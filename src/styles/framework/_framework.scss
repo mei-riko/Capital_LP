@@ -1,0 +1,127 @@
+html,body {
+    font-size: map-get($font-size, 'md');
+    font-weight: $font-weight-base;
+    line-height: $line-height;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+
+    &.hidden{
+        overflow: hidden;
+    }
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.hidden{
+    overflow: hidden;
+}
+
+p {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: $paragraph-margin-bottom;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+ol, ul{
+    padding: 0;
+    padding-left: 1em;
+    margin-bottom: $paragraph-margin-bottom;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+a{
+    display: inline-block;
+    outline: none;
+    transition: .3s;
+
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+table{
+    td{
+        padding: 8px 15px;
+    }
+}
+
+.text{
+    &-right{text-align: right;}
+    &-center{text-align: center;}
+    &-left{text-align: left;}
+}
+
+.img-fluid{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+hr, .hr{
+    width: 100%;
+    height: 1px;
+    height: 1px;
+    border-bottom: 1px solid $border-color;
+}
+
+blockquote, .blockquote{
+    padding: $spacer;
+    background-color: $body-bg;
+    border-radius: $border-radius;
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .text-xl{
+        &-left{text-align: left;}
+        &-center{text-align: center;}
+        &-right{text-align: right;}
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .text-lg{
+        &-left{text-align: left;}
+        &-center{text-align: center;}
+        &-right{text-align: right;}
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){  
+    .text-md{
+        &-left{text-align: left;}
+        &-center{text-align: center;}
+        &-right{text-align: right;}
+    }
+    blockquote, .blockquote{
+        padding: $spacer/2;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .text-sm{
+        &-left{text-align: left;}
+        &-center{text-align: center;}
+        &-right{text-align: right;}
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    html, body {
+        background-color: $white;
+        font-size: map-get($font-size, 'sm');
+    }
+    .text-xs{
+        &-left{text-align: left;}
+        &-center{text-align: center;}
+        &-right{text-align: right;}
+    }
+}
