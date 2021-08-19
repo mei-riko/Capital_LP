@@ -1,0 +1,44 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 99;
+
+    width: 100%;
+    padding: map-get($map: $spacers, $key: 4) map-get($map: $spacers, $key: 5);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        width: 174px;
+        // 30px
+        height: map-get($map: $spacers, $key: 2);
+        background: url('../img/logo.svg') no-repeat left center / contain;
+    }
+    &__phone{
+        display: flex;
+        align-items: center;
+        line-height: 1;
+
+        &-icon{
+            fill: $white;
+            transition: $transition-base;
+        }
+        &-body{
+            padding-left: $spacer-gutter;
+            padding-top: 5px;
+        }
+
+        &:hover, &:focus{
+            text-decoration: none;
+            color: $grey;
+
+            .header__phone-icon{
+                fill: $grey;
+            }
+        }
+    }
+}

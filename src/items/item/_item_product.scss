@@ -1,0 +1,26 @@
+.item_product{
+    position: relative;
+
+    width: 250px;
+    max-width: 100%;
+    padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
+    text-align: center;
+
+    &__type{
+        font-size: map-get($map: $heading, $key: h5);
+        line-height: $line-height-heading;
+    }
+    &__name{
+        font-size: map-get($map: $heading, $key: h5);
+        line-height: $line-height-heading;
+    }
+    &__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 100%;
+        height: 120px;
+        margin: map-get($map: $spacers, $key: 1) 0;
+    }
+}

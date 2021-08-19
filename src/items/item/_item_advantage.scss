@@ -1,0 +1,48 @@
+.item_advantage{
+    padding: map-get($map: $spacers, $key: 2) map-get($map: $spacers, $key: 3);
+    margin-bottom: map-get($map: $spacers, $key: 2);
+
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 60px 1fr;
+    grid-template-areas: 
+        "icon title"
+        "icon intro";
+    align-items: center;
+
+    &__icon{
+        grid-area: icon;
+    }
+    &__title{
+        grid-area: title;
+        font-size: map-get($map: $heading, $key: h1);
+        line-height: $line-height-heading;
+        padding-left: map-get($map: $spacers, $key: 3);
+    }
+    &__intro{
+        grid-area: intro;
+        font-size: map-get($map: $heading, $key: h4);
+        line-height: $line-height-heading;
+        padding-left: map-get($map: $spacers, $key: 3);
+    }
+    &::before{
+        background: linear-gradient(255.03deg, rgba(84, 114, 191, 0.3) -65.11%, rgba(255, 0, 0, 0) 185.85%);
+        filter: opacity(1) drop-shadow(0px 34px 60px rgba(0, 0, 0, 0.25));
+    }
+    &::after{
+        filter: opacity(0) drop-shadow(0px 34px 60px rgba(0, 0, 0, 0.25));
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &:hover{
+        &::before{
+            filter: opacity(0) drop-shadow(0px 34px 60px rgba(0, 0, 0, 0.25));
+        }
+        &::after{
+            filter: opacity(1) drop-shadow(0px 34px 60px rgba(0, 0, 0, 0.25));
+        }
+    }
+}

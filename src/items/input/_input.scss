@@ -1,0 +1,18 @@
+.input{
+    border: 2px solid $white;
+    border-radius: $border-radius;
+    padding: 26px 30px 24px 30px;
+    background-color: inherit;
+    color: $white;
+
+    font-size: map-get($map: $heading, $key: h5);
+
+    &::placeholder{
+        font-size: map-get($map: $heading, $key: h5);
+        color: $white;
+    }
+
+    &:hover, &:focus{
+        outline: none;
+    }
+}

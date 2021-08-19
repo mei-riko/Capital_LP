@@ -1,21 +1,24 @@
 $white                : #ffffff;
 $black                : #000000;
-$action               : #ce002b;
+$action               : #E1372F;
 
-$light-grey           : #FCFBFA;
-$grey                 : #777777;
-$dark-grey            : #3a3a3a;
+$light-grey           : #B8B8BE;
+$grey                 : #8B8B97;
+
+$light-pink           : #F6C4D2;
 
 $body-bg              : #171830;
 $body-color           : $white;
 
 $border-color         : #000;
-$border-radius        : 6px;
+$border-radius        : 20px;
 
 $link-color           : $white !default;
 $link-hover-color     : $action !default;
 $link-decoration      : none !default;
 $link-hover-decoration: underline !default;
+
+$transition-base      : .3s;
 
 $grid-breakpoints: (
   xs: 360px,
@@ -36,13 +39,13 @@ $container-max-widths: (
 
 
 $font-weight          : 400;
-$font-weight-bolder   : 600;
+// $font-weight-bolder   : 600;
 $font-weight-bold     : 700;
 
-$font-weight-heading: $font-weight-bold !default;
-$dt-font-weight:      $font-weight-bold !default;
+$font-weight-heading: $font-weight !default;
+$dt-font-weight:      $font-weight !default;
 
-$line-height          : 1.7;
+$line-height          : 1.6;
 $line-height-base     : 1.4;
 $line-height-heading  : 1.2;
 
@@ -64,6 +67,15 @@ $font-size: (
   lg: 20px
 ) !default;
 
+$heading: (
+  h6: 18px,
+  h5: 20px,
+  h4: 24px,
+  h3: 32px,
+  h2: 40px,
+  h1: 50px
+) !default;
+
 $letter-spacing       : 0.04em;
 
 $grid-columns         : 10    !default;
@@ -76,8 +88,8 @@ $spacers: ()  !default;
 $spacers: map-merge(
   (
     0: 0,
-    1: $spacer/4,       // 10px
-    2: $spacer/2,       // 20px
+    1: $spacer/2,       // 20px
+    2: (3*$spacer)/4,   // 30px
     3: $spacer,         // 40px
     4: (3*$spacer)/2,   // 60px
     5: $spacer * 2,     // 80px
@@ -97,7 +109,7 @@ $table-cell-padding   : 10px !default;
 $table-cell-padding-sm: 6px !default;
 $table-caption-color  : #242424 !default;
 
-$label-margin-bottom: 10px;
+$label-margin-bottom  : 10px;
 
 $enable-grid-classes              : true !default;
 $enable-pointer-cursor-for-buttons: true !default;

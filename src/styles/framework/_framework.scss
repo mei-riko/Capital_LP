@@ -4,7 +4,10 @@ html,body {
     line-height: $line-height;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
-
+}
+body{
+    overflow-x: hidden;
+    
     &.hidden{
         overflow: hidden;
     }
@@ -40,7 +43,7 @@ ol, ul{
 a{
     display: inline-block;
     outline: none;
-    transition: .3s;
+    transition: $transition-base;
 
     color: $link-color;
 
@@ -62,6 +65,9 @@ table{
     &-right{text-align: right;}
     &-center{text-align: center;}
     &-left{text-align: left;}
+}
+.text-grey{
+    color: $grey;
 }
 
 .img-fluid{

@@ -1,0 +1,56 @@
+.item_company{
+    position: relative;
+
+    width: 250px;
+    max-width: 100%;
+    padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
+    text-align: left;
+
+    // Total Paper Count
+    &__count{
+        position: absolute;
+        top: 4px;
+        right: 4px;
+
+        background-color: $body-bg;
+        border-radius: 30px;
+        line-height: 28px;
+        text-align: center;
+        padding: 3px 10px 0;
+    }
+    // About Company
+    &__info{
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: 50px 1fr;
+        grid-template-areas: 
+            "logo name"
+            "logo fullname";
+        align-items: center;
+
+        margin-bottom: map-get($map: $spacers, $key: 2);
+    }
+    &__logo{
+        grid-area: logo;
+    }
+    &__name{
+        grid-area: name;
+        padding-left: $spacer-gutter;
+    }
+    &__fullname{
+        grid-area: fullname;
+        padding-left: $spacer-gutter;
+
+        font-size: 1rem;
+        line-height: $line-height-heading;
+        color: $grey;
+    }
+    // Price Info
+    &__label{
+        font-size: 1rem;
+        line-height: $line-height-heading;
+    }
+    &__subtotal{
+        margin-bottom: map-get($map: $spacers, $key: 2);
+    }
+}

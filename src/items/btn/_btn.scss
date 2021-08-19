@@ -1,0 +1,22 @@
+.btn{
+    border-radius: $border-radius;
+
+    font-size: map-get($map: $heading, $key: h5);
+    font-weight: 500;
+    line-height: $line-height-heading;
+
+    padding: 24px 56px 22px 56px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover, &:focus{
+        text-decoration: none;
+        outline: none;
+    }
+}

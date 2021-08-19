@@ -1,1 +1,21 @@
-.main{}
+@import "../styles/helpers/variables";
+
+@import "../items/item/item";
+@import "../items/item/item_company";
+@import "../items/item/item_product";
+@import "../items/item/item_advantage";
+@import "../items/item/item_service";
+
+@import "../items/btn/btn";
+@import "../items/btn/btn_action";
+@import "../items/btn/btn_secondary";
+@import "../items/input/input";
+@import "../items/form/form";
+
+@import "../blocks/grid/grid";
+
+@import "../blocks/header/header";
+@import "../blocks/footer/footer";
+@import "../blocks/heading-screen/heading-screen";
+@import "../blocks/advantage/advantage";
+@import "../blocks/cta-block/cta-block";

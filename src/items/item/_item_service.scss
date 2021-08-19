@@ -1,0 +1,16 @@
+.item_service{
+    text-align: center;
+    padding: 50px $spacer;
+
+    &__icon{
+        margin: 0 auto $spacer;
+    }
+    &__title{
+        margin-bottom: $spacer/2;
+    }
+    &__intro{
+        font-size: map-get($map: $heading, $key: h5);
+        line-height: $line-height-base;
+        color: $light-grey;
+    }
+}

@@ -1,0 +1,13 @@
+.advantage{
+    padding: 180px 0;
+
+    &__items{
+        position: relative;
+    }
+    &__figure{
+        position: absolute;
+        top: 80px;
+        left: 320px;
+        z-index: -1;
+    }
+}

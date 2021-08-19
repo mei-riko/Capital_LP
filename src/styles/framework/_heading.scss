@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5, h6,
     font-family: $font-family-heading;
     font-weight: $font-weight-heading;
     line-height: $line-height-heading;
-    margin-bottom: $spacer-gutter;
+    margin-bottom: map-get($map: $spacers, $key: 2);
 
     &:last-child{
         margin-bottom: 0;
@@ -11,14 +11,14 @@ h1, h2, h3, h4, h5, h6,
 }
 * + h1, * + h2, * + h3, * + h4, * + h5, * + h6,
 * + .h1, * + .h2, * + .h3, * + .h4, * + .h5, * + .h6{
-    margin-top: $grid-gutter-width/2;
+    margin-top: map-get($map: $spacers, $key: 3);
 }
-.h1,h1{font-size: 38px;}
-.h2,h2{font-size: 32px;}
-.h3,h3{font-size: 28px;}
-.h4,h4{font-size: 21px;}
-.h5,h5{font-size: 18px;}
-.h6,h6{font-size: 1rem;}
+.h1,h1{font-size: map-get($map: $heading, $key: h1);}
+.h2,h2{font-size: map-get($map: $heading, $key: h2);}
+.h3,h3{font-size: map-get($map: $heading, $key: h3);}
+.h4,h4{font-size: map-get($map: $heading, $key: h4);}
+.h5,h5{font-size: map-get($map: $heading, $key: h5);}
+.h6,h6{font-size: map-get($map: $heading, $key: h6);}
 
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){}
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){}

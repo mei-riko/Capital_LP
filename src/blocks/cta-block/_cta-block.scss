@@ -1,0 +1,28 @@
+.cta-block{
+    position: relative;
+
+    padding: 50px map-get($map: $spacers, $key: 4);
+    margin: 180px 0 160px;
+
+    background: linear-gradient(98deg, #E341AC -50%, #E1372F 92%);
+    border-radius: 20px;
+
+    &__intro{
+        font-size: map-get($map: $heading, $key: h4);
+        line-height: $line-height-base;
+        color: #F6C4D2;
+
+        width: 540px;
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+    &__img{
+        position: absolute;
+        bottom: 0;
+        right: map-get($map: $spacers, $key: 2);
+    }
+    &__form{
+        width: 390px;
+        max-width: 100%;
+    }
+}
