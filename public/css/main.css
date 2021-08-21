@@ -524,6 +524,11 @@
   margin: 0 auto 30px;
 }
 
+.heading-screen__subtitle {
+  width: 620px;
+  max-width: 100%;
+}
+
 .heading-screen__intro {
   position: relative;
   z-index: 2;
@@ -532,6 +537,13 @@
   text-align: center;
   line-height: 1.4;
   margin: 0 auto 80px;
+}
+
+.heading-screen__content {
+  color: #8B8B97;
+  font-size: 20px;
+  width: 620px;
+  max-width: 100%;
 }
 
 .heading-screen__change {
@@ -605,6 +617,11 @@
   padding: 20px 0 30px;
 }
 
+.heading-screen__form {
+  width: 480px;
+  max-width: 100%;
+}
+
 .heading-screen_step__title {
   margin-bottom: 60px;
 }
@@ -631,6 +648,16 @@
 .heading-screen_step__container_success:after {
   width: 580px;
   background: url("../img/business-man-success.png") no-repeat center bottom/contain;
+}
+
+.heading-screen_step__container_result:after {
+  width: 650px;
+  background: url("../img/business-man-result.png") no-repeat center bottom/contain;
+}
+
+.heading-screen_step__container_subscribe:after {
+  width: 650px;
+  background: url("../img/business-man-subscribe.png") no-repeat center bottom/contain;
 }
 
 .stocks {

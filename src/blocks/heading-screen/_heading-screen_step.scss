@@ -27,8 +27,17 @@
                 background: url('../img/business-man-success.png') no-repeat center bottom / contain;
             }
         }
+        &_result{
+            &:after{
+                width: 650px;
+                background: url('../img/business-man-result.png') no-repeat center bottom / contain;
+            }
+        }
+        &_subscribe{
+            &:after{
+                width: 650px;
+                background: url('../img/business-man-subscribe.png') no-repeat center bottom / contain;
+            }
+        }
     }
-    // &__card{
-    //     grid-template-columns: repeat(2, 320px);
-    // }
 }
