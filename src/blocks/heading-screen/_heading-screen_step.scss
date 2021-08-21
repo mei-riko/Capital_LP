@@ -1,0 +1,34 @@
+.heading-screen_step{
+    &__title{
+        margin-bottom: map-get($map: $spacers, $key: 4);
+    }
+    &__container{
+        padding-top: 220px;
+        // min-height: 900px;
+        background-position-x: calc( 100% - 40px );
+
+        &:after{
+            left: auto;
+            right: map-get($map: $spacers, $key: 5);
+            transform: translateX(0);
+
+            height: 810px;
+        }
+
+        &_sad{
+            &:after{
+                width: 630px;
+                background: url('../img/business-man-sad.png') no-repeat center bottom / contain;
+            }
+        }
+        &_success{
+            &:after{
+                width: 580px;
+                background: url('../img/business-man-success.png') no-repeat center bottom / contain;
+            }
+        }
+    }
+    // &__card{
+    //     grid-template-columns: repeat(2, 320px);
+    // }
+}

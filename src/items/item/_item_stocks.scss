@@ -1,0 +1,35 @@
+.item_stocks{
+    position: relative;
+    padding: map-get($map: $spacers, $key: 1);
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__info{
+        margin-right: map-get($map: $spacers, $key: 1);
+        
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    &__title{
+        font-size: map-get($map: $font-size, $key: lg);
+        line-height: $line-height-heading;
+    }
+    &__subtitle{
+        line-height: $line-height-heading;
+        color: $light-grey;
+    }
+    // Total Paper Count
+    &__count{
+        position: absolute;
+        top: 4px;
+        right: 4px;
+
+        background-color: $body-bg;
+        border-radius: 30px;
+        line-height: 28px;
+        text-align: center;
+        padding: 3px 10px 0;
+    }
+}

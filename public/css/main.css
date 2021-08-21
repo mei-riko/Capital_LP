@@ -133,6 +133,49 @@
   margin-bottom: 30px;
 }
 
+.item_company-inside {
+  width: 320px;
+}
+
+.item_stocks {
+  position: relative;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.item_stocks__info {
+  margin-right: 20px;
+}
+
+.item_stocks__info:last-child {
+  margin-right: 0;
+}
+
+.item_stocks__title {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.item_stocks__subtitle {
+  line-height: 1.2;
+  color: #B8B8BE;
+}
+
+.item_stocks__count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: #171830;
+  border-radius: 30px;
+  line-height: 28px;
+  text-align: center;
+  padding: 3px 10px 0;
+}
+
 .item_product {
   position: relative;
   width: 250px;
@@ -444,12 +487,18 @@
 }
 
 .heading-screen {
-  position: relative;
-  padding: 60px 0 160px;
-  background: #181933 url("../img/bg-figure.svg") no-repeat center bottom/800px;
+  background: #181933;
 }
 
-.heading-screen:after {
+.heading-screen__container {
+  position: relative;
+  min-height: 900px;
+  height: 100vh;
+  padding: 60px 0 160px;
+  background: url("../img/bg-figure.svg") no-repeat center bottom/800px;
+}
+
+.heading-screen__container:after {
   content: '';
   position: absolute;
   left: 50%;
@@ -468,6 +517,9 @@
   z-index: 2;
   width: 720px;
   max-width: 100%;
+}
+
+.heading-screen__title_start {
   text-align: center;
   margin: 0 auto 30px;
 }
@@ -546,8 +598,151 @@
 .heading-screen__card {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   padding: 20px 0 30px;
+}
+
+.heading-screen_step__title {
+  margin-bottom: 60px;
+}
+
+.heading-screen_step__container {
+  padding-top: 220px;
+  background-position-x: calc( 100% - 40px);
+}
+
+.heading-screen_step__container:after {
+  left: auto;
+  right: 80px;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  height: 810px;
+}
+
+.heading-screen_step__container_sad:after {
+  width: 630px;
+  background: url("../img/business-man-sad.png") no-repeat center bottom/contain;
+}
+
+.heading-screen_step__container_success:after {
+  width: 580px;
+  background: url("../img/business-man-success.png") no-repeat center bottom/contain;
+}
+
+.stocks {
+  background: #181933;
+}
+
+.stocks__info {
+  padding-top: 200px;
+  padding-bottom: 80px;
+}
+
+.stocks__info-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stocks__graph {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.stocks__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stocks__btns-item {
+  margin-right: 20px;
+}
+
+.stocks__btns-item:last-child {
+  margin-right: 0;
+}
+
+.stocks__chat {
+  position: relative;
+  padding-top: 200px;
+  min-height: 900px;
+  height: 100vh;
+}
+
+.stocks__chat:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  width: 410px;
+  max-width: 100%;
+  height: 390px;
+  background: url("../img/business-man-chat.png") no-repeat center bottom/contain;
+}
+
+.stocks__chat-body {
+  padding: 0 20px;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.stocks__message {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "name date" "text text";
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid #5F49F2;
+}
+
+.stocks__message:nth-child(1) {
+  background-color: #5F49F2;
+}
+
+.stocks__message:nth-child(2) {
+  -webkit-filter: opacity(0.4);
+  filter: opacity(0.4);
+}
+
+.stocks__message:nth-child(3) {
+  -webkit-filter: opacity(0.2);
+  filter: opacity(0.2);
+}
+
+.stocks__message:nth-child(4) {
+  -webkit-filter: opacity(0.1);
+  filter: opacity(0.1);
+}
+
+.stocks__message-name {
+  grid-area: name;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+}
+
+.stocks__message-date {
+  grid-area: date;
+  font-size: 14px;
+  text-align: right;
+  color: #ffffff;
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+}
+
+.stocks__message-text {
+  grid-area: text;
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 .advantage {

@@ -1,0 +1,14 @@
+extends ../blocks/main.pug
+
+block variables
+    - var pageTitle     = "Выбрали товары"
+
+block content
+    section.heading-screen.heading-screen_step
+        .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_sad
+            .row.justify-content-center 
+                .col-8 
+                    h1.heading-screen__title.heading-screen_step__title Какая боль! Вы могли заработать 
+                        span#price(data-status="fail") 150 000 
+                        | ₽, вложив совсем немного лишних денег в&nbsp;акции
+                    a.btn.btn_action(href="index.html") Попробовать еще раз

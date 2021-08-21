@@ -1,21 +1,28 @@
 .heading-screen{
-    position: relative;
-    // 60px 0 160px
-    padding: map-get($map: $spacers, $key: 4) 0 160px;
-    background: #181933 url('../img/bg-figure.svg') no-repeat center bottom / 800px;
+    // position: relative;
+    background: $body-bg-secondary;
 
-    &:after{
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        z-index: 0;
+    &__container{
+        position: relative;
+        min-height: 900px;
+        height: 100vh;
+        // 60px 0 160px
+        padding: map-get($map: $spacers, $key: 4) 0 160px;
+        background: url('../img/bg-figure.svg') no-repeat center bottom / 800px;
 
-        transform: translateX(-50%);
-
-        width: 550px;
-        height: 570px;
-        background: url('../img/business-man.png') no-repeat center bottom / contain;
+        &:after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            z-index: 0;
+    
+            transform: translateX(-50%);
+    
+            width: 550px;
+            height: 570px;
+            background: url('../img/business-man.png') no-repeat center bottom / contain;
+        }
     }
 
     &__title{
@@ -25,8 +32,10 @@
         width: 720px;
         max-width: 100%;
 
-        text-align: center;
-        margin: 0 auto map-get($map: $spacers, $key: 2);
+        &_start{
+            text-align: center;
+            margin: 0 auto map-get($map: $spacers, $key: 2);
+        }
     }
     &__intro{
         position: relative;
@@ -87,8 +96,8 @@
     &__card{
         display: grid;
         grid-gap: map-get($map: $spacers, $key: 1);
-        grid-template-columns: 1fr 1fr;
-
+        grid-template-columns: repeat(2, 1fr);
+        max-width: fit-content;
         padding: map-get($map: $spacers, $key: 1) 0 map-get($map: $spacers, $key: 2);
     }
 }

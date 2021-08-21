@@ -35,8 +35,8 @@ mixin advantageItem(object)
         .item_advantage__intro=object.intro
 block content
     section.heading-screen
-        .container 
-            h1.heading-screen__title Как бы вы поступили со своими деньгами 5 лет назад?
+        .container.heading-screen__container
+            h1.heading-screen__title.heading-screen__title_start Как бы вы поступили со своими деньгами 5 лет назад?
             p.h4.heading-screen__intro Узнайте, сколько вы могли заработать — купите товары или вложите в акции
             .heading-screen__row
                 .heading-screen__col
@@ -47,7 +47,7 @@ block content
                     .heading-screen__card
                         for object in companies
                             +company(object)
-                    a.btn.btn_action(href="javascript;") Купить акции
+                    a.btn.btn_action(href="success.html") Купить акции
                 .heading-screen__col
                     a.heading-screen__change.heading-screen__change_reverse(href="javascript;")
                         svg.heading-screen__change-icon(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -56,7 +56,7 @@ block content
                     .heading-screen__card
                         for object in products
                             +product(object)
-                    a.btn.btn_action(href="javascript;") Купить товары
+                    a.btn.btn_action(href="error.html") Купить товары
     section.advantage 
         .container 
             .row.justify-content-around.align-items-center
