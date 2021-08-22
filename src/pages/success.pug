@@ -6,24 +6,25 @@ block variables
 mixin company(object)
     .item.item_company.item_company-inside
         .item_company__count=object.count
-        .item_company__info 
+        .item_company__info.item_company-inside__info
             .item_company__logo
                 img.img-fluid(src=object.logo)
             .item__title.item_company__name=object.name
             .item_company__fullname=object.fullname
-        p.item_company__label Стоимость акции
-        .item__title=object.subtotal
+        .item_company-inside__col
+            p.item_company__label Стоимость акции
+            .item__title=object.subtotal
 block content
     section.heading-screen.heading-screen_step
         .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_success
             .row 
-                .col-7
+                .col-7.col-xl-6.col-lg-8.col-md-9.col-sm-12
                     h1.heading-screen__title.heading-screen_step__title Отличный выбор! 
                         br
                         | Мы вложили  
                         span#price(data-status="success") 90 000 
                         | ₽ в&nbsp;акции быстрорастущих компаний
-                    .heading-screen__card
+                    .heading-screen__card.heading-screen_step__card
                         for object in companies
                             +company(object)
                     a.btn.btn_action(href="stocks.html") Начать торговать

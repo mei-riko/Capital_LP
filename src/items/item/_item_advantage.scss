@@ -49,7 +49,7 @@
         }
     }
 }
-
+// < 1680px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_advantage{
         &__title{
@@ -60,7 +60,7 @@
         }
     }
 }
-
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_advantage{
         padding: map-get($map: $spacers, $key: 1);
@@ -68,7 +68,7 @@
         width: 340px;
 
         &__title{
-            font-size: map-get($map: $heading, $key: h3);
+            font-size: map-get($map: $heading, $key: h4);
             padding-left: map-get($map: $spacers, $key: 1);
         }
         &__intro{
@@ -77,8 +77,10 @@
         }
     }
 }
+// < 920px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_advantage{
+        width: 280px;
         margin-bottom: $spacer-gutter;
         
         &:last-child{
@@ -93,9 +95,13 @@
         }
     }
 }
+// < 420px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_advantage{
         width: 100%;
         margin-left: 0;
+        &__intro{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
     }
 }

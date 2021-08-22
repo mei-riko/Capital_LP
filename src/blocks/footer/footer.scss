@@ -16,9 +16,22 @@
         color: $grey;
     }
 }
+// < 1680px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .footer{
+        padding: map-get($map: $spacers, $key: 4) 0;
+    }
+}
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .footer{
         padding: map-get($map: $spacers, $key: 3) 0;
+        &__logo{
+            width: 150px;
+        }
+        &__text{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'md')){

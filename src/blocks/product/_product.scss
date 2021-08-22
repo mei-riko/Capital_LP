@@ -9,11 +9,13 @@
         z-index: -1;
     }
 }
-
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .product{
         &__figure{
-            top: 80px;
+            width: 460px;
+            top: -80px;
+            left: -300px;
         }
     }
 }

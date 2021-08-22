@@ -44,14 +44,14 @@
         }
     }
 }
-
+// < 1680px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .header{
         padding-left: 120px;
         padding-right: 120px;
     }
 }
-
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .header{
         position: unset;
@@ -60,24 +60,33 @@
         
         &__container{
             max-width: map-get($map: $container-max-widths, $key: lg);
-            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
+            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width;
             margin-left: auto;
             margin-right: auto;
         }
+        &__logo{
+            width: 150px;
+        }
     }
 }
+// < 920px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
-            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
+            padding: map-get($map: $spacers, $key: 2) $grid-gutter-width;
+        }
+        &__phone-icon{
+            width: 24px;
         }
     }
 }
+// < 660px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
+            padding: map-get($map: $spacers, $key: 1) $grid-gutter-width map-get($map: $spacers, $key: 2);            
         }
         &__logo{
             width: 150px;

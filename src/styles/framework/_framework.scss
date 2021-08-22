@@ -90,7 +90,7 @@ blockquote, .blockquote{
     background-color: $body-bg;
     border-radius: $border-radius;
 }
-
+// < 1680px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .text-xl{
         &-left{text-align: left;}
@@ -98,7 +98,11 @@ blockquote, .blockquote{
         &-right{text-align: right;}
     }
 }
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    html, body {
+        font-size: map-get($font-size, 'sm');
+    }
     .text-lg{
         &-left{text-align: left;}
         &-center{text-align: center;}
@@ -106,9 +110,7 @@ blockquote, .blockquote{
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'md')){  
-    html, body {
-        font-size: map-get($font-size, 'sm');
-    }
+    
     .text-md{
         &-left{text-align: left;}
         &-center{text-align: center;}

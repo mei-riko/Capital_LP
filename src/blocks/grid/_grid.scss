@@ -2,7 +2,7 @@
     display: grid;
 
     &_stocks{
-        grid-gap: map-get($map: $spacers, $key: 3);
+        grid-gap: map-get($map: $spacers, $key: 4);
         grid-template-columns: 1fr 450px;
     }
 }

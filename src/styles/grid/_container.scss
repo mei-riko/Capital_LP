@@ -1,9 +1,10 @@
 // $grid-gutter-width    : 20px  !default;
 .container {
   width: 100%;
-  max-width: 1340px;
-  padding-left: $grid-gutter-width/2;
-  padding-right: $grid-gutter-width/2;
+  // 1320 + 40
+  max-width: 1360px;
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
   margin-right: auto;
   margin-left: auto;
 }
@@ -22,13 +23,13 @@
   padding-left: 0
 }
 
-// < 1380px
+// < 1680px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: xl);
   }
 }
-// < 1024px
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: lg);

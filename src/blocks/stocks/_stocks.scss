@@ -7,7 +7,7 @@
     }
     &__info-grid{
         display: grid;
-        grid-gap: $grid-gutter-width/2;
+        grid-gap: $spacer-gutter;
         grid-template-columns: repeat(2,1fr);
     }
     &__graph{

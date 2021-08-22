@@ -14,7 +14,7 @@
         color: $light-grey;
     }
 }
-
+// < 1680px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_service{
         padding: map-get($map: $spacers, $key: 3);
@@ -24,12 +24,13 @@
         }
     }
 }
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_service{
         padding: map-get($map: $spacers, $key: 1);
     
         &__intro{
-            font-size: map-get($map: $font-size, $key: md);
+            font-size: map-get($map: $font-size, $key: sm);
         }
     }
 }

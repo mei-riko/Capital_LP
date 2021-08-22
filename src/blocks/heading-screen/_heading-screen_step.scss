@@ -1,10 +1,11 @@
 .heading-screen_step{
-    &__title{
-        margin-bottom: map-get($map: $spacers, $key: 4);
-    }
+    overflow-x: clip;
+    // min-height: 100vh;
+
     &__container{
         padding-top: 220px;
-        // min-height: 900px;
+        // padding-bottom: 320px;
+        min-height: 900px;
         background: none;
 
         &:before{
@@ -16,8 +17,9 @@
             z-index: 0;
             
             width: 860px;
-            height: 680px;
+            height: 800px;
             background: url('../img/bg-figure.svg') no-repeat center bottom / contain;
+            background-position-y: calc(100% + 140px);
         }
 
         &:after{
@@ -51,6 +53,150 @@
                 width: 650px;
                 background: url('../img/business-man-subscribe.png') no-repeat center bottom / contain;
             }
+        }
+    }
+    &__title{
+        margin-bottom: map-get($map: $spacers, $key: 3);
+    }
+}
+// < 1680px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .heading-screen_step{
+        &__container{
+            min-height: 720px;
+
+            &:before{
+                width: 720px;
+                height: 680px;
+            }
+            &:after{
+                height: 620px;
+            }
+        }
+    }
+}
+// < 1380px
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .heading-screen_step{
+        &__container{
+            padding-top: map-get($map: $spacers, $key: 3);
+            padding-bottom: 140px;
+            min-height: 1px;
+
+            &:before{
+                height: 420px;
+
+                background-size: cover;
+                background-position-y: top;
+
+                right: -160px;
+            }
+            &:after{
+                width: 700px;
+                height: 100%;
+
+                background-size: 540px;
+                background-position-y: top;
+
+                // right: -260px;
+                right: -180px;
+            }
+
+            &_sad{
+                padding-top: 140px;
+            }
+            &_result{
+                &:before{
+                    right: -280px;
+                }
+                &:after {
+                    width: 500px;
+                    background-size: 500px;
+                }
+            }
+            &_subscribe{
+                &:after{
+                    width: 600px;
+                    background-size: 480px;
+                }
+            }
+        }
+        &__title{
+            margin-bottom: map-get($map: $spacers, $key: 2);
+        }
+    }
+}
+// < 920px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .heading-screen_step{
+        &__container{
+            &:before{
+                height: 340px;
+                right: -160px;
+                width: 600px;
+            }
+            &:after{
+                width: 580px;
+                background-size: 420px;
+                background-position-y: map-get($map: $spacers, $key: 3);
+                right: -240px;
+            }
+
+            &_subscribe{
+                &:after{
+                    background-size: 440px;
+                }
+            }
+        }
+        &__title{
+            font-size: map-get($map: $heading, $key: h4);
+            margin-bottom: map-get($map: $spacers, $key: 1);
+        }
+        &__card{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+// < 660px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .heading-screen_step{
+        background-size: 480px;
+
+        &__container{
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &:before{
+                display: none;
+            }
+            &:after{
+                display: block;
+                position: unset;
+                // height: 480px;
+                // width: 500px;
+
+                height: 320px;
+                width: 400px;
+                background-size: 340px;
+                background-position-y: 20px;
+            }
+        }
+        &__title{
+            margin-bottom: map-get($map: $spacers, $key: 1);
+        }
+    }
+}
+// < 440px
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .heading-screen_step{
+        &__container{
+            &:after{
+                background-size: 320px;
+                background-position-y: 0px;
+            }
+        }
+        &__card{
+            grid-template-columns: 1fr;
         }
     }
 }
