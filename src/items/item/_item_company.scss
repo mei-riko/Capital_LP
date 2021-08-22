@@ -54,3 +54,92 @@
         margin-bottom: map-get($map: $spacers, $key: 2);
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .item_company{
+        width: 234px;
+        padding: map-get($map: $spacers, $key: 1);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .item_company{
+        width: 180px;
+        padding: $spacer-gutter;
+
+        &__count{
+            font-size: map-get($map: $font-size, $key: xs);
+            line-height: 18px;
+            padding: 4px 8px 0;
+        }
+        &__info{
+            grid-template-columns: 40px 1fr;
+        }
+        &__name{
+            padding-left: 10px;
+        }
+        &__fullname{
+            font-size: map-get($map: $font-size, $key: xs);
+            padding-left: 10px;
+        }
+        &__label{
+            font-size: map-get($map: $font-size, $key: sm);
+            margin-bottom: 5px;
+        }
+        &__subtotal{
+            margin-bottom: $spacer-gutter;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .item_company{
+        display: flex;
+        flex-wrap: wrap;
+        width: 240px;
+
+        &__info{
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: $spacer-gutter;
+        }
+        &__col{
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        &__subtotal{
+            margin-bottom: 0;
+        }
+        &__label{
+            font-size: 10px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item_company{
+        // display: block;
+        width: 170px;
+        padding: 20px 15px;
+        // text-align: center;
+
+        &__info{
+            grid-template-columns: 30px 1fr;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .item_company{
+        width: 134px;
+        padding: $spacer-gutter;
+
+        &__col{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        &__subtotal{
+            margin-bottom: $spacer-gutter;
+        }
+        &__count{
+            top: auto;
+            bottom: 4px;
+        }
+    }
+}

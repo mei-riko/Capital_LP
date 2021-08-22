@@ -20,3 +20,23 @@
         outline: none;
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .btn{
+        font-size: map-get($map: $font-size, $key: md);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .btn{
+        font-size: map-get($map: $font-size, $key: sm);
+        padding: 14px 36px 12px 36px;
+        border-radius: $border-radius/2;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .btn{
+        // font-size: map-get($map: $font-size, $key: sm);
+        padding: 14px 24px 12px 24px;
+        border-radius: $border-radius/2;
+    }
+}

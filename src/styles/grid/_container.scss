@@ -1,12 +1,11 @@
 // $grid-gutter-width    : 20px  !default;
 .container {
   width: 100%;
-  max-width: 1680px;
-  padding-left: $grid-gutter-width;
-  padding-right: $grid-gutter-width;
+  max-width: 1340px;
+  padding-left: $grid-gutter-width/2;
+  padding-right: $grid-gutter-width/2;
   margin-right: auto;
   margin-left: auto;
-
 }
 .row{
   display: flex;
@@ -23,7 +22,7 @@
   padding-left: 0
 }
 
-// < 1440px
+// < 1380px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: xl);

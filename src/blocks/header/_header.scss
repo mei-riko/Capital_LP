@@ -3,14 +3,16 @@
     top: 0;
     left: 0;
 
-    z-index: 99;
+    z-index: 1;
 
     width: 100%;
     padding: map-get($map: $spacers, $key: 4) map-get($map: $spacers, $key: 5);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;    
+    }
 
     &__logo{
         width: 174px;
@@ -39,6 +41,66 @@
             .header__phone-icon{
                 fill: $grey;
             }
+        }
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .header{
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .header{
+        position: unset;
+        padding: 0;
+        background-color: $body-bg-secondary;
+        
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: lg);
+            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .header{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: md);
+            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .header{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: sm);
+        }
+        &__logo{
+            width: 150px;
+        }
+        &__phone-icon{
+            width: 18px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .header{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: xs);
+        }
+        &__logo{
+            width: 120px;
+        }
+        &__phone-body{
+            font-size: map-get($map: $font-size, $key: xs);
+            padding-left: 6px;
+        }
+        &__phone-icon{
+            width: 12px;
         }
     }
 }

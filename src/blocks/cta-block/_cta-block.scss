@@ -7,13 +7,16 @@
     background: linear-gradient(98deg, #E341AC -50%, #E1372F 92%);
     border-radius: 20px;
 
+    &__title{
+        max-width: 50%;
+    }
     &__intro{
         font-size: map-get($map: $heading, $key: h4);
         line-height: $line-height-base;
         color: #F6C4D2;
 
         width: 540px;
-        max-width: 100%;
+        max-width: 50%;
         margin-bottom: 50px;
     }
     &__img{
@@ -23,6 +26,79 @@
     }
     &__form{
         width: 390px;
-        max-width: 100%;
+        max-width: 50%;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .cta-block{
+        border-radius: 0;
+        margin: 100px 0 60px;
+        padding: 0;
+
+        &__container{
+            width: 100%;
+            max-width: map-get($map: $container-max-widths, $key: lg);
+            margin: 0 auto;
+            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
+        }
+        &__intro{
+            font-size: map-get($map: $heading, $key: h6);
+            margin-bottom: map-get($map: $spacers, $key: 3);
+        }
+        &__img{
+            max-width: 50%;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .cta-block{
+        margin: 100px 0 60px;
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: md);
+        }
+        &__title{
+            max-width: 100%;
+        }
+        &__intro{
+            max-width: 60%;
+        }
+        &__form{
+            max-width: 60%;
+        }
+        &__img{
+            max-width: 40%;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .cta-block{
+        margin: map-get($map: $spacers, $key: 4) 0;
+
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: sm);
+            padding-bottom: 0;
+        }
+        &__intro{
+            max-width: 100%;
+            margin-bottom: map-get($map: $spacers, $key: 1);
+        }
+        &__form{
+            max-width: 100%;
+        }
+        &__img{
+            position: unset;
+            max-width: 100%;
+            margin-top: map-get($map: $spacers, $key: 1);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .cta-block{
+        margin: map-get($map: $spacers, $key: 4) 0;
+
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: xs);
+        }
     }
 }

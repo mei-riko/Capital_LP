@@ -14,3 +14,37 @@
         color: $light-grey;
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .item_service{
+        padding: map-get($map: $spacers, $key: 3);
+
+        &__intro{
+            font-size: map-get($map: $heading, $key: h6);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .item_service{
+        padding: map-get($map: $spacers, $key: 1);
+    
+        &__intro{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .item_service{
+        &__icon{
+            width: 60px;
+            margin-bottom: map-get($map: $spacers, $key: 2);
+        }
+        &__title{
+            font-size: map-get($map: $font-size, $key: md);
+            margin-top: map-get($map: $spacers, $key: 2);
+        }
+        &__intro{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
+    }
+}

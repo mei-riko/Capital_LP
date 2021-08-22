@@ -1,8 +1,8 @@
 .grid{
     display: grid;
 
-    &_service{
-        grid-gap: map-get($map: $spacers, $key: 2);
-        grid-template-columns: repeat(3, 1fr);
+    &_stocks{
+        grid-gap: map-get($map: $spacers, $key: 3);
+        grid-template-columns: 1fr 450px;
     }
 }

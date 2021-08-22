@@ -1,0 +1,28 @@
+.product{
+    position: relative;
+    // overflow-x: clip;
+
+    &__figure{
+        position: absolute;
+        top: 200px;
+        left: -640px;
+        z-index: -1;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .product{
+        &__figure{
+            top: 80px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .product{
+        &__figure{
+            width: 460px;
+            left: -300px;
+            top: 0px;
+        }
+    }
+}

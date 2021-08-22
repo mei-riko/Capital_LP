@@ -14,11 +14,13 @@ mixin company(object)
                 img.img-fluid(src=object.logo)
             .item__title.item_company__name=object.name
             .item_company__fullname=object.fullname
-        p.item_company__label Стоимость акции
-        .item__title.item_company__subtotal=object.subtotal
-        p.item_company__label Общая сумма в рублях
-        .item__title.item_company__total=object.total
-            span.item__rub ₽
+        .item_company__col
+            p.item_company__label Стоимость акции
+            .item__title.item_company__subtotal=object.subtotal
+        .item_company__col
+            p.item_company__label Общая сумма в&nbsp;рублях
+            .item__title.item_company__total=object.total
+                span.item__rub ₽
 mixin product(object)
     .item.item_product
         .item_product__type=object.type
@@ -36,7 +38,7 @@ mixin advantageItem(object)
 block content
     section.heading-screen
         .container.heading-screen__container
-            h1.heading-screen__title.heading-screen__title_start Как бы вы поступили со своими деньгами 5 лет назад?
+            h1.heading-screen__title.heading-screen__title_start Как бы вы поступили со&nbsp;своими деньгами 5&nbsp;лет назад?
             p.h4.heading-screen__intro Узнайте, сколько вы могли заработать — купите товары или вложите в акции
             .heading-screen__row
                 .heading-screen__col
@@ -59,12 +61,12 @@ block content
                     a.btn.btn_action(href="error.html") Купить товары
     section.advantage 
         .container 
-            .row.justify-content-around.align-items-center
-                .col-4
-                    h2.advantage__title.mb-4 Предлагаем готовые инвестиционные продукты, даем доступ 
+            .row.justify-content-between.align-items-center
+                .col-6.col-lg-6.col-sm-12.mb-sm-3
+                    h2.advantage__title.mb-4.mb-lg-2 Предлагаем готовые инвестиционные продукты, даем доступ 
                         | на&nbsp;биржевые площадки и&nbsp;создаем условия для&nbsp;развития вашего&nbsp;бизнеса
                     a.btn.btn_action(href="javascript;") Перейти на наш сайт                    
-                .col-3.advantage__items
+                .col-5.col-lg-6.col-sm-12.advantage__items
                     <svg class="advantage__figure" width="820" height="954" viewBox="0 0 820 954" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="410" cy="544" r="410" fill="url(#paint0_linear)"/>
                         <circle cx="187.657" cy="47" r="47" fill="url(#paint1_linear)"/>
@@ -79,45 +81,71 @@ block content
                             </linearGradient>
                         </defs>
                     </svg>
+                    <svg class="advantage__figure-mobile" width="347" height="540" viewBox="0 0 347 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="115.5" cy="76" rx="75.5" ry="76" fill="url(#paint0_linear_mobile)"/>
+                        <ellipse cx="173.5" cy="366" rx="173.5" ry="174" fill="url(#paint1_linear_mobile)"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_mobile" x1="82.4238" y1="-85.6508" x2="258.77" y2="90.7548" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#13A8FC"/>
+                                <stop offset="1" stop-color="#00FFC2"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_mobile" x1="97.4905" y1="-4.09524" x2="662.152" y2="500.309" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#E8FF5E"/>
+                                <stop offset="1" stop-color="#C726FF"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
                     for object in advantages
                         +advantageItem(object)
-    section 
+    section
+        //- Service
         .container
-            p.h1.text-center.mb-4 Продукты для наших клиентов
-            //- Service
+            p.h1.text-center.mb-4.mb-lg-3 Продукты для наших клиентов
+            .row.justify-content-center.product
+                <svg class="product__figure" width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.5" d="M746.193 1.50058C777.95 -7.00846 807.008 22.0504 798.499 53.8065L607.046 768.32C598.537 800.076 558.842 810.712 535.595 787.465L12.535 264.405C-10.7121 241.158 -0.0757677 201.463 31.6804 192.954L746.193 1.50058Z" fill="url(#paint_linear_triagle)"/>
+                    <defs>
+                        <linearGradient id="paint_linear_triagle" x1="1067.29" y1="-584.809" x2="1061.44" y2="1102.73" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#13A8FC"/>
+                            <stop offset="1" stop-color="#00FFC2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                .col-4.col-sm-12.mb-sm-2
+                    .item.item_service
+                        img.item_service__icon.img-fluid(src="./icon/icon-ellips-1.svg")
+                        p.h3.item_service__title Доверительное управление
+                        p.item_service__intro Доверительное управление заключается в передаче ценных бумаг, денежных средств, профессиональному управляющему
+                .col-4.col-sm-12.mb-sm-2
+                    .item.item_service
+                        img.item_service__icon.img-fluid(src="./icon/icon-ellips-3.svg")
+                        p.h3.item_service__title Доверительное управление
+                        p.item_service__intro Доверительное управление заключается в передаче ценных бумаг, денежных средств, профессиональному управляющему
+                .col-4.col-sm-12
+                    .item.item_service
+                        img.item_service__icon.img-fluid(src="./icon/icon-ellips-2.svg")
+                        p.h3.item_service__title Доверительное управление
+                        p.item_service__intro Доверительное управление заключается в передаче ценных бумаг, денежных средств, профессиональному управляющему
+        //- CTA Form
+        .container.cta-block-container
+            .cta-block
+                .cta-block__container
+                    p.h1.cta-block__title.mb-1 Хотите узнать о нас больше?
+                    p.cta-block__intro Оставляйте нам свой номер телефона, мы перезвоним и все расскажем
+                    form.form.form_column.cta-block__form(action="")
+                        input.input.form_column__input(type="text", name="",placeholder="Ваш номер телефона")
+                        button.btn.btn_secondary.form_column__btn(type="submit") Отправить
+                    img.cta-block__img(src="./img/business-girl.png" alt="" title="")
+        //- Text
+        .container
             .row.justify-content-center
-                .col-8
-                    .grid.grid_service
-                        .item.item_service
-                            img.item_service__icon.img-fluid(src="./icon/icon-ellips-1.svg")
-                            p.h3.item_service__title Доверительное управление
-                            p.item_service__intro Доверительное управление заключается в передаче ценных бумаг, денежных средств, профессиональному управляющему
-                        .item.item_service
-                            img.item_service__icon.img-fluid(src="./icon/icon-ellips-3.svg")
-                            p.h3.item_service__title Доверительное управление
-                            p.item_service__intro Доверительное управление заключается в передаче ценных бумаг, денежных средств, профессиональному управляющему
-                        .item.item_service
-                            img.item_service__icon.img-fluid(src="./icon/icon-ellips-2.svg")
-                            p.h3.item_service__title Доверительное управление
-                            p.item_service__intro Доверительное управление заключается в передаче ценных бумаг, денежных средств, профессиональному управляющему
-            //- CTA Form
-            .row.justify-content-center
-                .col-8
-                    .cta-block
-                        p.h1.cta-block__title.mb-0 Хотите узнать о нас больше?
-                        p.cta-block__intro Оставляйте нам свой номер телефона, мы перезвоним и все расскажем
-                        form.form.form_column.cta-block__form(action="")
-                            input.input.form_column__input(type="text", name="",placeholder="Ваш номер телефона")
-                            button.btn.btn_secondary.form_column__btn(type="submit") Отправить
-                        img.cta-block__img(src="./img/business-girl.png" alt="" title="")
-            //- Text
-            .row.justify-content-center
-                .col-4
+                .col-6.col-md-12
                     p.text-grey Источник информации о доходности www.bloomberg.com. Представленная в настоящем документе информация подготовлена АО «ИК «Ай Ти Инвест» (далее — Компания, лицензия профессионального участника рынка ценных бумаг № 045-07514-100000 от 17.03.2004 на осуществление брокерской деятельности предоставлена Центральным Банком Российской Федерации (Банком России)) и предназначена исключительно для ознакомления.
                     p.text-grey Материалы, предоставленные Компанией, основаны на информации, полученной из открытых источников, которые рассматриваются Компанией как надежные. Компания не имеет возможности провести должную проверку такой информации и не несет ответственности за точность, полноту и достоверность материалов, предоставленных Компанией. При принятии инвестиционных решений инвестор должен провести собственный анализ финансового положения эмитента, процентных ставок, доходности и всех рисков, связанных с инвестированием в ценные бумаги и другие финансовые инструменты и при необходимости воспользоваться услугами финансовых, юридических и иных консультантов.
                     p.text-grey Стоимость инвестиций может как снижаться, так и повышаться, и инвестор может потерять первоначально инвестированную сумму. Доходность в прошлом не гарантирует доходности в будущем. Материалы и сведения, предоставленные Компанией, носят исключительно информационный характер, предназначены для лиц, которые вправе получать такие материалы и сведения, и не должны рассматриваться как заверение об обстоятельствах, имеющих значение для заключения, исполнения или прекращения какой-либо сделки.
                     p.text-grey Настоящий документ, включая любые его части и отдельные положения настоящего документа, не могут рассматриваться в качестве оферты (включая публичную оферту), 
-                .col-4
+                .col-6.col-md-12
                     p.text-grey приглашения делать оферты, коммерческого намерения Компании заключить сделку на условиях, изложенных в документе, а также гарантий Компании в отношении последствий заключения какой-либо сделки и/или использования какого-либо инструмента.
                     p.text-grey Представленная информация не является индивидуальной инвестиционной рекомендацией, не является формой выражения мнения Компании и/или ее сотрудников о том, отвечает ли конкретная ценная бумага или финансовый инструмент вашим финансовым и/или иным интересам. Определение соответствия финансового инструмента либо операции инвестиционным целям, инвестиционному горизонту и толерантности к риску является задачей инвестора. Компания не несет ответственности за возможные убытки инвестора в случае совершения операций, либо инвестирования в финансовые инструменты, упомянутые в данных материалах. Настоящий документ, включая любые его части и положения, а также любые комментарии Компании и ее работников в отношении данного документа не могут рассматриваться в качестве консультации, совета, разъяснений Компании в отношении рассматриваемого или любых других финансовых инструментов и сделок.
                     p.text-grey Любое использование информации, представленной в данном документе, включая любые части/разделы документа, допускается только на собственный страх и риск пользователя. Любое копирование и воспроизведение информации, представленной в данном документе, как в устной, так и в письменной форме, допускается только при условии предварительного разрешения (согласия) Компании. Представленная информация и мнения подлежат изменению без уведомления получателей данной информации и мнений. Представленная информация не является персональной инвестиционной рекомендацией. Не является рекламой ценных бумаг и иных финансовых инструментов. Продукт только для квалифицированных инвесторов.

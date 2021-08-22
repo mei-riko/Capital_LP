@@ -64,3 +64,25 @@
         }
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .item{
+        &__title{
+            font-size: map-get($map: $font-size, $key: lg);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .item{
+        &__title{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .item{
+        &__title{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+    }
+}

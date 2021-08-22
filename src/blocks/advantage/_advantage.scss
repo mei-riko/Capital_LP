@@ -1,5 +1,6 @@
 .advantage{
     padding: 180px 0;
+    overflow-x: clip;
 
     &__items{
         position: relative;
@@ -7,7 +8,64 @@
     &__figure{
         position: absolute;
         top: 80px;
-        left: 320px;
+        left: 360px;
         z-index: -1;
+    }
+    &__figure-mobile{
+        display: none;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .advantage{
+        &__figure{
+            top: 60px;
+            left: 300px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .advantage{
+        padding: map-get($map: $spacers, $key: 4) 0;
+
+        &__title{
+            font-size: map-get($map: $font-size, $key: lg);
+        }
+        &__figure{
+            top: 40px;
+            left: 240px;        
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .advantage{
+        padding: map-get($map: $spacers, $key: 4) 0 map-get($map: $spacers, $key: 5);
+
+        &__figure{
+            display: none;
+        }
+        &__figure-mobile{
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 200px;
+            z-index: -1;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .advantage{
+        &__figure-mobile{
+            top: -40px;
+            left: 260px;
+            height: 400px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .advantage{
+        &__figure-mobile{
+            left: 160px;
+        }
     }
 }

@@ -16,13 +16,13 @@ mixin company(object)
 block content
     section.heading-screen.heading-screen_step
         .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_success
-            .row.justify-content-center 
-                .col-8 
+            .row 
+                .col-7
                     h1.heading-screen__title.heading-screen_step__title Отличный выбор! 
                         br
                         | Мы вложили  
                         span#price(data-status="success") 90 000 
-                        | ₽, в&nbsp;акции быстрорастущих компаний
+                        | ₽ в&nbsp;акции быстрорастущих компаний
                     .heading-screen__card
                         for object in companies
                             +company(object)

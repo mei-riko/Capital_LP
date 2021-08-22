@@ -48,7 +48,7 @@
         }
 
         &-body{
-            padding: 0 map-get($map: $spacers, $key: 1);
+            // padding: 0 map-get($map: $spacers, $key: 1);
             height: 100%;
             overflow-y: hidden;
             // overflow-y: auto;
@@ -64,6 +64,7 @@
         padding: map-get($map: $spacers, $key: 1);
         margin-bottom: map-get($map: $spacers, $key: 1);
         border-radius: $border-radius;
+        border-bottom-right-radius: $border-radius/4;
         border: 1px solid $blue;
 
         &:nth-child(1){ background-color: $blue;}

@@ -4,11 +4,15 @@
 
     &__container{
         position: relative;
+        max-width: 1420px;
         min-height: 900px;
-        height: 100vh;
-        // 60px 0 160px
-        padding: map-get($map: $spacers, $key: 4) 0 160px;
+        // height: 100vh;
+        // 60px
+        padding-top: map-get($map: $spacers, $key: 4);
+        padding-bottom: 160px;
+
         background: url('../img/bg-figure.svg') no-repeat center bottom / 800px;
+        background-position-y: calc(100% + 200px);
 
         &:after{
             content: '';
@@ -21,10 +25,9 @@
     
             width: 550px;
             height: 570px;
-            background: url('../img/business-man.png') no-repeat center bottom / contain;
+            background: url('../img/business-man.png') no-repeat center top / cover;
         }
     }
-
     &__title{
         position: relative;
         z-index: 2;
@@ -67,8 +70,7 @@
         color: $grey;
 
         &-title{
-            padding-left: $spacer-gutter;
-            padding-right: $spacer-gutter;
+            padding: 4px $spacer-gutter 0;
         }
         &-icon{
             fill: $grey;
@@ -102,6 +104,7 @@
     }
     &__col{
         text-align: center;
+        max-width: 50%;
     }
     &__card{
         display: grid;
@@ -114,5 +117,107 @@
     &__form{
         width: 480px;
         max-width: 100%;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .heading-screen{
+        &__container{
+            width: calc(100% - 50px);
+            max-width: 1240px;
+
+            &:after{
+                width: 520px;
+                height: 540px;
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .heading-screen{
+        &__container{
+            width: 100%;
+            max-width: map-get($map: $container-max-widths, $key: lg);
+
+            min-height: 1px;
+            
+            padding-top: 0;
+            padding-bottom: map-get($map: $spacers, $key: 3);
+
+            background-size: 660px;
+            background-position-y: calc(100% + 100px);
+            
+            &:after{
+                width: 420px;
+                height: 600px;
+            }
+        }
+        &__title{
+            width: 460px;
+        }
+        &__intro{
+            margin-bottom: 220px;
+        }
+        &__card{
+            grid-gap: map-get($map: $spacers, $key: 1)/2;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .heading-screen{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: md);
+            background-size: 500px;
+            // padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
+
+            &:after{
+                width: 340px;
+            }
+        }
+        &__intro{
+            width: 440px;
+            margin-bottom: map-get($map: $spacers, $key: 5);
+        }
+        &__change{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
+        &__card{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .heading-screen{
+        background: $body-bg-secondary url('../img/bg-figure.svg') no-repeat center bottom / 700px;
+        background-position-y: calc(100% + 200px);
+
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: sm);
+            background-image: none;
+
+            &:after{
+                width: 100%;
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .heading-screen{
+        &__title{
+            margin-bottom: $spacer-gutter;
+        }
+        &__intro{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &__change{
+            font-size: map-get($map: $font-size, $key: xs);
+            &-icon{
+                width: 20px;
+            }
+            &-title{
+                padding-left: 6px;
+                padding-right: 6px;
+            }
+        }
     }
 }

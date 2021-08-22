@@ -4,8 +4,10 @@ $action               : #E1372F;
 
 $blue                 : #5F49F2;
 
-$light-grey           : #B8B8BE;
-$grey                 : #8B8B97;
+$light-grey           : rgba(255,255,255,0.7);
+$grey                 : rgba(255,255,255,0.5);
+// $light-grey           : #B8B8BE;
+// $grey                 : #797983;
 
 $light-pink           : #F6C4D2;
 
@@ -24,20 +26,19 @@ $link-hover-decoration: underline !default;
 $transition-base      : .3s;
 
 $grid-breakpoints: (
-  xs: 360px,
-  sm: 420px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1440px
+  xs: 420px,
+  sm: 640px,
+  md: 920px,
+  lg: 1200px,
+  xl: 1380px
 ) !default;
 
 $container-max-widths: (
-  xs: 320px,
-  sm: 414px,
-  md: 540px,
-  lg: 896px,
-  xl: 1360px,
-  // xl: 1680px
+  xs: 300px,
+  sm: 380px,
+  md: 580px,
+  lg: 840px,
+  xl: 1140px,
 ) !default;
 
 

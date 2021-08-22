@@ -4,6 +4,8 @@ html,body {
     line-height: $line-height;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
+
+    min-width: 100%;
 }
 body{
     overflow-x: hidden;
@@ -104,6 +106,9 @@ blockquote, .blockquote{
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'md')){  
+    html, body {
+        font-size: map-get($font-size, 'sm');
+    }
     .text-md{
         &-left{text-align: left;}
         &-center{text-align: center;}
@@ -121,10 +126,6 @@ blockquote, .blockquote{
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
-    html, body {
-        background-color: $white;
-        font-size: map-get($font-size, 'sm');
-    }
     .text-xs{
         &-left{text-align: left;}
         &-center{text-align: center;}

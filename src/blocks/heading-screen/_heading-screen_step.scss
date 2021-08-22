@@ -5,11 +5,24 @@
     &__container{
         padding-top: 220px;
         // min-height: 900px;
-        background-position-x: calc( 100% - 40px );
+        background: none;
+
+        &:before{
+            content: '';
+            position: absolute;
+            left: auto;
+            right: -100px;
+            bottom: 0;
+            z-index: 0;
+            
+            width: 860px;
+            height: 680px;
+            background: url('../img/bg-figure.svg') no-repeat center bottom / contain;
+        }
 
         &:after{
             left: auto;
-            right: map-get($map: $spacers, $key: 5);
+            right: -(map-get($map: $spacers, $key: 5));
             transform: translateX(0);
 
             height: 810px;

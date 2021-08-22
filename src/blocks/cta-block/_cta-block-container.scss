@@ -1,0 +1,6 @@
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .cta-block-container{
+        max-width: 100%;
+        padding: 0;
+    }
+}
