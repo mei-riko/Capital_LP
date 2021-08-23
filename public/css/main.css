@@ -21,8 +21,8 @@
   background: linear-gradient(180deg, rgba(204, 204, 204, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
   -webkit-box-shadow: 0px 34px 60px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 34px 60px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(44px);
-  backdrop-filter: blur(44px);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
   -webkit-filter: opacity(1);
   filter: opacity(1);
   -webkit-transition: .3s;
@@ -44,8 +44,8 @@
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(110, 107, 107, 0.2) 100%);
   -webkit-box-shadow: 0px 34px 60px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 34px 60px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(44px);
-  backdrop-filter: blur(44px);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
   -webkit-filter: opacity(0);
   filter: opacity(0);
   -webkit-transition: .3s;
@@ -365,6 +365,52 @@
   line-height: 28px;
   text-align: center;
   padding: 3px 10px 0;
+}
+
+@media all and (max-width: 1680px) {
+  .item_stocks__title {
+    font-size: 16px;
+  }
+  .item_stocks__subtitle {
+    font-size: 12px;
+  }
+  .item_stocks__count {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .item_stocks__info {
+    margin-right: 10px;
+  }
+  .item_stocks__info:last-child {
+    margin-right: 0;
+  }
+}
+
+@media all and (max-width: 1380px) {
+  .item_stocks__title {
+    font-size: 20px;
+  }
+  .item_stocks__subtitle {
+    font-size: 14px;
+  }
+  .item_stocks__info {
+    margin-right: 20px;
+  }
+  .item_stocks__info:last-child {
+    margin-right: 0;
+  }
+}
+
+@media all and (max-width: 920px) {
+  .item_stocks__subtitle {
+    font-size: 12px;
+  }
+  .item_stocks__info {
+    margin-right: 15px;
+  }
+  .item_stocks__info:last-child {
+    margin-right: 0;
+  }
 }
 
 .item_product {
@@ -842,6 +888,24 @@
 .grid_stocks {
   grid-gap: 60px;
   grid-template-columns: 1fr 450px;
+}
+
+@media all and (max-width: 1680px) {
+  .grid_stock {
+    grid-template-columns: 1fr 400px;
+  }
+}
+
+@media all and (max-width: 1380px) {
+  .grid_stocks {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 920px) {
+  .grid_stocks {
+    grid-gap: 40px;
+  }
 }
 
 .header {
@@ -1484,7 +1548,6 @@
   position: relative;
   padding-top: 200px;
   min-height: 900px;
-  height: 100vh;
 }
 
 .stocks__chat:after {
@@ -1556,6 +1619,132 @@
   grid-area: text;
   font-size: 20px;
   line-height: 1.4;
+}
+
+@media all and (max-width: 1680px) {
+  .stocks__container {
+    max-width: 1286px;
+  }
+  .stocks__message-text {
+    font-size: 16px;
+  }
+  .stocks__info {
+    padding-top: 160px;
+  }
+  .stocks__chat {
+    min-height: 1px;
+    padding-top: 160px;
+  }
+  .stocks__chat:after {
+    height: 360px;
+  }
+}
+
+@media all and (max-width: 1380px) {
+  .stocks__container {
+    width: 100%;
+    max-width: 860px;
+  }
+  .stocks__info {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .stocks__chat {
+    padding-top: 0;
+  }
+  .stocks__chat-body {
+    width: calc(100% - 220px);
+    margin-left: auto;
+  }
+  .stocks__chat:after {
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    width: 160px;
+    height: 160px;
+    background-color: #5F49F2;
+    border-radius: 50%;
+  }
+  .stocks__message {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+  }
+}
+
+@media all and (max-width: 920px) {
+  .stocks__container {
+    max-width: 660px;
+  }
+  .stocks__info-grid {
+    grid-template-columns: 1fr;
+  }
+  .stocks__graph {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .stocks__message-name {
+    font-size: 12px;
+  }
+  .stocks__message-date {
+    font-size: 12px;
+  }
+  .stocks__message-text {
+    font-size: 16px;
+  }
+  .stocks__chat-body {
+    width: calc(100% - 120px);
+  }
+  .stocks__chat:after {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media all and (max-width: 660px) {
+  .stocks__container {
+    max-width: 400px;
+  }
+  .stocks__message {
+    display: none;
+  }
+  .stocks__message:nth-child(1), .stocks__message:nth-child(2), .stocks__message:nth-child(3) {
+    display: block;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .stocks__container {
+    max-width: 320px;
+  }
+  .stocks__btns {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .stocks__btns-item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .stocks__btns-item:last-of-type {
+    margin-bottom: 0;
+  }
+  .stocks__btn {
+    width: 100%;
+  }
+  .stocks__chat-body {
+    width: calc(100% - 66px);
+  }
+  .stocks__chat:after {
+    width: 46px;
+    height: 46px;
+  }
+  .stocks__message {
+    padding: 15px;
+  }
+  .stocks__message-text {
+    font-size: 14px;
+  }
 }
 
 .advantage {

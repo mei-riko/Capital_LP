@@ -6,3 +6,27 @@
         grid-template-columns: 1fr 450px;
     }
 }
+// < 1680px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .grid{
+        &_stock{
+            grid-template-columns: 1fr 400px;
+        }
+    }
+}
+// < 1380px
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .grid{
+        &_stocks{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+// < 920px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .grid{
+        &_stocks{
+            grid-gap: map-get($map: $spacers, $key: 3);
+        }
+    }
+}

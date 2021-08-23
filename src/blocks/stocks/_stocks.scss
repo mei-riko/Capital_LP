@@ -31,7 +31,7 @@
 
         padding-top: 200px;
         min-height: 900px;
-        height: 100vh;
+        // height: 100vh;
 
         &:after{
             content: '';
@@ -90,5 +90,155 @@
         grid-area: text;
         font-size: map-get($map: $font-size, $key: lg);
         line-height: $line-height-base;
+    }
+}
+
+// < 1680px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .stocks{
+        &__container{
+            // 1246 + 40
+            max-width: 1286px;
+        }
+        &__message-text{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &__info{
+            padding-top: 160px;
+        }
+        &__chat{
+            min-height: 1px;
+            padding-top: 160px;
+
+            &:after{
+                height: 360px;
+            }
+        }
+    }
+}
+// < 1380px
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .stocks{
+        &__container{
+            width: 100%;
+            max-width: map-get($map: $container-max-widths, $key: lg);
+        }
+        &__info{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        &__chat{
+            padding-top: 0;
+
+            &-body{
+                width: calc(100% - 220px);
+                margin-left: auto;
+            }
+
+            &:after{
+                top: 0;
+                left: 0;
+                right: auto;
+                bottom: auto;
+
+                width: 160px;
+                height: 160px;
+                background-color: $blue;
+                border-radius: 50%;
+            }
+        }
+        &__message{
+            border-bottom-right-radius: $border-radius;
+            border-bottom-left-radius: 5px;
+        }
+    }
+}
+// < 920px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .stocks{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: md);
+        }
+        &__info-grid{
+            grid-template-columns: 1fr;
+        }
+        &__graph {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        &__message-name{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+        &__message-date{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+        &__message-text{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &__chat{
+            &-body{
+                width: calc(100% - 120px);
+            }
+            &:after{
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+// < 660px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .stocks{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: sm);
+        }
+        &__message{
+            display: none;
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3){
+                display: block;
+            }
+        }
+    }
+}
+// < 420px
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .stocks{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: xs);
+        }
+        &__btns{
+            flex-wrap: wrap;
+
+            &-item{
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: $spacer-gutter;
+
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__btn{
+            width: 100%;
+        }
+        &__chat{
+            &-body{
+                width: calc(100% - 66px);
+            }
+            &:after{
+                width: 46px;
+                height: 46px;
+            }
+        }
+        &__message{
+            padding: $spacer-gutter;
+        }
+        &__message-text{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
     }
 }

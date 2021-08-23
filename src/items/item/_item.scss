@@ -17,7 +17,7 @@
 
         background: linear-gradient(180deg, rgba(204, 204, 204, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
         box-shadow: 0px 34px 60px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(44px);    
+        backdrop-filter: blur(24px);    
 
         filter: opacity(1);
         transition: .3s;
@@ -35,7 +35,7 @@
 
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(110, 107, 107, 0.2) 100%);
         box-shadow: 0px 34px 60px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(44px);    
+        backdrop-filter: blur(24px);    
 
         filter: opacity(0);
         transition: .3s;
@@ -72,6 +72,7 @@
         }
     }
 }
+// < 920px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item{
         &__title{
@@ -79,6 +80,7 @@
         }
     }
 }
+// < 420px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item{
         &__title{
