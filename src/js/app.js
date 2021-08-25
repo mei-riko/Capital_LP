@@ -24,3 +24,4 @@ import './companydata';
 import './company';
 import './productdata';
 import './product';
+import './diagram';

@@ -3,6 +3,19 @@ import $ from 'jquery';
 var maxActiveCompanies = 2;
 
 $(function() {
+	var drawActiveCompanies = function() {
+		for(let i = 0; i<window.companydata.active.length; i++) {
+			var company = window.companydata.available[window.companydata.active[i]];
+			// console.log(i, window.companydata);
+			var companyContainer = $('.item.item_company[data-id=' + i + ']').first();
+			companyContainer.find('.item_company__count').empty().html(company.numberOfShares + '&nbsp;шт.');
+			companyContainer.find('.item_company__logo img').attr('src', company.icon);
+			companyContainer.find('.item__title.item_company__name').empty().html(company.shareCode);
+			companyContainer.find('.item_company__fullname').empty().html(company.name);
+			companyContainer.find('.item__title.item_company__subtotal').empty().html('$'+company.priceAtStart.usd);
+			companyContainer.find('.item__title.item_company__total .item__value').empty().html(company.totalAtStart.rur);
+		}
+	};
 	var loadNextCompanies = function() {
 		// get active companies
 		var activeCompanies = window.companydata.active;
@@ -27,17 +40,7 @@ $(function() {
         }
 
         // draw next part
-		for(let i = 0; i<window.companydata.active.length; i++) {
-			var company = window.companydata.available[window.companydata.active[i]];
-			// console.log(i, window.companydata);
-			var companyContainer = $('.item.item_company[data-id=' + i + ']').first();
-			companyContainer.find('.item_company__count').empty().html(company.numberOfShares + '&nbsp;шт.');
-			companyContainer.find('.item_company__logo img').attr('src', company.icon);
-			companyContainer.find('.item__title.item_company__name').empty().html(company.shareCode);
-			companyContainer.find('.item_company__fullname').empty().html(company.name);
-			companyContainer.find('.item__title.item_company__subtotal').empty().html('$'+company.priceAtStart.usd);
-			companyContainer.find('.item__title.item_company__total .item__value').empty().html(company.totalAtStart.rur);
-		}
+        drawActiveCompanies();
 	}
     var initNextCompany = function() {
         $('.nextcompany').click(function(e) {
@@ -47,5 +50,20 @@ $(function() {
         });
     };
     initNextCompany();
+    drawActiveCompanies();
+
+    window.getTotalSharesRur = function(){
+    	var totalSharesRur = 0;
+    	for(let i = 0; i<window.companydata.active.length; i++) {
+    		var company = window.companydata.available[window.companydata.active[i]];
+    		var sharesRurStr = '' + company.totalAtStart.rur;
+    		var sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
+    		totalSharesRur += sharesRur;
+    	}
+    	return totalSharesRur;
+    }
+    window.showTotalSharesRur = function(selector){
+    	$(selector).empty().html(window.getTotalSharesRur());
+    }
 });
 

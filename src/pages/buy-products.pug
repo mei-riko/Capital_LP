@@ -21,3 +21,5 @@ mixin product(object)
                 for object in products
                     +product(object)
             a.btn.btn_action(href="stocks.html" data-target="#heading-screen" data-loader="ajax") Начать торговать
+            script
+                | window.showTotalProductsRur('#price[data-status="success"]');

@@ -24,3 +24,5 @@ mixin company(object)
                 for object in companies
                     +company(object)
             a.btn.btn_action(href="stocks.html" data-target="#heading-screen" data-loader="ajax") Начать торговать
+            script
+                | window.showTotalSharesRur('#price[data-status="success"]');

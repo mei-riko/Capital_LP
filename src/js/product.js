@@ -3,6 +3,17 @@ import $ from 'jquery';
 var maxActiveProducts = 2;
 
 $(function() {
+	var drawActiveProducts = function() {
+		for(let i = 0; i<window.productdata.active.length; i++) {
+			var product = window.productdata.available[window.productdata.active[i]];
+			// console.log(i, window.productdata);
+			var productContainer = $('.item.item_product[data-id=' + i + ']').first();
+			productContainer.find('.item_product__type').empty().html(product.type);
+			productContainer.find('.item_product__name').empty().html(product.name);
+			productContainer.find('.item_product__img img').attr('src', product.icon);
+			productContainer.find('.item__title.item_product__price .item__value').empty().html(product.price.rur);
+		}
+	}
 	var loadNextProducts = function() {
 		// get active products
 		var activeProducts = window.productdata.active;
@@ -27,15 +38,8 @@ $(function() {
         }
 
         // draw next part
-		for(let i = 0; i<window.productdata.active.length; i++) {
-			var product = window.productdata.available[window.productdata.active[i]];
-			// console.log(i, window.productdata);
-			var productContainer = $('.item.item_product[data-id=' + i + ']').first();
-			productContainer.find('.item_product__type').empty().html(product.type);
-			productContainer.find('.item_product__name').empty().html(product.name);
-			productContainer.find('.item_product__img img').attr('src', product.icon);
-			productContainer.find('.item__title.item_product__price .item__value').empty().html(product.price.rur);
-		}
+        drawActiveProducts();
+
 	}
     var initNextCompany = function() {
         $('.nextproduct').click(function(e) {
@@ -45,5 +49,22 @@ $(function() {
         });
     };
     initNextCompany();
+    drawActiveProducts();
+
+
+    window.getTotalProductsRur = function(){
+    	var totalRur = 0;
+		for(let i = 0; i<window.productdata.active.length; i++) {
+			var product = window.productdata.available[window.productdata.active[i]];
+			var rurStr = '' + product.price.rur;
+    		var rur = parseFloat(rurStr.replace(/[^0-9.]/g, ''));
+    		totalRur += rur;
+		}
+    	return totalRur;
+    }
+    window.showTotalProductsRur = function(selector){
+    	$(selector).empty().html(window.getTotalProductsRur());
+    }
+
 });
 
