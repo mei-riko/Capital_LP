@@ -1,20 +1,12 @@
 $white                : #ffffff;
-$black                : #000000;
-$action               : #E1372F;
+$black                : #141314;
+$action               : #597CFB;
 
-$blue                 : #5F49F2;
-
-$light-grey           : rgba(255,255,255,0.7);
-$grey                 : rgba(255,255,255,0.5);
-
-$light-pink           : #F6C4D2;
-
-$body-bg              : #171830;
-$body-bg-secondary    : #181933;
+$body-bg              : $black;
 $body-color           : $white;
 
-$border-color         : #000;
-$border-radius        : 20px;
+$border-color         : $white;
+$border-radius        : 30px;
 
 $link-color           : $white !default;
 $link-hover-color     : $action !default;
@@ -24,10 +16,10 @@ $link-hover-decoration: underline !default;
 $transition-base      : .3s;
 
 $grid-breakpoints: (
-  xs: 420px,
-  sm: 660px,
-  md: 920px,
-  lg: 1380px,
+  // xs: 0,
+  // sm: 0,
+  // md: 0,
+  // lg: 0,
   xl: 1600px
 ) !default;
 
@@ -36,12 +28,14 @@ $container-max-widths: (
   // sm: 400px,
   // md: 660px,
   // lg: 860px,
-  xl: 1180px,
+  // xl: 1400px,
+  // 1400px + padding 40px
+  hd: 1440px,
 ) !default;
 
 
 $font-weight          : 400;
-// $font-weight-bolder   : 600;
+$font-weight-bolder   : 600;
 $font-weight-bold     : 700;
 
 $font-weight-heading: $font-weight !default;
@@ -54,8 +48,8 @@ $line-height-heading  : 1.2;
 $font-size-base       : 1rem;
 $font-weight-base     : $font-weight;
 
-$font-family-heading  : "Theinhardt Pan", "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-base     : "Theinhardt Pan", "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-heading  : "TT Interfaces", "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base     : "TT Interfaces", "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,   "Liberation Mono",   "Courier New",    monospace !default;
 
 $font-size: (
@@ -73,16 +67,18 @@ $heading: (
   h6: 18px,
   h5: 20px,
   h4: 24px,
-  h3: 32px,
-  h2: 40px,
-  h1: 50px
+  h3: 30px,
+  h2: 80px,
+  h1: 120px
 ) !default;
 
 $letter-spacing       : 0.04em;
 
 $grid-columns         : 10    !default;
 $grid-gutter-width    : 20px  !default;
-$spacer-gutter        : 15px  !default;
+$spacer-gutter        : 12px  !default;
+
+$paragraph-margin-bottom: $spacer-gutter !default;
 
 $spacer : 40px!default;
 $spacers: ()  !default;
@@ -102,14 +98,12 @@ $spacers: map-merge(
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family  : null !default;
 $headings-font-weight  : 400 !default;
-$headings-line-height  : 1.2 !default;
+$headings-line-height  : 1.12 !default;
 $headings-color        : null !default;
-
-$paragraph-margin-bottom: $spacer-gutter !default;
 
 $table-cell-padding   : 10px !default;
 $table-cell-padding-sm: 6px !default;
-$table-caption-color  : #242424 !default;
+$table-caption-color  : $black !default;
 
 $label-margin-bottom  : 10px;
 

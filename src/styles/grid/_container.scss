@@ -1,8 +1,7 @@
 // $grid-gutter-width    : 20px  !default;
 .container {
   width: 100%;
-  // 1320 + 40
-  max-width: 1360px;
+  max-width: map-get($map: $container-max-widths, $key: hd);
   padding-left: $grid-gutter-width;
   padding-right: $grid-gutter-width;
   margin-right: auto;
