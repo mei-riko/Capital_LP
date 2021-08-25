@@ -17,5 +17,3 @@ $(function() {
         e.preventDefault();
     })
 });
-
-import './mouseup';

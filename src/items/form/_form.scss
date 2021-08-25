@@ -1,11 +1,2 @@
 .form{
-
-    &_column{
-        display: flex;
-        flex-direction: column;
-
-        &__input{
-            margin-bottom: $grid-gutter-width/2;
-        }
-    }
 }

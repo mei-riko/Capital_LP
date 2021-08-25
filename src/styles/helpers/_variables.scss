@@ -6,8 +6,6 @@ $blue                 : #5F49F2;
 
 $light-grey           : rgba(255,255,255,0.7);
 $grey                 : rgba(255,255,255,0.5);
-// $light-grey           : #B8B8BE;
-// $grey                 : #797983;
 
 $light-pink           : #F6C4D2;
 
@@ -25,42 +23,20 @@ $link-hover-decoration: underline !default;
 
 $transition-base      : .3s;
 
-// $grid-breakpoints: (
-//   xs: 420px,
-//   sm: 640px,
-//   md: 920px,
-//   lg: 1200px,
-//   xl: 1380px
-// ) !default;
-
-// $container-max-widths: (
-//   xs: 300px,
-//   sm: 380px,
-//   md: 580px,
-//   lg: 840px,
-//   xl: 1140px,
-// ) !default;
-
 $grid-breakpoints: (
   xs: 420px,
   sm: 660px,
   md: 920px,
   lg: 1380px,
-  xl: 1680px
+  xl: 1600px
 ) !default;
 
 $container-max-widths: (
-  // 280 + 40
-  xs: 320px,
-  // 360 + 40
-  sm: 400px,
-  // 620 + 40
-  md: 660px,
-  // 820 + 40
-  lg: 860px,
-  // 1120 + 40
+  // xs: 320px,
+  // sm: 400px,
+  // md: 660px,
+  // lg: 860px,
   xl: 1180px,
-  // start 1320+40
 ) !default;
 
 
