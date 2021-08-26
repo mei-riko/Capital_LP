@@ -113,6 +113,16 @@ function drawLinearGraph(selector, graphData, options) {
 		    	);
 		}
     }
+    // get minimal and maximal Y
+    let v0 = graphData[0].values;
+    let v1 = graphData[1].values;
+    if (v0[v0.length-1].Y > v1[v1.length-1].Y ) {
+    	graphData[0].labelShift =  -1;
+    	graphData[1].labelShift =   0;
+    } else {
+    	graphData[0].labelShift = 0;
+    	graphData[1].labelShift = -1;
+    }
     // plot data 
     for(var iD=0; iD<graphData.length; iD++){
     	var data = graphData[iD];
@@ -147,7 +157,7 @@ function drawLinearGraph(selector, graphData, options) {
         var wLabel = 60;
         var hLabel = 30;
         var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift) + hLabel * 2.5;
-        var yLabel = getYPixel(lastDataPoint.Y, minY, maxY, yShift) - hLabel/2;
+        var yLabel = getYPixel(lastDataPoint.Y, minY, maxY, yShift) - hLabel/2 + data.labelShift * hLabel;
 
         c.fillRect(xLabel, yLabel, wLabel, hLabel);
 
@@ -278,7 +288,7 @@ $(function() {
         var options = {
 		    xPadding : 150,
 		    xShift: -60,
-		    yPadding : 20,
+		    yPadding : 40,
 		    lineWidth : 8,
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,

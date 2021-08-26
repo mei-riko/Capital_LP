@@ -65,5 +65,18 @@ $(function() {
     window.showTotalSharesRur = function(selector){
     	$(selector).empty().html(window.getTotalSharesRur());
     }
+
+    window.showCurrentCompanies = function(){
+		for(let i = 0; i<window.companydata.active.length; i++) {
+			var company = window.companydata.available[window.companydata.active[i]];
+			// console.log(i, window.companydata);
+			var companyContainer = $('.item.item_company.item_company-inside[data-id=' + i + ']').first();
+			companyContainer.find('.item_company__count').empty().html(company.numberOfShares + '&nbsp;шт.');
+			companyContainer.find('.item_company__logo img').attr('src', company.icon);
+			companyContainer.find('.item__title.item_company__name').empty().html(company.shareCode);
+			companyContainer.find('.item_company__fullname').empty().html(company.name);
+			companyContainer.find('.item_subtotal').empty().html('$'+company.priceAtStart.usd);
+		}
+	};
 });
 

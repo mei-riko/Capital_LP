@@ -1,7 +1,7 @@
 - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","count":"15 шт."},{"logo":"./icon/tesla.svg","name":"TSLA","fullname":"Tesla inc.","subtotal":"$46.96","count":"8 шт."}]
 
 mixin company(object)
-    .item.item_company.item_company-inside
+    .item.item_company.item_company-inside&attributes(attributes)
         .item_company__count=object.count
         .item_company__info.item_company-inside__info
             .item_company__logo
@@ -10,7 +10,7 @@ mixin company(object)
             .item_company__fullname=object.fullname
         .item_company-inside__col
             p.item_company__label Стоимость акции
-            .item__title=object.subtotal
+            .item__title.item_subtotal=object.subtotal
 
 .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_success
     .row 
@@ -21,8 +21,10 @@ mixin company(object)
                 span#price(data-status="success") 90 000 
                 | ₽ в&nbsp;акции быстрорастущих компаний
             .heading-screen__card.heading-screen_step__card
-                for object in companies
-                    +company(object)
+                for object, index in companies
+                    +company(object)(data-id=index)
             a.btn.btn_action(href="stocks.html" data-target="#heading-screen" data-loader="ajax") Начать торговать
             script
                 | window.showTotalSharesRur('#price[data-status="success"]');
+                | window.showCurrentCompanies()
+                
