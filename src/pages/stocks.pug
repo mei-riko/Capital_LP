@@ -14,14 +14,14 @@ mixin companyStocks(object)
                 .item_stocks__title#total=object.total
                 .item_stocks__subtitle Общая стоимость
 
-.container.stocks__container
+.container.stocks
     .grid.grid_stocks 
         .stocks__info
             .stocks__info-grid
                 for object, index in companies
                     +companyStocks(object)(data-id=index)
-                .stocks__graph
-                    img.img-fluid(src="./img/graph-1.svg")
+                //- .stocks__graph
+                //-     img.img-fluid(src="./img/graph-1.svg")
                 .stocks__graph
                     canvas#flot-graph(width="820" height="400")
             .mt-2.stocks__btns

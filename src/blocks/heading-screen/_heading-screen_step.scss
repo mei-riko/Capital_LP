@@ -5,7 +5,7 @@
     &__container{
         padding-top: 220px;
         // padding-bottom: 320px;
-        min-height: 900px;
+        // min-height: 900px;
         background: none;
 
         &:before{
@@ -63,7 +63,7 @@
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .heading-screen_step{
         &__container{
-            min-height: 720px;
+            // min-height: 720px;
 
             &:before{
                 width: 720px;
@@ -80,7 +80,7 @@
     .heading-screen_step{
         &__container{
             padding-top: map-get($map: $spacers, $key: 3);
-            padding-bottom: 140px;
+            padding-bottom: 100px;
             min-height: 1px;
 
             &:before{

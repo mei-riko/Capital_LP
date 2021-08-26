@@ -1,25 +1,12 @@
-- var products      = [{"type":"Смартфон","name":"Samsung Galaxy S7","img":"./img/phone.png","price":"54 000"},{"type":"Умные часы","name":"Apple Watch Series 2","img":"./img/clock.png","price":"34 000"}]
-
-mixin product(object)
-    .item.item_product
-        .item_product__type=object.type
-        .item_product__name=object.name
-        .item_product__img
-            img.img-fluid(src=object.img)
-        .item__title.item_product__price=object.price
-            span.item__rub ₽
-
-.container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_success
-    .row 
-        .col-7.col-xl-6.col-lg-8.col-md-9.col-sm-12
-            h1.heading-screen__title.heading-screen_step__title Отличный выбор! 
-                br
-                | Мы вложили 
-                span#price(data-status="success") 90 000 
-                | ₽ в&nbsp;акции быстрорастущих компаний
-            .heading-screen__card.heading-screen_step__card
-                for object in products
-                    +product(object)
-            a.btn.btn_action(href="stocks.html" data-target="#heading-screen" data-loader="ajax") Начать торговать
-            script
-                | window.showTotalProductsRur('#price[data-status="success"]');
+block content
+    .heading-screen.heading-screen_step
+        .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_sad
+            .row 
+                .col-8.col-xl-6.col-lg-8.col-md-7.col-sm-12
+                    h1.heading-screen__title.heading-screen_step__title Какая боль! Вы могли заработать 
+                        span#price(data-status="success") 150 000 
+                        | ₽, вложив совсем немного денег в&nbsp;акции
+                    a.btn.btn_action(href="/") Попробовать еще раз
+    include ../blocks/content.pug
+    script
+        | window.showTotalProductsRur('#price[data-status="success"]');

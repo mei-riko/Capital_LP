@@ -5,12 +5,17 @@
     // First Screen Container
     &__container{
         position: relative;
-        // 1400 + 40
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         max-width: 1440px;
         min-height: 900px;
+        height: 100vh;
         // 60px
         padding-top: map-get($map: $spacers, $key: 4);
-        padding-bottom: 160px;
+        padding-bottom: 140px;
 
         background: url('../img/bg-figure.svg') no-repeat center bottom / 800px;
         background-position-y: calc(100% + 200px);
@@ -25,15 +30,20 @@
             transform: translateX(-50%);
     
             width: 550px;
-            height: 570px;
+            height: 70%;
+            // height: 570px;
             background: url('../img/business-man.png') no-repeat center top / cover;
         }
     }
     // Text Content
-    &__title{
+    &__heading{
         position: relative;
         z-index: 2;
 
+        width: 100%;
+        margin-bottom: map-get($map: $spacers, $key: 5);
+    }
+    &__title{
         width: 720px;
         max-width: 100%;
 
@@ -47,19 +57,17 @@
         max-width: 100%;
     }
     &__intro{
-        position: relative;
-        z-index: 2;
-
         width: 990px;
         max-width: 100%;
 
         text-align: center;
         line-height: $line-height-base;
-        margin: 0 auto map-get($map: $spacers, $key: 5);
+        margin: 0 auto;
     }
     &__content{
-        color: $grey;
         font-size: map-get($map: $font-size, $key: lg);
+        color: $grey;
+        
         width: 620px;
         max-width: 100%;
     }
@@ -101,7 +109,8 @@
         display: flex;
         justify-content: space-between;
 
-        width: 1400px;
+        // width: 1400px;
+        width: 100%;
         max-width: 100%;
         margin: 0 auto;
     }
@@ -122,13 +131,13 @@
         max-width: 100%;
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .heading-screen{
         &__container{
-            // 1246 + 40
-            max-width: 1286px;
-            min-height: 1px;
+            // 1240 + 40
+            max-width: 1280px;
+            min-height: 720px;
 
             // 60px
             padding-top: map-get($map: $spacers, $key: 4);
@@ -140,19 +149,22 @@
 
             &:after{
                 width: 360px;
-                height: 420px;
+                height: 60%;
+                // height: 420px;
             }
         }
     }
 }
-// < 1380px
+// < 1400px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .heading-screen{
         &__container{
             width: 100%;
             max-width: map-get($map: $container-max-widths, $key: lg);
+            min-height: 640px;
 
-            padding-top: 0;
+            padding-top: 80px;
+            // padding-top: 0;
             padding-bottom: map-get($map: $spacers, $key: 3);
 
             background-size: 620px;
@@ -160,8 +172,11 @@
             
             &:after{
                 width: 360px;
-                height: 520px;
+                height: 500px;
             }
+        }
+        &__heading{
+            margin-bottom: map-get($map: $spacers, $key: 4);
         }
         &__title{
             width: 460px;
@@ -170,11 +185,9 @@
         &__subtitle{
             color: $grey;
         }
-        &__intro{
-            margin-bottom: 140px;
-        }
         &__card{
             grid-gap: map-get($map: $spacers, $key: 1)/2;
+            padding-bottom: map-get($map: $spacers, $key: 1);
         }
     }
 }

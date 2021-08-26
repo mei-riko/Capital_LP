@@ -1,5 +1,7 @@
 .stocks{
     background: $body-bg-secondary;
+    // min-height: 900px;
+    // height: 100vh;
 
     &__info{       
         padding-top: 200px;
@@ -31,7 +33,7 @@
 
         padding-top: 200px;
         min-height: 900px;
-        // height: 100vh;
+        height: 100vh;
 
         &:after{
             content: '';
@@ -93,13 +95,9 @@
     }
 }
 
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .stocks{
-        &__container{
-            // 1246 + 40
-            max-width: 1286px;
-        }
         &__message-text{
             font-size: map-get($map: $font-size, $key: md);
         }
@@ -107,7 +105,7 @@
             padding-top: 160px;
         }
         &__chat{
-            min-height: 1px;
+            min-height: 720px;
             padding-top: 160px;
 
             &:after{
@@ -116,13 +114,9 @@
         }
     }
 }
-// < 1380px
+// < 1400px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .stocks{
-        &__container{
-            width: 100%;
-            max-width: map-get($map: $container-max-widths, $key: lg);
-        }
         &__info{
             padding-top: 0;
             padding-bottom: 0;

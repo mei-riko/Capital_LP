@@ -44,23 +44,23 @@
         }
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .header{
         padding-left: 120px;
         padding-right: 120px;
     }
 }
-// < 1380px
+// < 1400px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .header{
-        position: unset;
+        // position: unset;
         padding: 0;
         background-color: $body-bg-secondary;
         
         &__container{
             max-width: map-get($map: $container-max-widths, $key: lg);
-            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width;
+            padding: map-get($map: $spacers, $key: 2) $grid-gutter-width;
             margin-left: auto;
             margin-right: auto;
         }
