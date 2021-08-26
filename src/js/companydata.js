@@ -40,26 +40,6 @@ window.companydata={
 	   	      [2020, 492.31],
 	   	      [2021, 518.91],
 	   	    ]
-	   }, 					
-	   {
-	   	icon: './icon/yandex.svg',
-	   	name: 'Yandex',
-	   	shareCode: 'YNDX',
-	   	priceAtStart: {
-	   		usd:"22.48"
-	   	},
-	   	totalAtStart: {
-	   		rur: "18 073.92"
-	   	},
-	   	numberOfShares:12,
-	   	plotData:[
-	   	      [2016, 22.48],
-	   	      [2017, 29.81],
-	   	      [2018, 31.27],
-	   	      [2019, 36.48],
-	   	      [2020, 63.57],
-	   	      [2021, 69.07],
-	   	    ]
 	   },					
 	   {
 	   	icon: './icon/tesla.svg',
@@ -79,6 +59,26 @@ window.companydata={
 	   	      [2019, 43.99],
 	   	      [2020, 410],
 	   	      [2021, 665.71],
+	   	    ]
+	   }, 					
+	   {
+	   	icon: './icon/yandex.svg',
+	   	name: 'Yandex',
+	   	shareCode: 'YNDX',
+	   	priceAtStart: {
+	   		usd:"22.48"
+	   	},
+	   	totalAtStart: {
+	   		rur: "18 073.92"
+	   	},
+	   	numberOfShares:12,
+	   	plotData:[
+	   	      [2016, 22.48],
+	   	      [2017, 29.81],
+	   	      [2018, 31.27],
+	   	      [2019, 36.48],
+	   	      [2020, 63.57],
+	   	      [2021, 69.07],
 	   	    ]
 	   }
 	]

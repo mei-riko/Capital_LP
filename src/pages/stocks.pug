@@ -20,13 +20,14 @@ mixin companyStocks(object)
             .stocks__info-grid
                 for object, index in companies
                     +companyStocks(object)(data-id=index)
-                .stocks__graph
-                    img.img-fluid(src="./img/graph-1.svg")
+                // 
+                    .stocks__graph
+                        img.img-fluid(src="./img/graph-1.svg")
                 .stocks__graph
                     canvas#flot-graph(width="820" height="400")
             .mt-2.stocks__btns
                 .stocks__btns-item
-                    a.btn.btn_action.stocks__btn(href="stocks-final.html") Подождать еще год
+                    a.btn.btn_action.stocks__btn#oneMoreYear(href="stocks-final.html") Подождать еще год
                 .stocks__btns-item
                     a.btn.btn_secondary.stocks__btn(href="result.html") Продать акции
         .stocks__chat
@@ -42,4 +43,5 @@ mixin companyStocks(object)
 link(href="css/graphart.css" rel="stylesheet")
 script
    | window.drawActiveStocks();
-   | window.drawStocksPlot('#flot-graph');
+   | window.drawStocksPlot('#flot-graph', window.plotMaxYear);
+   | window.activateNextBtn();
