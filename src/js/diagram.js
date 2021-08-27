@@ -301,7 +301,6 @@ $(function() {
 	window.activateNextBtn = function () {
 		$('#oneMoreYear').click(function(e){
 			e.preventDefault();
-			console.log('!!!!!!!', window.plotMaxYear + 1);
 			window.drawStocksPlot('#flot-graph', window.plotMaxYear + 1);
 			return false;
 		})

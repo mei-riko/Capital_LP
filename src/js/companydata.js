@@ -1,5 +1,5 @@
 window.companydata={
-	active: [2,3],
+	active: [],
 	available:[
 	   {
 	   	icon: './icon/apple.svg',
