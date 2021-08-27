@@ -7,10 +7,10 @@ window.plotMaxYear=false;
 
 /*** LINEAR GRAPH FUNCTIONS ***/
 
-function getMaxY(plotData) {
+function getMaxY(pricesUSD) {
     var max = false;
-    for(var iD=0; iD<plotData.length; iD++){
-    	var data = plotData[iD];
+    for(var iD=0; iD<pricesUSD.length; iD++){
+    	var data = pricesUSD[iD];
 	    for(var i = 0; i < data.values.length; i ++) {
 	        if(max===false || data.values[i].Y > max) {
 	            max = data.values[i].Y;
@@ -206,7 +206,7 @@ $(function() {
 
 	window.drawStocksPlot = function(areaSelector, maxYear) {
 		var delta = 1;
-		var plotData = [];
+		var pricesUSD = [];
 		var minX = false;
 		var maxX = false;
 		var minY = false;
@@ -218,40 +218,40 @@ $(function() {
 
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
-			for(let k=0; k<company.plotData.length; k++) {
-		        if(minX === false || minX > company.plotData[k][0]) {
-		        	minX = company.plotData[k][0];
+			for(let k=0; k<company.pricesUSD.length; k++) {
+		        if(minX === false || minX > company.pricesUSD[k][0]) {
+		        	minX = company.pricesUSD[k][0];
 		        }
-		        if(maxX === false || maxX < company.plotData[k][0]) {
-		        	maxX = company.plotData[k][0];
+		        if(maxX === false || maxX < company.pricesUSD[k][0]) {
+		        	maxX = company.pricesUSD[k][0];
 		        }
 			}
 		}
 		if(maxYear === false) {
-			maxYear = company.plotData[1][0];
+			maxYear = company.pricesUSD[1][0];
 		}
 		window.plotMaxYear = maxYear;
 
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
-			var companyPlotData = []
-			for(let k=0; k<company.plotData.length; k++) {
-		        if(company.plotData[k][0]<=maxYear){
-			        if(minY === false || minY > company.plotData[k][1]) {
-			        	minY = company.plotData[k][1];
+			var companypricesUSD = []
+			for(let k=0; k<company.pricesUSD.length; k++) {
+		        if(company.pricesUSD[k][0]<=maxYear){
+			        if(minY === false || minY > company.pricesUSD[k][1]) {
+			        	minY = company.pricesUSD[k][1];
 			        }
-			        if(maxY === false || maxY < company.plotData[k][1]) {
-			        	maxY = company.plotData[k][1];
+			        if(maxY === false || maxY < company.pricesUSD[k][1]) {
+			        	maxY = company.pricesUSD[k][1];
 			        }
-					companyPlotData.push({
-						X:company.plotData[k][0],
-						Y:company.plotData[k][1]
+					companypricesUSD.push({
+						X:company.pricesUSD[k][0],
+						Y:company.pricesUSD[k][1]
 						});		        	
 		        }
 			}
 
-			var delta = Math.round(100*(companyPlotData[companyPlotData.length - 1].Y / companyPlotData[companyPlotData.length - 2].Y - 1))
-			// console.log('delta', delta, 'companyPlotData', companyPlotData);
+			var delta = Math.round(100*(companypricesUSD[companypricesUSD.length - 1].Y / companypricesUSD[companypricesUSD.length - 2].Y - 1))
+			// console.log('delta', delta, 'companypricesUSD', companypricesUSD);
 			var dataLabel, dataLabelBg;
 			if (delta > 0) {
 				dataLabel='+ ' + delta + '% ↑';
@@ -265,8 +265,8 @@ $(function() {
 			}
 			var dataLabelColor='#FFFFFF';
 
-			plotData.push({
-				values: companyPlotData, 
+			pricesUSD.push({
+				values: companypricesUSD, 
 				icon:company.icon,
 				dataLabel: dataLabel,
 				dataLabelBg: dataLabelBg,
@@ -274,8 +274,8 @@ $(function() {
 			});
 		}
 
-        plotData[0].color='#2A4269';
-		plotData[1].color='rgb(101, 181, 178)';
+        pricesUSD[0].color='#2A4269';
+		pricesUSD[1].color='rgb(101, 181, 178)';
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -299,11 +299,10 @@ $(function() {
 		    yAxisTicks:yAxisTicks,
 		    font:'italic 14pt sans-serif'
 		}
-		drawLinearGraph(areaSelector, plotData, options);
+		drawLinearGraph(areaSelector, pricesUSD, options);
 	}
 
     window.drawChatMessages = function(areaSelector, maxYear) {
-
 
     	// get element
     	var messageContainer = $(areaSelector);
@@ -321,19 +320,19 @@ $(function() {
 			var company = window.companydata.available[window.companydata.active[i]];
 
 			if(maxYear === false) {
-				maxYear = company.plotData[1][0];
+				maxYear = company.pricesUSD[1][0];
 			}
 			window.plotMaxYear = maxYear;
 
-			for(let k=0; k<company.plotData.length; k++) {
-		        if(company.plotData[k][0]<=maxYear){
-		        	if(!messages[company.plotData[k][0]]) {
-		        		messages[company.plotData[k][0]] = '';
-		        		summary[company.plotData[k][0]] = '';
+			for(let k=0; k<company.pricesUSD.length; k++) {
+		        if(company.pricesUSD[k][0]<=maxYear){
+		        	if(!messages[company.pricesUSD[k][0]]) {
+		        		messages[company.pricesUSD[k][0]] = '';
+		        		summary[company.pricesUSD[k][0]] = '';
 		        	}
-		        	if(company.plotData[k][2]) {
-		        		summary[company.plotData[k][0]] += company.plotData[k][3];
-			        	messages[company.plotData[k][0]] += ' ' + company.plotData[k][2];
+		        	if(company.pricesUSD[k][2]) {
+		        		summary[company.pricesUSD[k][0]] += company.pricesUSD[k][3];
+			        	messages[company.pricesUSD[k][0]] += ' ' + company.pricesUSD[k][2];
 		        	}
 		        }
 			}

@@ -76,8 +76,16 @@ window.initCompanyPart = function (){
 		}
 	};
 
-	window.showLostProfitRur = function() {
-
+	window.showLostProfitRur = function(selector) {
+    	var totalSharesRur = 0;
+    	for(let i = 0; i<window.companydata.active.length; i++) {
+    		var company = window.companydata.available[window.companydata.active[i]];
+    		var sharesRurStr = '' + company.sumPricesRUR[company.sumPricesRUR.length - 1][1];
+    		var sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
+    		totalSharesRur += sharesRur;
+    		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
+    	}
+    	$(selector).empty().html(totalSharesRur);
 	}
 
     try{
