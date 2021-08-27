@@ -37,12 +37,8 @@
             </div>
           </div>
         </div>
-        <!-- 
-        .stocks__graph
-            img.img-fluid(src="./img/graph-1.svg")
-        -->
         <div class="stocks__graph">
-          <canvas id="flot-graph" width="820" height="400"></canvas>
+          <canvas id="flot-graph" width="1" height="1"></canvas>
         </div>
       </div>
       <div class="mt-2 stocks__btns">
@@ -51,17 +47,18 @@
       </div>
     </div>
     <div class="stocks__chat">
-      <div class="stocks__chat-body">
+      <div class="stocks__chat-body" id="chat-messages">
         <div class="stocks__message stocks__message_new">
           <div class="stocks__message-name">Консультант ITI Capital</div>
           <div class="stocks__message-date">2017 год</div>
           <div class="stocks__message-text">Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год</div>
         </div>
-        <div class="stocks__message">
-          <div class="stocks__message-name">Консультант ITI Capital</div>
-          <div class="stocks__message-date">2017 год</div>
-          <div class="stocks__message-text">Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год</div>
-        </div>
+        <!--
+        .stocks__message
+            .stocks__message-name Консультант ITI Capital
+            .stocks__message-date 2017 год
+            .stocks__message-text Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год
+        -->
       </div>
     </div>
   </div>
@@ -70,5 +67,6 @@
 <script>
   window.drawActiveStocks();
   window.drawStocksPlot('#flot-graph', window.plotMaxYear);
+  window.drawChatMessages('#chat-messages', window.plotMaxYear);
   window.activateNextBtn();
 </script>

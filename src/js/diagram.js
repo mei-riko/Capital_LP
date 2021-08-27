@@ -212,6 +212,10 @@ $(function() {
 		var minY = false;
 		var maxY = false;
 
+		var canvas = $(areaSelector);
+		canvas.attr('width', canvas.parent().innerWidth());
+		canvas.attr('height', Math.round(canvas.attr('width')/1.8));
+
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
 			for(let k=0; k<company.plotData.length; k++) {
@@ -298,10 +302,61 @@ $(function() {
 		drawLinearGraph(areaSelector, plotData, options);
 	}
 
+    window.drawChatMessages = function(areaSelector, maxYear) {
+
+
+    	// get element
+    	var messageContainer = $(areaSelector);
+
+    	// get first child as template
+    	var templateNode = messageContainer.children().first().detach();
+
+    	// clear all children
+    	messageContainer.empty();
+
+    	// get list of messages
+    	var messages = {};
+    	var summary  =  {}
+		for(let i = 0; i<window.companydata.active.length; i++) {
+			var company = window.companydata.available[window.companydata.active[i]];
+
+			if(maxYear === false) {
+				maxYear = company.plotData[1][0];
+			}
+			window.plotMaxYear = maxYear;
+
+			for(let k=0; k<company.plotData.length; k++) {
+		        if(company.plotData[k][0]<=maxYear){
+		        	if(!messages[company.plotData[k][0]]) {
+		        		messages[company.plotData[k][0]] = '';
+		        		summary[company.plotData[k][0]] = '';
+		        	}
+		        	if(company.plotData[k][2]) {
+		        		summary[company.plotData[k][0]] += company.plotData[k][3];
+			        	messages[company.plotData[k][0]] += ' ' + company.plotData[k][2];
+		        	}
+		        }
+			}
+		}
+
+    	// fill-in the element with the messages
+    	for(let y in messages) {
+    		if(messages[y]){
+	    		let node = templateNode.clone();
+	    		node.find('.stocks__message-date').empty().html(y + ' год');
+	    		node.find('.stocks__message-text').empty().html(messages[y] + ' ' + window.companydata.tips[summary[y]]);
+	    		messageContainer.prepend(node);
+    		}
+    	}
+
+    }
+
 	window.activateNextBtn = function () {
 		$('#oneMoreYear').click(function(e){
 			e.preventDefault();
-			window.drawStocksPlot('#flot-graph', window.plotMaxYear + 1);
+			var nextYear = window.plotMaxYear + 1
+			window.drawStocksPlot('#flot-graph', nextYear);
+			window.drawChatMessages('.stocks__chat-body', nextYear);
 			return false;
 		})
 	}
