@@ -83,7 +83,7 @@ window.initCompanyPart = function (){
     		var sharesRurStr = '' + company.sumPricesRUR[company.sumPricesRUR.length - 1][1];
     		var sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
     		totalSharesRur += sharesRur;
-    		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
+    		console.log(company, sharesRurStr, sharesRur, totalSharesRur);
     	}
     	$(selector).empty().html(totalSharesRur);
 	}
