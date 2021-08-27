@@ -51,7 +51,7 @@
         padding-right: 120px;
     }
 }
-// < 1400px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .header{
         // position: unset;
@@ -69,24 +69,25 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
-            padding: map-get($map: $spacers, $key: 2) $grid-gutter-width;
+            padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
+            // padding: map-get($map: $spacers, $key: 2) $grid-gutter-width;
         }
         &__phone-icon{
             width: 24px;
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
-            padding: map-get($map: $spacers, $key: 1) $grid-gutter-width map-get($map: $spacers, $key: 2);            
+            // padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
         }
         &__logo{
             width: 150px;
@@ -96,10 +97,12 @@
         }
     }
 }
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
+            padding: map-get($map: $spacers, $key: 1)/2 map-get($map: $spacers, $key: 1);
         }
         &__logo{
             width: 120px;

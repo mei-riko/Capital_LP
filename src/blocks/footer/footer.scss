@@ -16,16 +16,17 @@
         color: $grey;
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .footer{
         padding: map-get($map: $spacers, $key: 4) 0;
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .footer{
         padding: map-get($map: $spacers, $key: 3) 0;
+        
         &__logo{
             width: 150px;
         }
@@ -34,6 +35,7 @@
         }
     }
 }
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .footer{
         // padding: map-get($map: $spacers, $key: 2) 0;
@@ -44,5 +46,11 @@
         &__text{
             font-size: map-get($map: $font-size, $key: xs);
         }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .footer{
+        padding: map-get($map: $spacers, $key: 2) 0;
     }
 }

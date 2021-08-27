@@ -13,6 +13,7 @@
     &__name{
         font-size: map-get($map: $heading, $key: h5);
         line-height: $line-height-heading;
+        white-space: nowrap;
     }
     &__img{
         display: flex;
@@ -40,7 +41,7 @@
         }
     }
 }
-// < 1400px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_product{
         width: 180px;
@@ -57,7 +58,7 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_product{
         display: grid;
@@ -92,32 +93,41 @@
         }
     }
 }
-// 660px
+// 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_product{
         display: block;
-        width: 144px;
+        width: 170px;
         padding: $spacer-gutter;
         text-align: center;
 
         &__img{
-            height: 50px;
-            margin: 5px 0 10px;
+            height: 68px;
+            margin: 4px 0 8px;
         }
     }
 }
-// < 420px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_product{
-        width: 138px;
-        padding: $grid-gutter-width/2 $spacer-gutter;
-
         &__name{
             font-size: map-get($map: $font-size, $key: xs);
-            white-space: nowrap;
         }
+        &__img{
+            height: 50px;
+            margin: 4px 0 8px;
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .item_product{
+        max-width: 134px;
+        width: 100%;
+        padding: $grid-gutter-width/2;
+
         &__img {
-            height: 66px;
+            height: 58px;
             margin: 4px 0 10px;
         }
     }

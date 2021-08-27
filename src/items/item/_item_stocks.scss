@@ -5,6 +5,8 @@
     display: flex;
     flex-wrap: nowrap;
 
+    max-width: 100%;
+
     &__info{
         margin-right: map-get($map: $spacers, $key: 1);
         
@@ -34,7 +36,7 @@
     }
 }
 
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_stocks{
         &__title{
@@ -56,11 +58,11 @@
         }
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_stocks{
         &__title{
-            font-size: map-get($map: $font-size, $key: lg);
+            // font-size: map-get($map: $font-size, $key: lg);
         }
         &__subtitle{
             font-size: map-get($map: $font-size, $key: sm);
@@ -74,9 +76,11 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_stocks{
+        width: 320px;
+
         &__subtitle{
             font-size: map-get($map: $font-size, $key: xs);
         }
@@ -86,6 +90,21 @@
             &:last-child{
                 margin-right: 0;
             }
+        }
+    }
+}
+
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .item_stocks{
+        padding-top: 16px;
+        padding-bottom: 14px;
+
+        &__title{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+        &__subtitle{
+            font-size: 10px;
         }
     }
 }

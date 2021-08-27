@@ -155,7 +155,7 @@
         }
     }
 }
-// < 1400px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .heading-screen{
         &__container{
@@ -191,17 +191,22 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .heading-screen{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
             background-size: 500px;
+            min-height: 680px;
             // padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
 
             &:after{
                 width: 340px;
             }
+        }
+        // Text Content
+        &__heading{
+            margin-bottom: map-get($map: $spacers, $key: 2);
         }
         &__content{
             font-size: map-get($map: $font-size, $key: md);
@@ -222,27 +227,30 @@
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .heading-screen{
-        background: $body-bg-secondary url('../img/bg-figure.svg') no-repeat center bottom / 700px;
-        background-position-y: calc(100% + 200px);
+        background: $body-bg-secondary url('../img/bg-figure.svg') no-repeat center bottom / 640px;
+        // background-position-y: calc(100% + 200px);
+        background-position-y: calc(100% + 260px);
 
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
+            min-height: 700px;
             background-image: none;
 
             &:after{
                 width: 340px;
-                height: 600px;
+                height: 480px;
             }
         }
+        // Text Content
         &__title{
-            font-size: map-get($map: $heading, $key: h3);
+            font-size: map-get($map: $heading, $key: h4);
         }
         &__intro{
-            font-size: map-get($map: $heading, $key: h6);
-            margin-bottom: 140px;
+            font-size: map-get($map: $font-size, $key: md);
+            // margin-bottom: 140px;
         }
         &__change{
             font-size: map-get($map: $font-size, $key: xs);
@@ -261,28 +269,75 @@
         }
     }
 }
-// < 420px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .heading-screen{
+        background-size: 520px;
+        background-position-y: calc(100% + 200px);
+        
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
+            // min-height: 580px;
+            padding-top: map-get($map: $spacers, $key: 4);
+
+            &:after{
+                height: 500px;
+            }
+        }
+        // Text Content
+        &__heading{
+            margin-bottom: map-get($map: $spacers, $key: 2);
+        }
+        &__title{
+            font-size: map-get($map: $heading, $key: h4);
+            margin-bottom: $spacer-gutter;
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .heading-screen{
+        background-size: 460px;
+        
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: xxs);
+            min-height: 580px;
+            // padding-top: map-get($map: $spacers, $key: 4);
+            justify-content: space-around;
 
             &:after{
                 width: 100%;
-                height: 600px;
+                height: 300px;
+                background-size: contain;
                 background-position-y: bottom;
             }
         }
+        // Text Content
+        &__heading{
+            margin-bottom: map-get($map: $spacers, $key: 1);
+        }
         &__title{
-            font-size: map-get($map: $heading, $key: h5);
-            margin-bottom: $spacer-gutter;
+            font-size: map-get($map: $heading, $key: h6);
+            // margin-bottom: $spacer-gutter;
         }
         &__subtitle{
-            font-size: map-get($map: $font-size, $key: sm);
+            font-size: map-get($map: $font-size, $key: xs);
         }
         &__intro{
             font-size: map-get($map: $font-size, $key: sm);
             margin-bottom: 100px;
+        }
+        // Card Row
+        &__col{
+            width: calc(50% - 15px);
+        }
+        &__change{
+            font-size: 10px;
+
+            &-icon{
+                width: $spacer-gutter;
+                height: $spacer-gutter;
+            }
         }
     }
 }

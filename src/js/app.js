@@ -16,6 +16,15 @@ $(function() {
     $(document).on('click', '[data-trigger="click"]', function(e){
         e.preventDefault();
     })
+    // Hover Effect
+    $('.heading-screen .heading-screen__col .btn')
+        .mouseenter(function(event){
+            let card = $(this).parent().find('.heading-screen__card');
+            card.find('.item').addClass('item--hover');
+        })
+        .mouseleave(function(event){
+            $('.item.item--hover').removeClass('item--hover');
+        });
 });
 
 import './mouseup';

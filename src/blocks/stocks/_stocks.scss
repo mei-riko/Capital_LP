@@ -3,6 +3,10 @@
     // min-height: 900px;
     // height: 100vh;
 
+    &__container{
+        max-width: 1440px;
+    }
+
     &__info{       
         padding-top: 200px;
         padding-bottom: map-get($map: $spacers, $key: 5);
@@ -15,6 +19,12 @@
     &__graph{
         grid-column-start: 1;
         grid-column-end: 3;
+
+        width: 100%;
+        overflow: hidden;
+        // canvas{
+        //     max-width: 100%;
+        // }
     }
     &__btns{
         display: flex;
@@ -98,15 +108,21 @@
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .stocks{
+        &__container{
+            // 1240 + 40
+            max-width: 1280px;
+            // max-width: map-get($map: $container-max-widths, $key: xl);
+        }
         &__message-text{
             font-size: map-get($map: $font-size, $key: md);
         }
         &__info{
-            padding-top: 160px;
+            padding-top: 140px;
+            padding-bottom: map-get($map: $spacers, $key: 4);
         }
         &__chat{
+            padding-top: 140px;
             min-height: 720px;
-            padding-top: 160px;
 
             &:after{
                 height: 360px;
@@ -114,14 +130,21 @@
         }
     }
 }
-// < 1400px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .stocks{
+        padding-top: 120px;
+
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: lg);
+        }
         &__info{
             padding-top: 0;
             padding-bottom: 0;
         }
         &__chat{
+            min-height: 1px;
+            max-height: 420px;
             padding-top: 0;
 
             &-body{
@@ -147,18 +170,13 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .stocks{
+        padding-top: 100px;
+
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
-        }
-        &__info-grid{
-            grid-template-columns: 1fr;
-        }
-        &__graph {
-            grid-column-start: 1;
-            grid-column-end: 2;
         }
         &__message-name{
             font-size: map-get($map: $font-size, $key: xs);
@@ -170,6 +188,8 @@
             font-size: map-get($map: $font-size, $key: md);
         }
         &__chat{
+            height: 340px;
+
             &-body{
                 width: calc(100% - 120px);
             }
@@ -180,12 +200,24 @@
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .stocks{
+        padding-top: map-get($map: $spacers, $key: 5);
+
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
         }
+        &__info-grid{
+            grid-template-columns: 1fr;
+        }
+        &__graph {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        // &__chat{
+        //     height: 340px;
+        // }
         &__message{
             display: none;
 
@@ -197,22 +229,39 @@
         }
     }
 }
-// < 420px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .stocks{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
         }
+        &__chat{
+            height: 340px;
+        }
+        &__btn-xs{
+            width: 100%;
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .stocks{
+        background-color: $body-bg-secondary;
+
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: xxs);
+        }
+    
         &__btns{
             flex-wrap: wrap;
+            justify-content: space-between;
 
             &-item{
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: $spacer-gutter;
-
+                // width: 100%;
+                margin-right: map-get($map: $spacers, $key: 1)/2;
+                // margin-bottom: $spacer-gutter;
                 &:last-of-type{
-                    margin-bottom: 0;
+                    margin-right: 0;
                 }
             }
         }
@@ -220,6 +269,9 @@
             width: 100%;
         }
         &__chat{
+            // min-height: 1px;
+            height: 260px;
+
             &-body{
                 width: calc(100% - 66px);
             }
@@ -232,7 +284,7 @@
             padding: $spacer-gutter;
         }
         &__message-text{
-            font-size: map-get($map: $font-size, $key: sm);
+            font-size: map-get($map: $font-size, $key: xs);
         }
     }
 }

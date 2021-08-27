@@ -132,5 +132,9 @@ blockquote, .blockquote{
         &-left{text-align: left;}
         &-center{text-align: center;}
         &-right{text-align: right;}
+
+        &-small{
+            font-size: 10px;
+        }
     }
 }

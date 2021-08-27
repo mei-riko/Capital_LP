@@ -18,7 +18,7 @@ mixin companyStocks(object)
                 .item_stocks__title=object.total
                 .item_stocks__subtitle Общая стоимость
 block content
-    section.stocks
+    .stocks
         .container.stocks__container
             .grid.grid_stocks
                 .stocks__info
@@ -28,7 +28,7 @@ block content
                         .stocks__graph
                             img.img-fluid(src="./img/graph-1.svg")
                     .mt-2
-                        a.btn.btn_action(href="result.html") Продать акции
+                        a.btn.btn_action.stocks__btn-xs(href="result.html") Продать акции
                 .stocks__chat
                     .stocks__chat-body
                         .stocks__message.stocks__message_new

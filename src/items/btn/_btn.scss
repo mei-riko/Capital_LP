@@ -42,3 +42,10 @@
         border-radius: $border-radius/2;
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .btn{
+        font-size: map-get($map: $font-size, $key: xs);
+        padding: 12px 18px 10px 18px;
+    }
+}

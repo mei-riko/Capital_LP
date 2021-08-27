@@ -55,7 +55,7 @@
         }
     }
 }
-// < 420px
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_company-inside{
         display: grid;
@@ -63,6 +63,7 @@
         grid-template-columns: repeat(2,1fr);
 
         width: 100%;
+        max-width: 280px;
 
         &__col{
             padding-left: 0;

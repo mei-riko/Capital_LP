@@ -1,9 +1,11 @@
 .heading-screen_step{
     overflow-x: clip;
     // min-height: 100vh;
+    background-color: $body-bg-secondary;
 
     &__container{
         padding-top: 220px;
+        justify-content: flex-start;
         // padding-bottom: 320px;
         // min-height: 900px;
         background: none;
@@ -59,10 +61,11 @@
         margin-bottom: map-get($map: $spacers, $key: 3);
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .heading-screen_step{
         &__container{
+            padding-top: 200px;
             // min-height: 720px;
 
             &:before{
@@ -75,13 +78,14 @@
         }
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .heading-screen_step{
         &__container{
-            padding-top: map-get($map: $spacers, $key: 3);
+            padding-top: 120px;
             padding-bottom: 100px;
-            min-height: 1px;
+            // min-height: 1px;
+            max-width: map-get($map: $container-max-widths, $key: lg);
 
             &:before{
                 height: 420px;
@@ -95,8 +99,8 @@
                 width: 700px;
                 height: 100%;
 
-                background-size: 540px;
-                background-position-y: top;
+                background-size: 360px;
+                background-position-y: bottom;
 
                 // right: -260px;
                 right: -180px;
@@ -111,13 +115,13 @@
                 }
                 &:after {
                     width: 500px;
-                    background-size: 500px;
+                    background-size: 420px;
                 }
             }
             &_subscribe{
                 &:after{
                     width: 600px;
-                    background-size: 480px;
+                    background-size: 420px;
                 }
             }
         }
@@ -126,10 +130,13 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .heading-screen_step{
         &__container{
+            padding-top: 100px;
+            max-width: map-get($map: $container-max-widths, $key: md);
+
             &:before{
                 height: 340px;
                 right: -160px;
@@ -138,7 +145,7 @@
             &:after{
                 width: 580px;
                 background-size: 420px;
-                background-position-y: map-get($map: $spacers, $key: 3);
+                background-position-y: bottom;
                 right: -240px;
             }
 
@@ -157,14 +164,17 @@
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .heading-screen_step{
         background-size: 480px;
 
         &__container{
-            padding-top: 0;
             padding-bottom: 0;
+            padding-top: map-get($map: $spacers, $key: 5);
+            // padding-top: 0;
+            max-width: map-get($map: $container-max-widths, $key: sm);
+            justify-content: space-between;
 
             &:before{
                 display: none;
@@ -175,7 +185,7 @@
                 // height: 480px;
                 // width: 500px;
 
-                height: 320px;
+                height: 440px;
                 width: 400px;
                 background-size: 340px;
                 background-position-y: 20px;
@@ -186,13 +196,33 @@
         }
     }
 }
-// < 440px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .heading-screen_step{
         &__container{
+            max-width: map-get($map: $container-max-widths, $key: xs);
             &:after{
-                background-size: 320px;
-                background-position-y: 0px;
+                height: 440px;
+            }
+        }
+        &__card{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .heading-screen_step{
+        &__container{
+            max-width: map-get($map: $container-max-widths, $key: xxs);
+            padding-top: map-get($map: $spacers, $key: 5);
+            // padding-top: map-get($map: $spacers, $key: 1);
+            
+            &:after{
+                background-size: contain;
+                background-position-y: bottom;
+                background-position-x: right;
+                width: 100%;
             }
         }
         &__card{

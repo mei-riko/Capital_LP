@@ -49,12 +49,16 @@
     &__label{
         font-size: 1rem;
         line-height: $line-height-heading;
+
+        &::first-letter{
+            text-transform: uppercase;
+        }
     }
     &__subtotal{
         margin-bottom: map-get($map: $spacers, $key: 2);
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_company{
         width: 234px;
@@ -66,7 +70,7 @@
         }
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_company{
         width: 180px;
@@ -96,7 +100,7 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_company{
         display: flex;
@@ -120,11 +124,11 @@
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_company{
         // display: block;
-        width: 144px;
+        width: 170px;
         padding: $spacer-gutter;
         // text-align: center;
 
@@ -147,13 +151,26 @@
         }
     }
 }
-// < 420px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_company{
-        width: 134px;
+        padding-top: map-get($map: $spacers, $key: 1)/2;
+        padding-bottom: map-get($map: $spacers, $key: 1)/2;
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .item_company{
+        max-width: 134px;
+        width: 100%;
         padding: $spacer-gutter;
 
+        &__fullname{
+            font-size: 10px;
+        }
         &__info{
+            grid-template-columns: 22px 1fr;
+            align-items: flex-start;
             margin-bottom: $grid-gutter-width/2;
         }
         &__label{

@@ -42,25 +42,28 @@ $transition-base      : .3s;
 // ) !default;
 
 $grid-breakpoints: (
-  xs: 420px,
-  sm: 660px,
-  md: 920px,
-  lg: 1400px,
+ xxs: 375px,
+  xs: 576px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
   xl: 1600px
 ) !default;
 
 $container-max-widths: (
-  // 280 + 40
-  xs: 320px,
-  // 360 + 40
-  sm: 400px,
-  // 620 + 40
-  md: 660px,
-  // 820 + 40
-  lg: 860px,
-  // 1120 + 40
+  // 100%           // до 375
+ xxs: 100%,
+  // 440 + 40       // от 375 до 576 
+  xs: 480px,
+  // 440 + 40       // от 576 до 768
+  sm: 480px,
+  // 680 + 40       // от 768 до 1024
+  md: 720px,
+  // 940 + 40       // от 1024 до 1280
+  lg: 980px,
+  // 1140 + 40      // от 1280 до 1600
   xl: 1180px,
-  // start 1320+40
+  // start 1320+40  // от 1600
   hd: 1360px
 ) !default;
 

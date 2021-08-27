@@ -29,7 +29,7 @@
         max-width: 60%;
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .cta-block{
         padding: map-get($map: $spacers, $key: 3) map-get($map: $spacers, $key: 4);
@@ -44,7 +44,7 @@
         }
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .cta-block{
         padding: map-get($map: $spacers, $key: 3) map-get($map: $spacers, $key: 2);
@@ -65,7 +65,7 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .cta-block{
         margin: map-get($map: $spacers, $key: 4) 0 map-get($map: $spacers, $key: 3);
@@ -93,9 +93,10 @@
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .cta-block{
+        text-align: center;
         // margin: map-get($map: $spacers, $key: 4) 0 map-get($map: $spacers, $key: 3);
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
@@ -103,10 +104,12 @@
         }
         &__intro{
             max-width: 100%;
-            margin-bottom: map-get($map: $spacers, $key: 1);
+            margin: 0 auto map-get($map: $spacers, $key: 1);
         }
         &__form{
             max-width: 100%;
+            width: 360px;
+            margin: 0 auto;
         }
         &__img{
             position: unset;
@@ -115,12 +118,27 @@
         }
     }
 }
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .cta-block{
-        margin: map-get($map: $spacers, $key: 4) 0;
+        &__form{
+            width: 260px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .cta-block{
+        // text-align: center;
+        margin: map-get($map: $spacers, $key: 3) 0;
 
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
+        }
+        &__intro{
+            font-size: map-get($map: $font-size, $key: sm);
         }
     }
 }

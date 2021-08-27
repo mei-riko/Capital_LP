@@ -17,7 +17,9 @@ mixin company(object)
             p.item_company__label Стоимость акции
             .item__title.item_company__subtotal=object.subtotal
         .item_company__col
-            p.item_company__label Общая сумма в&nbsp;рублях
+            p.item_company__label 
+                span.d-xs-none Общая 
+                | сумма в&nbsp;рублях
             .item__title.item_company__total
                 span.item__value=object.total
                 span.item__rub ₽

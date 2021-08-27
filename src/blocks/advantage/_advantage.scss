@@ -58,20 +58,27 @@
         }
     }
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .advantage{
-        .advantage{
-            &__figure-mobile{
-                top: -80px;
-            }
+        &__figure-mobile {
+            top: -60px;
+            left: 280px;
         }
     }
 }
-// 420px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .advantage{
-        padding: map-get($map: $spacers, $key: 4) 0;
+        &__figure-mobile{
+            left: 260px;
+        }
+    }
+}
+// 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .advantage{
+        padding: map-get($map: $spacers, $key: 3) 0;
         
         &__figure-mobile{
             left: 160px;
