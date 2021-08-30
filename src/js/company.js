@@ -57,8 +57,11 @@ window.initCompanyPart = function (){
     		var sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
     		totalSharesRur += sharesRur;
     	}
-    	return totalSharesRur;
+		var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalSharesRur).toFixed(2));
+
+    	return totalSharesRurView;
     }
+	
     window.showTotalSharesRur = function(selector){
     	$(selector).empty().html(window.getTotalSharesRur());
     }
@@ -85,12 +88,9 @@ window.initCompanyPart = function (){
     		totalSharesRur += sharesRur;
     		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
     	}
-    	var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping:true })).format(Number(totalSharesRur).toFixed(2));
+    	var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalSharesRur).toFixed(2));
     	$(selector).empty().html(totalSharesRurView);
 	}
-
-
-
 
 
     try{
