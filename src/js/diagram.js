@@ -377,8 +377,10 @@ $(function() {
 		var yearIntervar = window.plotMaxYear - window.plotMinYear;
 		if(yearIntervar==1){
 			$(selectorYears).empty().html(yearIntervar+' год');
-		} else {
+		} else if (yearIntervar > 1 &&  yearIntervar<=4) {
 			$(selectorYears).empty().html(yearIntervar+' года');
+		} else {
+			$(selectorYears).empty().html(yearIntervar+' лет');
 		}
 		
 
