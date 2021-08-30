@@ -181,11 +181,14 @@
             margin-bottom: map-get($map: $spacers, $key: 4);
         }
         &__title{
-            width: 460px;
+            width: 520px;
             margin-bottom: map-get($map: $spacers, $key: 1);
         }
         &__subtitle{
             color: $grey;
+        }
+        &__intro{
+            font-size: map-get($map: $heading, $key: h6);
         }
         &__card{
             grid-gap: map-get($map: $spacers, $key: 1)/2;
@@ -226,6 +229,13 @@
         }
         &__card{
             grid-template-columns: 1fr;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')) and (orientation: portrait) {
+    .heading-screen{
+        &__container{
+            height: auto;
         }
     }
 }
@@ -331,7 +341,7 @@
         }
         // Card Row
         &__col{
-            width: calc(50% - 15px);
+            max-width: calc(50% - 15px);
         }
         &__change{
             font-size: 10px;

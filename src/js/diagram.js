@@ -255,13 +255,13 @@ $(function() {
 			var dataLabel, dataLabelBg;
 			if (delta > 0) {
 				dataLabel='+ ' + delta + '% ↑';
-				dataLabelBg='#47AF34';
+				dataLabelBg='#90a908';
 			} else if(delta<0) {
 				dataLabel='' + delta + '% ↓';
-				dataLabelBg='#FA633F';
+				dataLabelBg='#ff1a45';
 			} else {
 				dataLabel='=';
-				dataLabelBg='#47AF34';
+				dataLabelBg='#90a908';
 			}
 			var dataLabelColor='#FFFFFF';
 
@@ -274,8 +274,10 @@ $(function() {
 			});
 		}
 
-        pricesUSD[0].color='#2A4269';
-		pricesUSD[1].color='rgb(101, 181, 178)';
+        // pricesUSD[0].color='#2A4269';
+		// pricesUSD[1].color='rgb(101, 181, 178)';
+        pricesUSD[0].color='#E341AC';
+		pricesUSD[1].color='rgb(95, 73, 242)';
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -297,7 +299,7 @@ $(function() {
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
-		    font:'italic 14pt sans-serif'
+		    font:'normal 12pt sans-serif'
 		}
 		drawLinearGraph(areaSelector, pricesUSD, options);
 	}

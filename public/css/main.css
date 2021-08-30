@@ -1,6 +1,6 @@
 .item {
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.35);
   -webkit-backdrop-filter: blur(10px);
@@ -37,7 +37,7 @@
 
 @media all and (max-width: 576px) {
   .item {
-    border-radius: 10px;
+    border-radius: 8px;
   }
   .item__title {
     font-size: 12px;
@@ -210,7 +210,7 @@
 
 @media all and (max-width: 375px) {
   .item_company {
-    max-width: 134px;
+    min-width: 134px;
     width: 100%;
     padding: 15px;
   }
@@ -518,7 +518,7 @@
 
 @media all and (max-width: 375px) {
   .item_product {
-    max-width: 134px;
+    min-width: 134px;
     width: 100%;
     padding: 10px;
   }
@@ -665,11 +665,17 @@
   .item_service {
     padding: 40px;
   }
+  .item_service__title {
+    font-size: 22px;
+  }
 }
 
 @media all and (max-width: 1280px) {
   .item_service {
     padding: 20px;
+  }
+  .item_service__title {
+    font-size: 18px;
   }
   .item_service__intro {
     font-size: 14px;
@@ -677,16 +683,33 @@
 }
 
 @media all and (max-width: 1024px) {
+  .item_service {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .item_service__icon {
     width: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .item_service__title {
-    font-size: 16px;
-    margin-top: 30px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   .item_service__intro {
-    font-size: 14px;
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .item_service {
+    padding: 20px;
+  }
+  .item_service__title {
+    font-size: 20px;
+  }
+  .item_service__intro {
+    min-height: 1px;
   }
 }
 
@@ -705,7 +728,7 @@
 }
 
 .btn {
-  border-radius: 20px;
+  border-radius: 16px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -742,14 +765,14 @@
   .btn {
     font-size: 14px;
     padding: 14px 36px 12px 36px;
-    border-radius: 10px;
+    border-radius: 8px;
   }
 }
 
 @media all and (max-width: 768px) {
   .btn {
     padding: 14px 24px 12px 24px;
-    border-radius: 10px;
+    border-radius: 8px;
   }
 }
 
@@ -801,7 +824,7 @@
 
 .input {
   border: 2px solid #ffffff;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 24px 30px 22px 30px;
   background-color: inherit;
   color: #ffffff;
@@ -864,7 +887,7 @@
   .input {
     font-size: 14px;
     padding: 14px 30px 12px 30px;
-    border-radius: 10px;
+    border-radius: 8px;
   }
   .input::-webkit-input-placeholder {
     font-size: 14px;
@@ -1083,6 +1106,12 @@
 }
 
 @media all and (max-width: 1024px) {
+  .footer__logo {
+    width: 120px;
+  }
+  .footer__copyright {
+    font-size: 12px;
+  }
   .footer__col-logo {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
@@ -1286,11 +1315,14 @@
     margin-bottom: 60px;
   }
   .heading-screen__title {
-    width: 460px;
+    width: 520px;
     margin-bottom: 20px;
   }
   .heading-screen__subtitle {
     color: rgba(255, 255, 255, 0.5);
+  }
+  .heading-screen__intro {
+    font-size: 18px;
   }
   .heading-screen__card {
     grid-gap: 10px;
@@ -1326,6 +1358,12 @@
   }
   .heading-screen__card {
     grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 1024px) and (orientation: portrait) {
+  .heading-screen__container {
+    height: auto;
   }
 }
 
@@ -1416,7 +1454,7 @@
     margin-bottom: 100px;
   }
   .heading-screen__col {
-    width: calc(50% - 15px);
+    max-width: calc(50% - 15px);
   }
   .heading-screen__change {
     font-size: 10px;
@@ -1686,33 +1724,37 @@
 }
 
 .stocks__message {
-  display: grid;
+  display: none;
   grid-gap: 10px;
   grid-template-areas: "name date" "text text";
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 20px;
-  border-bottom-right-radius: 5px;
+  border-radius: 16px;
+  border-bottom-right-radius: 4px;
   border: 1px solid #5F49F2;
 }
 
 .stocks__message:nth-child(1) {
   background-color: #5F49F2;
+  display: grid;
 }
 
 .stocks__message:nth-child(2) {
   -webkit-filter: opacity(0.4);
   filter: opacity(0.4);
+  display: grid;
 }
 
 .stocks__message:nth-child(3) {
   -webkit-filter: opacity(0.2);
   filter: opacity(0.2);
+  display: grid;
 }
 
 .stocks__message:nth-child(4) {
   -webkit-filter: opacity(0.1);
   filter: opacity(0.1);
+  display: grid;
 }
 
 .stocks__message-name {
@@ -1790,7 +1832,7 @@
     border-radius: 50%;
   }
   .stocks__message {
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 16px;
     border-bottom-left-radius: 5px;
   }
 }
@@ -1836,12 +1878,6 @@
   .stocks__graph {
     grid-column-start: 1;
     grid-column-end: 2;
-  }
-  .stocks__message {
-    display: none;
-  }
-  .stocks__message:nth-child(1), .stocks__message:nth-child(2), .stocks__message:nth-child(3) {
-    display: block;
   }
 }
 

@@ -128,6 +128,10 @@ blockquote, .blockquote{
         &-left{text-align: left;}
         &-center{text-align: center;}
         &-right{text-align: right;}
+
+        &-small{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){

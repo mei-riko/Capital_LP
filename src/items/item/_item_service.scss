@@ -22,7 +22,9 @@
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_service{
         padding: map-get($map: $spacers, $key: 3);
-
+        &__title{
+            font-size: 22px;
+        }
         // &__intro{
         //     font-size: map-get($map: $heading, $key: h6);
         // }
@@ -33,6 +35,9 @@
     .item_service{
         padding: map-get($map: $spacers, $key: 1);
     
+        &__title{
+            font-size: map-get($map: $heading, $key: h6);
+        }
         &__intro{
             font-size: map-get($map: $font-size, $key: sm);
         }
@@ -41,16 +46,33 @@
 // < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_service{
+        padding-left: map-get($map: $spacers, $key: 1)/2;
+        padding-right: map-get($map: $spacers, $key: 1)/2;
+
         &__icon{
             width: 60px;
-            margin-bottom: map-get($map: $spacers, $key: 2);
+            margin-bottom: map-get($map: $spacers, $key: 1);
         }
         &__title{
-            font-size: map-get($map: $font-size, $key: md);
-            margin-top: map-get($map: $spacers, $key: 2);
+            font-size: map-get($map: $font-size, $key: sm);
+            margin-top: map-get($map: $spacers, $key: 1);
+            margin-bottom: map-get($map: $spacers, $key: 1)/2;
         }
         &__intro{
-            font-size: map-get($map: $font-size, $key: sm);
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+    }
+}
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item_service{
+        padding: map-get($map: $spacers, $key: 1);
+
+        &__title{
+            font-size: map-get($map: $font-size, $key: lg);
+        }
+        &__intro{
+            min-height: 1px;
         }
     }
 }
