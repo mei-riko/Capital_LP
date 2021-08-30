@@ -3,18 +3,18 @@ window.productdata={
 	available:[
 	   {
 	   	icon: './img/clock.png',
-	   	name: 'Apple Watch Series 2x',
+	   	name: 'Apple Watch Series 6',
 	   	type: 'Умные часы',
 	   	price: {
-	   		rur:"34 000"
+	   		rur:"46 560"
 	   	}
 	   },
 	   {
 	   	icon: './img/clock.png',
-	   	name: 'Samsung Galaxy S7x',
+	   	name: 'Xiaomi Redmi Note 8',
 	   	type: 'Смартфон',
 	   	price: {
-	   		rur:"54 000"
+	   		rur:"87 000"
 	   	}
 	   },
 	   {

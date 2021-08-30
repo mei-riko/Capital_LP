@@ -49,6 +49,8 @@
     &__label{
         font-size: 1rem;
         line-height: $line-height-heading;
+        color: $light-grey;
+        margin-bottom: 6px;
 
         &::first-letter{
             text-transform: uppercase;
@@ -93,7 +95,6 @@
         }
         &__label{
             font-size: map-get($map: $font-size, $key: sm);
-            margin-bottom: 5px;
         }
         &__subtotal{
             margin-bottom: $spacer-gutter;
@@ -173,8 +174,8 @@
             align-items: flex-start;
             margin-bottom: $grid-gutter-width/2;
         }
-        &__label{
-            color: $grey;
-        }
+        // &__label{
+        //     color: $grey;
+        // }
     }
 }

@@ -2,9 +2,10 @@
     .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_sad
         .row 
             .col-8.col-xl-6.col-lg-8.col-md-7.col-sm-12
-                h1.heading-screen__title.heading-screen_step__title Какая боль! Вы могли заработать 
+                h1.heading-screen__title.heading-screen_step__title.mb-1 Вы могли вложить деньги в&nbsp;акции и&nbsp;заработать 
                     span#price(data-status="fail") 150 000 
-                    | ₽, вложив совсем немного денег в&nbsp;акции
+                    | ₽. 
+                p.heading-screen__intro.heading-screen_step__intro.mb-4 Но&nbsp;зато теперь у&nbsp;вас есть новые&nbsp;гаджеты — поздравляем!
                 a.btn.btn_action(href="try-again.html" data-target="#heading-screen" data-loader="ajax") Попробовать еще раз
                 script
                     | window.showLostProfitRur('#price[data-status="fail"]');

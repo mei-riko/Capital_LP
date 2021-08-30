@@ -1,9 +1,7 @@
 import $ from 'jquery';
 
 import './ajaxloader';
-import './companydata';
 import './company';
-import './productdata';
 import './product';
 import './diagram';
 

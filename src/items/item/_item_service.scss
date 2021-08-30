@@ -1,17 +1,21 @@
 .item_service{
     text-align: center;
-    padding: 50px $spacer;
+    padding: $spacer;
 
     &__icon{
         margin: 0 auto $spacer;
     }
     &__title{
+        font-size: 26px;
+        line-height: $line-height-heading;
         margin-bottom: $spacer/2;
     }
     &__intro{
-        font-size: map-get($map: $heading, $key: h5);
-        line-height: $line-height-base;
+        // font-size: map-get($map: $heading, $key: h5);
+        // font-size: map-get($map: $font-size, $key: md);
+        // line-height: $line-height-base;
         color: $light-grey;
+        min-height: 230px;
     }
 }
 // < 1600px
@@ -19,9 +23,9 @@
     .item_service{
         padding: map-get($map: $spacers, $key: 3);
 
-        &__intro{
-            font-size: map-get($map: $heading, $key: h6);
-        }
+        // &__intro{
+        //     font-size: map-get($map: $heading, $key: h6);
+        // }
     }
 }
 // < 1280px

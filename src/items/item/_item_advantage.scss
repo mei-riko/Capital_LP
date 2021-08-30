@@ -24,7 +24,7 @@
     }
     &__intro{
         grid-area: intro;
-        font-size: map-get($map: $heading, $key: h4);
+        font-size: map-get($map: $heading, $key: h5);
         line-height: $line-height-heading;
         padding-left: map-get($map: $spacers, $key: 3);
     }
@@ -55,9 +55,9 @@
         &__title{
             font-size: map-get($map: $heading, $key: h2);
         }
-        &__intro{
-            font-size: map-get($map: $heading, $key: h5);
-        }
+        // &__intro{
+        //     font-size: map-get($map: $heading, $key: h5);
+        // }
     }
 }
 // < 1280px

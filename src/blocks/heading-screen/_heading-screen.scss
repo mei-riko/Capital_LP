@@ -44,7 +44,7 @@
         margin-bottom: map-get($map: $spacers, $key: 5);
     }
     &__title{
-        width: 720px;
+        width: 760px;
         max-width: 100%;
 
         &_start{
@@ -60,9 +60,11 @@
         width: 990px;
         max-width: 100%;
 
-        text-align: center;
+        // text-align: center;
+        font-size: map-get($map: $heading, $key: h5);
         line-height: $line-height-base;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     &__content{
         font-size: map-get($map: $font-size, $key: lg);

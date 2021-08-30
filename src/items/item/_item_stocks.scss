@@ -1,9 +1,11 @@
 .item_stocks{
     position: relative;
     padding: map-get($map: $spacers, $key: 1);
-
+    padding-right: map-get($map: $spacers, $key: 5);
+    
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-around;
 
     max-width: 100%;
 

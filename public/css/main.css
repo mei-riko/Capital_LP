@@ -95,6 +95,8 @@
 .item_company__label {
   font-size: 1rem;
   line-height: 1.2;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
 }
 
 .item_company__label::first-letter {
@@ -137,7 +139,6 @@
   }
   .item_company__label {
     font-size: 14px;
-    margin-bottom: 5px;
   }
   .item_company__subtotal {
     margin-bottom: 15px;
@@ -223,9 +224,6 @@
     align-items: flex-start;
     margin-bottom: 10px;
   }
-  .item_company__label {
-    color: rgba(255, 255, 255, 0.5);
-  }
 }
 
 .item_company-inside {
@@ -301,11 +299,14 @@
 .item_stocks {
   position: relative;
   padding: 20px;
+  padding-right: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   max-width: 100%;
 }
 
@@ -555,7 +556,7 @@
 
 .item_advantage__intro {
   grid-area: intro;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.2;
   padding-left: 40px;
 }
@@ -589,9 +590,6 @@
 @media all and (max-width: 1600px) {
   .item_advantage__title {
     font-size: 40px;
-  }
-  .item_advantage__intro {
-    font-size: 20px;
   }
 }
 
@@ -645,7 +643,7 @@
 
 .item_service {
   text-align: center;
-  padding: 50px 40px;
+  padding: 40px;
 }
 
 .item_service__icon {
@@ -653,21 +651,19 @@
 }
 
 .item_service__title {
+  font-size: 26px;
+  line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .item_service__intro {
-  font-size: 20px;
-  line-height: 1.4;
   color: rgba(255, 255, 255, 0.7);
+  min-height: 230px;
 }
 
 @media all and (max-width: 1600px) {
   .item_service {
     padding: 40px;
-  }
-  .item_service__intro {
-    font-size: 18px;
   }
 }
 
@@ -1151,7 +1147,7 @@
 }
 
 .heading-screen__title {
-  width: 720px;
+  width: 760px;
   max-width: 100%;
 }
 
@@ -1168,9 +1164,10 @@
 .heading-screen__intro {
   width: 990px;
   max-width: 100%;
-  text-align: center;
+  font-size: 20px;
   line-height: 1.4;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading-screen__content {
@@ -1485,8 +1482,8 @@
   background: url("../img/business-man-subscribe.png") no-repeat center bottom/contain;
 }
 
-.heading-screen_step__title {
-  margin-bottom: 40px;
+.heading-screen_step__intro {
+  width: 100%;
 }
 
 @media all and (max-width: 1600px) {
