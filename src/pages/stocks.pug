@@ -12,8 +12,7 @@ mixin companyStocks(object)
                 .item_stocks__label Цена за акцию
             .item_stocks__info
                 .item_stocks__title#total=object.total
-<<<<<<< HEAD
-                .item_stocks__subtitle Общая стоимость
+                .item_stocks__label Общая стоимость
 .stocks
     .container.stocks__container
         .grid.grid_stocks 
@@ -31,31 +30,6 @@ mixin companyStocks(object)
             .stocks__chat
                 .stocks__chat-body#chat-messages
                     .stocks__message.stocks__message_new
-=======
-                .item_stocks__label Общая стоимость
-
-.container.stocks__container
-    .grid.grid_stocks 
-        .stocks__info
-            .stocks__info-grid
-                for object, index in companies
-                    +companyStocks(object)(data-id=index)
-                .stocks__graph
-                    canvas#flot-graph(width="1" height="1")
-            .mt-2.stocks__btns
-                .stocks__btns-item
-                    a.btn.btn_action.stocks__btn#oneMoreYear(href="stocks-final.html") Подождать еще год
-                .stocks__btns-item
-                    a.btn.btn_secondary.stocks__btn(href="result.html" data-target="#heading-screen" data-loader="ajax") Продать акции
-        .stocks__chat
-            .stocks__chat-body#chat-messages
-                .stocks__message.stocks__message_new
-                    .stocks__message-name Консультант ITI Capital
-                    .stocks__message-date 2017 год
-                    .stocks__message-text Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год
-                //
-                    .stocks__message
->>>>>>> feature/001-ajaxloader
                         .stocks__message-name Консультант ITI Capital
                         .stocks__message-date 2017 год
                         .stocks__message-text Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год
@@ -64,6 +38,11 @@ mixin companyStocks(object)
                             .stocks__message-name Консультант ITI Capital
                             .stocks__message-date 2017 год
                             .stocks__message-text Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год
+                        //
+                            .stocks__message
+                                .stocks__message-name Консультант ITI Capital
+                                .stocks__message-date 2017 год
+                                .stocks__message-text Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год
 link(href="css/graphart.css" rel="stylesheet")
 script
    | window.drawActiveStocks();
