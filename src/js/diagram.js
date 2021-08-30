@@ -198,7 +198,11 @@ $(function() {
 			companyContainer.find('.item_stocks__title').empty().html(company.shareCode);
 			companyContainer.find('.item_stocks__subtitle').empty().html(company.name);
 			companyContainer.find('.item_stocks__title#subtotal').empty().html('$'+company.priceAtStart.usd);
-			companyContainer.find('.item_stocks__title#total').empty().html(company.totalAtStart.rur);
+
+			var totalAtStartFloat = parseFloat(company.totalAtStart.rur.replace(/[^0-9.]/g, ''));
+			var totalAtStartView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalAtStartFloat).toFixed(2));
+			// console.log( totalAtStartView );
+			companyContainer.find('.item_stocks__title#total').empty().html(totalAtStartView);
 		}
 	};
 

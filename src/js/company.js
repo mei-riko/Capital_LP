@@ -20,7 +20,11 @@ window.initCompanyPart = function (){
 			companyContainer.find('.item__title.item_company__name').empty().html(company.shareCode);
 			companyContainer.find('.item_company__fullname').empty().html(company.name);
 			companyContainer.find('.item__title.item_company__subtotal').empty().html('$'+company.priceAtStart.usd);
-			companyContainer.find('.item__title.item_company__total .item__value').empty().html(company.totalAtStart.rur);
+
+			var totalAtStartFloat = parseFloat(company.totalAtStart.rur.replace(/[^0-9.]/g, ''));
+			var totalAtStartView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalAtStartFloat).toFixed(2));
+			// console.log( totalAtStartView );
+			companyContainer.find('.item__title.item_company__total .item__value').empty().html(totalAtStartView);
 		}
 	};
 	window.loadNextCompanies = function() {
@@ -75,7 +79,7 @@ window.initCompanyPart = function (){
 			companyContainer.find('.item_company__logo img').attr('src', company.icon);
 			companyContainer.find('.item__title.item_company__name').empty().html(company.shareCode);
 			companyContainer.find('.item_company__fullname').empty().html(company.name);
-			companyContainer.find('.item_subtotal').empty().html('$'+company.priceAtStart.usd);
+			companyContainer.find('.item__subtotal').empty().html('$'+company.priceAtStart.usd);
 		}
 	};
 
