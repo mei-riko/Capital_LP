@@ -52,5 +52,5 @@ mixin product(object)
                     +product(object)(data-id=index)
             a.btn.btn_action(href="buy-products.html" data-target="#heading-screen" data-loader="ajax") Купить товары
             script
-                | window.initCompanyPart()
-                | window.initProductPart()
+                | if(window.initCompanyPart) window.initCompanyPart();
+                | if(window.initProductPart) window.initProductPart();

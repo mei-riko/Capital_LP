@@ -79,8 +79,8 @@
                     </div>
             </div><a class="btn btn_action" href="buy-products.html" data-target="#heading-screen" data-loader="ajax">Купить товары</a>
             <script>
-              window.initCompanyPart()
-              window.initProductPart()
+              if(window.initCompanyPart) window.initCompanyPart();
+              if(window.initProductPart) window.initProductPart();
             </script>
           </div>
         </div>

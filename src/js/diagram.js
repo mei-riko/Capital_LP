@@ -5,6 +5,7 @@ var maxActiveCompanies = 2;
 window.plotImages=[];
 window.plotMaxYear=false;
 
+
 /*** LINEAR GRAPH FUNCTIONS ***/
 
 function getMaxY(pricesUSD) {
@@ -317,6 +318,33 @@ $(function() {
 
     window.drawChatMessages = function(areaSelector, maxYear) {
 
+        if(!window.chatMessages) {
+        	// extract all chat messages
+        	window.chatMessages = {};
+        	for(let i = 0; i<window.companydata.active.length; i++) {
+        		var company = window.companydata.available[window.companydata.active[i]];
+
+        		if(maxYear === false) {
+					maxYear = company.pricesUSD[1][0];
+				}
+				
+
+				for(let k=0; k<company.pricesUSD.length; k++) {
+			        if(!window.chatMessages[company.pricesUSD[k][0]]) {
+			        	window.chatMessages[company.pricesUSD[k][0]] = [];
+			        }
+			        if(company.pricesUSD[k][2]) {
+				       	window.chatMessages[company.pricesUSD[k][0]].push(company.pricesUSD[k][2]);
+			        }
+				}
+        	}
+        	for(let y in window.chatMessages){
+        		let m = window.chatMessages[y];
+        		let k = Math.floor(Math.random() * m.length);
+        		window.chatMessages[y] = m[k];
+        	}
+        }
+
     	// get element
     	var messageContainer = $(areaSelector);
 
@@ -326,40 +354,13 @@ $(function() {
     	// clear all children
     	messageContainer.empty();
 
-    	// get list of messages
-    	var messages = {};
-    	var summary  =  {}
-
-    	// var k = Math.floor(Math.random() * company.pricesUSD.length);
-
-		for(let i = 0; i<window.companydata.active.length; i++) {
-			var company = window.companydata.available[window.companydata.active[i]];
-
-			if(maxYear === false) {
-				maxYear = company.pricesUSD[1][0];
-			}
-			window.plotMaxYear = maxYear;
-
-			for(let k=0; k<company.pricesUSD.length; k++) {
-		        if(company.pricesUSD[k][0]<=maxYear){
-		        	if(!messages[company.pricesUSD[k][0]]) {
-		        		messages[company.pricesUSD[k][0]] = '';
-		        		summary[company.pricesUSD[k][0]] = '';
-		        	}
-		        	if(company.pricesUSD[k][2]) {
-		        		summary[company.pricesUSD[k][0]] += company.pricesUSD[k][3];
-			        	messages[company.pricesUSD[k][0]] += ' ' + company.pricesUSD[k][2];
-		        	}
-		        }
-			}
-		}
-
     	// fill-in the element with the messages
-    	for(let y in messages) {
-    		if(messages[y]){
+    	window.plotMaxYear = maxYear;
+    	for(let y in window.chatMessages) {
+    		if(y <= maxYear && window.chatMessages[y]) {
 	    		let node = templateNode.clone();
 	    		node.find('.stocks__message-date').empty().html(y + ' год');
-	    		node.find('.stocks__message-text').empty().html(messages[y] + ' ' + window.companydata.tips[summary[y]]);
+	    		node.find('.stocks__message-text').empty().html(window.chatMessages[y]);
 	    		messageContainer.prepend(node);
     		}
     	}
@@ -388,7 +389,7 @@ $(function() {
 		}
 		
 
-		console.log(window.companydata.active);
+		// console.log(window.companydata.active);
 
         var startPriceRur = 0;
     	for(let i = 0; i<window.companydata.active.length; i++) {
