@@ -42,6 +42,7 @@
             <canvas id="flot-graph" width="820" height="400"></canvas>
           </div>
         </div>
+<<<<<<< HEAD
         <div class="mt-2 stocks__btns">
           <div class="stocks__btns-item"><a class="btn btn_action stocks__btn" href="stocks-final.html">Подождать еще год</a></div>
           <div class="stocks__btns-item"><a class="btn btn_secondary stocks__btn" href="result.html">Продать акции</a></div>
@@ -60,6 +61,30 @@
             <div class="stocks__message-text">Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год</div>
           </div>
         </div>
+=======
+        <div class="stocks__graph">
+          <canvas id="flot-graph" width="1" height="1"></canvas>
+        </div>
+      </div>
+      <div class="mt-2 stocks__btns">
+        <div class="stocks__btns-item"><a class="btn btn_action stocks__btn" id="oneMoreYear" href="stocks-final.html">Подождать еще год</a></div>
+        <div class="stocks__btns-item"><a class="btn btn_secondary stocks__btn" href="result.html">Продать акции</a></div>
+      </div>
+    </div>
+    <div class="stocks__chat">
+      <div class="stocks__chat-body" id="chat-messages">
+        <div class="stocks__message stocks__message_new">
+          <div class="stocks__message-name">Консультант ITI Capital</div>
+          <div class="stocks__message-date">2017 год</div>
+          <div class="stocks__message-text">Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год</div>
+        </div>
+        <!--
+        .stocks__message
+            .stocks__message-name Консультант ITI Capital
+            .stocks__message-date 2017 год
+            .stocks__message-text Год прошел отлично, акции растут! В следующем году Apple выпустит новое устройство, а Яндекс новый сервис. Советум подождать еще год
+        -->
+>>>>>>> feature/001-ajaxloader
       </div>
     </div>
   </div>
@@ -67,5 +92,7 @@
 <link href="css/graphart.css" rel="stylesheet"/>
 <script>
   window.drawActiveStocks();
-  window.drawStocksPlot('#flot-graph');
+  window.drawStocksPlot('#flot-graph', window.plotMaxYear);
+  window.drawChatMessages('#chat-messages', window.plotMaxYear);
+  window.activateNextBtn();
 </script>

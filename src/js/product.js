@@ -2,8 +2,9 @@ import $ from 'jquery';
 
 var maxActiveProducts = 2;
 
-$(function() {
-	var drawActiveProducts = function() {
+
+window.initProductPart = function() {
+	window.drawActiveProducts = function() {
 		for(let i = 0; i<window.productdata.active.length; i++) {
 			var product = window.productdata.available[window.productdata.active[i]];
 			// console.log(i, window.productdata);
@@ -14,7 +15,7 @@ $(function() {
 			productContainer.find('.item__title.item_product__price .item__value').empty().html(product.price.rur);
 		}
 	}
-	var loadNextProducts = function() {
+	window.loadNextProducts = function() {
 		// get active products
 		var activeProducts = window.productdata.active;
 		var maxId = activeProducts[0];
@@ -41,17 +42,13 @@ $(function() {
         drawActiveProducts();
 
 	}
-    var initNextCompany = function() {
+    window.initNextCompany = function() {
         $('.nextproduct').click(function(e) {
             e.preventDefault();
             loadNextProducts();
             return false;
         });
     };
-    initNextCompany();
-    drawActiveProducts();
-
-
     window.getTotalProductsRur = function(){
     	var totalRur = 0;
 		for(let i = 0; i<window.productdata.active.length; i++) {
@@ -65,6 +62,13 @@ $(function() {
     window.showTotalProductsRur = function(selector){
     	$(selector).empty().html(window.getTotalProductsRur());
     }
+    try{
+	    window.initNextCompany();
+	    window.drawActiveProducts();
+    } catch (e) {
 
-});
+    }
+};
+
+$(window.initProductPart);
 
