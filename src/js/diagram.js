@@ -227,10 +227,13 @@ $(function() {
 		        }
 			}
 		}
+		window.plotMinYear = company.pricesUSD[0][0];
 		if(maxYear === false) {
 			maxYear = company.pricesUSD[1][0];
 		}
 		window.plotMaxYear = maxYear;
+
+		window.maxYearDrawn = true;
 
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
@@ -247,6 +250,8 @@ $(function() {
 						X:company.pricesUSD[k][0],
 						Y:company.pricesUSD[k][1]
 						});		        	
+		        } else {
+		        	window.maxYearDrawn = false;
 		        }
 			}
 
@@ -300,6 +305,10 @@ $(function() {
 		    font:'italic 14pt sans-serif'
 		}
 		drawLinearGraph(areaSelector, pricesUSD, options);
+
+		if( window.maxYearDrawn) {
+			$('#oneMoreYear').parent().addClass('d-none');
+		}
 	}
 
     window.drawChatMessages = function(areaSelector, maxYear) {
@@ -316,6 +325,9 @@ $(function() {
     	// get list of messages
     	var messages = {};
     	var summary  =  {}
+
+    	// var k = Math.floor(Math.random() * company.pricesUSD.length);
+
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
 
@@ -359,4 +371,46 @@ $(function() {
 			return false;
 		})
 	}
+
+	window.showResults = function(selectorYears, selectorProfit){
+
+		var yearIntervar = window.plotMaxYear - window.plotMinYear;
+		if(yearIntervar==1){
+			$(selectorYears).empty().html(yearIntervar+' год');
+		} else {
+			$(selectorYears).empty().html(yearIntervar+' года');
+		}
+		
+
+		console.log(window.companydata.active);
+
+        var startPriceRur = 0;
+    	for(let i = 0; i<window.companydata.active.length; i++) {
+    		let company = window.companydata.available[window.companydata.active[i]];
+    		let sharesRurStr = '' + company.sumPricesRUR[0][1];
+    		let sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
+    		startPriceRur += sharesRur;
+    		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
+    	}
+
+        var endPriceRur = 0;
+        var isEndYear;
+    	for(let i = 0; i<window.companydata.active.length; i++) {
+    		let company = window.companydata.available[window.companydata.active[i]];
+
+            isEndYear = function (value) {
+  				return value[0] == window.plotMaxYear;
+			}
+			let filtered = company.sumPricesRUR.filter(isEndYear);
+
+    		let sharesRurStr = '' + filtered[0][1];
+    		let sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
+    		endPriceRur += sharesRur;
+    		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
+    	}
+
+    	var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping:true })).format(Number(endPriceRur - startPriceRur).toFixed(2));
+    	$(selectorProfit).empty().html(totalSharesRurView);
+	}
+
 });
