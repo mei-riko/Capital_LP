@@ -2,7 +2,6 @@ import $ from 'jquery';
 
 var maxActiveProducts = 2;
 
-
 window.initProductPart = function() {
 	window.drawActiveProducts = function() {
 		for(let i = 0; i<window.productdata.active.length; i++) {

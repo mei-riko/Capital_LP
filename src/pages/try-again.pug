@@ -1,5 +1,4 @@
 block variables
-    - var pageTitle     = "Landing Page"
     - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","total":"23 745","count":"15 шт."},{"logo":"./icon/tesla.svg","name":"TSLA","fullname":"Tesla inc.","subtotal":"$46.96","total":"27 469","count":"8 шт."}]
     - var products      = [{"type":"Смартфон","name":"Samsung Galaxy S7","img":"./img/phone.png","price":"54 000"},{"type":"Умные часы","name":"Apple Watch Series 2","img":"./img/clock.png","price":"34 000"}]
 
@@ -29,28 +28,29 @@ mixin product(object)
             span.item__value=object.price
             span.item__rub ₽
 
-.container.heading-screen__container
-    h1.heading-screen__title.heading-screen__title_start Как бы вы поступили со&nbsp;своими деньгами 5&nbsp;лет назад?
-    p.h4.heading-screen__intro Узнайте, сколько вы могли заработать — купите товары или вложите в акции
-    .heading-screen__row
-        .heading-screen__col
-            a.heading-screen__change.nextcompany(href="javascript:void(0);")
-                svg.heading-screen__change-icon(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30ZM11.4645 18.5355C12.4021 19.4732 13.6739 20 15 20C16.957 20 18.633 18.865 19.455 17.227L21.256 18.128C20.6758 19.2908 19.7832 20.269 18.6782 20.9529C17.5732 21.6368 16.2995 21.9994 15 22C13.1435 22 11.363 21.2625 10.0503 19.9497C8.7375 18.637 8 16.8565 8 15C8 13.1435 8.7375 11.363 10.0503 10.0503C11.363 8.7375 13.1435 8 15 8C16.7886 7.99877 18.509 8.68634 19.804 9.92L21.901 8L23.002 15.127L16 13.402L18.316 11.282C17.4081 10.458 16.2261 10.001 15 10C13.6739 10 12.4021 10.5268 11.4645 11.4645C10.5268 12.4021 10 13.6739 10 15C10 16.3261 10.5268 17.5979 11.4645 18.5355Z")
-                span.heading-screen__change-title.nextcompany Другие компании
-            .heading-screen__card
-                for object, index in companies
-                    +company(object)(data-id=index)
-            a.btn.btn_action(href="buy-shares.html" data-target="#heading-screen" data-loader="ajax") Купить акции
-        .heading-screen__col
-            a.heading-screen__change.heading-screen__change_reverse.nextproduct(href="javascript:void(0);")
-                svg.heading-screen__change-icon(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30ZM11.4645 18.5355C12.4021 19.4732 13.6739 20 15 20C16.957 20 18.633 18.865 19.455 17.227L21.256 18.128C20.6758 19.2908 19.7832 20.269 18.6782 20.9529C17.5732 21.6368 16.2995 21.9994 15 22C13.1435 22 11.363 21.2625 10.0503 19.9497C8.7375 18.637 8 16.8565 8 15C8 13.1435 8.7375 11.363 10.0503 10.0503C11.363 8.7375 13.1435 8 15 8C16.7886 7.99877 18.509 8.68634 19.804 9.92L21.901 8L23.002 15.127L16 13.402L18.316 11.282C17.4081 10.458 16.2261 10.001 15 10C13.6739 10 12.4021 10.5268 11.4645 11.4645C10.5268 12.4021 10 13.6739 10 15C10 16.3261 10.5268 17.5979 11.4645 18.5355Z")
-                span.heading-screen__change-title.nextproduct Другие товары
-            .heading-screen__card
-                for object, index in products
-                    +product(object)(data-id=index)
-            a.btn.btn_action(href="buy-products.html" data-target="#heading-screen" data-loader="ajax") Купить товары
-            script
-                | window.initCompanyPart()
-                | window.initProductPart()
+.heading-screen
+    .container.heading-screen__container
+        h1.heading-screen__title.heading-screen__title_start Как бы вы поступили со&nbsp;своими деньгами 5&nbsp;лет назад?
+        p.h4.heading-screen__intro Узнайте, сколько вы могли заработать — купите товары или вложите в акции
+        .heading-screen__row
+            .heading-screen__col
+                a.heading-screen__change.nextcompany(href="javascript:void(0);")
+                    svg.heading-screen__change-icon(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30ZM11.4645 18.5355C12.4021 19.4732 13.6739 20 15 20C16.957 20 18.633 18.865 19.455 17.227L21.256 18.128C20.6758 19.2908 19.7832 20.269 18.6782 20.9529C17.5732 21.6368 16.2995 21.9994 15 22C13.1435 22 11.363 21.2625 10.0503 19.9497C8.7375 18.637 8 16.8565 8 15C8 13.1435 8.7375 11.363 10.0503 10.0503C11.363 8.7375 13.1435 8 15 8C16.7886 7.99877 18.509 8.68634 19.804 9.92L21.901 8L23.002 15.127L16 13.402L18.316 11.282C17.4081 10.458 16.2261 10.001 15 10C13.6739 10 12.4021 10.5268 11.4645 11.4645C10.5268 12.4021 10 13.6739 10 15C10 16.3261 10.5268 17.5979 11.4645 18.5355Z")
+                    span.heading-screen__change-title.nextcompany Другие компании
+                .heading-screen__card
+                    for object, index in companies
+                        +company(object)(data-id=index)
+                a.btn.btn_action(href="buy-shares.html" data-target="#heading-screen" data-loader="ajax") Купить акции
+            .heading-screen__col
+                a.heading-screen__change.heading-screen__change_reverse.nextproduct(href="javascript:void(0);")
+                    svg.heading-screen__change-icon(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30ZM11.4645 18.5355C12.4021 19.4732 13.6739 20 15 20C16.957 20 18.633 18.865 19.455 17.227L21.256 18.128C20.6758 19.2908 19.7832 20.269 18.6782 20.9529C17.5732 21.6368 16.2995 21.9994 15 22C13.1435 22 11.363 21.2625 10.0503 19.9497C8.7375 18.637 8 16.8565 8 15C8 13.1435 8.7375 11.363 10.0503 10.0503C11.363 8.7375 13.1435 8 15 8C16.7886 7.99877 18.509 8.68634 19.804 9.92L21.901 8L23.002 15.127L16 13.402L18.316 11.282C17.4081 10.458 16.2261 10.001 15 10C13.6739 10 12.4021 10.5268 11.4645 11.4645C10.5268 12.4021 10 13.6739 10 15C10 16.3261 10.5268 17.5979 11.4645 18.5355Z")
+                    span.heading-screen__change-title.nextproduct Другие товары
+                .heading-screen__card
+                    for object, index in products
+                        +product(object)(data-id=index)
+                a.btn.btn_action(href="buy-products.html" data-target="#heading-screen" data-loader="ajax") Купить товары
+                script
+                    | window.initCompanyPart()
+                    | window.initProductPart()

@@ -1,7 +1,10 @@
 extends ../blocks/main.pug
 
-
+block variables
+    - var pageTitle     = "Landing Page"
+    
 block content
-    section.heading-screen#heading-screen
+    section#heading-screen
         include ./try-again.pug
     include ../blocks/content.pug
+    

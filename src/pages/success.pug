@@ -3,6 +3,7 @@ extends ../blocks/main.pug
 block variables
     - var pageTitle     = "Выбрали акции"
     - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","count":"15 шт."},{"logo":"./icon/tesla.svg","name":"TSLA","fullname":"Tesla inc.","subtotal":"$46.96","count":"8 шт."}]
+
 mixin company(object)
     .item.item_company.item_company-inside
         .item_company__count=object.count
@@ -14,6 +15,7 @@ mixin company(object)
         .item_company-inside__col
             p.item_company__label Стоимость акции
             .item__title=object.subtotal
+
 block content
     .heading-screen.heading-screen_step
         .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_success

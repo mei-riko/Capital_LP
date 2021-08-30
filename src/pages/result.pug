@@ -1,31 +1,14 @@
-extends ../blocks/main.pug
-
-block variables
-    - var pageTitle     = "Результаты"
-    - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","count":"15 шт."},{"logo":"./icon/tesla.svg","name":"TSLA","fullname":"Tesla inc.","subtotal":"$46.96","count":"8 шт."}]
-mixin company(object)
-    .item.item_company.item_company-inside
-        .item_company__count=object.count
-        .item_company__info 
-            .item_company__logo
-                img.img-fluid(src=object.logo)
-            .item__title.item_company__name=object.name
-            .item_company__fullname=object.fullname
-        p.item_company__label Стоимость акции
-        .item__title=object.subtotal
-block content
-    .heading-screen.heading-screen_step
-        .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_result
-            .row
-                .col-6.col-xl-6.col-lg-7.col-md-7.col-sm-12
-                    h1.heading-screen__title Вы подождали 3 года и заработали 
-                        span#price(data-status="result") 150 000 
-                        | ₽
-                    p.heading-screen__content.mb-4.mb-xl-2 Теперь вы готовы к&nbsp;открытию брокерского счета. Заполните форму 
-                        | ниже и&nbsp;мы с&nbsp;вами свяжемся в&nbsp;ближайшее время
-                    form.form.form_column.heading-screen__form(action="")
-                        input.input.form_column__input(type="text", name="",placeholder="Ваше имя")
-                        input.input.form_column__input(type="tel", name="",placeholder="Ваш номер телефона")
-                        a.btn.btn_action.form_column__btn(href="subscribe.html") Отправить заявку
-                        //- button.btn.btn_action.form_column__btn(type="submit") Отправить заявку
-    include ../blocks/content.pug
+.heading-screen.heading-screen_step
+    .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_result
+        .row
+            .col-6.col-xl-6.col-lg-7.col-md-7.col-sm-12
+                h1.heading-screen__title Вы подождали 3 года и заработали 
+                    span#price(data-status="result") 150 000 
+                    | ₽
+                p.heading-screen__content.mb-4.mb-xl-2 Теперь вы готовы к&nbsp;открытию брокерского счета. Заполните форму 
+                    | ниже и&nbsp;мы с&nbsp;вами свяжемся в&nbsp;ближайшее время
+                form.form.form_column.heading-screen__form(action="")
+                    input.input.form_column__input(type="text", name="",placeholder="Ваше имя")
+                    input.input.form_column__input(type="tel", name="",placeholder="Ваш номер телефона")
+                    a.btn.btn_action.form_column__btn(href="subscribe.html" data-target="#heading-screen" data-loader="ajax") Отправить заявку
+                    //- button.btn.btn_action.form_column__btn(type="submit") Отправить заявку

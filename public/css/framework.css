@@ -1974,6 +1974,10 @@ table td {
   text-align: left;
 }
 
+.text-small {
+  font-size: 14px;
+}
+
 .text-grey {
   color: rgba(255, 255, 255, 0.5);
 }

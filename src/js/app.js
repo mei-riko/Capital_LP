@@ -1,5 +1,12 @@
 import $ from 'jquery';
 
+import './ajaxloader';
+import './companydata';
+import './company';
+import './productdata';
+import './product';
+import './diagram';
+
 $(function() {
     // Animate Scroll
     $(document).on('click', '[data-trigger="scroll"]', function(e){
@@ -25,12 +32,10 @@ $(function() {
         .mouseleave(function(event){
             $('.item.item--hover').removeClass('item--hover');
         });
+    // Init Change
+    window.initCompanyPart();
+    window.initProductPart();
 });
 
 import './mouseup';
-import './ajaxloader';
-import './companydata';
-import './company';
-import './productdata';
-import './product';
-import './diagram';
+
