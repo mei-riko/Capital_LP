@@ -307,6 +307,7 @@
   flex-wrap: nowrap;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  background-color: #282941;
   max-width: 100%;
 }
 
@@ -323,7 +324,7 @@
   line-height: 1.2;
 }
 
-.item_stocks__subtitle {
+.item_stocks__label, .item_stocks__subtitle {
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -343,7 +344,7 @@
   .item_stocks__title {
     font-size: 16px;
   }
-  .item_stocks__subtitle {
+  .item_stocks__label, .item_stocks__subtitle {
     font-size: 12px;
   }
   .item_stocks__count {
@@ -359,7 +360,7 @@
 }
 
 @media all and (max-width: 1280px) {
-  .item_stocks__subtitle {
+  .item_stocks__label, .item_stocks__subtitle {
     font-size: 14px;
   }
   .item_stocks__info {
@@ -374,7 +375,7 @@
   .item_stocks {
     width: 320px;
   }
-  .item_stocks__subtitle {
+  .item_stocks__label, .item_stocks__subtitle {
     font-size: 12px;
   }
   .item_stocks__info {
@@ -393,7 +394,7 @@
   .item_stocks__title {
     font-size: 12px;
   }
-  .item_stocks__subtitle {
+  .item_stocks__label, .item_stocks__subtitle {
     font-size: 10px;
   }
 }
@@ -939,6 +940,9 @@
 .grid_stocks {
   grid-gap: 60px;
   grid-template-columns: 1fr 450px;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 @media all and (max-width: 1600px) {
@@ -1693,6 +1697,8 @@
 .stocks__graph {
   grid-column-start: 1;
   grid-column-end: 3;
+  background-color: #282941;
+  border-radius: 16px;
   width: 100%;
   overflow: hidden;
 }

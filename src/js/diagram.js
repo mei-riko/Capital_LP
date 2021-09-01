@@ -65,8 +65,9 @@ function drawLinearGraph(selector, graphData, options) {
 
     c.clearRect(0, 0, graph.width(), graph.height());
     
+	// Color Of Axis
     c.lineWidth = options.lineWidthAxes;
-    c.strokeStyle = '#333';
+    c.strokeStyle = '#343550';
 	
     c.font = options.font;
     c.textAlign = "center";
@@ -82,7 +83,7 @@ function drawLinearGraph(selector, graphData, options) {
     c.textAlign = "right"
     c.textBaseline = "middle";
     for ( var iy = 0; iy < options.yAxisTicks.length; iy ++ ) {
-		c.fillStyle = '#808080';
+		c.fillStyle = '#9394A0';
         c.fillText('$'+options.yAxisTicks[iy],
         	60,
         	getYPixel(options.yAxisTicks[iy], minY, maxY, yShift));
@@ -92,7 +93,7 @@ function drawLinearGraph(selector, graphData, options) {
     c.textAlign = "center"
     // console.log(options.xAxisTicks);
 	for ( var ix = 0; ix < options.xAxisTicks.length; ix ++ ) {
-		c.fillStyle = '#808080';
+		c.fillStyle = '#9394A0';
 		let xPixel = getXPixel(options.xAxisTicks[ix], minX, maxX, xShift);
 
 		c.fillText(options.xAxisTicks[ix], xPixel, graph.height() - options.yPadding + 10);
@@ -155,8 +156,8 @@ function drawLinearGraph(selector, graphData, options) {
         var lastDataPoint = data.values[data.values.length - 1];
 
         c.fillStyle =  data.dataLabelBg;
-        var wLabel = 60;
-        var hLabel = 30;
+        var wLabel = 40;
+        var hLabel = 28;
         var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift) + hLabel * 2.5;
         var yLabel = getYPixel(lastDataPoint.Y, minY, maxY, yShift) - hLabel/2 + data.labelShift * hLabel;
 
@@ -284,8 +285,9 @@ $(function() {
 			});
 		}
 
-        pricesUSD[0].color='#2A4269';
-		pricesUSD[1].color='rgb(101, 181, 178)';
+        pricesUSD[0].color='#5CE21B';
+		pricesUSD[1].color='#6542D5';
+		// pricesUSD[1].color='rgb(101, 181, 178)';
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -300,10 +302,11 @@ $(function() {
 			yAxisTicks.push(y);
 		}
         var options = {
-		    xPadding : 150,
-		    xShift: -60,
-		    yPadding : 40,
-		    lineWidth : 8,
+		    xPadding : 130,
+		    xShift: -42,
+		    yPadding : 44,
+			// 8
+		    lineWidth : 10,
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,

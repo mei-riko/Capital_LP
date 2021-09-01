@@ -5,6 +5,8 @@ import './company';
 import './product';
 import './diagram';
 
+import '../items/input/input';
+
 $(function() {
     // Animate Scroll
     $(document).on('click', '[data-trigger="scroll"]', function(e){
@@ -21,6 +23,7 @@ $(function() {
     $(document).on('click', '[data-trigger="click"]', function(e){
         e.preventDefault();
     })
+    
     // Hover Effect
     $('.heading-screen .heading-screen__col .btn')
         .mouseenter(function(event){

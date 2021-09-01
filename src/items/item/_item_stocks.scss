@@ -7,6 +7,7 @@
     flex-wrap: nowrap;
     justify-content: space-around;
 
+    background-color: $dark-grey;
     max-width: 100%;
 
     &__info{
@@ -20,6 +21,7 @@
         font-size: map-get($map: $font-size, $key: lg);
         line-height: $line-height-heading;
     }
+    &__label,
     &__subtitle{
         line-height: $line-height-heading;
         color: $light-grey;
@@ -44,6 +46,7 @@
         &__title{
             font-size: map-get($map: $font-size, $key: md);
         }
+        &__label,
         &__subtitle{
             font-size: map-get($map: $font-size, $key: xs);
         }
@@ -66,6 +69,7 @@
         &__title{
             // font-size: map-get($map: $font-size, $key: lg);
         }
+        &__label,
         &__subtitle{
             font-size: map-get($map: $font-size, $key: sm);
         }
@@ -83,6 +87,7 @@
     .item_stocks{
         width: 320px;
 
+        &__label,
         &__subtitle{
             font-size: map-get($map: $font-size, $key: xs);
         }
@@ -105,6 +110,7 @@
         &__title{
             font-size: map-get($map: $font-size, $key: xs);
         }
+        &__label,
         &__subtitle{
             font-size: 10px;
         }
