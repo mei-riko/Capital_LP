@@ -180,6 +180,7 @@ function drawLinearGraph(selector, graphData, options) {
 		icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
 		window.plotImages.push(icon_image);
 
+		c.font = options.dataLabelFont;
 		c.textAlign = "center"
         c.fillStyle = data.dataLabelColor;
         c.fillText(data.dataLabel, xLabel + wLabel/2, yLabel+hLabel/2);
@@ -310,7 +311,8 @@ $(function() {
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
-		    font:'normal 12pt sans-serif'
+		    font:'normal 12pt sans-serif',
+			dataLabelFont:'normal 10pt sans-serif'
 		}
 		drawLinearGraph(areaSelector, pricesUSD, options);
 
