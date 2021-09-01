@@ -179,9 +179,11 @@ function drawLinearGraph(selector, graphData, options) {
 		icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
 		window.plotImages.push(icon_image);
 
+		c.font = options.dataLabelFont;
 		c.textAlign = "center"
         c.fillStyle = data.dataLabelColor;
         c.fillText(data.dataLabel, xLabel + wLabel/2, yLabel+hLabel/2);
+        c.font = options.font;
     }
 
 
@@ -307,7 +309,8 @@ $(function() {
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
-		    font:'italic 14pt sans-serif'
+		    font:'italic 14pt sans-serif',
+		    dataLabelFont:'italic 14pt sans-serif'
 		}
 		drawLinearGraph(areaSelector, pricesUSD, options);
 
