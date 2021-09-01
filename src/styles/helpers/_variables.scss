@@ -2,11 +2,14 @@ $white                : #ffffff;
 $black                : #141314;
 $action               : #597CFB;
 
+$grey                 : #EBEBEB;
+$dark-grey            : #322831;
+
 $body-bg              : $black;
 $body-color           : $white;
 
 $border-color         : $white;
-$border-radius        : 30px;
+$border-radius        : 40px;
 
 $link-color           : $white !default;
 $link-hover-color     : $action !default;
@@ -16,34 +19,42 @@ $link-hover-decoration: underline !default;
 $transition-base      : .3s;
 
 $grid-breakpoints: (
-  // xs: 0,
-  // sm: 0,
-  // md: 0,
-  // lg: 0,
+ xxs: 375px,
+  xs: 576px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
   xl: 1600px
 ) !default;
 
 $container-max-widths: (
-  // xs: 320px,
-  // sm: 400px,
-  // md: 660px,
-  // lg: 860px,
-  // xl: 1400px,
-  // 1400px + padding 40px
-  hd: 1440px,
+  // 100%           // до 375
+ xxs: 100%,
+  // 440 + 40       // от 375 до 576 
+  xs: 480px,
+  // 440 + 40       // от 576 до 768
+  sm: 480px,
+  // 680 + 40       // от 768 до 1024
+  md: 720px,
+  // 940 + 40       // от 1024 до 1280
+  lg: 980px,
+  // 1140 + 40      // от 1280 до 1600
+  xl: 1180px,
+  // start 1400+40  // от 1600
+  hd: 1440px
 ) !default;
 
 
 $font-weight          : 400;
-$font-weight-bolder   : 600;
+$font-weight-bolder   : 500;
 $font-weight-bold     : 700;
 
-$font-weight-heading: $font-weight !default;
+$font-weight-heading: $font-weight-bolder !default;
 $dt-font-weight:      $font-weight !default;
 
 $line-height          : 1.6;
 $line-height-base     : 1.4;
-$line-height-heading  : 1.2;
+$line-height-heading  : 1.12;
 
 $font-size-base       : 1rem;
 $font-weight-base     : $font-weight;
@@ -86,11 +97,11 @@ $spacers: ()  !default;
 $spacers: map-merge(
   (
     0: 0,
-    1: $spacer/2,       // 20px
-    2: (3*$spacer)/4,   // 30px
-    3: $spacer,         // 40px
-    4: (3*$spacer)/2,   // 60px
-    5: $spacer * 2,     // 80px
+    1: 60px,
+    2: 80px,
+    3: 120px,
+    4: 160px,
+    5: 210px,
   ),
   $spacers
 );

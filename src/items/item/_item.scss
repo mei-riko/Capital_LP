@@ -3,8 +3,67 @@
     overflow: hidden;
     transition: .3s;
 
+    padding: $spacer;
+    border-radius: $border-radius;
+    border: 6px solid;
+    text-align: center;
+
+    &__logo{
+        margin: 0 auto;
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        border: 1px solid;
+        padding: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+    }
     &__title{
+        margin-top: $spacer/2;
+        margin-bottom: $spacer-gutter;
+
+        font-size: map-get($map: $heading, $key: h3);
+        font-weight: $font-weight-bolder;
         line-height: $line-height-heading;
     }
-    
+    &__subtitle{
+        font-size: map-get($map: $heading, $key: h6);
+        margin-bottom: map-get($map: $spacers, $key: 1);
+    }
+    &__statistics{
+        display: grid;
+        grid-gap: $spacer-gutter;
+        grid-template-columns: 200px 1fr;
+
+        font-size: map-get($map: $heading, $key: h6);
+        line-height: $line-height-heading;
+
+        margin-bottom: $spacer;
+
+        &-title{
+            text-align: left;
+        }
+        &-value{
+            text-align: right;
+            font-weight: $font-weight-bold;
+        }
+    }
+    &__open-modal{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid;
+    }
 }

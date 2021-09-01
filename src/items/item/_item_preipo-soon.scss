@@ -1,0 +1,16 @@
+.item_preipo-soon{
+    background-color: $body-bg;
+    color: $white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__logo{
+        border-color: $action;
+        background-color: $action;
+    }
+    &__btn{
+        
+    }
+}

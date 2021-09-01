@@ -11,21 +11,173 @@
   <body>
     <script src="./js/jquery.min.js"></script>
     <header class="header">
-      <div class="header__container"><a class="header__logo" href="/"></a><a class="header__phone" href="/">
-          <svg class="header__phone-icon" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28ZM17.9988 16.693L20.4556 20.423L18.3273 21.5L18.309 21.474C15.2466 20.21 12.5742 18.151 10.7527 15.384C8.93229 12.62 8.23424 9.56 8.51597 6.601L8.5 6.577L10.6283 5.5L13.0852 9.231L11.6663 11.384L15.1622 16.693H17.9988Z"></path>
-          </svg><span class="header__phone-body">8 800 200 55 91</span></a></div>
+      <div class="header__container"><a class="header__logo" href="/"></a>
+        <div class="header__nav"> <a class="header__nav-item" href="#screen1" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#screen2" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#screen3" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#screen4" data-trigger="scroll">Как мы работаем</a></div>
+      </div>
     </header>
-    <section>
+    <section class="heading-screen">
       <div class="container">
-        <div class="row">
-          <div class="col-12 mt-5 mb-5">
-            <p>Landing Page Pre-IPO</p>
+        <div class="heading-screen__description">
+          <h1 class="heading-screen__title">Участвуй в Pre-IPO частных компаний с максимальной доходностью</h1><a class="heading-screen__btn btn btn_action" href="#">Принять участие</a><svg class="heading-screen__tetris" width="900" height="790px" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g class="figure_one" transform="translate(0,-150)">
+<path class="figure" d="M600 260.5C600 282.591 582.091 300.5 560 300.5H540C517.909 300.5 500 282.591 500 260.5V240.5C500 218.409 482.091 200.5 460 200.5H440C417.909 200.5 400 182.591 400 160.5L400 46C400 23.9086 417.909 6.00003 440 6.00003L460 6.00003C482.091 6.00003 500 23.9086 500 46V60.5C500 82.5914 517.909 100.5 540 100.5H560C582.091 100.5 600 118.409 600 140.5V260.5Z" fill="#597CFB"></path>
+</g>
+<g class="figure_two">
+<path class="figure figure_two figure_green" d="M203 240.5C203 220.065 219.565 203.5 240 203.5H260C283.748 203.5 303 184.248 303 160.5V140.5C303 120.065 319.565 103.5 340 103.5H360C380.435 103.5 397 120.065 397 140.5V160.5C397 184.248 416.252 203.5 440 203.5H460C480.435 203.5 497 220.065 497 240.5V260.5C497 280.935 480.435 297.5 460 297.5H240C219.565 297.5 203 280.935 203 260.5V240.5Z" stroke="#F6F1EC" stroke-width="6"></path>
+</g>
+<path class="figure figure_green" d="M740 197.5H760C780.435 197.5 797 180.935 797 160.5V140.5C797 120.065 780.435 103.5 760 103.5H740C719.565 103.5 703 120.065 703 140.5V160.5C703 180.935 719.565 197.5 740 197.5Z" stroke="#F6F1EC" stroke-width="6"></path>
+<path class="figure figure_yellow" d="M860 203.5H740C719.565 203.5 703 220.065 703 240.5V360.5C703 380.935 719.565 397.5 740 397.5H860C880.435 397.5 897 380.935 897 360.5V240.5C897 220.065 880.435 203.5 860 203.5Z" stroke="#F6F1EC" stroke-width="6"></path>
+<path class="figure" d="M540 400.5C517.909 400.5 500 382.591 500 360.5V340.5C500 318.409 517.909 300.5 540 300.5H560C582.091 300.5 600 282.591 600 260.5V140.5C600 118.409 617.909 100.5 640 100.5H660C682.091 100.5 700 118.409 700 140.5V360.5C700 382.591 682.091 400.5 660 400.5H540Z" fill="#E96226"></path>
+<path class="figure figure_blue" d="M860 403.5H540C519.565 403.5 503 420.065 503 440.5V460.5C503 480.935 519.565 497.5 540 497.5H860C880.435 497.5 897 480.935 897 460.5V440.5C897 420.065 880.435 403.5 860 403.5Z" stroke="#F6F1EC" stroke-width="6"></path>
+<path class="figure" d="M300 340.5V460.5C300 482.591 317.909 500.5 340 500.5H460C482.091 500.5 500 482.591 500 460.5V340.5C500 318.409 482.091 300.5 460 300.5H340C317.909 300.5 300 318.409 300 340.5Z" fill="#F1BA05"></path>
+<path class="figure figure_orange" d="M140 497.5C119.565 497.5 103 480.935 103 460.5V440.5C103 420.065 119.565 403.5 140 403.5H160C183.748 403.5 203 384.248 203 360.5V340.5C203 320.065 219.565 303.5 240 303.5H260C280.435 303.5 297 320.065 297 340.5V460.5C297 480.935 280.435 497.5 260 497.5H140Z" stroke="#F6F1EC" stroke-width="6"></path>
+<path class="figure figure_green" d="M40 497.5H60C80.4345 497.5 97 480.935 97 460.5V440.5C97 420.065 80.4345 403.5 60 403.5H40C19.5655 403.5 3 420.065 3 440.5V460.5C3 480.935 19.5655 497.5 40 497.5Z" stroke="#F6F1EC" stroke-width="6"></path>
+<path class="figure figure_orange" d="M897 160C897 180.435 880.435 197 860 197H840C819.565 197 803 180.435 803 160V140C803 116.252 783.748 97 760 97H740C719.565 97 703 80.4346 703 60V40C703 19.5655 719.565 3.00002 740 3.00001L860 3C880.435 3 897 19.5655 897 40V160Z" stroke="#F6F1EC" stroke-width="6"></path>
+</svg>
+        </div>
+      </div>
+    </section>
+    <section class="content pt-3">
+      <div class="container mb-1">
+        <p class="h3 text-center">Текущие Pre-IPO</p>
+      </div>
+      <div class="container content__slider"> 
+        <div class="content__grid">
+          <div class="item item_preipo" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item__open-modal item_preipo__open-modal">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
+              </svg>
+            </div>
+            <div class="item_preipo__logo"><img class="img-fluid" src="img/1.svg" alt=""/></div>
+            <div class="item__title">OCSiAl</div>
+            <div class="item__subtitle">Мировой монополист в сфере производства графеновых нанотрубок</div>
+            <div class="item__statistics">
+              <div class="item__statistics-title">Стоимость компании</div>
+              <div class="item__statistics-value"> $1.9+ млрд</div>
+              <div class="item__statistics-title">Ожидаемая доходность</div>
+              <div class="item__statistics-value">73-514%</div>
+              <div class="item__statistics-title">Срок инвестиций</div>
+              <div class="item__statistics-value">9-36 месяцев</div>
+            </div>
+            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+          </div>
+          <div class="item item_preipo" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item__open-modal item_preipo__open-modal">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
+              </svg>
+            </div>
+            <div class="item_preipo__logo"><img class="img-fluid" src="img/2.svg" alt=""/></div>
+            <div class="item__title">Airbnb</div>
+            <div class="item__subtitle">Сервис онлайн аренды частного жилья по всему миру</div>
+            <div class="item__statistics">
+              <div class="item__statistics-title">Стоимость компании</div>
+              <div class="item__statistics-value"> $1.9+ млрд</div>
+              <div class="item__statistics-title">Ожидаемая доходность</div>
+              <div class="item__statistics-value">73-514%</div>
+              <div class="item__statistics-title">Срок инвестиций</div>
+              <div class="item__statistics-value">9-36 месяцев</div>
+            </div>
+            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+          </div>
+          <div class="item item_preipo-soon" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item_preipo-soon__content">
+              <div class="item__open-modal item_preipo-soon__open-modal">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.61501 1.9967e-07C8.44152 -0.000126342 8.27335 0.0598978 8.13915 0.169848C8.00495 0.279799 7.91301 0.432874 7.87901 0.603L7.73701 1.315C7.69391 1.52941 7.60445 1.73181 7.4749 1.90801C7.34534 2.0842 7.17882 2.22994 6.98701 2.335L6.68701 2.5C5.806 2.90057 5.04418 3.52316 4.4762 4.30676C3.90822 5.09036 3.55357 6.00809 3.44701 6.97L2.90701 11.834C2.8572 12.2821 2.71809 12.7158 2.4979 13.1093C2.27771 13.5028 1.9809 13.8481 1.62501 14.125L1.27101 14.4C1.04156 14.5785 0.868942 14.8199 0.774138 15.0947C0.679334 15.3695 0.666435 15.666 0.73701 15.948L0.75001 16C0.89701 16.588 1.42501 17 2.03001 17H15.97C16.2643 16.9999 16.5501 16.9014 16.782 16.7202C17.0139 16.539 17.1787 16.2855 17.25 16L17.263 15.948C17.3336 15.666 17.3207 15.3695 17.2259 15.0947C17.1311 14.8199 16.9585 14.5785 16.729 14.4L16.375 14.125C16.0191 13.8481 15.7223 13.5028 15.5021 13.1093C15.2819 12.7158 15.1428 12.2821 15.093 11.834L14.553 6.969C14.4463 6.00726 14.0916 5.08975 13.5236 4.30633C12.9556 3.52292 12.1939 2.90048 11.313 2.5L11.013 2.336C10.8211 2.23083 10.6545 2.08494 10.5249 1.90856C10.3954 1.73219 10.306 1.52959 10.263 1.315L10.121 0.603C10.087 0.432874 9.99507 0.279799 9.86087 0.169848C9.72667 0.0598978 9.5585 -0.000126342 9.38501 1.9967e-07H8.61501ZM14.9 15C13.505 14.15 13.227 13.154 13.105 12.054L12.565 7.19C12.4695 6.31121 12.0527 5.49866 11.3948 4.90834C10.7368 4.31802 9.88398 3.99152 9.00001 3.99152C8.11604 3.99152 7.26322 4.31802 6.60525 4.90834C5.94728 5.49866 5.53054 6.31121 5.43501 7.19L4.89501 12.054C4.77301 13.154 4.49901 14.15 3.10001 15H14.9Z"></path>
+                </svg>
+              </div>
+              <div class="item_preipo-soon__logo"></div>
+              <div class="item__title">Скоро</div>
+              <div class="item__subtitle">Мы ожидаем информацию о следующей компании в ближайшее время</div>
+            </div>
+            <div class="item_preipo-soon__btn btn btn_secondary">Получить уведомление</div>
           </div>
         </div>
       </div>
     </section>
-    <footer class="footer">
+    <div class="modal d-none" id="modal1">
+      <p>test</p>
+    </div>
+    <section class="content pt-3">
+      <div class="container mb-1">
+        <p class="h3 text-center">Прошедшие Pre-IPO</p>
+      </div>
+      <div class="container content__slider"> 
+        <div class="content__grid">
+          <div class="item item_preipo-prev" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item__open-modal item_preipo-prev__open-modal">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
+              </svg>
+            </div>
+            <div class="item_preipo__logo"><img class="img-fluid" src="img/1.svg" alt=""/></div>
+            <div class="item__title">OCSiAl</div>
+            <div class="item__subtitle">Мировой монополист в сфере производства графеновых нанотрубок</div>
+            <div class="item__statistics">
+              <div class="item__statistics-title">Стоимость компании</div>
+              <div class="item__statistics-value"> $1.9+ млрд</div>
+              <div class="item__statistics-title">Ожидаемая доходность</div>
+              <div class="item__statistics-value">73-514%</div>
+              <div class="item__statistics-title">Срок инвестиций</div>
+              <div class="item__statistics-value">9-36 месяцев</div>
+            </div>
+            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+          </div>
+          <div class="item item_preipo" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item__open-modal item_preipo__open-modal">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
+              </svg>
+            </div>
+            <div class="item_preipo__logo"><img class="img-fluid" src="img/2.svg" alt=""/></div>
+            <div class="item__title">Airbnb</div>
+            <div class="item__subtitle">Сервис онлайн аренды частного жилья по всему миру</div>
+            <div class="item__statistics">
+              <div class="item__statistics-title">Стоимость компании</div>
+              <div class="item__statistics-value"> $1.9+ млрд</div>
+              <div class="item__statistics-title">Ожидаемая доходность</div>
+              <div class="item__statistics-value">73-514%</div>
+              <div class="item__statistics-title">Срок инвестиций</div>
+              <div class="item__statistics-value">9-36 месяцев</div>
+            </div>
+            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+          </div>
+          <div class="item item_preipo item_preipo-soon" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item_preipo-soon__content">
+              <div class="item__open-modal item_preipo__open-modal item_preipo__open-modal_soon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.61501 1.9967e-07C8.44152 -0.000126342 8.27335 0.0598978 8.13915 0.169848C8.00495 0.279799 7.91301 0.432874 7.87901 0.603L7.73701 1.315C7.69391 1.52941 7.60445 1.73181 7.4749 1.90801C7.34534 2.0842 7.17882 2.22994 6.98701 2.335L6.68701 2.5C5.806 2.90057 5.04418 3.52316 4.4762 4.30676C3.90822 5.09036 3.55357 6.00809 3.44701 6.97L2.90701 11.834C2.8572 12.2821 2.71809 12.7158 2.4979 13.1093C2.27771 13.5028 1.9809 13.8481 1.62501 14.125L1.27101 14.4C1.04156 14.5785 0.868942 14.8199 0.774138 15.0947C0.679334 15.3695 0.666435 15.666 0.73701 15.948L0.75001 16C0.89701 16.588 1.42501 17 2.03001 17H15.97C16.2643 16.9999 16.5501 16.9014 16.782 16.7202C17.0139 16.539 17.1787 16.2855 17.25 16L17.263 15.948C17.3336 15.666 17.3207 15.3695 17.2259 15.0947C17.1311 14.8199 16.9585 14.5785 16.729 14.4L16.375 14.125C16.0191 13.8481 15.7223 13.5028 15.5021 13.1093C15.2819 12.7158 15.1428 12.2821 15.093 11.834L14.553 6.969C14.4463 6.00726 14.0916 5.08975 13.5236 4.30633C12.9556 3.52292 12.1939 2.90048 11.313 2.5L11.013 2.336C10.8211 2.23083 10.6545 2.08494 10.5249 1.90856C10.3954 1.73219 10.306 1.52959 10.263 1.315L10.121 0.603C10.087 0.432874 9.99507 0.279799 9.86087 0.169848C9.72667 0.0598978 9.5585 -0.000126342 9.38501 1.9967e-07H8.61501ZM14.9 15C13.505 14.15 13.227 13.154 13.105 12.054L12.565 7.19C12.4695 6.31121 12.0527 5.49866 11.3948 4.90834C10.7368 4.31802 9.88398 3.99152 9.00001 3.99152C8.11604 3.99152 7.26322 4.31802 6.60525 4.90834C5.94728 5.49866 5.53054 6.31121 5.43501 7.19L4.89501 12.054C4.77301 13.154 4.49901 14.15 3.10001 15H14.9Z"></path>
+                </svg>
+              </div>
+              <div class="item_preipo__logo item_preipo__logo_action"></div>
+              <div class="item__title">Скоро</div>
+              <div class="item__subtitle">Мы ожидаем информацию о следующей компании в ближайшее время</div>
+            </div>
+            <div class="item_preipo__btn btn btn_secondary">Получить уведомление</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer pt-5 pb-3">
+      <div class="container">
+        <div class="row"> 
+          <div class="col-6">
+            <p class="footer__disclaimers">Источник информации о доходности www.bloomberg.com. Представленная в настоящем документе информация подготовлена АО «ИК «Ай Ти Инвест» (далее — Компания, лицензия профессионального участника рынка ценных бумаг № 045-07514-100000 от 17.03.2004 на осуществление брокерской деятельности предоставлена Центральным Банком Российской Федерации (Банком России)) и предназначена исключительно для ознакомления.</p>
+            <p class="footer__disclaimers">Материалы, предоставленные Компанией, основаны на информации, полученной из открытых источников, которые рассматриваются Компанией как надежные. Компания не имеет возможности провести должную проверку такой информации и не несет ответственности за точность, полноту и достоверность материалов, предоставленных Компанией. При принятии инвестиционных решений инвестор должен провести собственный анализ финансового положения эмитента, процентных ставок, доходности и всех рисков, связанных с инвестированием в ценные бумаги и другие финансовые инструменты и при необходимости воспользоваться услугами финансовых, юридических и иных консультантов.</p>
+            <p class="footer__disclaimers">Стоимость инвестиций может как снижаться, так и повышаться, и инвестор может потерять первоначально инвестированную сумму. Доходность в прошлом не гарантирует доходности в будущем. Материалы и сведения, предоставленные Компанией, носят исключительно информационный характер, предназначены для лиц, которые вправе получать такие материалы и сведения, и не должны рассматриваться как заверение об обстоятельствах, имеющих значение для заключения, исполнения или прекращения какой-либо сделки.</p>
+            <p class="footer__disclaimers">Настоящий документ, включая любые его части и отдельные положения настоящего документа, не могут рассматриваться в качестве оферты (включая публичную оферту),</p>
+          </div>
+          <div class="col-6">
+            <p class="footer__disclaimers">приглашения делать оферты, коммерческого намерения Компании заключить сделку на условиях, изложенных в документе, а также гарантий Компании в отношении последствий заключения какой-либо сделки и/или использования какого-либо инструмента.</p>
+            <p class="footer__disclaimers">Представленная информация не является индивидуальной инвестиционной рекомендацией, не является формой выражения мнения Компании и/или ее сотрудников о том, отвечает ли конкретная ценная бумага или финансовый инструмент вашим финансовым и/или иным интересам. Определение соответствия финансового инструмента либо операции инвестиционным целям, инвестиционному горизонту и толерантности к риску является задачей инвестора. Компания не несет ответственности за возможные убытки инвестора в случае совершения операций, либо инвестирования в финансовые инструменты, упомянутые в данных материалах. Настоящий документ, включая любые его части и положения, а также любые комментарии Компании и ее работников в отношении данного документа не могут рассматриваться в качестве консультации, совета, разъяснений Компании в отношении рассматриваемого или любых других финансовых инструментов и сделок.</p>
+            <p class="footer__disclaimers">Любое использование информации, представленной в данном документе, включая любые части/разделы документа, допускается только на собственный страх и риск пользователя. Любое копирование и воспроизведение информации, представленной в данном документе, как в устной, так и в письменной форме, допускается только при условии предварительного разрешения (согласия) Компании. Представленная информация и мнения подлежат изменению без уведомления получателей данной информации и мнений. Представленная информация не является персональной инвестиционной рекомендацией. Не является рекламой ценных бумаг и иных финансовых инструментов. Продукт только для квалифицированных инвесторов.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer pb-1">
       <div class="container"> 
         <div class="row justify-content-center">
           <div class="col-6 col-lg-3 col-md-12 footer__col-logo"><a class="footer__logo" href="/"></a>

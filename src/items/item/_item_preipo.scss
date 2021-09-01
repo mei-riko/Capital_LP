@@ -1,0 +1,44 @@
+.item_preipo{
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+
+    cursor: pointer;
+    transition: $transition-base;
+    
+    &__open-modal{
+        border-color: $black;
+        transition: $transition-base;
+
+        path{
+            fill: $black;
+            transition: $transition-base;
+        }
+
+        &_soon{
+            border-color: $white;
+            path{
+                fill: $white;
+            }
+        }
+
+        &--hover,
+        &:hover{
+            border-color: $action;
+
+            path{
+                fill: $action;
+            }
+        }
+    }
+    &__logo{
+        border-color: $grey;
+    }
+    &__btn{
+        width: 100%;
+    }
+
+    &:hover{
+        border-color: $action;
+    }
+}

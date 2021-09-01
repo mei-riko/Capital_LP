@@ -1,0 +1,10 @@
+.content{
+
+    &__grid{
+        display: grid;
+
+        grid-gap: map-get($map: $spacers, $key: 1);
+        grid-template-columns: repeat(3, 1fr);
+    }
+    // align-items: flex-end;
+}

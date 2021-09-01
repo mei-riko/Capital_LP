@@ -1,5 +1,8 @@
 import $ from 'jquery';
 
+import '../blocks/heading-screen/heading-screen';
+import '../items/item/item';
+
 $(function() {
     // Animate Scroll
     $(document).on('click', '[data-trigger="scroll"]', function(e){
@@ -16,4 +19,8 @@ $(function() {
     $(document).on('click', '[data-trigger="click"]', function(e){
         e.preventDefault();
     })
+    // Fancybox
+    Fancybox.bind("[data-fancybox]", {
+        // Your options go here
+    });
 });

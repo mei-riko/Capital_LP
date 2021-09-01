@@ -3,16 +3,20 @@
 
     &__logo{
         width: 220px;
-        // 30px
-        height: map-get($map: $spacers, $key: 2);
+        // 40px
+        height: $spacer;
         background: url('../img/logo.svg') no-repeat left center / contain;
     }
     &__copyright{
         margin-top: $spacer-gutter;
-        // font-size: map-get($map: $font-size, $key: sm);
+        filter: opacity(.5);
     }
     &__text{
-        // font-size: map-get($map: $font-size, $key: sm);
-        // color: $grey;
+        filter: opacity(.5);
+    }
+    &__disclaimers{
+        font-size: map-get($map: $font-size, $key: xs);
+        color: $grey;
+        filter: opacity(.5);
     }
 }

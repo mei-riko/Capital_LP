@@ -1,2 +1,15 @@
 .btn_secondary{
+    background-color: $dark-grey;
+    border-color: $dark-grey;
+    color: $white;
+
+    &--hover,
+    &:hover{
+        background-color: lighten($color: $dark-grey, $amount: 10);
+        border-color: lighten($color: $dark-grey, $amount: 10);
+        color: $white;
+    }
+    &:focus{
+        color: $white;
+    }
 }

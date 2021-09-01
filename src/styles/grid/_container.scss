@@ -22,33 +22,39 @@
   padding-left: 0
 }
 
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: xl);
   }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: lg);
   }
 }
-// < 768px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: md);
   }
 }
-// < 420px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: sm);
   }
 }
-// < 360px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
   .container {
     max-width: map-get($map: $container-max-widths, $key: xs);
+  }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+  .container {
+    max-width: map-get($map: $container-max-widths, $key: xxs);
   }
 }

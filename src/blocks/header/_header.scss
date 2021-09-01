@@ -1,12 +1,6 @@
 .header{
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-
     z-index: 1;
-
-    // width: 100%;
-    padding: map-get($map: $spacers, $key: 4) map-get($map: $spacers, $key: 5);
+    padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
 
     &__container{
         display: flex;
@@ -15,23 +9,25 @@
     }
 
     &__logo{
-        width: 220px;
-        // 30px
-        height: map-get($map: $spacers, $key: 2);
+        width: 200px;
+        // 40px
+        height: $spacer;
         background: url('../img/logo.svg') no-repeat left center / contain;
     }
-    &__phone{
+    &__nav{
         display: flex;
         align-items: center;
         line-height: 1;
 
-        &-icon{
-            fill: $white;
+        &-item{
+            font-size: map-get($map: $font-size, $key: lg);
             transition: $transition-base;
-        }
-        &-body{
-            padding-left: $spacer-gutter;
-            padding-top: 5px;
+
+            padding-left: map-get($map: $spacers, $key: 1);
+
+            &:hover{
+                text-decoration: none;
+            }
         }
     }
 }
