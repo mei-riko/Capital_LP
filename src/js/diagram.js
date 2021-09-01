@@ -310,7 +310,7 @@ $(function() {
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
 		    font:'italic 14pt sans-serif',
-		    dataLabelFont:'italic 14pt sans-serif'
+		    dataLabelFont:'italic 12pt sans-serif'
 		}
 		drawLinearGraph(areaSelector, pricesUSD, options);
 
