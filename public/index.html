@@ -12,13 +12,19 @@
     <script src="./js/jquery.min.js"></script>
     <header class="header">
       <div class="header__container"><a class="header__logo" href="/"></a>
+        <div class="header__toggle d-none d-md-block">
+          <div class="header__toggle-item">меню</div>
+        </div>
         <div class="header__nav"> <a class="header__nav-item" href="#screen1" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#screen2" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#screen3" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#screen4" data-trigger="scroll">Как мы работаем</a></div>
       </div>
     </header>
+    <div class="modal d-none" id="modal1">
+      <p>test</p>
+    </div>
     <section class="heading-screen">
       <div class="container">
         <div class="heading-screen__description">
-          <h1 class="heading-screen__title">Участвуй в Pre-IPO частных компаний с максимальной доходностью</h1><a class="heading-screen__btn btn btn_action" href="#">Принять участие</a><svg class="heading-screen__tetris" width="900" height="790px" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <h1 class="heading-screen__title">Участвуй в&nbsp;Pre-IPO частных компаний с&nbsp;максимальной доходностью</h1><a class="heading-screen__btn btn btn_action" href="#">Принять участие</a><svg class="heading-screen__tetris" width="900" height="790px" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g class="figure_one" transform="translate(0,-150)">
 <path class="figure" d="M600 260.5C600 282.591 582.091 300.5 560 300.5H540C517.909 300.5 500 282.591 500 260.5V240.5C500 218.409 482.091 200.5 460 200.5H440C417.909 200.5 400 182.591 400 160.5L400 46C400 23.9086 417.909 6.00003 440 6.00003L460 6.00003C482.091 6.00003 500 23.9086 500 46V60.5C500 82.5914 517.909 100.5 540 100.5H560C582.091 100.5 600 118.409 600 140.5V260.5Z" fill="#597CFB"></path>
 </g>
@@ -37,7 +43,7 @@
         </div>
       </div>
     </section>
-    <section class="content pt-3">
+    <section class="content pt-md-0 pt-lg-2 pt-3">
       <div class="container mb-1">
         <p class="h3 text-center">Текущие Pre-IPO</p>
       </div>
@@ -49,18 +55,22 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
               </svg>
             </div>
-            <div class="item_preipo__logo"><img class="img-fluid" src="img/1.svg" alt=""/></div>
-            <div class="item__title">OCSiAl</div>
-            <div class="item__subtitle">Мировой монополист в сфере производства графеновых нанотрубок</div>
-            <div class="item__statistics">
-              <div class="item__statistics-title">Стоимость компании</div>
-              <div class="item__statistics-value"> $1.9+ млрд</div>
-              <div class="item__statistics-title">Ожидаемая доходность</div>
-              <div class="item__statistics-value">73-514%</div>
-              <div class="item__statistics-title">Срок инвестиций</div>
-              <div class="item__statistics-value">9-36 месяцев</div>
+            <div class="item__description">
+              <div class="item__logo item_preipo__logo" style="background-image:url('img/logo-OCSiAl.svg');"></div>
+              <div class="item__title">OCSiAl</div>
+              <div class="item__subtitle">Мировой монополист в сфере производства графеновых нанотрубок</div>
             </div>
-            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+            <div class="item__footer">
+              <div class="item__statistics">
+                <div class="item__statistics-title">Стоимость компании</div>
+                <div class="item__statistics-value"> $1.9+ млрд</div>
+                <div class="item__statistics-title">Ожидаемая доходность</div>
+                <div class="item__statistics-value">73-514%</div>
+                <div class="item__statistics-title">Срок инвестиций</div>
+                <div class="item__statistics-value">9-36 месяцев</div>
+              </div>
+              <div class="item_preipo__btn btn btn_action">Принять участие</div>
+            </div>
           </div>
           <div class="item item_preipo" data-fancybox="data-fancybox" data-src="#modal1">
             <div class="item__open-modal item_preipo__open-modal">
@@ -68,39 +78,42 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
               </svg>
             </div>
-            <div class="item_preipo__logo"><img class="img-fluid" src="img/2.svg" alt=""/></div>
-            <div class="item__title">Airbnb</div>
-            <div class="item__subtitle">Сервис онлайн аренды частного жилья по всему миру</div>
-            <div class="item__statistics">
-              <div class="item__statistics-title">Стоимость компании</div>
-              <div class="item__statistics-value"> $1.9+ млрд</div>
-              <div class="item__statistics-title">Ожидаемая доходность</div>
-              <div class="item__statistics-value">73-514%</div>
-              <div class="item__statistics-title">Срок инвестиций</div>
-              <div class="item__statistics-value">9-36 месяцев</div>
+            <div class="item__description">
+              <div class="item__logo item_preipo__logo" style="background-image:url('img/logo-Airbnb.svg');"></div>
+              <div class="item__title">Airbnb</div>
+              <div class="item__subtitle">Сервис онлайн аренды частного жилья по всему миру</div>
             </div>
-            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+            <div class="item__footer">
+              <div class="item__statistics">
+                <div class="item__statistics-title">Стоимость компании</div>
+                <div class="item__statistics-value"> $1.9+ млрд</div>
+                <div class="item__statistics-title">Ожидаемая доходность</div>
+                <div class="item__statistics-value">73-514%</div>
+                <div class="item__statistics-title">Срок инвестиций</div>
+                <div class="item__statistics-value">9-36 месяцев</div>
+              </div>
+              <div class="item_preipo__btn btn btn_action">Принять участие</div>
+            </div>
           </div>
           <div class="item item_preipo-soon" data-fancybox="data-fancybox" data-src="#modal1">
-            <div class="item_preipo-soon__content">
+            <div class="item__description">
               <div class="item__open-modal item_preipo-soon__open-modal">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M8.61501 1.9967e-07C8.44152 -0.000126342 8.27335 0.0598978 8.13915 0.169848C8.00495 0.279799 7.91301 0.432874 7.87901 0.603L7.73701 1.315C7.69391 1.52941 7.60445 1.73181 7.4749 1.90801C7.34534 2.0842 7.17882 2.22994 6.98701 2.335L6.68701 2.5C5.806 2.90057 5.04418 3.52316 4.4762 4.30676C3.90822 5.09036 3.55357 6.00809 3.44701 6.97L2.90701 11.834C2.8572 12.2821 2.71809 12.7158 2.4979 13.1093C2.27771 13.5028 1.9809 13.8481 1.62501 14.125L1.27101 14.4C1.04156 14.5785 0.868942 14.8199 0.774138 15.0947C0.679334 15.3695 0.666435 15.666 0.73701 15.948L0.75001 16C0.89701 16.588 1.42501 17 2.03001 17H15.97C16.2643 16.9999 16.5501 16.9014 16.782 16.7202C17.0139 16.539 17.1787 16.2855 17.25 16L17.263 15.948C17.3336 15.666 17.3207 15.3695 17.2259 15.0947C17.1311 14.8199 16.9585 14.5785 16.729 14.4L16.375 14.125C16.0191 13.8481 15.7223 13.5028 15.5021 13.1093C15.2819 12.7158 15.1428 12.2821 15.093 11.834L14.553 6.969C14.4463 6.00726 14.0916 5.08975 13.5236 4.30633C12.9556 3.52292 12.1939 2.90048 11.313 2.5L11.013 2.336C10.8211 2.23083 10.6545 2.08494 10.5249 1.90856C10.3954 1.73219 10.306 1.52959 10.263 1.315L10.121 0.603C10.087 0.432874 9.99507 0.279799 9.86087 0.169848C9.72667 0.0598978 9.5585 -0.000126342 9.38501 1.9967e-07H8.61501ZM14.9 15C13.505 14.15 13.227 13.154 13.105 12.054L12.565 7.19C12.4695 6.31121 12.0527 5.49866 11.3948 4.90834C10.7368 4.31802 9.88398 3.99152 9.00001 3.99152C8.11604 3.99152 7.26322 4.31802 6.60525 4.90834C5.94728 5.49866 5.53054 6.31121 5.43501 7.19L4.89501 12.054C4.77301 13.154 4.49901 14.15 3.10001 15H14.9Z"></path>
                 </svg>
               </div>
-              <div class="item_preipo-soon__logo"></div>
+              <div class="item__logo item_preipo-soon__logo"></div>
               <div class="item__title">Скоро</div>
               <div class="item__subtitle">Мы ожидаем информацию о следующей компании в ближайшее время</div>
             </div>
-            <div class="item_preipo-soon__btn btn btn_secondary">Получить уведомление</div>
+            <div class="item__footer">
+              <div class="item_preipo-soon__btn btn btn_secondary">Получить уведомление</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="modal d-none" id="modal1">
-      <p>test</p>
-    </div>
-    <section class="content pt-3">
+    <section class="content pt-md-2 pt-3">
       <div class="container mb-1">
         <p class="h3 text-center">Прошедшие Pre-IPO</p>
       </div>
@@ -112,55 +125,224 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
               </svg>
             </div>
-            <div class="item_preipo__logo"><img class="img-fluid" src="img/1.svg" alt=""/></div>
-            <div class="item__title">OCSiAl</div>
-            <div class="item__subtitle">Мировой монополист в сфере производства графеновых нанотрубок</div>
-            <div class="item__statistics">
-              <div class="item__statistics-title">Стоимость компании</div>
-              <div class="item__statistics-value"> $1.9+ млрд</div>
-              <div class="item__statistics-title">Ожидаемая доходность</div>
-              <div class="item__statistics-value">73-514%</div>
-              <div class="item__statistics-title">Срок инвестиций</div>
-              <div class="item__statistics-value">9-36 месяцев</div>
+            <div class="item__description">
+              <div class="item__logo item_preipo-prev__logo" style="background-image:url('img/logo-Coursera.svg');"></div>
+              <div class="item__title">Coursera</div>
+              <div class="item__subtitle">Платформа для онлайн образования с десятками миллионов пользователей по всему миру</div>
             </div>
-            <div class="item_preipo__btn btn btn_action">Принять участие</div>
+            <div class="item__footer">
+              <div class="item__statistics">
+                <div class="item__statistics-title">Выход на IPO</div>
+                <div class="item__statistics-value"> 20 апреля 2021</div>
+                <div class="item__statistics-title">Стоимость акции</div>
+                <div class="item__statistics-value">$324</div>
+              </div>
+              <div class="item__statistics item_preipo-prev__total"> 
+                <div class="item__statistics-title">Доходность</div>
+                <div class="item__statistics-value">194%</div>
+              </div>
+            </div>
           </div>
-          <div class="item item_preipo" data-fancybox="data-fancybox" data-src="#modal1">
-            <div class="item__open-modal item_preipo__open-modal">
+          <div class="item item_preipo-prev" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item__open-modal item_preipo-prev__open-modal">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
               </svg>
             </div>
-            <div class="item_preipo__logo"><img class="img-fluid" src="img/2.svg" alt=""/></div>
-            <div class="item__title">Airbnb</div>
-            <div class="item__subtitle">Сервис онлайн аренды частного жилья по всему миру</div>
-            <div class="item__statistics">
-              <div class="item__statistics-title">Стоимость компании</div>
-              <div class="item__statistics-value"> $1.9+ млрд</div>
-              <div class="item__statistics-title">Ожидаемая доходность</div>
-              <div class="item__statistics-value">73-514%</div>
-              <div class="item__statistics-title">Срок инвестиций</div>
-              <div class="item__statistics-value">9-36 месяцев</div>
+            <div class="item__description">
+              <div class="item__logo" style="background-image:url('img/logo-Snowflake.svg');"></div>
+              <div class="item__title">Snowflake</div>
+              <div class="item__subtitle">Платформа, предоставляющая облачную инфраструктуру для управления данными</div>
             </div>
-            <div class="item_preipo__btn btn btn_action">Принять участие</div>
-          </div>
-          <div class="item item_preipo item_preipo-soon" data-fancybox="data-fancybox" data-src="#modal1">
-            <div class="item_preipo-soon__content">
-              <div class="item__open-modal item_preipo__open-modal item_preipo__open-modal_soon">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.61501 1.9967e-07C8.44152 -0.000126342 8.27335 0.0598978 8.13915 0.169848C8.00495 0.279799 7.91301 0.432874 7.87901 0.603L7.73701 1.315C7.69391 1.52941 7.60445 1.73181 7.4749 1.90801C7.34534 2.0842 7.17882 2.22994 6.98701 2.335L6.68701 2.5C5.806 2.90057 5.04418 3.52316 4.4762 4.30676C3.90822 5.09036 3.55357 6.00809 3.44701 6.97L2.90701 11.834C2.8572 12.2821 2.71809 12.7158 2.4979 13.1093C2.27771 13.5028 1.9809 13.8481 1.62501 14.125L1.27101 14.4C1.04156 14.5785 0.868942 14.8199 0.774138 15.0947C0.679334 15.3695 0.666435 15.666 0.73701 15.948L0.75001 16C0.89701 16.588 1.42501 17 2.03001 17H15.97C16.2643 16.9999 16.5501 16.9014 16.782 16.7202C17.0139 16.539 17.1787 16.2855 17.25 16L17.263 15.948C17.3336 15.666 17.3207 15.3695 17.2259 15.0947C17.1311 14.8199 16.9585 14.5785 16.729 14.4L16.375 14.125C16.0191 13.8481 15.7223 13.5028 15.5021 13.1093C15.2819 12.7158 15.1428 12.2821 15.093 11.834L14.553 6.969C14.4463 6.00726 14.0916 5.08975 13.5236 4.30633C12.9556 3.52292 12.1939 2.90048 11.313 2.5L11.013 2.336C10.8211 2.23083 10.6545 2.08494 10.5249 1.90856C10.3954 1.73219 10.306 1.52959 10.263 1.315L10.121 0.603C10.087 0.432874 9.99507 0.279799 9.86087 0.169848C9.72667 0.0598978 9.5585 -0.000126342 9.38501 1.9967e-07H8.61501ZM14.9 15C13.505 14.15 13.227 13.154 13.105 12.054L12.565 7.19C12.4695 6.31121 12.0527 5.49866 11.3948 4.90834C10.7368 4.31802 9.88398 3.99152 9.00001 3.99152C8.11604 3.99152 7.26322 4.31802 6.60525 4.90834C5.94728 5.49866 5.53054 6.31121 5.43501 7.19L4.89501 12.054C4.77301 13.154 4.49901 14.15 3.10001 15H14.9Z"></path>
-                </svg>
+            <div class="item__footer">
+              <div class="item__statistics">
+                <div class="item__statistics-title">Выход на IPO</div>
+                <div class="item__statistics-value"> 20 апреля 2021</div>
+                <div class="item__statistics-title">Стоимость акции</div>
+                <div class="item__statistics-value">$324</div>
               </div>
-              <div class="item_preipo__logo item_preipo__logo_action"></div>
-              <div class="item__title">Скоро</div>
-              <div class="item__subtitle">Мы ожидаем информацию о следующей компании в ближайшее время</div>
+              <div class="item__statistics item_preipo-prev__total"> 
+                <div class="item__statistics-title">Доходность</div>
+                <div class="item__statistics-value">194%</div>
+              </div>
             </div>
-            <div class="item_preipo__btn btn btn_secondary">Получить уведомление</div>
+          </div>
+          <div class="item item_preipo-prev" data-fancybox="data-fancybox" data-src="#modal1">
+            <div class="item__open-modal item_preipo-prev__open-modal">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
+              </svg>
+            </div>
+            <div class="item__description">
+              <div class="item__logo" style="background-image:url('img/logo-Unity.svg');"></div>
+              <div class="item__title">Unity</div>
+              <div class="item__subtitle">Мультиплатформенные инструменты и услуги для разработчиков интерактивного контента</div>
+            </div>
+            <div class="item__footer">
+              <div class="item__statistics">
+                <div class="item__statistics-title">Выход на IPO</div>
+                <div class="item__statistics-value"> 20 апреля 2021</div>
+                <div class="item__statistics-title">Стоимость акции</div>
+                <div class="item__statistics-value">$324</div>
+              </div>
+              <div class="item__statistics item_preipo-prev__total"> 
+                <div class="item__statistics-title">Доходность</div>
+                <div class="item__statistics-value">194%</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="footer pt-5 pb-3">
+    <section class="content pt-md-3 pt-5">
+      <div class="container text-center pb-3 pb-lg-2">
+        <p class="h3">Что такое Pre-IPO</p>
+        <p class="h1 content__title">Pre-Initial Public Offering</p>
+        <div class="row justify-content-center">
+          <div class="col-8 col-lg-12">
+            <p class="content__intro">Это инвестиции в частные компании за 1-3 года перед выходом на биржу со 100% аллокацией и чаще всего по более низкой цене, чем непосредственно перед IPO</p>
+          </div>
+        </div>
+      </div>
+      <div class="container content__slider">
+        <div class="content__grid">
+          <div class="item item_info">
+            <p class="item__title item_info__title">Участие в Pre-IPO</p>
+            <p class="item__intro">Участие в Pre-IPO гарантирует 100%-ную аллокацию, в отличие от IPO. Кроме того, Pre-IPO дает большую доходность. Есть, однако, и обратная сторона медали: уровень неопределённости больше, тогда как ликвидность меньше (перед выходом компании на открытый рынок)</p>
+          </div>
+          <div class="item item_info">
+            <p class="item__title item_info__title">Риски</p>
+            <p class="item__intro">По уровню рисков инвестиции в Pre-IPO находятся где-то между венчурными инвестициями и инвестициями в фондовый рынок. В первом случае риски и сопутствующая доходность очень велики. Достаточно часто венчурные инвестиции не приводят к прибыли</p>
+          </div>
+          <div class="item item_info">
+            <p class="item__title item_info__title">Биржа</p>
+            <p class="item__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam enim purus nisl sit ultricies aliquet. Amet cras pretium odio odio egestas tortor lobortis commodo, justo. Duis ultrices condimentum mauris, lobortis imperdiet lorem id sed ultricies. Netus non lacus odio egestas amet scelerisque nunc.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content pt-md-2 pt-3">
+      <div class="container"> 
+        <p class="h3 text-center">Процесс инвестирования в Pre-IPO</p>
+        <div class="content__steps"> 
+          <div class="step">
+            <div class="step__num">1</div>
+            <div class="step__intro">Начало Pre-IPO компании</div>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <div class="step__intro">Сбор заявок и выкуп акций ITI-Prime</div>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <div class="step__intro">Подготовка и выход компании на IPO (6-12 месяцев)</div>
+          </div>
+          <div class="step">
+            <div class="step__num">4</div>
+            <div class="step__intro">Ожидание Lock-up периода (от 3-х месяцев)</div>
+          </div>
+          <div class="step">
+            <div class="step__num">5</div>
+            <div class="step__intro">Продажа акций ITI-Prime по поручению клиента. Выплата денежного эквивалента</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content pt-md-3 pt-5">
+      <div class="container">
+        <p class="h1 content__title text-center">Как мы работаем</p>
+        <div class="row justify-content-center text-center">
+          <div class="col-10 col-lg-12">
+            <p class="content__intro">Наши аналитики отбирают 10-15 наиболее перспективных из 100-200 компаний, статус которых дает основание полагать, что компания в скором времени может выйти на IPO,тщательно изучают финансовые показатели компании, перспективы и точки роста, а также конъюнктуру отрасли на данный момент. Минимальный порог входа</p>
+          </div>
+        </div>
+        <div class="content__stats mt-md-2 mt-3">
+          <div class="content__stats-item"> 
+            <div class="content__stats-title">Минимальный порог входа</div>
+            <div class="content__stats-value">$10 060</div>
+          </div>
+          <div class="content__stats-item"> 
+            <div class="content__stats-title">Ожидаемая доходность</div>
+            <div class="content__stats-value">60 – 480%</div>
+          </div>
+          <div class="content__stats-item"> 
+            <div class="content__stats-title">Срок инвестирования</div>
+            <div class="content__stats-value">от 9 до 36 месяцев</div>
+          </div>
+          <div class="content__stats-item"> 
+            <div class="content__stats-title">Lock-up период</div>
+            <div class="content__stats-value">от 0 до 3 месяцев</div>
+          </div>
+          <div class="content__stats-item"> 
+            <div class="content__stats-title">Комиссия</div>
+            <div class="content__stats-value">5%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content pt-md-3 pt-5">
+      <div class="container">
+        <p class="h1 content__title text-center">ITI Capital</p>
+        <div class="row justify-content-center text-center">
+          <div class="col-10 col-lg-12">
+            <p class="content__intro">Лидер на рынке финансовых услуг с 2000 года</p>
+          </div>
+        </div>
+        <div class="content__grid content__grid_advantage mt-2">
+          <div class="advantage">
+            <div class="advantage__icon">
+               <svg width="67" height="51" viewBox="0 0 67 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M52.1537 22.5983C56.455 21.994 59.7665 18.3063 59.7757 13.8386C59.7757 9.43557 56.566 5.78491 52.3572 5.09424" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M57.8296 32.9385C61.9951 33.5613 64.9027 35.0197 64.9027 38.026C64.9027 40.0949 63.5337 41.4392 61.3199 42.2841" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.6507 34.2134C23.7408 34.2134 15.2771 35.715 15.2771 41.712C15.2771 47.706 23.6884 49.2508 33.6507 49.2508C43.5605 49.2508 52.0212 47.7646 52.0212 41.7645C52.0212 35.7643 43.6129 34.2134 33.6507 34.2134Z" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.6507 25.6545C40.1534 25.6545 45.4259 20.3851 45.4259 13.8793C45.4259 7.3765 40.1534 2.104 33.6507 2.104C27.1479 2.104 21.8754 7.3765 21.8754 13.8793C21.8508 20.3604 27.0832 25.6329 33.5643 25.6545H33.6507Z" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15.1448 22.5983C10.8405 21.994 7.53208 18.3063 7.52283 13.8386C7.52283 9.43557 10.7326 5.78491 14.9413 5.09424" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9.46871 32.9385C5.30312 33.5613 2.39554 35.0197 2.39554 38.026C2.39554 40.0949 3.76454 41.4392 5.97837 42.2841" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            </div>
+            <div class="advantage__title">62 000</div>
+            <div class="advantage__intro">Постоянных клиентов</div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">
+               <svg width="62" height="61" viewBox="0 0 62 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50.0855 10.4346C55.2964 10.4346 59.4897 14.6587 59.4897 19.8696V30.4762C51.9047 34.9162 41.8839 37.5987 30.9689 37.5987C20.0539 37.5987 10.0639 34.9162 2.47888 30.4762V19.8387C2.47888 14.6279 6.70305 10.4346 11.9139 10.4346H50.0855Z" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M41.7766 10.4212V9.29268C41.7766 5.53102 38.7241 2.47852 34.9624 2.47852H27.0074C23.2457 2.47852 20.1932 5.53102 20.1932 9.29268V10.4212" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M2.55444 41.7393L3.13719 49.4753C3.53186 54.6893 7.87628 58.7192 13.1025 58.7192H48.8661C54.0924 58.7192 58.4368 54.6893 58.8314 49.4753L59.4142 41.7393" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            </div>
+            <div class="advantage__title">$232 млрд</div>
+            <div class="advantage__intro">Оборот в год по всем рынкам</div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">
+               <svg width="52" height="63" viewBox="0 0 52 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M25.9523 60.6183C25.9523 60.6183 49.6076 53.4557 49.6076 33.7101C49.6076 13.9613 50.4648 12.4197 48.5685 10.5203C46.6692 8.621 29.0541 2.479 25.9523 2.479C22.8504 2.479 5.23533 8.621 3.33908 10.5203C1.43975 12.4197 2.29692 13.9613 2.29692 33.7101C2.29692 53.4557 25.9523 60.6183 25.9523 60.6183Z" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M17.9399 30.6132L23.7736 36.4562L35.7924 24.4312" stroke="#597CFB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            </div>
+            <div class="advantage__title">21 год</div>
+            <div class="advantage__intro">На финансовом рынке</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content pt-md-3 pt-5">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-7 col-lg-10">
+            <p class="content__intro">Оставьте заявку, чтобы подробнее узнать про условия. Наш консультат свяжется с вами в ближайшее время</p>
+          </div>
+          <div class="col-8 col-lg-10 mt-1">
+            <div class="form form_inline"> 
+              <input class="input form_inline__input" type="tel" name="" placeholder="Ваш номер телефона"/>
+              <button class="form_inline__btn btn btn_action" type="submit">Принять участие</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer pt-md-3 pt-5 pb-3">
       <div class="container">
         <div class="row"> 
           <div class="col-6">

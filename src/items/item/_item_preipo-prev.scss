@@ -1,0 +1,55 @@
+.item_preipo-prev{
+    background-color: $action;
+    border-color: $action;
+    color: $white;
+
+    cursor: pointer;
+    transition: $transition-base;
+
+    &__open-modal{
+        border-color: $white;
+        transition: $transition-base;
+
+        path{
+            fill: $white;
+            transition: $transition-base;
+        }
+
+        &--hover,
+        &:hover{
+            border-color: #A1B5FF;
+
+            path{
+                fill: #A1B5FF;
+            }
+        }
+    }
+    &__logo{
+        background-color: #0056D2;
+        border-color: #0056D2;
+    }
+    &__total {
+        background: $white;
+        color: $black;
+        font-size: map-get($map: $heading, $key: h5);
+        line-height: $line-height-heading;
+
+        border-radius: $border-radius;    
+        padding: 24px 30px 26px 30px;
+        margin-bottom: 0;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &:hover{
+        border-color: $white;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .item_preipo-prev{
+        &__total{
+            font-size: map-get($map: $font-size, $key: md);
+            padding: 20px 26px 22px 26px;
+        }
+    }
+}

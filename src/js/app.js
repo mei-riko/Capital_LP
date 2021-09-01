@@ -23,4 +23,8 @@ $(function() {
     Fancybox.bind("[data-fancybox]", {
         // Your options go here
     });
+    // Nav
+    $('.header__toggle-item').on('click', function(){
+        $('.header__nav').toggleClass('header__nav--active');
+    })
 });

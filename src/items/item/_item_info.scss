@@ -1,0 +1,11 @@
+.item_info{
+    text-align: left;
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+
+    &__title{
+        margin-top: 0;
+        margin-bottom: $spacer-gutter*2;
+    }
+}

@@ -3,10 +3,14 @@
     overflow: hidden;
     transition: .3s;
 
-    padding: $spacer;
+    padding: map-get($map: $spacers, $key: 1)/2;
     border-radius: $border-radius;
     border: 6px solid;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &__logo{
         margin: 0 auto;
@@ -14,13 +18,8 @@
         height: 128px;
         border-radius: 50%;
         border: 1px solid;
-        padding: 20px;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
+        background: $white no-repeat center / contain;
     }
     &__title{
         margin-top: $spacer/2;
@@ -67,3 +66,36 @@
         border: 1px solid;
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .item{
+        padding: $spacer/2;
+
+        &__open-modal{
+            top: 20px;
+            right: 20px;
+        }
+        &__logo{
+            margin: 0 auto;
+            width: 90px;
+            height: 90px;
+        }
+        &__title{
+            font-size: map-get($map: $heading, $key: h4);
+        }
+        &__subtitle{
+            font-size: map-get($map: $font-size, $key: md);
+            margin-bottom: $spacer;
+        }
+        &__statistics{
+            font-size: map-get($map: $font-size, $key: sm);
+            grid-template-columns: auto 1fr;
+        }
+    }
+}
+
+// @media all and (max-width: map-get($grid-breakpoints, 'sm')){
+//     .item{
+//         width: 300px;
+//     }
+// }

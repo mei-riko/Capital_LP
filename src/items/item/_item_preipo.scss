@@ -15,13 +15,6 @@
             transition: $transition-base;
         }
 
-        &_soon{
-            border-color: $white;
-            path{
-                fill: $white;
-            }
-        }
-
         &--hover,
         &:hover{
             border-color: $action;

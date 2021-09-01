@@ -1,0 +1,32 @@
+.step{
+    &__num{
+        font-size: 100px;
+        font-weight: $font-weight-bolder;
+        line-height: 1;
+        margin-bottom: $spacer;
+        color: $action;
+    }
+    &__intro{
+        font-size: map-get($map: $heading, $key: h4);
+        white-space: break-spaces;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .step{
+        &__intro{
+            font-size: map-get($map: $heading, $key: h6);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .step{
+        display: grid;
+        grid-gap: $spacer-gutter;
+        grid-template-columns: 40px 1fr;
+
+        &__num{
+            font-size: 56px;
+        }
+    }
+}

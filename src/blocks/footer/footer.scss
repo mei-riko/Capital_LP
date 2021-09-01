@@ -15,7 +15,7 @@
         filter: opacity(.5);
     }
     &__disclaimers{
-        font-size: map-get($map: $font-size, $key: xs);
+        font-size: map-get($map: $font-size, $key: sm);
         color: $grey;
         filter: opacity(.5);
     }

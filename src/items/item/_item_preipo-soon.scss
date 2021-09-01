@@ -2,15 +2,36 @@
     background-color: $body-bg;
     color: $white;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    cursor: pointer;
+    transition: $transition-base;
 
+    &__open-modal{
+        border-color: $white;
+        transition: $transition-base;
+
+        path{
+            fill: $white;
+            transition: $transition-base;
+        }
+
+        &--hover,
+        &:hover{
+            border-color: $action;
+
+            path{
+                fill: $action;
+            }
+        }
+    }
     &__logo{
         border-color: $action;
         background-color: $action;
     }
     &__btn{
-        
+        width: 100%;
+    }
+
+    &:hover{
+        border-color: $action;
     }
 }

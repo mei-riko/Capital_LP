@@ -1,2 +1,18 @@
 .form{
+    &_inline{
+        display: grid;
+        grid-gap: $spacer-gutter;
+        grid-template-columns: 1fr 340px;
+
+        &__input{
+            width: 100%;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .form{
+        &_inline{
+            grid-template-columns: 1fr 220px;
+        }
+    }
 }
