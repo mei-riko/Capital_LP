@@ -1,11 +1,11 @@
 import $ from 'jquery';
 
+import '../items/input/input';
+
 import './ajaxloader';
 import './company';
 import './product';
 import './diagram';
-
-import '../items/input/input';
 
 $(function() {
     // Animate Scroll

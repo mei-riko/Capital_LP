@@ -374,6 +374,8 @@
 @media all and (max-width: 1024px) {
   .item_stocks {
     width: 320px;
+    max-width: 100%;
+    padding-right: 30px;
   }
   .item_stocks__label, .item_stocks__subtitle {
     font-size: 12px;
@@ -383,6 +385,12 @@
   }
   .item_stocks__info:last-child {
     margin-right: 0;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .item_stocks {
+    width: 100%;
   }
 }
 
@@ -1100,6 +1108,12 @@
 
 .footer__text {
   font-size: 14px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__text_sub {
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1192,12 +1206,13 @@
 }
 
 .heading-screen__title {
-  width: 760px;
+  width: 860px;
   max-width: 100%;
 }
 
 .heading-screen__title_start {
   text-align: center;
+  font-weight: 700;
   margin: 0 auto 30px;
 }
 
@@ -1311,6 +1326,9 @@
     width: 360px;
     height: 60%;
   }
+  .heading-screen__title {
+    width: 720px;
+  }
 }
 
 @media all and (max-width: 1280px) {
@@ -1346,6 +1364,12 @@
   }
 }
 
+@media all and (max-width: 1280px) and (orientation: portrait) {
+  .heading-screen__container {
+    height: auto;
+  }
+}
+
 @media all and (max-width: 1024px) {
   .heading-screen__container {
     max-width: 720px;
@@ -1374,12 +1398,6 @@
   }
   .heading-screen__card {
     grid-template-columns: 1fr;
-  }
-}
-
-@media all and (max-width: 1024px) and (orientation: portrait) {
-  .heading-screen__container {
-    height: auto;
   }
 }
 
@@ -1720,7 +1738,7 @@
 .stocks__chat {
   position: relative;
   padding-top: 200px;
-  min-height: 900px;
+  min-height: 975px;
   height: 100vh;
 }
 

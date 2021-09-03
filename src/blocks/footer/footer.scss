@@ -13,7 +13,13 @@
     }
     &__text{
         font-size: map-get($map: $font-size, $key: sm);
-        color: $grey;
+        line-height: $line-height-heading;
+        color: $light-grey;
+
+        &_sub{
+            font-size: map-get($map: $font-size, $key: xs);
+            color: $grey;
+        }
     }
 }
 // < 1600px

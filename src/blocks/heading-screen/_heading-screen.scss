@@ -44,11 +44,12 @@
         margin-bottom: map-get($map: $spacers, $key: 5);
     }
     &__title{
-        width: 760px;
+        width: 860px;
         max-width: 100%;
 
         &_start{
             text-align: center;
+            font-weight: $font-weight-bold;
             margin: 0 auto map-get($map: $spacers, $key: 2);
         }
     }
@@ -155,6 +156,9 @@
                 // height: 420px;
             }
         }
+        &__title{
+            width: 720px;
+        }
     }
 }
 // < 1280px
@@ -196,6 +200,13 @@
         }
     }
 }
+@media all and (max-width: map-get($grid-breakpoints, 'lg')) and (orientation: portrait) {
+    .heading-screen{
+        &__container{
+            height: auto;
+        }
+    }
+}
 // < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .heading-screen{
@@ -229,13 +240,6 @@
         }
         &__card{
             grid-template-columns: 1fr;
-        }
-    }
-}
-@media all and (max-width: map-get($grid-breakpoints, 'md')) and (orientation: portrait) {
-    .heading-screen{
-        &__container{
-            height: auto;
         }
     }
 }

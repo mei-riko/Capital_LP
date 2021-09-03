@@ -1,4 +1,7 @@
 import $ from 'jquery';
+import {unitMaskPhone} from '../items/input/input';
+import {unitRegexName} from '../items/input/input';
+import {unitRegexEmail} from '../items/input/input';
 
 $(function() {
     var initAjaxLoader = function(){
@@ -10,6 +13,18 @@ $(function() {
             $(target).load(url, initAjaxLoader);
             return false;
         });
+        // Input Mask Phone
+        if( $('input[type="tel"]').length > 0 ) {
+            unitMaskPhone();
+        }
+        // Input Mask Name
+        if( $('input[name="name"]').length > 0 ) {
+            unitRegexName();
+        }
+        // Input Mask Email
+        if( $('input[name="mail"]').length > 0 ) {
+            unitRegexEmail();
+        }
     };
     initAjaxLoader();
 });

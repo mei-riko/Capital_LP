@@ -343,6 +343,13 @@ template {
   src: url("../fonts/TheinhardtPanMedium.woff") format("woff"), url("../fonts/TheinhardtPanMedium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Theinhardt Pan";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/TheinhardtPanBold.woff") format("woff"), url("../fonts/TheinhardtPanBold.ttf") format("truetype");
+}
+
 .container {
   width: 100%;
   max-width: 1360px;
