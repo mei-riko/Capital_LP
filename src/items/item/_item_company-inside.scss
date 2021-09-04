@@ -102,9 +102,9 @@
             font-size: map-get($map: $font-size, $key: xs);
             line-height: 20px;
         }
-        &__name,
-        &__price{
-            font-size: map-get($map: $font-size, $key: sm);
-        }
+        // &__name,
+        // &__price{
+            // font-size: map-get($map: $font-size, $key: sm);
+        // }
     }
 }
