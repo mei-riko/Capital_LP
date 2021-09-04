@@ -1,7 +1,7 @@
 .item{
     position: relative;
     overflow: hidden;
-    transition: .3s;
+    transition: $transition-base;
 
     padding: map-get($map: $spacers, $key: 1)/2;
     border-radius: $border-radius;
@@ -65,10 +65,27 @@
         border-radius: 50%;
         border: 1px solid;
     }
-}
 
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .item{
+        &__subtitle{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &__statistics{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &:hover{
+            transform: none;
+        }
+    }
+}
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item{
+        border-radius: $border-radius/2;
         padding: $spacer/2;
 
         &__open-modal{
@@ -84,7 +101,7 @@
             font-size: map-get($map: $heading, $key: h4);
         }
         &__subtitle{
-            font-size: map-get($map: $font-size, $key: md);
+            // font-size: map-get($map: $font-size, $key: md);
             margin-bottom: $spacer;
         }
         &__statistics{

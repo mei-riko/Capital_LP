@@ -10,6 +10,8 @@
 
         grid-gap: map-get($map: $spacers, $key: 2);
         grid-template-columns: repeat(5, 1fr);
+
+        margin-top: map-get($map: $spacers, $key: 1);
     }
 
     &__title{
@@ -50,6 +52,13 @@
         &__steps{
             grid-gap: map-get($map: $spacers, $key: 1);
             grid-template-columns: repeat(3, 1fr);
+            
+            margin-top: $spacer;
+        }
+        &__stats{
+            &-item{
+                font-size: map-get($map: $heading, $key: h5);
+            }
         }
     }
 }
@@ -64,6 +73,7 @@
         }
         &__grid{
             grid-template-columns: repeat(2, 1fr);
+
             &_advantage{
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -78,6 +88,12 @@
         &__steps{
             grid-gap: $spacer/2;
             grid-template-columns: repeat(2, 1fr);
+        }
+        &__intro{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &__stats-item{
+            font-size: map-get($map: $font-size, $key: md);
         }
     }
 }

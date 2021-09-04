@@ -23,6 +23,21 @@ body{
 .hidden{
     overflow: hidden;
 }
+.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $black;
+    filter: opacity(0.75);
+    
+    &--active{
+        display: block;
+        z-index: 11;
+    }
+}
 
 p {
     font-size: 1rem;

@@ -26,5 +26,7 @@ $(function() {
     // Nav
     $('.header__toggle-item').on('click', function(){
         $('.header__nav').toggleClass('header__nav--active');
+        $('body').toggleClass('hidden');
+        $('.overlay').toggleClass('overlay--active');
     })
 });

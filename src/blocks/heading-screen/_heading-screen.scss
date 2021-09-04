@@ -1,4 +1,5 @@
 .heading-screen{
+    padding-top: map-get($map: $spacers, $key: 3);
     padding-bottom: map-get($map: $spacers, $key: 3);
 
     &__description{
@@ -9,8 +10,7 @@
         width: 720px;
         max-width: 100%;
 
-        margin-top: map-get($map: $spacers, $key: 2);
-        margin-bottom: map-get($map: $spacers, $key: 2);
+        margin-bottom: map-get($map: $spacers, $key: 1);
     }
     &__btn{
         width: 340px;
@@ -19,7 +19,8 @@
     &__tetris{
         position: absolute;
         right: 0;
-        bottom: -240px;
+        bottom: -(map-get($map: $spacers, $key: 3));
+        // bottom: -240px;
         // margin-left: auto;
 
         svg {
@@ -50,9 +51,14 @@
 
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .heading-screen{
+        padding-top: map-get($map: $spacers, $key: 3);
         padding-bottom: map-get($map: $spacers, $key: 2);
+        
         &__title{
-            font-size: 60px;        
+            font-size: 56px;
+            width: 620px;
+
+            margin-bottom: map-get($map: $spacers, $key: 1);
         }
         &__tetris{
             width: 780px;
@@ -61,38 +67,52 @@
 }
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .heading-screen{
-        padding-bottom: map-get($map: $spacers, $key: 4);
+        padding-top: map-get($map: $spacers, $key: 2);
+        padding-bottom: map-get($map: $spacers, $key: 3);
 
+        &__title{
+            font-size: 46px;
+            width: 560px;
+            margin-bottom: $spacer;
+        }
+        &__btn{
+            width: 260px;
+        }
         &__tetris{
             width: 640px;
             height: 560px;
+            bottom: -160px;
         }
     }
 }
-
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .heading-screen{
-        padding-bottom: map-get($map: $spacers, $key: 0);
-
+        padding-top: $spacer;
         &__title{
-            margin-top: $spacer;
-            margin-bottom: $spacer;
-        }
+            font-size: 40px;
+            width: 440px;
+        }        
         &__tetris{
-            position: unset;
-            margin-top: $spacer;
-            width: 100%;
-            height: 600px;
+            width: 500px;
+            height: 380px;
+            bottom: -(map-get($map: $spacers, $key: 3));
         }
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .heading-screen{
+        padding-top: map-get($map: $spacers, $key: 0);
+        padding-bottom: map-get($map: $spacers, $key: 0);
+        
         &__title{
-            font-size: 42px;
+            font-size: map-get($map: $heading, $key: h3);
+            // font-size: 42px;
         }
         &__tetris{
-            height: 400px;
+            position: unset;
+            margin-top: $spacer;
+            width: 100%;
+            height: 340px;
         }
     }
 }

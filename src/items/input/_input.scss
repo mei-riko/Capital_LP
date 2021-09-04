@@ -11,6 +11,12 @@
     &::placeholder{
         font-size: map-get($map: $heading, $key: h5);
         color: $white;
+        transition: $transition-base;
+    }
+    &:focus{
+        &::placeholder{
+            opacity: 0;
+        }
     }
     &:hover, &:focus{
         outline: none;

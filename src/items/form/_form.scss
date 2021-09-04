@@ -16,3 +16,13 @@
         }
     }
 }
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .form{
+        &_inline{
+            grid-template-columns: 1fr;
+            &__input{
+                text-align: center;
+            }
+        }
+    }
+}

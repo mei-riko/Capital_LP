@@ -2,7 +2,15 @@
     text-align: center;
 
     &__icon{
-        margin-bottom: $spacer-gutter;
+        height: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2*$spacer-gutter;
+
+        svg{
+            width: auto;
+            height: 100%;
+        }
     }
 
     &__title{
@@ -16,18 +24,20 @@
         font-size: map-get($map: $heading, $key: h4);
     }
 }
-
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .advantage{
+        &__title{
+            font-size: map-get($map: $heading, $key: h3);
+        }
+        &__intro{
+            font-size: map-get($map: $heading, $key: h6);
+        }
+    }
+}
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .advantage{
         &__icon{
             height: 34px;
-            margin-left: auto;
-            margin-right: auto;
-
-            svg{
-                width: auto;
-                height: 100%;
-            }
         }
         &__title{
             font-size: map-get($map: $heading, $key: h4);

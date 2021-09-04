@@ -13,10 +13,58 @@
     }
     &__text{
         filter: opacity(.5);
+        line-height: $line-height;
+
+        &_sub{
+            font-size: map-get($map: $font-size, $key: xs);
+            filter: opacity(.5);
+        }
     }
     &__disclaimers{
         font-size: map-get($map: $font-size, $key: sm);
         color: $grey;
         filter: opacity(.5);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .footer{
+        &__logo{
+            width: 150px;
+        }
+        &__text{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
+    }
+}
+// < 1024px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .footer{
+        &__logo{
+            width: 120px;
+        }
+        &__copyright{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+        &__col-logo{
+            order: 3;
+            margin-top: map-get($map: $spacers, $key: 1);
+        }
+        &__text{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+    }
+}
+// <768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .footer{
+        &__col-logo{
+            margin-top: $spacer/2;
+        }
+        &__col{
+            margin-top: $spacer/2;
+        }
+        &__disclaimers{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
     }
 }
