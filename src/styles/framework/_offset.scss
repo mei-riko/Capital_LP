@@ -153,14 +153,14 @@
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .mt-xs{
         &-0{margin-top: map-get($spacers, 0);}
-        &-1{margin-top: map-get($spacers, 1);}
+        &-1{margin-top: $spacer;}
         &-2{margin-top: map-get($spacers, 2);}
         &-3{margin-top: map-get($spacers, 3);}
         &-4{margin-top: map-get($spacers, 4);}
     }
     .mb-xs{
         &-0{margin-bottom: map-get($spacers, 0);}
-        &-1{margin-bottom: map-get($spacers, 1);}
+        &-1{margin-bottom: $spacer;}
         &-2{margin-bottom: map-get($spacers, 2);}
         &-3{margin-bottom: map-get($spacers, 3);}
         &-4{margin-bottom: map-get($spacers, 4);}

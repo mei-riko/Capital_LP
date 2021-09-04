@@ -1,0 +1,54 @@
+.swiper {
+    width: 100%;
+    height: auto;
+
+    .swiper-wrapper,
+    .swiper-container{
+        height: auto;
+        height: intrinsic;
+    }
+    .swiper-slide {
+        width: auto;
+        height: auto;
+        height: intrinsic;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .content{
+        &__slider{
+            max-width: 100%;
+            &.swiper-initialized{
+                padding-left: calc( (100% - 440px)/2 );
+                padding-right: calc( (100% - 440px)/2 );
+            }
+        }
+        &__grid{
+            &.swiper-wrapper{
+                display: flex;
+                grid-gap: 0;
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .content{
+        &__slider{
+            max-width: 100%;
+            &.swiper-initialized{
+                padding-left: $spacer;
+                padding-right: $spacer;
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .content{
+        &__slider{
+            max-width: 100%;
+            &.swiper-initialized{
+                padding-left: $grid-gutter-width;
+                padding-right: $grid-gutter-width;
+            }
+        }
+    }
+}

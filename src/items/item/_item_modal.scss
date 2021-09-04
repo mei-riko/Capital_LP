@@ -1,0 +1,41 @@
+.item_modal{
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+
+    &:hover{
+        border-color: $white;
+        transform: none;
+    }
+
+    &__statistics{
+        grid-template-columns: auto 1fr;
+        grid-gap: $grid-gutter-width;
+    }
+    &__statistics-value{
+        font-weight: $font-weight-base;
+        color: $action;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item_modal{
+        &__statistics{
+            margin-bottom: $spacer/2;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .item_modal{
+        &__statistics{
+            grid-template-columns: 1fr;
+            grid-gap: $spacer-gutter/2;
+
+            &-value{
+                text-align: left;
+                margin-bottom: $spacer-gutter;
+            }
+        }
+    }
+}

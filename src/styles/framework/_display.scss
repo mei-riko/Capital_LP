@@ -11,7 +11,7 @@
         &-block{display: block;}
     }
 }
-@media all and (max-width: map-get($grid-breakpoints, 'lg')){   
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .d-lg{
         &-flex{display: flex;}
         &-none{display: none;}

@@ -2230,6 +2230,18 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
   }
 }
 
+@media all and (max-width: 375px) {
+  .h1, h1 {
+    font-size: 42px;
+  }
+  .h2, h2 {
+    font-size: 34px;
+  }
+  .h3, h3 {
+    font-size: 26px;
+  }
+}
+
 .mt-0 {
   margin-top: 0;
 }
@@ -2583,7 +2595,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
     margin-top: 0;
   }
   .mt-xs-1 {
-    margin-top: 60px;
+    margin-top: 40px;
   }
   .mt-xs-2 {
     margin-top: 80px;
@@ -2598,7 +2610,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
     margin-bottom: 0;
   }
   .mb-xs-1 {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .mb-xs-2 {
     margin-bottom: 80px;

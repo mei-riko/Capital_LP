@@ -35,3 +35,14 @@
         }
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .step{
+        align-items: center;
+        grid-gap: $spacer/2;
+
+        &__num{
+            text-align: center;
+        }
+    }
+}

@@ -2,6 +2,7 @@
     background-color: $body-bg;
     color: $white;
 
+    height: 100%;
     cursor: pointer;
     transition: $transition-base;
 
@@ -33,5 +34,14 @@
 
     &:hover{
         border-color: $action;
+        transform: scale(1.05);
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .item_preipo-soon{
+        &:hover{
+            transform: none;
+        }
     }
 }

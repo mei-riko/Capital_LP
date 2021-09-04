@@ -1,0 +1,236 @@
+.modal{
+    background: $body-bg;
+    color: $white;
+
+    &__company{
+        display: grid;
+        grid-gap: $grid-gutter-width;
+        grid-template-columns: 100px 1fr;
+        align-items: center;
+
+        margin-bottom: $spacer;
+
+        &-logo{
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid;
+    
+            background: $white no-repeat center / contain;
+        }
+        &-title{
+            // font-size: map-get($map: $font-size, $key: lg);
+            font-size: map-get($map: $heading, $key: h3);
+            line-height: $line-height-heading;
+        }
+    }
+    &__download{
+        &-icon{
+            fill: $white;
+            margin-right: 10px;
+            transition: $transition-base;
+        }
+        &-btn{
+            margin-top: $spacer;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            border: 2px solid $white;
+            padding: 15px 26px;
+
+            cursor: pointer;
+            transition: $transition-base;
+
+            &:hover{
+                border-color: $action;
+                color: $action;
+                text-decoration: none;
+
+                & > svg {
+                    fill: $action;
+                }
+            }
+        }
+    }
+    &__form{
+        
+        width: 1024px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        &-container{
+            border-radius: $border-radius;
+            background: lighten($color: $body-bg, $amount: 4);
+            padding: map-get($map: $spacers, $key: 2) map-get($map: $spacers, $key: 1);
+        }
+        &-intro{
+            width: 660px;
+            max-width: 100%;
+            margin: 0 auto $spacer;
+            text-align: center;
+            font-size: map-get($map: $heading, $key: h4);
+        }
+        &-icon{
+            fill: $white;
+            margin-right: 10px;
+            transition: $transition-base;
+
+            padding: 6px;
+            border: 1px solid $white;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+        }
+        &-btn{
+            margin-bottom: $spacer;
+            display: inline-flex;
+            align-items: center;
+
+            cursor: pointer;
+            transition: $transition-base;
+
+            &:hover{
+                color: $action;
+                text-decoration: none;
+
+                & > svg {
+                    border-color: $action;
+                    fill: $action;
+                }
+            }
+        }
+    }
+    &__stats{
+        border-bottom: 1px solid $white;
+
+        &-item{
+            display: grid;
+
+            grid-gap: $grid-gutter-width;
+            grid-template-columns: repeat(2, 1fr);
+
+            // font-size: map-get($map: $heading, $key: h3);
+            padding: $grid-gutter-width 0;
+            border-top: 1px solid $white;
+        }
+        &-value{
+            color: $action;
+            text-align: right;
+        }
+    }
+
+    &.fancybox__content{
+        width: 100%;
+        padding: $spacer 0;
+        // min-height: 100vh;
+
+        background: $body-bg;
+        color: $white;
+
+        cursor: default!important;
+
+        .carousel__button.is-close{
+            position: fixed;
+            top: $grid-gutter-width;
+            right: $grid-gutter-width;
+        }
+    }
+}
+
+// Fancybox
+.fancybox__container{
+    .fancybox__slide{
+        padding: 0;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .modal{
+        &__company{
+            grid-template-columns: 80px 1fr;
+        
+            &-logo{
+                width: 80px;
+                height: 80px;
+            }
+            &-title{
+                // font-size: map-get($map: $font-size, $key: lg);
+                font-size: map-get($map: $heading, $key: h4);
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .modal{
+        &__form{
+            &-container{
+                padding: map-get($map: $spacers, $key: 1);
+            }
+            &-intro{
+                font-size: map-get($map: $font-size, $key: lg);
+            }
+            &-btn{
+                margin-bottom: $spacer/2;
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .modal{
+        &__form{
+            &-container{
+                padding: $spacer;
+            }
+            &-intro{
+                font-size: map-get($map: $font-size, $key: lg);
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .modal{
+        &__form{
+            &-container{
+                padding: 0;
+                background: $body-bg;
+            }
+            &-intro{
+                font-size: map-get($map: $font-size, $key: md);
+            }
+        }
+        &__stats{
+            &-item{
+                grid-gap: $spacer-gutter/2;
+                padding-top: $spacer-gutter;
+                padding-bottom: $spacer-gutter;
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .modal{
+        &__company{
+            grid-template-columns: 56px 1fr;
+            margin-bottom: $spacer/2;
+        
+            &-logo{
+                width: 56px;
+                height: 56px;
+            }
+            &-title{
+                font-size: map-get($map: $heading, $key: h6);
+            }
+        }
+        &__stats{
+            &-item{
+                // grid-gap: $spacer-gutter/2;
+                grid-template-columns: 1fr;
+            }
+            &-value{
+                text-align: left;
+            }
+        }
+    }
+}

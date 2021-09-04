@@ -95,5 +95,29 @@
         &__stats-item{
             font-size: map-get($map: $font-size, $key: md);
         }
+        &__grid{
+            &_advantage{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .content{
+        &__steps{
+            grid-template-columns: 1fr;
+            width: 380px;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .content{
+        &__grid{
+            &_advantage{
+                grid-template-columns: 1fr;
+            }
+        }
     }
 }

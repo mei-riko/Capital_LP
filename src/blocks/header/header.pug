@@ -3,9 +3,14 @@ header.header
         a.header__logo(href="/")
         .header__toggle.d-none.d-md-block
             .header__toggle-item меню
-    .header__nav 
-        a.header__nav-item(href="#screen1" data-trigger="scroll") Текущие Pre-IPO
-        a.header__nav-item(href="#screen2" data-trigger="scroll") Прошедшие Pre-IPO
-        a.header__nav-item(href="#screen3" data-trigger="scroll") Что такое Pre-IPO
-        a.header__nav-item(href="#screen4" data-trigger="scroll") Как мы работаем
+        .header__nav
+            a.header__nav-item(href="#preipo" data-trigger="scroll") Текущие Pre-IPO
+            a.header__nav-item(href="#prevpreipo" data-trigger="scroll") Прошедшие Pre-IPO
+            a.header__nav-item(href="#about" data-trigger="scroll") Что такое Pre-IPO
+            a.header__nav-item(href="#work" data-trigger="scroll") Как мы работаем
+    .header__nav.header__nav_mobile-only
+        a.header__nav-item(href="#preipo" data-trigger="scroll") Текущие Pre-IPO
+        a.header__nav-item(href="#prevpreipo" data-trigger="scroll") Прошедшие Pre-IPO
+        a.header__nav-item(href="#about" data-trigger="scroll") Что такое Pre-IPO
+        a.header__nav-item(href="#work" data-trigger="scroll") Как мы работаем
 .overlay

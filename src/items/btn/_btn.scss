@@ -22,12 +22,13 @@
 }
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .btn{
-        font-size: map-get($map: $font-size, $key: md);
+        font-size: map-get($map: $heading, $key: h6);
         // padding: 20px 26px 22px 26px;
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .btn{
+        // font-size: map-get($map: $font-size, $key: md);
         font-size: map-get($map: $font-size, $key: sm);
         padding: 20px 26px 22px 26px;
     }

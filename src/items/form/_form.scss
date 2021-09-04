@@ -8,11 +8,25 @@
             width: 100%;
         }
     }
+    &_modal{
+        display: grid;
+        grid-gap: $spacer-gutter;
+        grid-template-columns: 1fr 1fr 280px;
+
+        &__input{
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .form{
         &_inline{
             grid-template-columns: 1fr 220px;
+        }
+        &_modal{
+            grid-gap: $spacer-gutter;
+            grid-template-columns: 1fr;
         }
     }
 }

@@ -1,5 +1,5 @@
 .heading-screen{
-    padding-top: map-get($map: $spacers, $key: 3);
+    padding-top: map-get($map: $spacers, $key: 2);
     padding-bottom: map-get($map: $spacers, $key: 3);
 
     &__description{
@@ -26,7 +26,7 @@
         svg {
             width: 900px;
         }
-        .figure_one {
+        .transition{
             transition: all 0.4s linear;
         }
         .figure_green.color {
@@ -51,17 +51,21 @@
 
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .heading-screen{
-        padding-top: map-get($map: $spacers, $key: 3);
+        // padding-top: map-get($map: $spacers, $key: 3);
+        padding-top: 100px;
         padding-bottom: map-get($map: $spacers, $key: 2);
         
         &__title{
-            font-size: 56px;
-            width: 620px;
+            font-size: 62px;
+            width: 640px;
 
             margin-bottom: map-get($map: $spacers, $key: 1);
         }
         &__tetris{
-            width: 780px;
+            width: 720px;
+        }
+        &__btn{
+            width: 280px;
         }
     }
 }

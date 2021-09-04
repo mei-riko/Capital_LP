@@ -36,6 +36,10 @@
                 text-decoration: none;
             }
         }
+
+        &_mobile-only{
+            display: none;
+        }
     }
 }
 
@@ -72,32 +76,45 @@
 
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .header{
-        background: $body-bg;
+        padding: 0;
+
         &__container{
             position: relative;
+            background: $body-bg;
+            padding-top: $spacer;
+            padding-bottom: $spacer;
             max-width: map-get($map: $container-max-widths, $key: md);
+            z-index: 101;
         }
         &__nav{
-            // display: none;
-            background: $body-bg;
-            padding: $spacer 0;
-            display: grid;
-            grid-gap: $spacer;
-            width: 100%;
-            text-align: center;
+            display: none;
 
-            position: absolute;
-            top: 2*$spacer;
-            left: 0;
-            // left: $grid-gutter-width;
-            z-index: 99;
+            &-item{
+                padding-left: 0;
+            }
+            
+            // Modification
+            &_mobile-only{
+                background: $body-bg;
+                padding: $spacer 0;
+                display: grid;
+                grid-gap: $spacer;
+                width: 100%;
+                text-align: center;
 
-            border-top: 1px solid lighten($color: $body-bg, $amount: 10);
-            border-bottom: 1px solid lighten($color: $body-bg, $amount: 10);
+                position: absolute;
+                top: 2*$spacer;
+                left: 0;
+                // left: $grid-gutter-width;
+                z-index: 99;
 
-            transition: $transition-base;
-            transform: translateY(calc( -100% - 80px));
+                border-top: 1px solid lighten($color: $body-bg, $amount: 10);
+                border-bottom: 1px solid lighten($color: $body-bg, $amount: 10);
 
+                transition: $transition-base;
+                transform: translateY(calc( -100% - 80px));
+            }
+            // JS State
             &--active{
                 transform: translateY(40px);
             }
@@ -131,6 +148,9 @@
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
+        }
+        &__logo{
+            width: 140px;
         }
     }
 }

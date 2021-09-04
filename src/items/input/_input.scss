@@ -21,11 +21,33 @@
     &:hover, &:focus{
         outline: none;
     }
+
+    // JS State
+    &--error{
+        border-color: #F41F16;
+        background: url("../img/icon-false.svg") no-repeat center right / 20px;
+        background-position-x: calc(100% - 20px);
+    }
+    &--success{
+        border-color: #19AE31;
+        background: url("../img/icon-true.svg") no-repeat center right / 20px;
+        background-position-x: calc(100% - 20px);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .input{
+        font-size: map-get($map: $heading, $key: h6);
+        padding: 22px 26px 22px 26px;
+
+        &::placeholder{
+            font-size: map-get($map: $heading, $key: h6);
+        }
+    }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .input{
         font-size: map-get($map: $font-size, $key: sm);
-        padding: 20px 26px 22px 26px;
+        // padding: 20px 26px 22px 26px;
 
         &::placeholder{
             font-size: map-get($map: $font-size, $key: sm);

@@ -3,6 +3,7 @@
     border-color: $action;
     color: $white;
 
+    height: 100%;
     cursor: pointer;
     transition: $transition-base;
 
@@ -43,6 +44,14 @@
 
     &:hover{
         border-color: $white;
+        transform: scale(1.05);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .item_preipo-prev{
+        &:hover{
+            transform: none;
+        }
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
@@ -51,5 +60,12 @@
             font-size: map-get($map: $font-size, $key: md);
             padding: 20px 26px 22px 26px;
         }
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .item_preipo-prev{
+        padding-left: $spacer-gutter;
+        padding-right: $spacer-gutter;
     }
 }
