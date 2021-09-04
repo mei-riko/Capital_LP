@@ -20,7 +20,7 @@ mixin company(object)
                     br
                     | Мы вложили 
                     span#price(data-status="success") 90 000 
-                    |  ₽ в&nbsp;акции быстрорастущих компаний
+                    | &nbsp;₽ в&nbsp;акции быстрорастущих компаний
                 .heading-screen__card.heading-screen_step__card
                     for object, index in companies
                         +company(object)(data-id=index)

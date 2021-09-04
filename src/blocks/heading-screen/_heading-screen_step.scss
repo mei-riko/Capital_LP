@@ -165,6 +165,9 @@
             font-size: map-get($map: $heading, $key: h4);
             margin-bottom: map-get($map: $spacers, $key: 1);
         }
+        &__intro{
+            margin-bottom: $spacer;
+        }
     }
 }
 // < 768px
@@ -192,6 +195,8 @@
                 width: 400px;
                 background-size: 340px;
                 background-position-y: 20px;
+
+                margin-top: -(map-get($map: $spacers, $key: 4));
             }
         }
         &__title{

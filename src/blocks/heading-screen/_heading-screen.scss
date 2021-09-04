@@ -20,6 +20,10 @@
         background: url('../img/bg-figure.svg') no-repeat center bottom / 800px;
         background-position-y: calc(100% + 200px);
 
+        .row{
+            position: relative;
+            z-index: 11;
+        }
         &:after{
             content: '';
             position: absolute;
@@ -304,7 +308,10 @@
             padding-top: map-get($map: $spacers, $key: 4);
 
             &:after{
-                height: 500px;
+                width: 100%;
+                height: 460px;
+                background-size: contain;
+                background-position-y: bottom;
             }
         }
         // Text Content
@@ -329,10 +336,10 @@
             justify-content: space-around;
 
             &:after{
-                width: 100%;
+                // width: 100%;
                 height: 300px;
-                background-size: contain;
-                background-position-y: bottom;
+                // background-size: contain;
+                // background-position-y: bottom;
             }
         }
         
