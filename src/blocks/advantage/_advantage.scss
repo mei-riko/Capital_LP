@@ -84,7 +84,7 @@
             left: 160px;
         }
         &__title{
-            font-size: map-get($map: $font-size, $key: md);
+            font-size: map-get($map: $heading, $key: h6);
         }
     }
 }

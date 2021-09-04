@@ -260,6 +260,13 @@
                 height: 480px;
             }
         }
+        // Card Row
+        &__col{
+            max-width: calc(50% - 20px);
+        }
+        &__card{
+            max-width: 100%;
+        }
         // Text Content
         &__title{
             font-size: map-get($map: $heading, $key: h4);
@@ -328,6 +335,7 @@
                 background-position-y: bottom;
             }
         }
+        
         // Text Content
         &__heading{
             margin-bottom: map-get($map: $spacers, $key: 1);

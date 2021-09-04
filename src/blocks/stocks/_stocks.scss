@@ -153,6 +153,9 @@
             max-height: 420px;
             padding-top: 0;
 
+            height: auto;
+            overflow: hidden;
+            
             &-body{
                 width: calc(100% - 220px);
                 margin-left: auto;
@@ -194,8 +197,6 @@
             font-size: map-get($map: $font-size, $key: md);
         }
         &__chat{
-            height: 340px;
-
             &-body{
                 width: calc(100% - 120px);
             }
@@ -221,6 +222,15 @@
             grid-column-start: 1;
             grid-column-end: 2;
         }
+
+        &__chat{
+            height: auto;
+            max-height: unset;
+            &-body {
+                max-height: 420px;
+                overflow: auto;
+            }
+        }
     }
 }
 // < 576px
@@ -230,7 +240,16 @@
             max-width: map-get($map: $container-max-widths, $key: xs);
         }
         &__chat{
-            height: 340px;
+            &:after {
+                width: 60px;
+                height: 60px;
+            }
+            &-body {
+                width: calc(100% - 80px);
+            }
+        }
+        &__message-text{
+            font-size: map-get($map: $font-size, $key: sm);
         }
         &__btn-xs{
             width: 100%;

@@ -57,8 +57,9 @@
             }
         }
     }
-    // &__title{
-    // }
+    &__card{
+        grid-template-columns: repeat(2, 320px);
+    }
     &__intro{
         width: 100%;
     }
@@ -130,6 +131,9 @@
         &__title{
             margin-bottom: map-get($map: $spacers, $key: 2);
         }
+        &__card{
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 // < 1024px
@@ -160,9 +164,6 @@
         &__title{
             font-size: map-get($map: $heading, $key: h4);
             margin-bottom: map-get($map: $spacers, $key: 1);
-        }
-        &__card{
-            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

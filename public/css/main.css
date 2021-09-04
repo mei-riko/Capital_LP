@@ -171,14 +171,15 @@
     margin-bottom: 0;
   }
   .item_company__label {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
 @media all and (max-width: 768px) {
   .item_company {
-    width: 170px;
     padding: 15px;
+    max-width: 160px;
+    width: 100%;
   }
   .item_company__info {
     grid-template-columns: 30px 1fr;
@@ -192,13 +193,6 @@
   .item_company__subtotal {
     margin-bottom: 10px;
   }
-  .item_company__count {
-    top: auto;
-    bottom: 4px;
-    font-size: 10px;
-    line-height: 16px;
-    padding: 2px 6px 0;
-  }
 }
 
 @media all and (max-width: 576px) {
@@ -206,12 +200,17 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  .item_company__label {
+    font-size: 10px;
+  }
+  .item_company__count {
+    top: auto;
+    bottom: 4px;
+  }
 }
 
 @media all and (max-width: 375px) {
   .item_company {
-    min-width: 134px;
-    width: 100%;
     padding: 15px;
   }
   .item_company__fullname {
@@ -227,72 +226,103 @@
 }
 
 .item_company-inside {
+  position: relative;
   width: 320px;
+  max-width: 100%;
+  padding: 20px 30px;
+  text-align: left;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 50px 1fr;
+  grid-template-areas: "logo info" "logo price";
+}
+
+.item_company-inside__count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: #171830;
+  border-radius: 30px;
+  line-height: 28px;
+  text-align: center;
+  padding: 3px 10px 0;
+}
+
+.item_company-inside__fullname {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.item_company-inside__label {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
+}
+
+.item_company-inside__label::first-letter {
+  text-transform: uppercase;
+}
+
+.item_company-inside__info {
+  grid-area: info;
 }
 
 .item_company-inside__col {
-  padding-left: 50px;
-  margin-left: 15px;
-}
-
-@media all and (max-width: 1600px) {
-  .item_company-inside {
-    width: 290px;
-  }
-  .item_company-inside__col {
-    padding-left: 50px;
-    margin-left: 15px;
-  }
-  .item_company-inside__info {
-    margin-bottom: 20px;
-  }
+  grid-area: price;
 }
 
 @media all and (max-width: 1280px) {
   .item_company-inside {
-    width: 220px;
-  }
-  .item_company-inside__col {
-    padding-left: 40px;
-    margin-left: 10px;
-  }
-  .item_company-inside__info {
-    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+    min-width: 240px;
   }
 }
 
 @media all and (max-width: 1024px) {
   .item_company-inside {
-    width: 200px;
+    grid-template-columns: 40px 1fr;
   }
-  .item_company-inside__info {
-    margin-bottom: 15px;
+  .item_company-inside__label {
+    font-size: 12px;
+  }
+  .item_company-inside__fullname {
+    font-size: 12px;
   }
 }
 
 @media all and (max-width: 768px) {
   .item_company-inside {
-    width: 175px;
+    min-width: 190px;
   }
-  .item_company-inside__col {
-    padding-left: 30px;
+  .item_company-inside__name, .item_company-inside__price {
+    font-size: 16px;
   }
 }
 
 @media all and (max-width: 576px) {
   .item_company-inside {
-    display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    max-width: 280px;
+    grid-template-columns: 40px 90px 1fr;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-template-areas: "logo info price";
   }
-  .item_company-inside__col {
-    padding-left: 0;
-    margin-left: 0;
+}
+
+@media all and (max-width: 576px) {
+  .item_company-inside {
+    grid-template-columns: 30px 74px 1fr;
   }
-  .item_company-inside__info {
-    margin-bottom: 0;
+  .item_company-inside__count {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .item_company-inside__name, .item_company-inside__price {
+    font-size: 14px;
   }
 }
 
@@ -327,6 +357,7 @@
 .item_stocks__label, .item_stocks__subtitle {
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
 }
 
 .item_stocks__count {
@@ -505,8 +536,10 @@
 @media all and (max-width: 768px) {
   .item_product {
     display: block;
-    width: 170px;
     padding: 15px;
+    max-width: 160px;
+    width: 100%;
+    min-height: 135px;
     text-align: center;
   }
   .item_product__img {
@@ -527,8 +560,6 @@
 
 @media all and (max-width: 375px) {
   .item_product {
-    min-width: 134px;
-    width: 100%;
     padding: 10px;
   }
   .item_product__img {
@@ -700,13 +731,8 @@
     width: 60px;
     margin-bottom: 20px;
   }
-  .item_service__title {
-    font-size: 14px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
   .item_service__intro {
-    font-size: 12px;
+    min-height: 200px;
   }
 }
 
@@ -727,12 +753,9 @@
     margin-bottom: 20px;
   }
   .item_service__title {
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 20px;
     margin-bottom: 10px;
-  }
-  .item_service__intro {
-    font-size: 12px;
   }
 }
 
@@ -1415,6 +1438,12 @@
     width: 340px;
     height: 480px;
   }
+  .heading-screen__col {
+    max-width: calc(50% - 20px);
+  }
+  .heading-screen__card {
+    max-width: 100%;
+  }
   .heading-screen__title {
     font-size: 24px;
   }
@@ -1554,6 +1583,10 @@
   background: url("../img/business-man-subscribe.png") no-repeat center bottom/contain;
 }
 
+.heading-screen_step__card {
+  grid-template-columns: repeat(2, 320px);
+}
+
 .heading-screen_step__intro {
   width: 100%;
 }
@@ -1607,6 +1640,9 @@
   .heading-screen_step__title {
     margin-bottom: 30px;
   }
+  .heading-screen_step__card {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media all and (max-width: 1024px) {
@@ -1631,9 +1667,6 @@
   .heading-screen_step__title {
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  .heading-screen_step__card {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1852,6 +1885,8 @@
     min-height: 1px;
     max-height: 420px;
     padding-top: 0;
+    height: auto;
+    overflow: hidden;
   }
   .stocks__chat-body {
     width: calc(100% - 220px);
@@ -1889,9 +1924,6 @@
   .stocks__message-text {
     font-size: 16px;
   }
-  .stocks__chat {
-    height: 340px;
-  }
   .stocks__chat-body {
     width: calc(100% - 120px);
   }
@@ -1915,14 +1947,29 @@
     grid-column-start: 1;
     grid-column-end: 2;
   }
+  .stocks__chat {
+    height: auto;
+    max-height: unset;
+  }
+  .stocks__chat-body {
+    max-height: 420px;
+    overflow: auto;
+  }
 }
 
 @media all and (max-width: 576px) {
   .stocks__container {
     max-width: 480px;
   }
-  .stocks__chat {
-    height: 340px;
+  .stocks__chat:after {
+    width: 60px;
+    height: 60px;
+  }
+  .stocks__chat-body {
+    width: calc(100% - 80px);
+  }
+  .stocks__message-text {
+    font-size: 14px;
   }
   .stocks__btn-xs {
     width: 100%;
@@ -2049,7 +2096,7 @@
     left: 160px;
   }
   .advantage__title {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 

@@ -11,10 +11,12 @@ mixin company(object)
             .item__title.item_company__name=object.name
             .item_company__fullname=object.fullname
         .item_company__col
-            p.item_company__label Стоимость акции
+            p.item_company__label Стоимость 
+                span.d-xs-none акции
             .item__title.item_company__subtotal=object.subtotal
         .item_company__col
-            p.item_company__label Общая сумма в&nbsp;рублях
+            p.item_company__label Общая сумма 
+                span.d-md-none в&nbsp;рублях
             .item__title.item_company__total
                 span.item__value=object.total
                 span.item__rub ₽

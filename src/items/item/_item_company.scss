@@ -121,7 +121,7 @@
             margin-bottom: 0;
         }
         &__label{
-            font-size: 10px;
+            font-size: 11px;
         }
     }
 }
@@ -129,9 +129,11 @@
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_company{
         // display: block;
-        width: 170px;
         padding: $spacer-gutter;
         // text-align: center;
+
+        max-width: 160px;
+        width: 100%;
 
         &__info{
             grid-template-columns: 30px 1fr;
@@ -143,13 +145,7 @@
         &__subtotal{
             margin-bottom: $grid-gutter-width/2;
         }
-        &__count{
-            top: auto;
-            bottom: 4px;
-            font-size: 10px;
-            line-height: 16px;
-            padding: 2px 6px 0;
-        }
+        
     }
 }
 // < 576px
@@ -157,16 +153,22 @@
     .item_company{
         padding-top: map-get($map: $spacers, $key: 1)/2;
         padding-bottom: map-get($map: $spacers, $key: 1)/2;
+
+        &__label{
+            font-size: 10px;
+        }
+        &__count{
+            top: auto;
+            bottom: 4px;
+        //     font-size: 10px;
+        //     line-height: 16px;
+        //     padding: 2px 6px 0;
+        }
     }
 }
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_company{
-        // max-width: 134px;
-        // width: 100%;
-        min-width: 134px;
-        width: 100%;
-        
         padding: $spacer-gutter;
 
         &__fullname{

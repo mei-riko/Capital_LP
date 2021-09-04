@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6,
 .h4,h4{font-size: map-get($map: $heading, $key: h4);}
 .h5,h5{font-size: map-get($map: $heading, $key: h5);}
 .h6,h6{font-size: map-get($map: $heading, $key: h6);}
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .h1,h1{font-size: map-get($map: $heading, $key: h2);}
     .h2,h2{font-size: map-get($map: $heading, $key: h3);}
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6,
     .h5,h5{font-size: map-get($map: $heading, $key: h6);}
     .h6,h6{font-size: map-get($map: $font-size, $key: lg);}
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .h1,h1{font-size: map-get($map: $heading, $key: h3);}
     .h2,h2{font-size: map-get($map: $heading, $key: h4);}
@@ -37,14 +37,17 @@ h1, h2, h3, h4, h5, h6,
     .h5,h5{font-size: map-get($map: $font-size, $key: lg);}
     .h6,h6{font-size: map-get($map: $font-size, $key: md);}
 }
-// @media all and (max-width: map-get($grid-breakpoints, 'md')){}
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
-    .h1,h1{font-size: map-get($map: $heading, $key: h4);}
-    .h2,h2{font-size: map-get($map: $heading, $key: h5);}
+    // .h1,h1{font-size: map-get($map: $heading, $key: h4);}
+    // .h2,h2{font-size: map-get($map: $heading, $key: h5);}
     .h3,h3{font-size: map-get($map: $heading, $key: h6);}
     .h4,h4{font-size: map-get($map: $font-size, $key: lg);}
     .h5,h5{font-size: map-get($map: $font-size, $key: md);}
     .h6,h6{font-size: map-get($map: $font-size, $key: sm);}
 }
-@media all and (max-width: map-get($grid-breakpoints, 'xs')){}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .h1,h1{font-size: map-get($map: $heading, $key: h4);}
+    .h2,h2{font-size: map-get($map: $heading, $key: h5);}
+}

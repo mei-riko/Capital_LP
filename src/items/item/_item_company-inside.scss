@@ -1,76 +1,110 @@
 .item_company-inside{
-    width: 320px;
+    position: relative;
 
+    width: 320px;
+    max-width: 100%;
+    padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
+    text-align: left;
+
+    display: grid;
+    grid-gap: $spacer-gutter;
+    grid-template-columns: 50px 1fr;
+
+    grid-template-areas:
+        "logo info"
+        "logo price";
+
+    // Total Paper Count
+    &__count{
+        position: absolute;
+        top: 4px;
+        right: 4px;
+
+        background-color: $body-bg;
+        border-radius: 30px;
+        line-height: 28px;
+        text-align: center;
+        padding: 3px 10px 0;
+    }
+    &__fullname{
+        font-size: 1rem;
+        line-height: $line-height-heading;
+        margin-top: 6px;
+        color: $light-grey 
+
+    }
+    // Price Info
+    &__label{
+        font-size: 1rem;
+        line-height: $line-height-heading;
+        color: $light-grey;
+        margin-top: 6px;
+
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+    &__info{
+        grid-area: info;
+    }
     &__col{
-        padding-left: 50px;
-        margin-left: $spacer-gutter;
+        grid-area: price;
     }
 }
-
-// < 1680px
-@media all and (max-width: map-get($grid-breakpoints, 'xl')){
-    .item_company-inside{
-        width: 290px;
-    
-        &__col{
-            padding-left: 50px;
-            margin-left: $spacer-gutter;
-        }
-        &__info{
-            margin-bottom: map-get($map: $spacers, $key: 1);
-        }
-    }    
-}
-// < 1380px
+// < 1600px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){}
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_company-inside{
-        width: 220px;
-    
-        &__col{
-            padding-left: 40px;
-            margin-left: $grid-gutter-width/2;
-        }
-        &__info{
-            margin-bottom: map-get($map: $spacers, $key: 1);
-        }
+        padding: $spacer-gutter;
+        width: 100%;
+        min-width: 240px;
     }    
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_company-inside{
-        width: 200px;
-    
-        &__info{
-            margin-bottom: $spacer-gutter;
+        grid-template-columns: 40px 1fr;
+        &__label{
+            font-size: map-get($map: $font-size, $key: xs);
+        }
+        &__fullname{
+            font-size: map-get($map: $font-size, $key: xs);
         }
     }    
 }
-// < 660px
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_company-inside{
-        width: 175px;
+        min-width: 190px;
 
-        &__col{
-            padding-left: 30px;
+        &__name,
+        &__price{
+            font-size: map-get($font-size,md);
         }
     }
 }
+// < 576px
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .item_company-inside{
+        grid-template-columns: 40px 90px 1fr;
+        align-items: center;
+        grid-template-areas:
+            "logo info price";
+    }
+}
+
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_company-inside{
-        display: grid;
-        grid-gap: $spacer-gutter;
-        grid-template-columns: repeat(2,1fr);
-
-        width: 100%;
-        max-width: 280px;
-
-        &__col{
-            padding-left: 0;
-            margin-left: 0;
+        grid-template-columns: 30px 74px 1fr;
+        &__count{
+            font-size: map-get($map: $font-size, $key: xs);
+            line-height: 20px;
         }
-        &__info{
-            margin-bottom: 0;
+        &__name,
+        &__price{
+            font-size: map-get($map: $font-size, $key: sm);
         }
     }
 }

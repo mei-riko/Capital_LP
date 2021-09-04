@@ -2249,12 +2249,6 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 }
 
 @media all and (max-width: 768px) {
-  .h1, h1 {
-    font-size: 24px;
-  }
-  .h2, h2 {
-    font-size: 20px;
-  }
   .h3, h3 {
     font-size: 18px;
   }
@@ -2266,6 +2260,15 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
   }
   .h6, h6 {
     font-size: 14px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .h1, h1 {
+    font-size: 24px;
+  }
+  .h2, h2 {
+    font-size: 20px;
   }
 }
 
