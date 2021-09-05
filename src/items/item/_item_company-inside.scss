@@ -91,6 +91,8 @@
         align-items: center;
         grid-template-areas:
             "logo info price";
+
+        max-width: 300px;
     }
 }
 

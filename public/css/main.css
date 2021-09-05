@@ -313,6 +313,7 @@
     -ms-flex-align: center;
     align-items: center;
     grid-template-areas: "logo info price";
+    max-width: 300px;
   }
 }
 
@@ -1090,7 +1091,8 @@
     max-width: 480px;
   }
   .header__logo {
-    width: 150px;
+    width: 140px;
+    height: 30px;
   }
   .header__phone-icon {
     width: 18px;
@@ -1101,9 +1103,6 @@
   .header__container {
     max-width: 480px;
     padding: 10px 20px;
-  }
-  .header__logo {
-    width: 120px;
   }
   .header__phone-body {
     font-size: 12px;
@@ -1478,7 +1477,7 @@
   }
   .heading-screen__container {
     max-width: 480px;
-    padding-top: 60px;
+    padding-top: 80px;
   }
   .heading-screen__container:after {
     width: 100%;
