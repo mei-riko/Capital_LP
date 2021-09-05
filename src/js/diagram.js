@@ -120,21 +120,21 @@ function drawLinearGraph(selector, graphData, options) {
 
     let v0 = graphData[0].values;
     let v1 = graphData[1].values;
-    console.log(v0, v1, v0[v0.length-1].Y, v1[v1.length-1].Y, v0[v0.length-1].Y - v1[v1.length-1].Y, hLabel);
+    //console.log(v0, v1, v0[v0.length-1].Y, v1[v1.length-1].Y, v0[v0.length-1].Y - v1[v1.length-1].Y, hLabel);
     if (v0[v0.length-1].Y - v1[v1.length-1].Y > 0.8*hLabel) {
-    	console.log('a');
+    	//console.log('a');
     	graphData[0].labelShift =  0;
     	graphData[1].labelShift =  0;
     } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.8 * hLabel) {
-    	console.log('b');
+    	//console.log('b');
     	graphData[0].labelShift =  0;
     	graphData[1].labelShift =  0;
     } else if(v0[v0.length-1].Y - v1[v1.length-1].Y > 0) {
-    	console.log('c');
+    	//console.log('c');
     	graphData[0].labelShift =  -0.5;
     	graphData[1].labelShift =   0.5;
     } else  if(v0[v0.length-1].Y - v1[v1.length-1].Y <= 0) {
-    	console.log('d');
+    	//console.log('d');
     	graphData[0].labelShift = 0.5;
     	graphData[1].labelShift = -0.5;
     }
