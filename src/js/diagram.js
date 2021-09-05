@@ -84,7 +84,7 @@ function drawLinearGraph(selector, graphData, options) {
     for ( var iy = 0; iy < options.yAxisTicks.length; iy ++ ) {
 		c.fillStyle = '#808080';
         c.fillText('$'+options.yAxisTicks[iy],
-        	60,
+        	50,
         	getYPixel(options.yAxisTicks[iy], minY, maxY, yShift));
     }
 
@@ -95,10 +95,10 @@ function drawLinearGraph(selector, graphData, options) {
 		c.fillStyle = '#808080';
 		let xPixel = getXPixel(options.xAxisTicks[ix], minX, maxX, xShift);
 
-		c.fillText(options.xAxisTicks[ix], xPixel, graph.height() - options.yPadding + 10);
+		c.fillText(options.xAxisTicks[ix], xPixel, graph.height() - options.yPadding + 5);
 		c.beginPath();
-		c.moveTo(xPixel, getYPixel(minY, minY, maxY, yShift) + 10);
-		c.lineTo(xPixel, getYPixel(maxY, minY, maxY, yShift) - 10);
+		c.moveTo(xPixel, getYPixel(minY, minY, maxY, yShift) + 5);
+		c.lineTo(xPixel, getYPixel(maxY, minY, maxY, yShift) - 5);
 		c.stroke();
 	}
     
@@ -115,14 +115,28 @@ function drawLinearGraph(selector, graphData, options) {
 		}
     }
     // get minimal and maximal Y
+    var wLabel = options.wLabel || 60;  // label width
+    var hLabel = options.hLabel || 30;  // label height
+
     let v0 = graphData[0].values;
     let v1 = graphData[1].values;
-    if (v0[v0.length-1].Y > v1[v1.length-1].Y ) {
-    	graphData[0].labelShift =  -1;
-    	graphData[1].labelShift =   0;
-    } else {
-    	graphData[0].labelShift = 0;
-    	graphData[1].labelShift = -1;
+    console.log(v0, v1, v0[v0.length-1].Y, v1[v1.length-1].Y, v0[v0.length-1].Y - v1[v1.length-1].Y, hLabel);
+    if (v0[v0.length-1].Y - v1[v1.length-1].Y > 0.8*hLabel) {
+    	console.log('a');
+    	graphData[0].labelShift =  0;
+    	graphData[1].labelShift =  0;
+    } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.8 * hLabel) {
+    	console.log('b');
+    	graphData[0].labelShift =  0;
+    	graphData[1].labelShift =  0;
+    } else if(v0[v0.length-1].Y - v1[v1.length-1].Y > 0) {
+    	console.log('c');
+    	graphData[0].labelShift =  -0.5;
+    	graphData[1].labelShift =   0.5;
+    } else  if(v0[v0.length-1].Y - v1[v1.length-1].Y <= 0) {
+    	console.log('d');
+    	graphData[0].labelShift = 0.5;
+    	graphData[1].labelShift = -0.5;
     }
     // plot data 
     for(var iD=0; iD<graphData.length; iD++){
@@ -155,9 +169,15 @@ function drawLinearGraph(selector, graphData, options) {
         var lastDataPoint = data.values[data.values.length - 1];
 
         c.fillStyle =  data.dataLabelBg;
-        var wLabel = 60;
-        var hLabel = 30;
-        var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift) + hLabel * 2.5;
+
+		
+        var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift);
+		if(options.drawLogo){
+			xLabel += hLabel * 2.5;
+		} else {
+			xLabel += hLabel * 0.8;
+		}
+
         var yLabel = getYPixel(lastDataPoint.Y, minY, maxY, yShift) - hLabel/2 + data.labelShift * hLabel;
 
         c.fillRect(xLabel, yLabel, wLabel, hLabel);
@@ -169,21 +189,25 @@ function drawLinearGraph(selector, graphData, options) {
 	    c.arc(xLabel+wLabel, yLabel+hLabel/2, hLabel/2, 0, Math.PI * 2, true);
         c.fill();
 
-		c.fillStyle = "#ffffff";
-        c.beginPath();
-	    c.arc(xLabel-hLabel-10 , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
-        c.fill();
+       
+        if(options.drawLogo){
 
-		var icon_image = new Image();
-		icon_image.src = data.icon;
-		icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
-		window.plotImages.push(icon_image);
+			c.fillStyle = "#ffffff";
+	        c.beginPath();
+		    c.arc(xLabel-hLabel-10 , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
+	        c.fill();
+
+			var icon_image = new Image();
+			icon_image.src = data.icon;
+			icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
+			window.plotImages.push(icon_image);
+        }
 
 		c.font = options.dataLabelFont;
 		c.textAlign = "center"
-        c.fillStyle = data.dataLabelColor;
-        c.fillText(data.dataLabel, xLabel + wLabel/2, yLabel+hLabel/2);
-        c.font = options.font;
+	    c.fillStyle = data.dataLabelColor;
+	    c.fillText(data.dataLabel, xLabel + wLabel/2, yLabel+hLabel/2);
+	    c.font = options.font;
     }
 
 
@@ -219,9 +243,7 @@ $(function() {
 		var minY = false;
 		var maxY = false;
 
-		var canvas = $(areaSelector);
-		canvas.attr('width', canvas.parent().innerWidth());
-		canvas.attr('height', Math.round(canvas.attr('width')/1.8));
+
 
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
@@ -289,6 +311,10 @@ $(function() {
         pricesUSD[0].color='#2A4269';
 		pricesUSD[1].color='rgb(101, 181, 178)';
 
+		var canvas = $(areaSelector);
+		canvas.attr('width', canvas.parent().innerWidth());
+		canvas.attr('height', Math.round(canvas.attr('width')/1.8));
+
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
 			xAxisTicks.push(x);
@@ -302,15 +328,30 @@ $(function() {
 			yAxisTicks.push(y);
 		}
         var options = {
-		    xPadding : 150,
-		    xShift: -60,
+		    xPadding : 140,
+		    xShift: -80,
 		    yPadding : 40,
+		    wLabel : 45,  // label width
+            hLabel : 30,  // label height
 		    lineWidth : 8,
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
 		    font:'italic 14pt sans-serif',
-		    dataLabelFont:'italic 12pt sans-serif'
+		    dataLabelFont:'italic 10pt sans-serif',
+		    drawLogo:true
+		}
+		if(canvas.attr('width')*1 < 400){
+		
+			canvas.attr('height', Math.round(canvas.attr('width')));
+
+			options.drawLogo = false;
+			options.xPadding = 80;
+		    options.xShift = -20;
+		    options.yPadding = 40;font:
+		    options.dataLabelFont ='italic 9pt sans-serif';
+		    options.font = 'italic 10pt sans-serif';
+		    options.wLabel = 40;  // label width
 		}
 		drawLinearGraph(areaSelector, pricesUSD, options);
 
