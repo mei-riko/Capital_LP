@@ -5,6 +5,7 @@ import '../items/input/input';
 import './ajaxloader';
 import './company';
 import './product';
+import './hidpicanvas';
 import './diagram';
 
 $(function() {
@@ -39,4 +40,3 @@ $(function() {
 });
 
 import './mouseup';
-
