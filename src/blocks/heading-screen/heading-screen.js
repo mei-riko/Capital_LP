@@ -1,7 +1,8 @@
 import $ from 'jquery';
 $(function() {
     // Фигура которую анимируем
-    const $figure = $('.figure_one');
+    const $figureDesktop = $('.figure_one-desktop');
+    const $figureMobile = $('.figure_one-mobile');
     // Следующий блок
     const $next = $('#preipo');
     // Идентификатор
@@ -9,26 +10,9 @@ $(function() {
     // Скролл страницы
     let newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     // Отступ фигуры от верха страницы
-    let figureOffset = $figure.offset().top;
-    // Отступ следующего блока от верха страницы
-    let nextOffset = $next.offset().top;
+    let figureOffset = 0;
     // Триггер
     let trigger = Math.ceil(figureOffset - newPosTop);
-
-    // Если фигуру не видно
-    // if( newPosTop > nextOffset ){
-    //     isAnimation = true;
-    //     $figure.attr('transform', 'translate(0,195)');
-    //     $('.figure').each(function(){
-    //         $(this).addClass('color');
-    //     });
-
-    //     setTimeout(function () {
-    //         $figure.addClass('transition');
-    //     }, 300)
-    // }else{
-    //     $figure.addClass('transition');
-    // }
 
     var CurrentScroll = 0;
     $(window).on('scroll', function(event){
@@ -38,66 +22,40 @@ $(function() {
         if (NextScroll > CurrentScroll){
            //write the codes related to down-ward scrolling here 
             newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-            figureOffset = $figure.offset().top;
-            trigger = Math.ceil(figureOffset - newPosTop);
+            
+            // Отступ фигуры от верха страницы
+            if ( $(window).width() > 768 || !window.matchMedia('screen and (max-width: 768px)').matches ){
+                figureOffset = $figureDesktop.offset().top;
+                trigger = Math.ceil(figureOffset - newPosTop);
 
-            if ( trigger >= 0 && trigger <= 40 && !isAnimation) {
-                isAnimation = true;
-                $figure.attr('transform', 'translate(0,195)');
+                if ( trigger >= 0 && trigger <= 40 && !isAnimation) {
+                    isAnimation = true;
+                    $figureDesktop.attr('transform', 'translate(0,195)');
+    
+                    setTimeout(function () {
+                        $('.figure').each(function(){
+                            $(this).addClass('color');
+                        });
+                    }, 300)
+                }
+            }else{
+                figureOffset = $figureMobile.offset().top;
+                trigger = Math.ceil(figureOffset - newPosTop);
 
-                setTimeout(function () {
-                    $('.figure').each(function(){
-                        $(this).addClass('color');
-                    });
-                }, 300)
+                if ( trigger >= 0 && trigger <= 120 && !isAnimation) {
+                    isAnimation = true;
+                    $figureMobile.attr('transform', 'translate(0,130)');
+    
+                    setTimeout(function () {
+                        $('.figure').each(function(){
+                            $(this).addClass('color');
+                        });
+                    }, 300)
+                }
             }
-        }
-        else {
-            //write the codes related to upward-scrolling here
-            // newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-            // figureOffset = $figure.offset().top;
-            // trigger = Math.ceil(figureOffset - newPosTop);
-
-            // if ( trigger >= 60 && isAnimation) {
-            //     isAnimation = false;
-            //     $figure.attr('transform', 'translate(0,0)');
-
-            //     setTimeout(function () {
-            //         $('.figure').each(function(){
-            //             $(this).removeClass('color');
-            //         });
-            //     }, 300)
-            // }
+            // console.log( trigger );
         }
   
         CurrentScroll = NextScroll;  //Updates current scroll position
     });
-    // При скролле
-    // $(window).on('scroll', function(){
-    //     newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    //     figureOffset = $figure.offset().top;
-    //     trigger = Math.ceil(figureOffset - newPosTop);
-        
-    //     console.log( trigger );
-    
-    //     if ( trigger >= 0 && trigger <= 40 && !isAnimation) {
-    //         isAnimation = true;
-    //         $figure.attr('transform', 'translate(0,195)');
-    
-    //         setTimeout(function () {
-    //             $('.figure').each(function(){
-    //                 $(this).addClass('color');
-    //             });
-    //         }, 300)
-    //     } else if ( trigger > 60 && isAnimation ){
-    //         isAnimation = false;
-    //         $figure.attr('transform', 'translate(0,0)');
-    
-    //         setTimeout(function () {
-    //             $('.figure').each(function(){
-    //                 $(this).removeClass('color');
-    //             });
-    //         }, 300)
-    //     }
-    // });
 });

@@ -23,6 +23,10 @@
         // bottom: -240px;
         // margin-left: auto;
 
+        &_mobile{
+            display: none;
+        }
+
         svg {
             width: 900px;
         }
@@ -48,7 +52,7 @@
           
     }
 }
-
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .heading-screen{
         padding-top: 100px;
@@ -68,13 +72,14 @@
         }
     }
 }
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .heading-screen{
         padding-top: map-get($map: $spacers, $key: 2);
         padding-bottom: map-get($map: $spacers, $key: 3);
 
         &__title{
-            font-size: 46px;
+            // font-size: 46px;
             width: 560px;
             margin-bottom: $spacer;
         }
@@ -88,9 +93,11 @@
         }
     }
 }
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .heading-screen{
         padding-top: $spacer;
+
         &__title{
             font-size: 40px;
             width: 440px;
@@ -102,20 +109,46 @@
         }
     }
 }
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .heading-screen{
         padding-top: map-get($map: $spacers, $key: 0);
         padding-bottom: map-get($map: $spacers, $key: 0);
         
         &__title{
-            font-size: map-get($map: $heading, $key: h3);
-            // font-size: 42px;
+            margin-top: $spacer/2;
         }
         &__tetris{
             position: unset;
             margin-top: $spacer;
             width: 100%;
-            height: 340px;
+            height: 460px;
+
+            &_mobile{
+                display: block;
+            }
+            &_desktop{
+                display: none;
+            }
+        }
+    }
+}
+// < 576px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .heading-screen{
+        &__tetris{
+            height: 380px;
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .heading-screen{
+        &__title{
+            font-size: 30px;
+        }
+        &__tetris{
+            height: 320px;
         }
     }
 }

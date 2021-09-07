@@ -11,7 +11,7 @@
         white-space: break-spaces;
     }
 }
-
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .step{
         &__intro{
@@ -19,14 +19,24 @@
         }
     }
 }
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .step{
         &__num{
             margin-bottom: $spacer/2;
-        // font-size: map-get($map: $heading, $key: h6);
         }
     }
 }
+// < 1024px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .step{
+        &_last{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .step{
         display: grid;
@@ -40,9 +50,14 @@
         &__intro{
             font-size: map-get($map: $font-size, $key: md);
         }
+
+        &_last{
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
     }
 }
-
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .step{
         align-items: center;

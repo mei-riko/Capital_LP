@@ -68,6 +68,7 @@
         border: 2px solid;
     }
 }
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item{
         &__title{
@@ -86,6 +87,7 @@
         }
     }
 }
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item{
         border-radius: $border-radius/2;
@@ -109,8 +111,29 @@
         }
     }
 }
-
-
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item{
+        &__subtitle{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+        &__statistics{
+            font-size: map-get($map: $font-size, $key: md);
+        }
+    }
+}
+// < 576px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item{
+        &__subtitle{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
+        &__statistics{
+            font-size: map-get($map: $font-size, $key: sm);
+        }
+    }
+}
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item{
         &__open-modal{

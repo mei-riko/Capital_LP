@@ -71,7 +71,10 @@
             margin-top: $spacer/2;
         }
         &__disclaimers{
-            font-size: map-get($map: $font-size, $key: xs);
+            font-size: 10px;
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
         }
     }
 }

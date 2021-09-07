@@ -39,25 +39,23 @@
         }
     }
 }
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_modal{
         padding: $spacer/2;
+
         &__statistics{
             margin-bottom: $spacer/2;
-            // grid-template-columns: 1fr 1fr;
+            font-size: map-get($map: $font-size, $key: md);
         }
     }
 }
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_modal{
         &__statistics{
-            // grid-template-columns: 1fr;
-            grid-gap: $spacer-gutter/2;
-
-            &-value{
-                text-align: left;
-                margin-bottom: $spacer-gutter;
-            }
+            font-size: map-get($map: $font-size, $key: sm);
+            grid-gap: $spacer-gutter;
         }
     }
 }

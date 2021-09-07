@@ -38,7 +38,7 @@
         transform: scale(1.05);
     }
 }
-
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_preipo{
         &:hover{
@@ -46,6 +46,15 @@
         }
     }
 }
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item_preipo{
+        &:hover{
+            transform: none;
+        }
+    }
+}
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_preipo{
         padding-left: $spacer-gutter;

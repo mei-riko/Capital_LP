@@ -13,6 +13,7 @@
         height: intrinsic;
     }
 }
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .content{
         &__slider{
@@ -30,6 +31,7 @@
         }
     }
 }
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .content{
         &__slider{
@@ -41,6 +43,7 @@
         }
     }
 }
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .content{
         &__slider{

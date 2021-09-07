@@ -73,6 +73,9 @@
             background: lighten($color: $body-bg, $amount: 4);
             padding: map-get($map: $spacers, $key: 2) map-get($map: $spacers, $key: 1);
         }
+        &-thanks{
+            text-align: center;
+        }
         &-intro{
             width: 660px;
             max-width: 100%;
@@ -96,16 +99,18 @@
             align-items: center;
 
             font-size: map-get($map: $heading, $key: h5);
-            cursor: pointer;
-            transition: $transition-base;
 
-            &:hover{
-                color: $action;
-                text-decoration: none;
-
-                & > svg {
-                    border-color: $action;
-                    fill: $action;
+            &_link{
+                cursor: pointer;
+                transition: $transition-base;
+                &:hover{
+                    color: $orange;
+                    text-decoration: none;
+    
+                    & > svg {
+                        border-color: $orange;
+                        fill: $orange;
+                    }
                 }
             }
         }
@@ -129,6 +134,45 @@
         }
     }
 
+    &__track{
+        &-container{
+            position: relative;
+        }
+
+        position: absolute;
+        top: -30px;
+        left: -30px;
+
+        opacity: 0;
+        transition: $transition-base;
+        z-index: -1;
+
+        width: 400px;
+        max-width: 100%;
+
+        background-color: $orange;
+        padding: 30px;
+        border-radius: $border-radius;
+
+        &-intro{
+            font-size: map-get($map: $font-size, $key: lg);
+            text-align: center;
+            margin: 30px auto;
+        }
+        &-input{
+            width: 100%;
+        }
+        &-btn{
+            width: 100%;
+            margin-top: $spacer-gutter;
+        }
+
+        // JS State
+        &--active{
+            opacity: 1;
+            z-index: 11;
+        }
+    }
     &.fancybox-content{
         width: 100%;
         padding: $spacer 0;
@@ -139,7 +183,7 @@
 
         cursor: default!important;
 
-        .carousel__button.is-close{
+        .fancybox-close-small{
             position: fixed;
             top: $grid-gutter-width;
             right: $grid-gutter-width;
@@ -229,13 +273,22 @@
                 font-size: map-get($map: $font-size, $key: lg);
             }
             &-btn{
-                margin-bottom: $spacer/2;
+                &_link{
+                    margin-bottom: $spacer;
+                }
             }
         }
     }
 }
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .modal{
+        &__stats{
+            padding-right: 0;
+            &-item{
+                font-size: map-get($map: $font-size, $key: md);
+            }
+        }
         &__form{
             &-container{
                 padding: $spacer;
@@ -246,14 +299,33 @@
         }
     }
 }
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .modal{
+        &__company{
+            &-title{
+                font-size: map-get($map: $heading, $key: h6);
+            }
+            &-intro{
+                font-size: map-get($map: $font-size, $key: md);
+            }
+        }
+        &__stats{
+            &-item{
+                font-size: map-get($map: $font-size, $key: md);
+            }
+        }
+        &__download{
+            &-btn{
+                font-size: map-get($map: $font-size, $key: md);
+            }
+        }
         &__form{
             &-container{
                 padding: 0;
                 background: $body-bg;
             }
-            &-intro{
+            &-btn{
                 font-size: map-get($map: $font-size, $key: md);
             }
         }
@@ -264,29 +336,46 @@
                 padding-bottom: $spacer-gutter;
             }
         }
+        &__track{
+            padding: $spacer/2;
+            top: -$spacer/2;
+            left: -$spacer/2;
+
+            &-intro{
+                font-size: map-get($map: $font-size, $key: sm);
+                margin: $spacer/2 auto;
+            }
+        }
     }
 }
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .modal{
         &__company{
             grid-template-columns: 56px 1fr;
-            margin-bottom: $spacer/2;
         
             &-logo{
                 width: 56px;
                 height: 56px;
             }
-            &-title{
-                font-size: map-get($map: $heading, $key: h6);
-            }
         }
         &__stats{
             &-item{
                 grid-gap: $spacer-gutter/2;
-                // grid-template-columns: 1fr;
+                font-size: map-get($map: $font-size, $key: sm);
             }
-            &-value{
-                text-align: left;
+        }
+        &__form{
+            &-intro{
+                font-size: map-get($map: $font-size, $key: md);
+            }
+            &-icon{
+                padding: 2px;
+                width: 26px;
+                height: 26px;
+            }
+            &-btn{
+                font-size: map-get($map: $font-size, $key: sm);
             }
         }
     }

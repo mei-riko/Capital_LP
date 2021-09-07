@@ -37,12 +37,20 @@
         transform: scale(1.05);
     }
 }
-
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_preipo-soon{
         &:hover{
             transform: scale(1.025);
             // transform: none;
+        }
+    }
+}
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item_preipo-soon{
+        &:hover{
+            transform: none;
         }
     }
 }

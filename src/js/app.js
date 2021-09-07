@@ -6,6 +6,7 @@ import '../items/item/item';
 import '../items/input/input';
 
 import '../items/slider/slider';
+import '../items/modal/modal';
 
 $(function() {
     // Animate Scroll
@@ -35,19 +36,6 @@ $(function() {
     $(document).on('click', '[data-trigger="click"]', function(e){
         e.preventDefault();
     })
-    // Fancybox
-    $('.item.item_modal .item_modal__btn').on('click', function(){
-        let modal = $(this).closest('.modal');
-        let modalForm = modal.find('.modal__form');
-        $(".fancybox-slide").animate({
-            scrollTop: $(document).height()
-        }, 2000);
-
-        modalForm.find('input:first-child').focus();
-    });
-    $(".fancybox-slide").animate({
-        scrollTop: $(document).height()
-    }, 2000);
-
+    
 });
 

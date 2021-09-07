@@ -47,6 +47,7 @@
         transform: scale(1.05);
     }
 }
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_preipo-prev{
         &__total {
@@ -58,6 +59,7 @@
         }
     }
 }
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_preipo-prev{
         &__total{
@@ -66,7 +68,15 @@
         }
     }
 }
-
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .item_preipo-prev{
+        &:hover{
+            transform: none;
+        }
+    }
+}
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_preipo-prev{
         padding-left: $spacer-gutter;

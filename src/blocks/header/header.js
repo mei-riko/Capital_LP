@@ -1,4 +1,5 @@
 import $ from 'jquery';
+
 $(function() {
     // Nav
     $('.header__toggle-item').on('click', function(){
@@ -8,7 +9,6 @@ $(function() {
         $('.overlay').toggleClass('overlay--active');
     })
 });
-
 
 $(document).on('mouseup', function (e){ 
     let headerActive = $(".header__nav"); // элемент

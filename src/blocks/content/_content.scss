@@ -111,7 +111,7 @@
         }
     }
 }
-
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .content{
         &__slider{
@@ -130,6 +130,7 @@
         &__grid{
             &_advantage{
                 grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
             }
         }
     }
