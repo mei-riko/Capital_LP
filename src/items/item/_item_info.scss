@@ -7,8 +7,21 @@
     padding: $spacer;
     height: 100%;
 
+    justify-content: flex-start;
+
     &__title{
         margin-top: 0;
         margin-bottom: $spacer-gutter*2;
+    }
+}
+// < 1280px
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .item_info{
+        padding: $spacer/2;
+
+        &__title{
+            font-size: map-get($map: $heading, $key: h6);
+            margin-bottom: $spacer-gutter;
+        }
     }
 }

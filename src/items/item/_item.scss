@@ -70,6 +70,9 @@
 }
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item{
+        &__title{
+            font-size: map-get($map: $heading, $key: h5);
+        }
         &__subtitle{
             font-size: map-get($map: $font-size, $key: md);
         }
@@ -93,15 +96,11 @@
             right: 20px;
         }
         &__logo{
-            // margin: 0 auto;
             width: 90px;
             height: 90px;
         }
-        &__title{
-            font-size: map-get($map: $heading, $key: h4);
-        }
         &__subtitle{
-            // font-size: map-get($map: $font-size, $key: md);
+            font-size: map-get($map: $font-size, $key: sm);
             margin-bottom: $spacer;
         }
         &__statistics{

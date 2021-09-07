@@ -2217,28 +2217,31 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
     font-size: 80px;
   }
   .h2, h2 {
-    font-size: 56px;
+    font-size: 60px;
   }
-}
-
-@media all and (max-width: 768px) {
-  .h1, h1 {
-    font-size: 56px;
-  }
-  .h2, h2 {
+  .h3, h3 {
     font-size: 40px;
   }
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 1280px) {
   .h1, h1 {
-    font-size: 42px;
+    font-size: 60px;
   }
   .h2, h2 {
-    font-size: 34px;
+    font-size: 40px;
   }
   .h3, h3 {
-    font-size: 26px;
+    font-size: 30px;
+  }
+  .h4, h4 {
+    font-size: 24px;
+  }
+  .h5, h5 {
+    font-size: 20px;
+  }
+  .h6, h6 {
+    font-size: 18px;
   }
 }
 

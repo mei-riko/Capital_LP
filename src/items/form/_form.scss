@@ -19,6 +19,16 @@
         }
     }
 }
+// < 1280px
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .form{
+
+        &_modal{
+            grid-gap: $spacer-gutter;
+            grid-template-columns: 1fr 1fr 260px;
+        }
+    }
+}
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .form{
         &_inline{

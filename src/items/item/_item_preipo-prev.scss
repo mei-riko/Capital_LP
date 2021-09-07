@@ -49,8 +49,12 @@
 }
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_preipo-prev{
+        &__total {
+            font-size: map-get($map: $heading, $key: h6);
+        }
         &:hover{
-            transform: none;
+            transform: scale(1.025);
+            // transform: none;
         }
     }
 }

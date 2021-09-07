@@ -52,15 +52,36 @@
     }
     // align-items: flex-end;
 }
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .content{
         &__grid{
             grid-gap: $spacer/2;
         }
+        &__intro{
+            font-size: map-get($map: $heading, $key: h5);
+
+            &_work{
+                font-size: map-get($map: $heading, $key: h6);
+            }
+        }
+        &__stats{
+            &-item{
+                font-size: map-get($map: $heading, $key: h5);
+            }
+        }
     }
 }
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .content{
+        &__intro{
+            font-size: map-get($map: $heading, $key: h6);
+
+            &_work{
+                font-size: map-get($map: $font-size, $key: lg);
+            }
+        }
         &__steps{
             grid-gap: map-get($map: $spacers, $key: 1);
             grid-template-columns: repeat(3, 1fr);
@@ -74,11 +95,9 @@
         }
     }
 }
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .content{
-        &__intro{
-            font-size: map-get($map: $heading, $key: h5);
-        }
         &__stats-item{
             padding: $spacer/2 0;
             font-size: map-get($map: $heading, $key: h6);            
@@ -92,6 +111,7 @@
         }
     }
 }
+
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .content{
         &__slider{

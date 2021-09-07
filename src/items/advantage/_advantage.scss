@@ -24,10 +24,10 @@
         font-size: map-get($map: $heading, $key: h5);
     }
 }
-@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .advantage{
         &__title{
-            font-size: map-get($map: $heading, $key: h3);
+            font-size: map-get($map: $heading, $key: h4);
         }
         &__intro{
             font-size: map-get($map: $heading, $key: h6);

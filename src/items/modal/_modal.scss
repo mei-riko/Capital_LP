@@ -111,13 +111,13 @@
         }
     }
     &__stats{
-        // border-bottom: 1px solid $white;
-
+        padding-right: $spacer;
         &-item{
             display: grid;
 
             grid-gap: $grid-gutter-width;
             grid-template-columns: repeat(2, 1fr);
+            align-items: center;
 
             font-size: map-get($map: $heading, $key: h5);
             padding: 2*$grid-gutter-width 0;
@@ -148,12 +148,38 @@
 }
 
 // Fancybox
-.fancybox__container{
-    .fancybox__slide{
+.fancybox-container{
+    .fancybox-slide{
         padding: 0;
     }
 }
-
+// < 1600px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .modal{
+        &__company{
+            &-intro{
+                font-size: map-get($map: $heading, $key: h6);
+            }
+        }
+        &__stats{
+            &-item{
+                font-size: map-get($map: $heading, $key: h6);
+                padding: $spacer 0;
+            }
+        }
+        &__download{
+            &-btn{
+                font-size: map-get($map: $heading, $key: h6);
+            }
+        }
+        &__form{
+            &-btn{
+                font-size: map-get($map: $heading, $key: h6);
+            }
+        }
+    }
+}
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .modal{
         &__company{
@@ -164,8 +190,25 @@
                 height: 80px;
             }
             &-title{
-                // font-size: map-get($map: $font-size, $key: lg);
-                font-size: map-get($map: $heading, $key: h4);
+                font-size: map-get($map: $heading, $key: h5);
+            }
+            &-intro{
+                font-size: map-get($map: $font-size, $key: lg);
+            }
+        }
+        &__stats{
+            &-item{
+                font-size: map-get($map: $font-size, $key: lg);
+            }
+        }
+        &__download{
+            &-btn{
+                font-size: map-get($map: $font-size, $key: lg);
+            }
+        }
+        &__form{
+            &-btn{
+                font-size: map-get($map: $font-size, $key: lg);
             }
         }
     }

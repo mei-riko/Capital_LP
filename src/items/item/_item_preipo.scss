@@ -42,7 +42,7 @@
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_preipo{
         &:hover{
-            transform: none;
+            transform: scale(1.025);
         }
     }
 }
