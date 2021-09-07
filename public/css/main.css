@@ -899,15 +899,16 @@
 }
 
 @media all and (max-width: 768px) {
+  .item_modal {
+    padding: 20px;
+  }
   .item_modal__statistics {
     margin-bottom: 20px;
-    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media all and (max-width: 576px) {
   .item_modal__statistics {
-    grid-template-columns: 1fr;
     grid-gap: 6px;
   }
   .item_modal__statistics-value {
@@ -1282,6 +1283,13 @@
 }
 
 @media all and (max-width: 1024px) {
+  .modal__heading {
+    margin-bottom: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
   .modal__form-container {
     padding: 60px;
   }
@@ -1330,7 +1338,7 @@
     font-size: 20px;
   }
   .modal__stats-item {
-    grid-template-columns: 1fr;
+    grid-gap: 6px;
   }
   .modal__stats-value {
     text-align: left;

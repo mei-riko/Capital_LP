@@ -213,8 +213,14 @@
         }
     }
 }
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .modal{
+        &__heading{
+            margin-bottom: $spacer/2;
+
+            flex-direction: column-reverse;
+        }
         &__form{
             &-container{
                 padding: map-get($map: $spacers, $key: 1);
@@ -276,8 +282,8 @@
         }
         &__stats{
             &-item{
-                // grid-gap: $spacer-gutter/2;
-                grid-template-columns: 1fr;
+                grid-gap: $spacer-gutter/2;
+                // grid-template-columns: 1fr;
             }
             &-value{
                 text-align: left;
