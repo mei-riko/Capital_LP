@@ -16,19 +16,19 @@ $(function() {
     let trigger = Math.ceil(figureOffset - newPosTop);
 
     // Если фигуру не видно
-    if( newPosTop > nextOffset ){
-        isAnimation = true;
-        $figure.attr('transform', 'translate(0,195)');
-        $('.figure').each(function(){
-            $(this).addClass('color');
-        });
+    // if( newPosTop > nextOffset ){
+    //     isAnimation = true;
+    //     $figure.attr('transform', 'translate(0,195)');
+    //     $('.figure').each(function(){
+    //         $(this).addClass('color');
+    //     });
 
-        setTimeout(function () {
-            $figure.addClass('transition');
-        }, 300)
-    }else{
-        $figure.addClass('transition');
-    }
+    //     setTimeout(function () {
+    //         $figure.addClass('transition');
+    //     }, 300)
+    // }else{
+    //     $figure.addClass('transition');
+    // }
 
     var CurrentScroll = 0;
     $(window).on('scroll', function(event){
@@ -54,20 +54,20 @@ $(function() {
         }
         else {
             //write the codes related to upward-scrolling here
-            newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-            figureOffset = $figure.offset().top;
-            trigger = Math.ceil(figureOffset - newPosTop);
+            // newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            // figureOffset = $figure.offset().top;
+            // trigger = Math.ceil(figureOffset - newPosTop);
 
-            if ( trigger >= 60 && isAnimation) {
-                isAnimation = false;
-                $figure.attr('transform', 'translate(0,0)');
+            // if ( trigger >= 60 && isAnimation) {
+            //     isAnimation = false;
+            //     $figure.attr('transform', 'translate(0,0)');
 
-                setTimeout(function () {
-                    $('.figure').each(function(){
-                        $(this).removeClass('color');
-                    });
-                }, 300)
-            }
+            //     setTimeout(function () {
+            //         $('.figure').each(function(){
+            //             $(this).removeClass('color');
+            //         });
+            //     }, 300)
+            // }
         }
   
         CurrentScroll = NextScroll;  //Updates current scroll position

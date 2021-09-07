@@ -7,7 +7,7 @@
         color: $action;
     }
     &__intro{
-        font-size: map-get($map: $heading, $key: h6);
+        font-size: map-get($map: $heading, $key: h5);
         white-space: break-spaces;
     }
 }

@@ -4,6 +4,9 @@
     border-color: $white;
     color: $black;
 
+    padding: $spacer;
+    height: 100%;
+
     &__title{
         margin-top: 0;
         margin-bottom: $spacer-gutter*2;

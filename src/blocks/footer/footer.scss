@@ -16,14 +16,21 @@
         line-height: $line-height;
 
         &_sub{
+            display: block;
             font-size: map-get($map: $font-size, $key: xs);
             filter: opacity(.5);
         }
     }
     &__disclaimers{
-        font-size: map-get($map: $font-size, $key: sm);
+        font-size: map-get($map: $font-size, $key: xs);
         color: $grey;
         filter: opacity(.5);
+
+        -webkit-column-count:2;  
+        -moz-column-count:2;  
+        column-count:2;  
+
+        grid-gap: $grid-gutter-width;
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){

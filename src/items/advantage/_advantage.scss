@@ -16,12 +16,12 @@
     &__title{
         font-size: 40px;
         line-height: $line-height-heading;
-        font-weight: $font-weight-bold;
-        color: $action;
+        font-weight: $font-weight-bolder;
+        // color: $action;
         margin-bottom: $spacer-gutter;
     }
     &__intro{
-        font-size: map-get($map: $heading, $key: h4);
+        font-size: map-get($map: $heading, $key: h5);
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){

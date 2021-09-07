@@ -2,6 +2,7 @@
     background-color: $white;
     border-color: $white;
     color: $black;
+    padding: $spacer;
 
     &:hover{
         border-color: $white;
@@ -9,12 +10,16 @@
     }
 
     &__statistics{
-        grid-template-columns: auto 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: $grid-gutter-width;
+        font-size: map-get($map: $heading, $key: h5);
     }
     &__statistics-value{
         font-weight: $font-weight-base;
         color: $action;
+    }
+    &__btn{
+        width: 100%;
     }
 }
 

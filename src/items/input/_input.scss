@@ -1,12 +1,13 @@
 .input{
     border: 2px solid $white;
     border-radius: $border-radius;
-    padding: 24px 30px 22px 30px;
+    padding: 22px 30px 24px 30px;
     background-color: inherit;
     color: $white;
 
     font-size: map-get($map: $heading, $key: h5);
     line-height: $line-height-heading;
+    text-align: center;
 
     &::placeholder{
         font-size: map-get($map: $heading, $key: h5);

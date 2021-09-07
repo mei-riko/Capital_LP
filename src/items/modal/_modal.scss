@@ -2,13 +2,16 @@
     background: $body-bg;
     color: $white;
 
+    &__heading{
+        margin-bottom: $spacer;
+    }
     &__company{
         display: grid;
-        grid-gap: $grid-gutter-width;
+        grid-gap: $spacer;
         grid-template-columns: 100px 1fr;
         align-items: center;
 
-        margin-bottom: $spacer;
+        // margin-bottom: $spacer;
 
         &-logo{
             margin: 0 auto;
@@ -20,15 +23,19 @@
             background: $white no-repeat center / contain;
         }
         &-title{
-            // font-size: map-get($map: $font-size, $key: lg);
-            font-size: map-get($map: $heading, $key: h3);
+            font-size: map-get($map: $heading, $key: h4);
             line-height: $line-height-heading;
+        }
+        &-intro{
+            font-size: map-get($map: $heading, $key: h5);
+            width: 600px;
+            max-width: 100%;
         }
     }
     &__download{
         &-icon{
             fill: $white;
-            margin-right: 10px;
+            margin-right: $spacer-gutter;
             transition: $transition-base;
         }
         &-btn{
@@ -36,8 +43,10 @@
             border-radius: 30px;
             display: inline-flex;
             align-items: center;
+
+            font-size: map-get($map: $heading, $key: h5);
             border: 2px solid $white;
-            padding: 15px 26px;
+            padding: 4px 26px 6px;
 
             cursor: pointer;
             transition: $transition-base;
@@ -54,7 +63,6 @@
         }
     }
     &__form{
-        
         width: 1024px;
         max-width: 100%;
         margin-left: auto;
@@ -70,24 +78,24 @@
             max-width: 100%;
             margin: 0 auto $spacer;
             text-align: center;
-            font-size: map-get($map: $heading, $key: h4);
+            font-size: map-get($map: $heading, $key: h5);
         }
         &-icon{
             fill: $white;
-            margin-right: 10px;
+            margin-right: $spacer-gutter;
             transition: $transition-base;
 
             padding: 6px;
-            border: 1px solid $white;
+            border: 2px solid $white;
             border-radius: 50%;
             width: 36px;
             height: 36px;
         }
         &-btn{
-            margin-bottom: $spacer;
             display: inline-flex;
             align-items: center;
 
+            font-size: map-get($map: $heading, $key: h5);
             cursor: pointer;
             transition: $transition-base;
 
@@ -103,7 +111,7 @@
         }
     }
     &__stats{
-        border-bottom: 1px solid $white;
+        // border-bottom: 1px solid $white;
 
         &-item{
             display: grid;
@@ -111,9 +119,9 @@
             grid-gap: $grid-gutter-width;
             grid-template-columns: repeat(2, 1fr);
 
-            // font-size: map-get($map: $heading, $key: h3);
-            padding: $grid-gutter-width 0;
-            border-top: 1px solid $white;
+            font-size: map-get($map: $heading, $key: h5);
+            padding: 2*$grid-gutter-width 0;
+            border-bottom: 2px solid $white;
         }
         &-value{
             color: $action;
@@ -121,7 +129,7 @@
         }
     }
 
-    &.fancybox__content{
+    &.fancybox-content{
         width: 100%;
         padding: $spacer 0;
         // min-height: 100vh;
