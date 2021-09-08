@@ -1,32 +1,40 @@
 .advantage{
+    position: relative;
     padding: 180px 0;
-    overflow-x: clip;
 
     &__items{
         position: relative;
     }
     &__figure{
         position: absolute;
-        top: 80px;
-        left: 360px;
         z-index: -1;
+        // left: 360px;
+
+        top: 140px;
+        right: 0;
+
+        width: 440px;
+        height: 950px;
+        background: url('../icon/advantage__figure.svg') no-repeat top left / 800px;
     }
     &__figure-mobile{
         display: none;
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .advantage{
         padding: 140px 0;
 
         &__figure{
-            top: 60px;
-            left: 300px;
+            top: 100px;
+            width: 300px;
+            height: 760px;
+            background-size: 640px;
         }
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .advantage{
         // padding: map-get($map: $spacers, $key: 5) 0;
@@ -40,21 +48,28 @@
         }
         &__figure-mobile{
             display: block;
+
             position: absolute;
-            top: -80px;
-            left: 320px;
             z-index: -1;
+            
+            top: 80px;
+            right: 0;
+            
+            width: 260px;
+            height: 600px;
+            background: url(../icon/advantage__figure-mobile.svg) no-repeat top left/380px;
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .advantage{
         padding: map-get($map: $spacers, $key: 4) 0 map-get($map: $spacers, $key: 5);
         &__figure-mobile{
-            top: -30px;
-            left: 200px;
-            height: 400px;
+            top: 20px;
+            width: 220px;
+            height: 540px;
+            background-size: 340px;
         }
     }
 }
@@ -62,8 +77,10 @@
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .advantage{
         &__figure-mobile {
-            top: -60px;
-            left: 280px;
+            top: 180px;
+            width: 300px;
+            height: 560px;
+            background-size: 360px;
         }
     }
 }
@@ -71,7 +88,9 @@
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .advantage{
         &__figure-mobile{
-            left: 260px;
+            width: 200px;
+            height: 410px;
+            background-size: 260px;
         }
     }
 }
@@ -81,7 +100,8 @@
         padding: map-get($map: $spacers, $key: 3) 0;
         
         &__figure-mobile{
-            left: 160px;
+            top: 140px;
+            width: 100px;
         }
         &__title{
             font-size: map-get($map: $heading, $key: h6);

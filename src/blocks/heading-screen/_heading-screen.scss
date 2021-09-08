@@ -173,7 +173,7 @@
             max-width: map-get($map: $container-max-widths, $key: lg);
             min-height: 640px;
 
-            padding-top: 80px;
+            padding-top: 120px;
             // padding-top: 0;
             padding-bottom: map-get($map: $spacers, $key: 3);
 
@@ -216,6 +216,8 @@
     .heading-screen{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
+
+            // padding-top: 120px;
             background-size: 500px;
             min-height: 680px;
             // padding: map-get($map: $spacers, $key: 3) $grid-gutter-width/2;
@@ -256,6 +258,8 @@
 
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
+
+            // padding-top: 120px;
             min-height: 700px;
             background-image: none;
 

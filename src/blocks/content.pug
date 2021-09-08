@@ -13,37 +13,10 @@ section.advantage
                     | Используем свой опыт и&nbsp;экспертизу для&nbsp;вашей выгоды и&nbsp;развития бизнеса
                 a.btn.btn_action(href="javascript;") Перейти на наш сайт                    
             .col-5.col-lg-6.col-sm-12.advantage__items
-                <svg class="advantage__figure" width="820" height="954" viewBox="0 0 820 954" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="410" cy="544" r="410" fill="url(#paint0_linear)"/>
-                    <circle cx="187.657" cy="47" r="47" fill="url(#paint1_linear)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear" x1="230.381" y1="-328.064" x2="1561.33" y2="864.281" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#E8FF5E"/>
-                            <stop offset="1" stop-color="#C726FF"/>
-                        </linearGradient>
-                        <linearGradient id="paint1_linear" x1="167.067" y1="-52.9683" x2="276.12" y2="56.8445" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#13A8FC"/>
-                            <stop offset="1" stop-color="#00FFC2"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <svg class="advantage__figure-mobile" width="347" height="540" viewBox="0 0 347 540" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="115.5" cy="76" rx="75.5" ry="76" fill="url(#paint0_linear_mobile)"/>
-                    <ellipse cx="173.5" cy="366" rx="173.5" ry="174" fill="url(#paint1_linear_mobile)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear_mobile" x1="82.4238" y1="-85.6508" x2="258.77" y2="90.7548" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#13A8FC"/>
-                            <stop offset="1" stop-color="#00FFC2"/>
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_mobile" x1="97.4905" y1="-4.09524" x2="662.152" y2="500.309" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#E8FF5E"/>
-                            <stop offset="1" stop-color="#C726FF"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-
                 for object in advantages
                     +advantageItem(object)
+    .advantage__figure
+    .advantage__figure-mobile
 section
     //- Service
     .container

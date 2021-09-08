@@ -6,6 +6,7 @@
     z-index: 1;
 
     width: 100%;
+    // 60-120
     padding: map-get($map: $spacers, $key: 4) map-get($map: $spacers, $key: 5);
 
     &__container{
@@ -15,9 +16,8 @@
     }
 
     &__logo{
-        width: 174px;
-        // 30px
-        height: map-get($map: $spacers, $key: 2);
+        width: 200px;
+        height: 40px;
         background: url('../img/logo.svg') no-repeat left center / contain;
     }
     &__phone{
@@ -30,6 +30,7 @@
             transition: $transition-base;
         }
         &-body{
+            font-size: map-get($map: $font-size, $key: md);
             padding-left: $spacer-gutter;
             padding-top: 5px;
         }
@@ -59,13 +60,11 @@
         background-color: $body-bg-secondary;
         
         &__container{
+            // 40-20
+            padding: map-get($map: $spacers, $key: 3) $grid-gutter-width;
             max-width: map-get($map: $container-max-widths, $key: lg);
-            padding: map-get($map: $spacers, $key: 2) $grid-gutter-width;
             margin-left: auto;
             margin-right: auto;
-        }
-        &__logo{
-            width: 150px;
         }
     }
 }
@@ -74,7 +73,7 @@
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
-            padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
+            // padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
             // padding: map-get($map: $spacers, $key: 2) $grid-gutter-width;
         }
         &__phone-icon{
@@ -90,7 +89,7 @@
             // padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
         }
         &__logo{
-            width: 140px;
+            width: 160px;
             height: 30px;
         }
         &__phone-icon{
@@ -98,16 +97,13 @@
         }
     }
 }
-// < 375px
+// < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .header{
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
-            padding: map-get($map: $spacers, $key: 1)/2 map-get($map: $spacers, $key: 1);
+            padding: map-get($map: $spacers, $key: 1);
         }
-        // &__logo{
-        //     width: 120px;
-        // }
         &__phone-body{
             font-size: map-get($map: $font-size, $key: xs);
             padding-left: 6px;
