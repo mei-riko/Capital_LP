@@ -1,0 +1,18 @@
+.modal_company{
+    &.fancybox-content{
+        width: 100%;
+        padding: $spacer 0;
+        min-height: 100vh;
+
+        background: $body-bg;
+        color: $white;
+
+        cursor: default!important;
+
+        .fancybox-close-small{
+            position: fixed;
+            top: $grid-gutter-width;
+            right: $grid-gutter-width;
+        }
+    }
+}

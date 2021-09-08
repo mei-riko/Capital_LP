@@ -1174,7 +1174,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 1px solid;
+  border: 1px solid inherit;
   background: #ffffff no-repeat center/contain;
 }
 
@@ -1351,24 +1351,6 @@
   z-index: 11;
 }
 
-.modal.fancybox-content {
-  width: 100%;
-  padding: 40px 0;
-  background: #141314;
-  color: #ffffff;
-  cursor: default !important;
-}
-
-.modal.fancybox-content .fancybox-close-small {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
-
-.fancybox-container .fancybox-slide {
-  padding: 0;
-}
-
 @media all and (max-width: 1600px) {
   .modal__company-intro {
     font-size: 20px;
@@ -1503,6 +1485,29 @@
   .modal__form-btn {
     font-size: 14px;
   }
+}
+
+.modal_company.fancybox-content {
+  width: 100%;
+  padding: 40px 0;
+  min-height: 100vh;
+  background: #141314;
+  color: #ffffff;
+  cursor: default !important;
+}
+
+.modal_company.fancybox-content .fancybox-close-small {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.modal_form.fancybox-content {
+  width: 100%;
+  padding: 0;
+  background: inherit;
+  color: #ffffff;
+  cursor: default !important;
 }
 
 .heading-screen {

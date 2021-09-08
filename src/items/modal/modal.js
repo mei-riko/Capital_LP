@@ -1,6 +1,12 @@
 import $ from 'jquery';
 
 $(function() {
+    // Fancybox
+    if( $('[data-fancybox]').length > 0 ){
+        $('[data-fancybox]').fancybox({
+            autoFocus: false
+        });
+    }
     // Modal
     $('.item.item_modal .item_modal__btn').on('click', function(){
         let modal = $(this).closest('.modal');

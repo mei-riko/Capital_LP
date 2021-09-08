@@ -1,0 +1,66 @@
+.modal.modal_company.d-none#modal2
+    .container  
+        .row.justify-content-between.justify-content-md-center.align-items-center.modal__heading
+            .col-12.col-md-9.col-sm-12
+                .modal__company 
+                    .modal__company-logo(style="background-image:url('img/logo-Coursera.svg');")
+                    .modal__company-title Coursera
+            
+        .row.justify-content-between.justify-content-md-center.align-items-center
+            .col-6.col-md-9.col-sm-12
+                p.modal__company-intro Платформа для онлайн образования с десятками миллионов пользователей по всему миру
+                p.modal__company-intro.mb-0 Основана: 2009&nbsp;г.
+                p.modal__company-intro.mb-0 Основатель: Юрий Коропачинский
+                p.modal__company-intro.mb-0 Сайт компании: https://ocsial.com/ru/
+                a.modal__download-btn(href="#")
+                    svg.modal__download-icon(width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(fill-rule="evenodd" clip-rule="evenodd" d="M0.272 1.365C-1.78814e-07 1.9 0 2.6 0 4V16C0 17.4 -1.78814e-07 18.1 0.272 18.635C0.511895 19.1053 0.894506 19.4875 1.365 19.727C1.9 20 2.6 20 4 20H10C11.4 20 12.1 20 12.635 19.727C13.1051 19.4874 13.4874 19.1051 13.727 18.635C14 18.1 14 17.4 14 16V7.988C14 7.254 14 6.888 13.917 6.542C13.8432 6.2359 13.7218 5.94332 13.557 5.675C13.372 5.372 13.113 5.113 12.594 4.595L9.406 1.405C8.887 0.887 8.628 0.628 8.325 0.442C8.05667 0.277261 7.7641 0.155775 7.458 0.082C7.112 1.49012e-08 6.745 0 6.012 0H4C2.6 0 1.9 5.96046e-08 1.365 0.272C0.894354 0.511725 0.511725 0.894354 0.272 1.365ZM6 7V2.82C6.00001 2.66052 6.04648 2.5045 6.13371 2.371C6.22094 2.23749 6.34517 2.13228 6.49121 2.06822C6.63726 2.00416 6.7988 1.98402 6.9561 2.01027C7.1134 2.03651 7.25966 2.108 7.377 2.216L11.763 6.602C11.8776 6.7166 11.9555 6.8626 11.9871 7.02153C12.0186 7.18046 12.0023 7.34518 11.9402 7.49485C11.8781 7.64451 11.7731 7.77239 11.6383 7.86231C11.5035 7.95223 11.345 8.00015 11.183 8H7C6.73478 8 6.48043 7.89464 6.29289 7.70711C6.10536 7.51957 6 7.26522 6 7Z")
+                    | Скачать PDF
+                    span.d-xs-none -презентацию
+            .col-6.col-md-9.col-sm-12.mt-md-1
+                .item.item_modal
+                    .item__statistics.item_modal__statistics
+                        .item__statistics-title.item_modal__statistics-title Ожидаемая доходность
+                        .item__statistics-value.item_modal__statistics-value 73-514%
+                        .item__statistics-title.item_modal__statistics-title Дата выхода на IPO через SPAC
+                        .item__statistics-value.item_modal__statistics-value 2021-2022 гг
+                        .item__statistics-title.item_modal__statistics-title Комиссии
+                        .item__statistics-value.item_modal__statistics-value 5% от суммы инвестиций <br/>
+                            | 10% при росте до 30% <br/>
+                            | 20% при росте от 30%
+                    //- .item_modal__btn.btn.btn_action(href="#modalform" data-trigger="modal") Принять участие 
+                    //-     span.d-xs-none в Pre-IPO
+        .row.justify-content-between.justify-content-md-center.mt-3.mt-md-1
+            .col-6.col-md-9.col-sm-12
+                p.h5.text-bolder Доходность компании
+                .modal__stats
+                    .modal__stats-item 
+                        .modal__stats-title Минимальный порог входа
+                        .modal__stats-value $10 060
+                    .modal__stats-item 
+                        .modal__stats-title Ожидаемая доходность
+                        .modal__stats-value 60 – 480%
+                    .modal__stats-item 
+                        .modal__stats-title Lock-up период
+                        .modal__stats-value от 0 до 3 месяцев
+                    .modal__stats-item 
+                        .modal__stats-title Комиссия
+                        .modal__stats-value 5%
+            .col-6.col-lg-6.col-md-9.col-sm-12.mt-md-1
+                p.h5.text-bolder.mb-2 Оценка стоимости компании
+                img.img-fluid(src="./img/graph.png")
+        //- .row.justify-content-center.mt-3.mt-md-1
+        //-     .col-12.col-md-9.col-sm-12
+        //-         .modal__form-container
+        //-             //- .modal__form-thanks
+        //-             //-     <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //-             //-         <path fill-rule="evenodd" clip-rule="evenodd" d="M86.1253 24.3749C86.1253 16.2499 78.0978 10.8333 71.8253 10.8333C67.4595 10.8333 67.1182 14.1483 66.4466 20.6916C66.1487 23.5624 65.7912 27.0508 65.0003 31.1458C62.9095 41.9899 55.6837 55.8457 48.772 59.9895V92.0832C48.7503 104.271 52.8128 108.333 70.417 108.333H90.8541C102.641 108.333 105.495 100.571 106.557 97.6949L106.627 97.4999C107.245 95.8424 108.567 94.537 110.083 93.0582C111.762 91.4007 113.68 89.5212 115.104 86.6666C116.789 83.292 116.567 80.2912 116.367 77.6207C116.242 76.0012 116.128 74.5062 116.459 73.1249C116.805 71.6624 117.249 70.552 117.677 69.4903C118.452 67.562 119.167 65.7745 119.167 62.2916C119.167 54.1666 115.115 48.7607 106.627 48.7607H83.9587C83.9587 48.7607 86.1253 32.4999 86.1253 24.3749ZM29.792 54.1666C27.6371 54.1666 25.5705 55.0226 24.0467 56.5463C22.523 58.0701 21.667 60.1367 21.667 62.2916V100.208C21.667 102.363 22.523 104.43 24.0467 105.953C25.5705 107.477 27.6371 108.333 29.792 108.333C31.9469 108.333 34.0135 107.477 35.5372 105.953C37.061 104.43 37.917 102.363 37.917 100.208V62.2916C37.917 60.1367 37.061 58.0701 35.5372 56.5463C34.0135 55.0226 31.9469 54.1666 29.792 54.1666Z" fill="#597CFB"/>
+        //-             //-     </svg>
+        //-             //-     p.modal__form-intro Дмитрий, спасибо за заявку! <br/>
+        //-             //-         | Скоро с вами свяжемся.
+        //-             p.modal__form-intro Оставьте заявку, чтобы подробнее узнать про&nbsp;условия. 
+        //-                 | Наш&nbsp;консультат свяжется с&nbsp;вами в&nbsp;ближайшее время
+        //-             .form.form_modal.modal__form
+        //-                 input.input.form_modal__input(type="text", name="name",placeholder="Вашe имя")
+        //-                 input.input.form_modal__input(type="tel", name="phone",placeholder="Номер телефона")
+        //-                 button.form_modal__btn.btn.btn_action(type="submit") Принять участие

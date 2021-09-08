@@ -20,7 +20,7 @@
       <div class="header__nav header__nav_mobile-only"><a class="header__nav-item" href="#preipo" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#prevpreipo" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#about" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#work" data-trigger="scroll">Как мы работаем</a></div>
     </header>
     <div class="overlay"></div>
-    <div class="modal modal_preipo d-none" id="modal1">
+    <div class="modal modal_company d-none" id="modal1">
       <div class="container"> 
         <div class="row justify-content-between justify-content-md-center align-items-center modal__heading">
           <div class="col-6 col-md-9 col-sm-12">
@@ -104,7 +104,7 @@
             </div>
           </div>
           <div class="col-6 col-lg-6 col-md-9 col-sm-12 mt-md-1">
-            <p class="h5 text-bolder mb-2">Оценка стоимости компании</p><img class="img-fluid" src="../img/graph.png"/>
+            <p class="h5 text-bolder mb-2">Оценка стоимости компании</p><img class="img-fluid" src="./img/graph.png"/>
           </div>
         </div>
         <div class="row justify-content-center mt-3 mt-md-1">
@@ -116,6 +116,87 @@
                 <input class="input form_modal__input" type="text" name="name" placeholder="Вашe имя"/>
                 <input class="input form_modal__input" type="tel" name="phone" placeholder="Номер телефона"/>
                 <button class="form_modal__btn btn btn_action" type="submit">Принять участие</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal_company d-none" id="modal2">
+      <div class="container"> 
+        <div class="row justify-content-between justify-content-md-center align-items-center modal__heading">
+          <div class="col-12 col-md-9 col-sm-12">
+            <div class="modal__company"> 
+              <div class="modal__company-logo" style="background-image:url('img/logo-Coursera.svg');"></div>
+              <div class="modal__company-title">Coursera</div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-between justify-content-md-center align-items-center">
+          <div class="col-6 col-md-9 col-sm-12">
+            <p class="modal__company-intro">Платформа для онлайн образования с десятками миллионов пользователей по всему миру</p>
+            <p class="modal__company-intro mb-0">Основана: 2009&nbsp;г.</p>
+            <p class="modal__company-intro mb-0">Основатель: Юрий Коропачинский</p>
+            <p class="modal__company-intro mb-0">Сайт компании: https://ocsial.com/ru/</p><a class="modal__download-btn" href="#">
+              <svg class="modal__download-icon" width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.272 1.365C-1.78814e-07 1.9 0 2.6 0 4V16C0 17.4 -1.78814e-07 18.1 0.272 18.635C0.511895 19.1053 0.894506 19.4875 1.365 19.727C1.9 20 2.6 20 4 20H10C11.4 20 12.1 20 12.635 19.727C13.1051 19.4874 13.4874 19.1051 13.727 18.635C14 18.1 14 17.4 14 16V7.988C14 7.254 14 6.888 13.917 6.542C13.8432 6.2359 13.7218 5.94332 13.557 5.675C13.372 5.372 13.113 5.113 12.594 4.595L9.406 1.405C8.887 0.887 8.628 0.628 8.325 0.442C8.05667 0.277261 7.7641 0.155775 7.458 0.082C7.112 1.49012e-08 6.745 0 6.012 0H4C2.6 0 1.9 5.96046e-08 1.365 0.272C0.894354 0.511725 0.511725 0.894354 0.272 1.365ZM6 7V2.82C6.00001 2.66052 6.04648 2.5045 6.13371 2.371C6.22094 2.23749 6.34517 2.13228 6.49121 2.06822C6.63726 2.00416 6.7988 1.98402 6.9561 2.01027C7.1134 2.03651 7.25966 2.108 7.377 2.216L11.763 6.602C11.8776 6.7166 11.9555 6.8626 11.9871 7.02153C12.0186 7.18046 12.0023 7.34518 11.9402 7.49485C11.8781 7.64451 11.7731 7.77239 11.6383 7.86231C11.5035 7.95223 11.345 8.00015 11.183 8H7C6.73478 8 6.48043 7.89464 6.29289 7.70711C6.10536 7.51957 6 7.26522 6 7Z"></path>
+              </svg>Скачать PDF<span class="d-xs-none">-презентацию</span></a>
+          </div>
+          <div class="col-6 col-md-9 col-sm-12 mt-md-1">
+            <div class="item item_modal">
+              <div class="item__statistics item_modal__statistics">
+                <div class="item__statistics-title item_modal__statistics-title">Ожидаемая доходность</div>
+                <div class="item__statistics-value item_modal__statistics-value">73-514%</div>
+                <div class="item__statistics-title item_modal__statistics-title">Дата выхода на IPO через SPAC</div>
+                <div class="item__statistics-value item_modal__statistics-value">2021-2022 гг</div>
+                <div class="item__statistics-title item_modal__statistics-title">Комиссии</div>
+                <div class="item__statistics-value item_modal__statistics-value">
+                  5% от суммы инвестиций <br/>10% при росте до 30% <br/>
+                  20% при росте от 30%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-between justify-content-md-center mt-3 mt-md-1">
+          <div class="col-6 col-md-9 col-sm-12">
+            <p class="h5 text-bolder">Доходность компании</p>
+            <div class="modal__stats">
+              <div class="modal__stats-item"> 
+                <div class="modal__stats-title">Минимальный порог входа</div>
+                <div class="modal__stats-value">$10 060</div>
+              </div>
+              <div class="modal__stats-item"> 
+                <div class="modal__stats-title">Ожидаемая доходность</div>
+                <div class="modal__stats-value">60 – 480%</div>
+              </div>
+              <div class="modal__stats-item"> 
+                <div class="modal__stats-title">Lock-up период</div>
+                <div class="modal__stats-value">от 0 до 3 месяцев</div>
+              </div>
+              <div class="modal__stats-item"> 
+                <div class="modal__stats-title">Комиссия</div>
+                <div class="modal__stats-value">5%</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-6 col-md-9 col-sm-12 mt-md-1">
+            <p class="h5 text-bolder mb-2">Оценка стоимости компании</p><img class="img-fluid" src="./img/graph.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal_form d-none" id="modal3">
+      <div class="container"> 
+        <div class="row justify-content-center">
+          <div class="col-9 col-md-9 col-sm-12">
+            <div class="modal__form-container">
+              <p class="modal__form-intro">
+                Оставьте заявку, чтобы сразу узнать про&nbsp;появление компании. Наши&nbsp;консультаты свяжутся с&nbsp;вами как только поступит новая информация.</p>
+              <div class="form form_modal modal__form">
+                <input class="input form_modal__input" type="text" name="name" placeholder="Вашe имя"/>
+                <input class="input form_modal__input" type="text" name="mail" placeholder="Ваш e-mail"/>
+                <button class="form_modal__btn btn btn_action" type="submit">Получить уведомление</button>
               </div>
             </div>
           </div>
@@ -179,7 +260,7 @@
             </div>
           </div>
           <div class="content__slider-slide">
-            <div class="item item_preipo" data-fancybox="data-fancybox" data-src="#modal2">
+            <div class="item item_preipo" data-fancybox="company2" data-src="#modal1">
               <div class="item__open-modal item_preipo__open-modal">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
@@ -204,7 +285,7 @@
             </div>
           </div>
           <div class="content__slider-slide">
-            <div class="item item_preipo-soon" data-fancybox="data-fancybox" data-src="#modal3">
+            <div class="item item_preipo-soon" data-fancybox="soon" data-src="#modal3">
               <div class="item__description">
                 <div class="item__open-modal item_preipo-soon__open-modal">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,7 +311,7 @@
       <div class="container content__slider">
         <div class="content__grid content__slider-wrapper">
           <div class="content__slider-slide">
-            <div class="item item_preipo-prev" data-fancybox="data-fancybox" data-src="#modal4">
+            <div class="item item_preipo-prev" data-fancybox="company3" data-src="#modal2">
               <div class="item__open-modal item_preipo-prev__open-modal">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
@@ -257,7 +338,7 @@
             </div>
           </div>
           <div class="content__slider-slide">
-            <div class="item item_preipo-prev" data-fancybox="data-fancybox" data-src="#modal5">
+            <div class="item item_preipo-prev" data-fancybox="company4" data-src="#modal2">
               <div class="item__open-modal item_preipo-prev__open-modal">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
@@ -283,7 +364,7 @@
             </div>
           </div>
           <div class="content__slider-slide">
-            <div class="item item_preipo-prev" data-fancybox="data-fancybox" data-src="#modal6">
+            <div class="item item_preipo-prev" data-fancybox="company5" data-src="#modal2">
               <div class="item__open-modal item_preipo-prev__open-modal">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0C8.44771 0 8 0.447716 8 1V8L1 8C0.447715 8 0 8.44771 0 9C0 9.55228 0.447716 10 1 10H8V17C8 17.5523 8.44771 18 9 18C9.55229 18 10 17.5523 10 17V10H17C17.5523 10 18 9.55229 18 9C18 8.44771 17.5523 8 17 8L10 8V1C10 0.447715 9.55229 0 9 0Z"></path>
