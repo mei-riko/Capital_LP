@@ -50,7 +50,17 @@
             text-align: right;
         }
     }
-    // align-items: flex-end;
+
+    // Slider Blocks
+    &__slider-wrapper{
+        align-items: stretch;
+    }
+    &__slider-slide{
+        height: auto;
+
+        display: flex;
+        align-items: stretch;
+    }
 }
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){

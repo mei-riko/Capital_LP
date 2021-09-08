@@ -1,11 +1,13 @@
 .item_info{
-    text-align: left;
     background-color: $white;
     border-color: $white;
     color: $black;
 
     padding: $spacer;
-    height: 100%;
+    text-align: left;
+    
+    // height: 100%;
+    height: auto;
 
     justify-content: flex-start;
 

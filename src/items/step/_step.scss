@@ -28,14 +28,7 @@
     }
 }
 // < 1024px
-@media all and (max-width: map-get($grid-breakpoints, 'md')){
-    .step{
-        &_last{
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-    }
-}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){}
 // < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .step{
@@ -53,7 +46,7 @@
 
         &_last{
             grid-column-start: 1;
-            grid-column-end: 2;
+            grid-column-end: 3;
         }
     }
 }
@@ -65,6 +58,11 @@
 
         &__num{
             text-align: center;
+        }
+
+        &_last{
+            grid-column-start: 1;
+            grid-column-end: 2;
         }
     }
 }
