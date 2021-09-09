@@ -1,0 +1,21 @@
+.modal_licence{
+    &.fancybox-content{
+        width: 620px;
+        max-width: calc(100% - 40px);
+        border-radius: $border-radius;
+        padding: $spacer map-get($map: $spacers, $key: 1);
+
+        background: $body-bg;
+        color: $white;
+
+        cursor: default!important;
+    }
+}
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .modal_licence{
+        &.fancybox-content{
+            padding: $spacer;
+        }
+    }
+}

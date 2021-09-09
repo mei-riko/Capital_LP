@@ -17,7 +17,8 @@ $(function() {
 
         modalForm.find('input:first-child').focus();
     });
-    $('.modal .modal__form-btn').on('click', function(){
+    $('.modal .modal__trigger').on('click', function(e){
+        e.preventDefault();
         $(this).closest('.modal__track-container').find('.modal__track').addClass('modal__track--active');
     });
 });

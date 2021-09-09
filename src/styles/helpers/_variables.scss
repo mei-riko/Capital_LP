@@ -48,7 +48,7 @@ $container-max-widths: (
 
 $font-weight          : 400;
 $font-weight-bolder   : 500;
-$font-weight-bold     : 700;
+$font-weight-bold     : 600;
 
 $font-weight-heading: $font-weight-bolder !default;
 $dt-font-weight:      $font-weight !default;
@@ -90,9 +90,9 @@ $grid-columns         : 10    !default;
 $grid-gutter-width    : 20px  !default;
 $spacer-gutter        : 12px  !default;
 
-$paragraph-margin-bottom: $spacer-gutter !default;
-
 $spacer : 40px!default;
+$paragraph-margin-bottom: $spacer/2 !default;
+
 $spacers: ()  !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(

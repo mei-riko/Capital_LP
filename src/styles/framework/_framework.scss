@@ -83,7 +83,9 @@ table{
     &-center{text-align: center;}
     &-left{text-align: left;}
 }
+.text-grey{filter: opacity(0.5);}
 .text-action{color: $action;}
+.text-spacing{letter-spacing: 0.05em;}
 
 .img-fluid{
     display: block;

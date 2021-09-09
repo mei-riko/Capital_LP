@@ -16,6 +16,7 @@
 
     &__title{
         color: $action;
+        margin-bottom: $spacer;
     }
     &__intro{
         font-size: map-get($map: $heading, $key: h4);

@@ -21,6 +21,9 @@
             filter: opacity(.5);
         }
     }
+    &__link{
+        text-decoration: underline;
+    }
     &__disclaimers{
         font-size: map-get($map: $font-size, $key: xs);
         color: $grey;

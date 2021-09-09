@@ -1,4 +1,5 @@
 .modal{
+    display: none;
     background: $body-bg;
     color: $white;
 
@@ -39,7 +40,6 @@
             transition: $transition-base;
         }
         &-btn{
-            margin-top: $spacer;
             border-radius: 30px;
             display: inline-flex;
             align-items: center;
@@ -51,14 +51,19 @@
             cursor: pointer;
             transition: $transition-base;
 
-            &:hover{
-                border-color: $action;
-                color: $action;
-                text-decoration: none;
-
-                & > svg {
-                    fill: $action;
+            &_link{
+                &:hover{
+                    border-color: $action;
+                    color: $action;
+                    text-decoration: none;
+    
+                    & > svg {
+                        fill: $action;
+                    }
                 }
+            }
+            &_disabled{
+                filter: opacity(.5);
             }
         }
     }
@@ -133,7 +138,7 @@
             text-align: right;
         }
     }
-
+    // Отслеживать | Получить pdf
     &__track{
         &-container{
             position: relative;
@@ -147,7 +152,7 @@
         transition: $transition-base;
         z-index: -1;
 
-        width: 400px;
+        width: 480px;
         max-width: 100%;
 
         background-color: $orange;
@@ -166,12 +171,23 @@
             width: 100%;
             margin-top: $spacer-gutter;
         }
-
+        &-form{
+            &_pdf{
+                margin-top: $spacer;
+            }
+        }
         // JS State
         &--active{
             opacity: 1;
             z-index: 11;
         }
+    }
+
+    // Fancybox
+    .fancybox-button.fancybox-close-small{
+        padding: 0;
+        top: $grid-gutter-width;
+        right: $grid-gutter-width;
     }
 }
 // < 1600px

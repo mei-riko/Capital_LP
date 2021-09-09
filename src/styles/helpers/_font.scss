@@ -1,14 +1,21 @@
 @font-face {
-    font-family: "Theinhardt Pan";
+    font-family: "TT Interfaces";
     font-weight: 400;
     font-style: normal;
-    src: url('../fonts/TheinhardtPanRegular.woff') format('woff'),
-      url('../fonts/TheinhardtPanRegular.ttf') format('truetype');
+    src: url('../fonts/TTInterfaces-Regular.woff') format('woff'),
+      url('../fonts/TTInterfaces-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: "Theinhardt Pan";
-    font-weight: 600;
+    font-family: "TT Interfaces";
+    font-weight: 500;
     font-style: normal;
-    src: url('../fonts/TheinhardtPanMedium.woff') format('woff'),
-      url('../fonts/TheinhardtPanMedium.ttf') format('truetype');
+    src: url('../fonts/TTInterfaces-Medium.woff') format('woff'),
+      url('../fonts/TTInterfaces-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "TT Interfaces";
+  font-weight: 600;
+  font-style: normal;
+  src: url('../fonts/TTInterfaces-SemiBold.woff') format('woff'),
+    url('../fonts/TTInterfaces-SemiBold.ttf') format('truetype');
 }

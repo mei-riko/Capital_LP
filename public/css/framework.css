@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 abbr[title],
@@ -94,7 +94,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 small {
@@ -330,17 +330,24 @@ template {
 }
 
 @font-face {
-  font-family: "Theinhardt Pan";
+  font-family: "TT Interfaces";
   font-weight: 400;
   font-style: normal;
-  src: url("../fonts/TheinhardtPanRegular.woff") format("woff"), url("../fonts/TheinhardtPanRegular.ttf") format("truetype");
+  src: url("../fonts/TTInterfaces-Regular.woff") format("woff"), url("../fonts/TTInterfaces-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Theinhardt Pan";
+  font-family: "TT Interfaces";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/TTInterfaces-Medium.woff") format("woff"), url("../fonts/TTInterfaces-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TT Interfaces";
   font-weight: 600;
   font-style: normal;
-  src: url("../fonts/TheinhardtPanMedium.woff") format("woff"), url("../fonts/TheinhardtPanMedium.ttf") format("truetype");
+  src: url("../fonts/TTInterfaces-SemiBold.woff") format("woff"), url("../fonts/TTInterfaces-SemiBold.ttf") format("truetype");
 }
 
 .container {
@@ -1942,7 +1949,7 @@ body.hidden {
 p {
   font-size: 1rem;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 p:last-child {
@@ -1952,7 +1959,7 @@ p:last-child {
 ol, ul {
   padding: 0;
   padding-left: 1em;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 ol:last-child, ul:last-child {
@@ -1993,8 +2000,17 @@ table td {
   text-align: left;
 }
 
+.text-grey {
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+}
+
 .text-action {
   color: #597CFB;
+}
+
+.text-spacing {
+  letter-spacing: 0.05em;
 }
 
 .img-fluid {
@@ -2171,7 +2187,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: "TT Interfaces", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   line-height: 1.12;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
@@ -2181,7 +2197,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
 
 * + h1, * + h2, * + h3, * + h4, * + h5, * + h6,
 * + .h1, * + .h2, * + .h3, * + .h4, * + .h5, * + .h6 {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .h1, h1 {

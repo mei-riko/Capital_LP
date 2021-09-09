@@ -8,7 +8,7 @@
             width: 100%;
         }
     }
-    &_modal{
+    &_callback{
         display: grid;
         grid-gap: $spacer-gutter;
         grid-template-columns: 1fr 1fr 340px;
@@ -23,7 +23,7 @@
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .form{
 
-        &_modal{
+        &_callback{
             grid-gap: $spacer-gutter;
             grid-template-columns: 1fr 1fr 260px;
         }
@@ -35,7 +35,7 @@
         &_inline{
             grid-template-columns: 1fr 240px;
         }
-        &_modal{
+        &_callback{
             grid-gap: $spacer-gutter;
             grid-template-columns: 1fr;
         }
