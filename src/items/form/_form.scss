@@ -1,4 +1,6 @@
 .form{
+    margin-bottom: 0;
+    
     &_inline{
         display: grid;
         grid-gap: $spacer-gutter;

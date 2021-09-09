@@ -322,6 +322,7 @@
                 font-size: map-get($map: $font-size, $key: md);
             }
         }
+        
         &__stats{
             &-item{
                 grid-gap: $spacer-gutter/2;
@@ -337,6 +338,11 @@
             &-intro{
                 font-size: map-get($map: $font-size, $key: sm);
                 margin: $spacer/2 auto;
+            }
+            &-form{
+                &_pdf{
+                    margin-top: $spacer/2;
+                }
             }
         }
     }

@@ -477,6 +477,10 @@
   }
 }
 
+.form {
+  margin-bottom: 0;
+}
+
 .form_inline {
   display: grid;
   grid-gap: 12px;
@@ -1434,6 +1438,9 @@
     font-size: 14px;
     margin: 20px auto;
   }
+  .modal__track-form_pdf {
+    margin-top: 20px;
+  }
 }
 
 @media all and (max-width: 375px) {
@@ -1668,6 +1675,16 @@
 .content__title {
   color: #597CFB;
   margin-bottom: 40px;
+}
+
+.content__title_link {
+  display: inline-block;
+}
+
+.content__title_link:hover, .content__title_link:focus {
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+  text-decoration: none;
 }
 
 .content__intro {

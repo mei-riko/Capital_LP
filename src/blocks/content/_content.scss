@@ -17,6 +17,15 @@
     &__title{
         color: $action;
         margin-bottom: $spacer;
+
+        &_link{
+            display: inline-block;
+
+            &:hover, &:focus{
+                filter: opacity(0.5);
+                text-decoration: none;
+            }
+        }
     }
     &__intro{
         font-size: map-get($map: $heading, $key: h4);
