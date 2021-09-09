@@ -74,7 +74,9 @@ table{
 .text-grey{
     color: $grey;
 }
-
+.text-spacing{
+    letter-spacing: 0.05em;
+}
 .img-fluid{
     display: block;
     height: auto;

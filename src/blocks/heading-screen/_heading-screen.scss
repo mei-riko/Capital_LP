@@ -258,8 +258,8 @@
 
         &__container{
             max-width: map-get($map: $container-max-widths, $key: sm);
+            padding-top: 100px;
 
-            // padding-top: 120px;
             min-height: 700px;
             background-image: none;
 
@@ -309,7 +309,7 @@
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xs);
             // min-height: 580px;
-            padding-top: map-get($map: $spacers, $key: 5);
+            // padding-top: map-get($map: $spacers, $key: 5);
 
             &:after{
                 width: 100%;
@@ -326,6 +326,11 @@
             font-size: map-get($map: $heading, $key: h4);
             margin-bottom: $spacer-gutter;
         }
+        &__col{
+            &-btn{
+                padding: 18px 18px 16px 18px;
+            }
+        }
     }
 }
 // < 375px
@@ -336,7 +341,7 @@
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xxs);
             min-height: 580px;
-            // padding-top: map-get($map: $spacers, $key: 4);
+            padding-top: map-get($map: $spacers, $key: 5);
             justify-content: space-around;
 
             &:after{
@@ -363,8 +368,17 @@
             margin-bottom: 100px;
         }
         // Card Row
+        &__card{
+            padding: $grid-gutter-width/2 0;
+        }
         &__col{
             max-width: calc(50% - 15px);
+
+            &-btn{
+                font-size: map-get($map: $font-size, $key: sm);
+                padding: 18px 16px 16px 16px;
+                width: 100%;
+            }
         }
         &__change{
             font-size: 10px;

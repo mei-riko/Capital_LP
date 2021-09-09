@@ -25,7 +25,7 @@
 
 @media all and (max-width: 1600px) {
   .item__title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -351,7 +351,7 @@
 }
 
 .item_stocks__title {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
 }
 
@@ -423,14 +423,12 @@
 @media all and (max-width: 768px) {
   .item_stocks {
     width: 100%;
+    padding: 12px;
+    padding-right: 60px;
   }
 }
 
 @media all and (max-width: 375px) {
-  .item_stocks {
-    padding-top: 16px;
-    padding-bottom: 14px;
-  }
   .item_stocks__title {
     font-size: 12px;
   }
@@ -540,7 +538,7 @@
     padding: 15px;
     max-width: 160px;
     width: 100%;
-    min-height: 135px;
+    min-height: 134px;
     text-align: center;
   }
   .item_product__img {
@@ -729,7 +727,7 @@
     padding-right: 10px;
   }
   .item_service__icon {
-    width: 60px;
+    width: 100px;
     margin-bottom: 20px;
   }
   .item_service__intro {
@@ -741,8 +739,11 @@
   .item_service {
     padding: 20px;
   }
+  .item_service__icon {
+    width: 70px;
+  }
   .item_service__title {
-    font-size: 20px;
+    font-size: 18px;
   }
   .item_service__intro {
     min-height: 1px;
@@ -766,6 +767,7 @@
   font-weight: 500;
   line-height: 1.2;
   padding: 26px 56px 24px 56px;
+  min-width: 200px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -789,30 +791,29 @@
 
 @media all and (max-width: 1600px) {
   .btn {
-    font-size: 16px;
-    padding: 22px 56px 20px 56px;
+    font-size: 18px;
+    padding: 22px 36px 20px 36px;
   }
 }
 
 @media all and (max-width: 1024px) {
   .btn {
-    font-size: 14px;
-    padding: 14px 36px 12px 36px;
     border-radius: 8px;
   }
 }
 
 @media all and (max-width: 768px) {
   .btn {
-    padding: 14px 24px 12px 24px;
+    font-size: 16px;
+    padding: 20px 24px 18px 24px;
     border-radius: 8px;
+    min-width: 1px;
   }
 }
 
 @media all and (max-width: 375px) {
   .btn {
-    font-size: 12px;
-    padding: 12px 18px 10px 18px;
+    padding: 18px 20px 16px 20px;
   }
 }
 
@@ -858,7 +859,7 @@
 .input {
   border: 2px solid #ffffff;
   border-radius: 16px;
-  padding: 24px 30px 22px 30px;
+  padding: 26px 30px 24px 30px;
   background-color: inherit;
   color: #ffffff;
   font-size: 20px;
@@ -908,8 +909,8 @@
 
 @media all and (max-width: 1600px) {
   .input {
-    font-size: 16px;
-    padding: 20px 30px 18px 30px;
+    font-size: 18px;
+    padding: 22px 30px 20px 30px;
   }
   .input::-webkit-input-placeholder {
     font-size: 16px;
@@ -928,26 +929,32 @@
   }
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 768px) {
   .input {
-    font-size: 14px;
-    padding: 14px 30px 12px 30px;
+    font-size: 16px;
+    padding: 20px 24px 18px 24px;
     border-radius: 8px;
   }
   .input::-webkit-input-placeholder {
-    font-size: 14px;
+    font-size: 16px;
   }
   .input::-moz-placeholder {
-    font-size: 14px;
+    font-size: 16px;
   }
   .input:-ms-input-placeholder {
-    font-size: 14px;
+    font-size: 16px;
   }
   .input::-ms-input-placeholder {
-    font-size: 14px;
+    font-size: 16px;
   }
   .input::placeholder {
-    font-size: 14px;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .input {
+    padding: 18px 20px 16px 20px;
   }
 }
 
@@ -972,9 +979,6 @@
 .grid_stocks {
   grid-gap: 60px;
   grid-template-columns: 1fr 450px;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
 }
 
 @media all and (max-width: 1600px) {
@@ -1056,8 +1060,7 @@
 
 @media all and (max-width: 1600px) {
   .header {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding: 40px 120px;
   }
 }
 
@@ -1086,6 +1089,8 @@
 @media all and (max-width: 768px) {
   .header__container {
     max-width: 480px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .header__logo {
     width: 160px;
@@ -1099,7 +1104,6 @@
 @media all and (max-width: 576px) {
   .header__container {
     max-width: 480px;
-    padding: 20px;
   }
   .header__phone-body {
     font-size: 12px;
@@ -1127,18 +1131,37 @@
 
 .footer__text {
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .footer__text_sub {
+  display: block;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__disclaimers {
+  font-size: 12px;
+  color: #EBEBEB;
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  grid-gap: 20px;
+}
+
+.footer_disclaimers {
+  padding: 0 20px;
 }
 
 @media all and (max-width: 1600px) {
   .footer {
     padding: 60px 0;
+  }
+  .footer_disclaimers {
+    padding: 0 20px;
   }
 }
 
@@ -1151,6 +1174,9 @@
   }
   .footer__text {
     font-size: 14px;
+  }
+  .footer_disclaimers {
+    padding: 0 20px;
   }
 }
 
@@ -1172,9 +1198,21 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .footer__disclaimers {
+    font-size: 10px;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+
 @media all and (max-width: 375px) {
   .footer {
     padding: 30px 0;
+  }
+  .footer_disclaimers {
+    padding: 0 20px;
   }
 }
 
@@ -1255,7 +1293,7 @@
 }
 
 .heading-screen__content {
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.5);
   width: 620px;
   max-width: 100%;
@@ -1410,7 +1448,7 @@
     font-size: 16px;
   }
   .heading-screen__subtitle {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
   }
   .heading-screen__intro {
@@ -1432,6 +1470,7 @@
   }
   .heading-screen__container {
     max-width: 480px;
+    padding-top: 100px;
     min-height: 700px;
     background-image: none;
   }
@@ -1474,7 +1513,6 @@
   }
   .heading-screen__container {
     max-width: 480px;
-    padding-top: 80px;
   }
   .heading-screen__container:after {
     width: 100%;
@@ -1489,6 +1527,9 @@
     font-size: 24px;
     margin-bottom: 15px;
   }
+  .heading-screen__col-btn {
+    padding: 18px 18px 16px 18px;
+  }
 }
 
 @media all and (max-width: 375px) {
@@ -1498,6 +1539,7 @@
   .heading-screen__container {
     max-width: 100%;
     min-height: 580px;
+    padding-top: 80px;
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
@@ -1517,8 +1559,16 @@
     font-size: 14px;
     margin-bottom: 100px;
   }
+  .heading-screen__card {
+    padding: 10px 0;
+  }
   .heading-screen__col {
     max-width: calc(50% - 15px);
+  }
+  .heading-screen__col-btn {
+    font-size: 14px;
+    padding: 18px 16px 16px 16px;
+    width: 100%;
   }
   .heading-screen__change {
     font-size: 10px;
@@ -1549,10 +1599,9 @@
   right: -100px;
   bottom: 0;
   z-index: 0;
-  width: 860px;
-  height: 800px;
-  background: url("../img/bg-figure.svg") no-repeat center bottom/contain;
-  background-position-y: calc(100% + 140px);
+  width: 880px;
+  height: 680px;
+  background: url("../img/bg-figure.svg") no-repeat top center/cover;
 }
 
 .heading-screen_step__container:after {
@@ -1570,6 +1619,7 @@
 }
 
 .heading-screen_step__container_success:after {
+  right: 0;
   width: 580px;
   background: url("../img/business-man-success.png") no-repeat center bottom/contain;
 }
@@ -1584,12 +1634,21 @@
   background: url("../img/business-man-subscribe.png") no-repeat center bottom/contain;
 }
 
+.heading-screen_step__title {
+  width: 740px;
+}
+
 .heading-screen_step__card {
   grid-template-columns: repeat(2, 320px);
 }
 
 .heading-screen_step__intro {
   width: 100%;
+}
+
+.heading-screen_step__btn {
+  width: 300px;
+  max-width: 100%;
 }
 
 @media all and (max-width: 1600px) {
@@ -1624,7 +1683,7 @@
     background-position-y: bottom;
     right: -180px;
   }
-  .heading-screen_step__container_sad {
+  .heading-screen_step__container_success, .heading-screen_step__container_sad {
     padding-top: 140px;
   }
   .heading-screen_step__container_result:before {
@@ -1648,7 +1707,6 @@
 
 @media all and (max-width: 1024px) {
   .heading-screen_step__container {
-    padding-top: 100px;
     max-width: 720px;
   }
   .heading-screen_step__container:before {
@@ -1756,21 +1814,19 @@
   background-color: #282941;
   border-radius: 16px;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
+  max-width: 100%;
 }
 
 .stocks__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
-.stocks__btns-item {
-  margin-right: 20px;
-}
-
-.stocks__btns-item:last-child {
-  margin-right: 0;
+.stocks__btn {
+  white-space: nowrap;
+  width: 100%;
 }
 
 .stocks__chat {
@@ -1851,7 +1907,7 @@
 
 .stocks__message-text {
   grid-area: text;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.4;
 }
 
@@ -1911,12 +1967,12 @@
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 5px;
   }
+  .stocks__btns {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
 }
 
 @media all and (max-width: 1024px) {
-  .stocks {
-    padding-top: 100px;
-  }
   .stocks__container {
     max-width: 720px;
   }
@@ -1960,6 +2016,9 @@
     max-height: 420px;
     overflow: auto;
   }
+  .stocks__btns {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media all and (max-width: 576px) {
@@ -1976,43 +2035,34 @@
   .stocks__message-text {
     font-size: 14px;
   }
-  .stocks__btn-xs {
-    width: 100%;
+  .stocks__btns {
+    grid-gap: 10px;
   }
 }
 
 @media all and (max-width: 375px) {
   .stocks {
     background-color: #181933;
+    padding-top: 70px;
   }
   .stocks__container {
     max-width: 100%;
   }
   .stocks__btns {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    margin-top: 15px;
   }
-  .stocks__btns-item {
-    margin-right: 10px;
-  }
-  .stocks__btns-item:last-of-type {
-    margin-right: 0;
-  }
-  .stocks__btn {
-    width: 100%;
+  .stocks__btns--last {
+    grid-template-columns: 1fr;
   }
   .stocks__chat {
     height: 260px;
   }
   .stocks__chat-body {
-    width: calc(100% - 66px);
+    width: calc(100% - 54px);
   }
   .stocks__chat:after {
-    width: 46px;
-    height: 46px;
+    width: 34px;
+    height: 34px;
   }
   .stocks__message {
     padding: 15px;
@@ -2059,7 +2109,7 @@
 
 @media all and (max-width: 1280px) {
   .advantage__title {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
   }
   .advantage__figure {

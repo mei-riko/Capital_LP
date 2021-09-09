@@ -50,7 +50,7 @@
         padding-right: map-get($map: $spacers, $key: 1)/2;
 
         &__icon{
-            width: 60px;
+            width: 100px;
             margin-bottom: map-get($map: $spacers, $key: 1);
         }
         &__intro{
@@ -63,6 +63,9 @@
     .item_service{
         padding: map-get($map: $spacers, $key: 1);
 
+        &__icon{
+            width: 70px;
+        }
         &__title{
             font-size: map-get($map: $font-size, $key: lg);
         }

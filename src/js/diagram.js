@@ -359,6 +359,8 @@ $(function() {
 
 		if( window.maxYearDrawn) {
 			$('#oneMoreYear').parent().addClass('d-none');
+			$('#saleShares').removeClass('btn_secondary').addClass('btn_action');
+			$('.stocks__btns').addClass('stocks__btns--last');
 		}
 	}
 

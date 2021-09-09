@@ -24,20 +24,25 @@
         border-radius: $border-radius;
         
         width: 100%;
-        overflow: hidden;
+        // overflow: hidden;
+        overflow: auto;
+        max-width: 100%;
         // canvas{
         //     max-width: 100%;
         // }
     }
     &__btns{
-        display: flex;
+        display: grid;
+        grid-gap: $grid-gutter-width;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 
-        &-item{
-            margin-right: map-get($map: $spacers, $key: 1);
-            &:last-child{
-                margin-right: 0;
-            }
-        }
+        // &-item{
+        //     width: 100%;
+        // }
+    }
+    &__btn{
+        white-space: nowrap;
+        width: 100%;
     }
 
     // Chat
@@ -177,12 +182,15 @@
             border-bottom-right-radius: $border-radius;
             border-bottom-left-radius: 5px;
         }
+        &__btns{
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
     }
 }
 // < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .stocks{
-        padding-top: 100px;
+        // padding-top: 100px;
 
         &__container{
             max-width: map-get($map: $container-max-widths, $key: md);
@@ -222,7 +230,6 @@
             grid-column-start: 1;
             grid-column-end: 2;
         }
-
         &__chat{
             height: auto;
             max-height: unset;
@@ -230,6 +237,9 @@
                 max-height: 420px;
                 overflow: auto;
             }
+        }
+        &__btns{
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
@@ -251,8 +261,8 @@
         &__message-text{
             font-size: map-get($map: $font-size, $key: sm);
         }
-        &__btn-xs{
-            width: 100%;
+        &__btns{
+            grid-gap: $grid-gutter-width/2;
         }
     }
 }
@@ -260,37 +270,29 @@
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .stocks{
         background-color: $body-bg-secondary;
+        padding-top: 70px;
 
         &__container{
             max-width: map-get($map: $container-max-widths, $key: xxs);
         }
     
         &__btns{
-            flex-wrap: wrap;
-            justify-content: space-between;
+            margin-top: $spacer-gutter;
 
-            &-item{
-                // width: 100%;
-                margin-right: map-get($map: $spacers, $key: 1)/2;
-                // margin-bottom: $spacer-gutter;
-                &:last-of-type{
-                    margin-right: 0;
-                }
+            &--last{
+                grid-template-columns: 1fr;
             }
-        }
-        &__btn{
-            width: 100%;
         }
         &__chat{
             // min-height: 1px;
             height: 260px;
 
             &-body{
-                width: calc(100% - 66px);
+                width: calc(100% - 54px);
             }
             &:after{
-                width: 46px;
-                height: 46px;
+                width: 34px;
+                height: 34px;
             }
         }
         &__message{

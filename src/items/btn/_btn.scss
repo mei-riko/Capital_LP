@@ -1,11 +1,12 @@
 .btn{
     border-radius: $border-radius;
 
-    font-size: map-get($map: $font-size, $key: lg);
+    font-size: map-get($map: $heading, $key: h5);
     font-weight: 500;
     line-height: $line-height-heading;
 
     padding: 26px 56px 24px 56px;
+    min-width: 200px;
 
     display: inline-flex;
     justify-content: center;
@@ -20,32 +21,35 @@
         outline: none;
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .btn{
-        font-size: map-get($map: $font-size, $key: md);
-        padding: 22px 56px 20px 56px;
+        font-size: map-get($map: $font-size, $key: lg);
+        padding: 22px 36px 20px 36px;
     }
 }
-// 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .btn{
-        font-size: map-get($map: $font-size, $key: sm);
-        padding: 14px 36px 12px 36px;
+        // font-size: map-get($map: $font-size, $key: sm);
+        // padding: 14px 36px 12px 36px;
         border-radius: $border-radius/2;
     }
 }
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .btn{
-        // font-size: map-get($map: $font-size, $key: sm);
-        padding: 14px 24px 12px 24px;
+        font-size: map-get($map: $font-size, $key: md);
+        padding: 20px 24px 18px 24px;
         border-radius: $border-radius/2;
+
+        min-width: 1px;
     }
 }
-
+// < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .btn{
-        font-size: map-get($map: $font-size, $key: xs);
-        padding: 12px 18px 10px 18px;
+        // font-size: map-get($map: $font-size, $key: xs);
+        padding: 18px 20px 16px 20px;
     }
 }

@@ -1989,6 +1989,10 @@ table td {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.text-spacing {
+  letter-spacing: 0.05em;
+}
+
 .img-fluid {
   display: block;
   height: auto;
@@ -2223,7 +2227,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
     font-size: 18px;
   }
   .h6, h6 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -2241,7 +2245,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
     font-size: 18px;
   }
   .h5, h5 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .h6, h6 {
     font-size: 16px;
@@ -2253,7 +2257,7 @@ h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:la
     font-size: 18px;
   }
   .h4, h4 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .h5, h5 {
     font-size: 16px;

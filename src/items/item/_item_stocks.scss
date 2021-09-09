@@ -107,14 +107,13 @@
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_stocks{
         width: 100%;
+        padding: 12px;
+        padding-right: map-get($map: $spacers, $key: 4);
     }
 }
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_stocks{
-        padding-top: 16px;
-        padding-bottom: 14px;
-
         &__title{
             font-size: map-get($map: $font-size, $key: xs);
         }

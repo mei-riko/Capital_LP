@@ -13,19 +13,33 @@
     }
     &__text{
         font-size: map-get($map: $font-size, $key: sm);
-        line-height: $line-height-heading;
+        line-height: $line-height-base;
         color: $light-grey;
 
         &_sub{
+            display: block;
             font-size: map-get($map: $font-size, $key: xs);
             color: $grey;
         }
     }
+    &__disclaimers{
+        font-size: map-get($map: $font-size, $key: xs);
+        color: #EBEBEB;
+        filter: opacity(0.5);
+        column-count: 2;
+        grid-gap: $grid-gutter-width;
+    }
+}
+.footer_disclaimers{
+    padding: 0 $grid-gutter-width;
 }
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .footer{
         padding: map-get($map: $spacers, $key: 4) 0;
+    }
+    .footer_disclaimers{
+        padding: 0 $grid-gutter-width;
     }
 }
 // < 1280px
@@ -39,6 +53,9 @@
         &__text{
             font-size: map-get($map: $font-size, $key: sm);
         }
+    }
+    .footer_disclaimers{
+        padding: 0 $grid-gutter-width;
     }
 }
 // < 1024px
@@ -60,9 +77,21 @@
         }
     }
 }
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .footer{
+        &__disclaimers {
+            font-size: 10px;
+            column-count: 1;
+        }
+    }
+}
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .footer{
         padding: map-get($map: $spacers, $key: 2) 0;
+    }
+    .footer_disclaimers{
+        padding: 0 $grid-gutter-width;
     }
 }

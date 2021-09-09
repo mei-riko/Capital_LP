@@ -4,7 +4,7 @@
     &_stocks{
         grid-gap: map-get($map: $spacers, $key: 4);
         grid-template-columns: 1fr 450px;
-        align-items: flex-end;
+        // align-items: flex-end;
     }
 }
 // < 1680px

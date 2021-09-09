@@ -1,7 +1,8 @@
 .input{
     border: 2px solid $white;
     border-radius: $border-radius;
-    padding: 24px 30px 22px 30px;
+
+    padding: 26px 30px 24px 30px;
     background-color: inherit;
     color: $white;
 
@@ -29,25 +30,31 @@
         // background-color: rgba(255,255,255,.25);
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .input{
-        font-size: map-get($map: $font-size, $key: md);
-        padding: 20px 30px 18px 30px;
+        font-size: map-get($map: $font-size, $key: lg);
+        padding: 22px 30px 20px 30px;
         &::placeholder{
             font-size: map-get($map: $font-size, $key: md);
         }
     }
 }
-// < 920px
-@media all and (max-width: map-get($grid-breakpoints, 'md')){
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .input{
-        font-size: map-get($map: $font-size, $key: sm);
-        padding: 14px 30px 12px 30px;
+        font-size: map-get($map: $font-size, $key: md);
+        padding: 20px 24px 18px 24px;
         border-radius: $border-radius/2;
 
         &::placeholder{
-            font-size: map-get($map: $font-size, $key: sm);
+            font-size: map-get($map: $font-size, $key: md);
         }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .input{
+        padding: 18px 20px 16px 20px;
     }
 }
