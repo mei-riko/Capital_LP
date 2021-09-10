@@ -121,11 +121,11 @@ function drawLinearGraph(selector, graphData, options) {
     let v0 = graphData[0].values;
     let v1 = graphData[1].values;
     //console.log(v0, v1, v0[v0.length-1].Y, v1[v1.length-1].Y, v0[v0.length-1].Y - v1[v1.length-1].Y, hLabel);
-    if (v0[v0.length-1].Y - v1[v1.length-1].Y > 0.8*hLabel) {
+    if (v0[v0.length-1].Y - v1[v1.length-1].Y > 0.6*hLabel) {
     	//console.log('a');
     	graphData[0].labelShift =  0;
     	graphData[1].labelShift =  0;
-    } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.8 * hLabel) {
+    } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.6 * hLabel) {
     	//console.log('b');
     	graphData[0].labelShift =  0;
     	graphData[1].labelShift =  0;
@@ -172,11 +172,7 @@ function drawLinearGraph(selector, graphData, options) {
 
 		
         var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift);
-		if(options.drawLogo){
-			xLabel += hLabel * 2.5;
-		} else {
-			xLabel += hLabel * 0.8;
-		}
+		xLabel += hLabel * 1.34;
 
         var yLabel = getYPixel(lastDataPoint.Y, minY, maxY, yShift) - hLabel/2 + data.labelShift * hLabel;
 
@@ -190,18 +186,18 @@ function drawLinearGraph(selector, graphData, options) {
         c.fill();
 
        
-        if(options.drawLogo){
+        
 
-			c.fillStyle = "#ffffff";
-	        c.beginPath();
-		    c.arc(xLabel-hLabel-10 , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
-	        c.fill();
+		c.fillStyle = "#ffffff";
+        c.beginPath();
+	    c.arc(xLabel-hLabel-10 , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
+        c.fill();
 
-			var icon_image = new Image();
-			icon_image.src = data.icon;
-			icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
-			window.plotImages.push(icon_image);
-        }
+		var icon_image = new Image();
+		icon_image.src = data.icon;
+		icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
+		window.plotImages.push(icon_image);
+        
 
 		c.font = options.dataLabelFont;
 		c.textAlign = "center"
@@ -313,7 +309,7 @@ $(function() {
 
 		var canvas = $(areaSelector);
 		canvas.attr('width', canvas.parent().innerWidth());
-		canvas.attr('height', Math.round(canvas.attr('width')/1.8));
+		canvas.attr('height', Math.round(canvas.attr('width')/2));
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -338,17 +334,12 @@ $(function() {
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
 		    font:'italic 14pt sans-serif',
-		    dataLabelFont:'italic 10pt sans-serif',
-		    drawLogo:true
+		    dataLabelFont:'italic 10pt sans-serif'
 		}
-		if(canvas.attr('width')*1 < 400){
-		
-			canvas.attr('height', Math.round(canvas.attr('width')));
-
-			options.drawLogo = false;
+		if(canvas.attr('width')*1 < 400){		
 			options.xPadding = 80;
 		    options.xShift = -20;
-		    options.yPadding = 40;font:
+		    options.yPadding = 40;
 		    options.dataLabelFont ='italic 9pt sans-serif';
 		    options.font = 'italic 10pt sans-serif';
 		    options.wLabel = 40;  // label width
