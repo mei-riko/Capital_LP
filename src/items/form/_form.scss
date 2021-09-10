@@ -1,4 +1,5 @@
 .form{
+    margin-bottom: 0;
 
     &_column{
         display: flex;
@@ -7,5 +8,14 @@
         &__input{
             margin-bottom: $grid-gutter-width/2;
         }
+    }
+}
+.form-thanks{
+    &__intro{
+        font-size: map-get($map: $heading, $key: h4);
+        line-height: $line-height-base;
+        // color: #F6C4D2;
+        width: 360px;
+        max-width: 100%;
     }
 }

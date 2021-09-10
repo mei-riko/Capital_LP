@@ -42,7 +42,7 @@ export let unitRegexName = () => {
 export let unitRegexEmail = () => {
     $('input[name="mail"]').inputmask({
         // mask: "email",
-        regex: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]{2,20}@[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]{2,10}.[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]{2,6}",
+        regex: "[0-9A-Za-z!#$.%&'*+/=?^_`{|}~\-]{2,20}@[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]{2,10}.[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]{2,6}",
         placeholder: " ",
         showMaskOnHover: false,
 
