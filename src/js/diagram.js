@@ -65,9 +65,8 @@ function drawLinearGraph(selector, graphData, options) {
 
     c.clearRect(0, 0, graph.width(), graph.height());
     
-	// Color Of Axis
     c.lineWidth = options.lineWidthAxes;
-    c.strokeStyle = '#343550';
+    c.strokeStyle = '#333';
 	
     c.font = options.font;
     c.textAlign = "center";
@@ -83,7 +82,7 @@ function drawLinearGraph(selector, graphData, options) {
     c.textAlign = "right"
     c.textBaseline = "middle";
     for ( var iy = 0; iy < options.yAxisTicks.length; iy ++ ) {
-		c.fillStyle = '#9394A0';
+		c.fillStyle = '#808080';
         c.fillText('$'+options.yAxisTicks[iy],
         	50,
         	getYPixel(options.yAxisTicks[iy], minY, maxY, yShift));
@@ -311,13 +310,13 @@ $(function() {
 			var dataLabel, dataLabelBg;
 			if (delta > 0) {
 				dataLabel='+ ' + delta + '% ↑';
-				dataLabelBg='#19AE31';
+				dataLabelBg='#47AF34';
 			} else if(delta<0) {
 				dataLabel='' + delta + '% ↓';
-				dataLabelBg='#FB6232';
+				dataLabelBg='#FA633F';
 			} else {
 				dataLabel='=';
-				dataLabelBg='#19AE31';
+				dataLabelBg='#47AF34';
 			}
 			var dataLabelColor='#FFFFFF';
 
@@ -330,9 +329,8 @@ $(function() {
 			});
 		}
 
-        pricesUSD[0].color='#5CE21B';
-		pricesUSD[1].color='#6542D5';
-		// pricesUSD[1].color='rgb(101, 181, 178)';
+        pricesUSD[0].color='#2A4269';
+		pricesUSD[1].color='rgb(101, 181, 178)';
 
 		var canvas = $(areaSelector);
 		canvas.attr('width', canvas.parent().innerWidth());
@@ -381,8 +379,6 @@ $(function() {
 
 		if( window.maxYearDrawn) {
 			$('#oneMoreYear').parent().addClass('d-none');
-			$('#saleShares').removeClass('btn_secondary').addClass('btn_action');
-			$('.stocks__btns').addClass('stocks__btns--last');
 		}
 	}
 
