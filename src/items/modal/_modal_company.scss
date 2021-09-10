@@ -16,3 +16,14 @@
         }
     }
 }
+// < 576px
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .modal_company{
+        &.fancybox-content{
+            .fancybox-close-small{
+                top: 6px;
+                right: 6px;
+            }
+        }
+    }
+}

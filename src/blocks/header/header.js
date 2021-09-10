@@ -14,7 +14,7 @@ $(document).on('mouseup', function (e){
     let headerActive = $(".header__nav"); // элемент
 
     if (!headerActive.is(e.target) // клик был не по блоку
-          && headerActive.has(e.target).length === 0 // и не по его дочерним элементам
+        //   && headerActive.has(e.target).length === 0 // и не по его дочерним элементам
           && $('body').hasClass('hidden')
           && !$('.header__toggle-item').is(e.target)
     ) { 

@@ -491,19 +491,19 @@
   width: 100%;
 }
 
-.form_callback {
+.form_subscribe, .form_callback {
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 1fr 1fr 340px;
 }
 
-.form_callback__input {
+.form_subscribe__input, .form_callback__input {
   width: 100%;
   text-align: center;
 }
 
 @media all and (max-width: 1280px) {
-  .form_callback {
+  .form_subscribe, .form_callback {
     grid-gap: 12px;
     grid-template-columns: 1fr 1fr 260px;
   }
@@ -513,7 +513,7 @@
   .form_inline {
     grid-template-columns: 1fr 240px;
   }
-  .form_callback {
+  .form_subscribe, .form_callback {
     grid-gap: 12px;
     grid-template-columns: 1fr;
   }
@@ -558,8 +558,7 @@
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  border: 1px solid;
-  background: #ffffff no-repeat center/contain;
+  background: no-repeat center / contain;
 }
 
 .item__title {
@@ -725,7 +724,7 @@
 }
 
 .item_preipo__logo {
-  border-color: #EBEBEB;
+  border: 1px solid #EBEBEB;
 }
 
 .item_preipo__btn {
@@ -1441,6 +1440,11 @@
   .modal__track-form_pdf {
     margin-top: 20px;
   }
+  .modal .fancybox-button.fancybox-close-small {
+    padding: 6px;
+    top: 6px;
+    right: 6px;
+  }
 }
 
 @media all and (max-width: 375px) {
@@ -1483,6 +1487,13 @@
   right: 20px;
 }
 
+@media all and (max-width: 576px) {
+  .modal_company.fancybox-content .fancybox-close-small {
+    top: 6px;
+    right: 6px;
+  }
+}
+
 .modal_form.fancybox-content {
   width: 1180px;
   max-width: calc(100% - 40px);
@@ -1491,6 +1502,26 @@
   background: #1e1d1e;
   padding: 80px 60px;
   cursor: default !important;
+}
+
+@media all and (max-width: 768px) {
+  .modal_form.fancybox-content {
+    padding: 60px 40px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+@media all and (max-width: 576px) {
+  .modal_form.fancybox-content {
+    border-radius: 20px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .modal_form.fancybox-content {
+    padding: 40px 20px;
+    max-width: 100%;
+  }
 }
 
 .modal_licence.fancybox-content {

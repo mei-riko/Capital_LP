@@ -21,7 +21,7 @@ export let unitMaskPhone = () => {
 }
 export let unitRegexName = () => {
     $('input[name="name"]').inputmask({
-        regex: "[А-Яа-яЁё]{2,20}",
+        regex: "[А-Яа-яЁёA-Za-z ]{2,20}",
         placeholder: " ",
         showMaskOnHover: false,
 
