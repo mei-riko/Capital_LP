@@ -217,26 +217,46 @@ function drawLinearGraph(selector, graphData, options) {
 
 
 $(function() {
-	window.drawActiveStocks = function() {
+	window.drawActiveStocks = function(maxYear) {
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
-			// console.log(i, window.companydata);
+			console.log(i, window.companydata);
 			var companyContainer = $('.stocks__company[data-id=' + i + ']').first();
 			companyContainer.find('.item_stocks__count').empty().html(company.numberOfShares + '&nbsp;шт.');
 			companyContainer.find('.item_stocks__title').empty().html(company.shareCode);
 			companyContainer.find('.item_stocks__subtitle').empty().html(company.name);
-			companyContainer.find('.item_stocks__title#subtotal').empty().html('$'+company.priceAtStart.usd);
 
-			var totalAtStartFloat = parseFloat(company.totalAtStart.rur.replace(/[^0-9.]/g, ''));
+			
+			// var pricePerShare = company.priceAtStart.usd;
+			var pricePerShare = company.pricesUSD.filter(w => (w[0] == maxYear) );
+			if(pricePerShare[0]) {
+				pricePerShare = pricePerShare[0][1];
+			} else {
+				pricePerShare = company.pricesUSD[1][1];
+			}
+			companyContainer.find('.item_stocks__title#subtotal').empty().html('$'+pricePerShare);
+
+			// var totalAtStart = company.totalAtStart.rur;
+			var totalAtStart = company.sumPricesRUR.filter(w => (w[0] == maxYear) );
+			if(totalAtStart[0]) {
+				totalAtStart = totalAtStart[0][1];
+			} else {
+				totalAtStart = company.sumPricesRUR[1][1];
+			}
+			totalAtStart = ''+totalAtStart;
+			
+
+			var totalAtStartFloat = parseFloat(totalAtStart.replace(/[^0-9.]/g, ''));
 			var totalAtStartView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalAtStartFloat).toFixed(2));
 			// console.log( totalAtStartView );
 			companyContainer.find('.item_stocks__title#total').empty().html(totalAtStartView);
 		}
 	};
 
-	window.drawActiveStocks();
-
+	
+	// window.drawActiveStocks(maxYear);
 	window.drawStocksPlot = function(areaSelector, maxYear) {
+		
 		var delta = 1;
 		var pricesUSD = [];
 		var minX = false;
@@ -416,7 +436,8 @@ $(function() {
 	window.activateNextBtn = function () {
 		$('#oneMoreYear').click(function(e){
 			e.preventDefault();
-			var nextYear = window.plotMaxYear + 1
+			var nextYear = window.plotMaxYear + 1;
+			window.drawActiveStocks(nextYear);
 			window.drawStocksPlot('#flot-graph', nextYear);
 			window.drawChatMessages('.stocks__chat-body', nextYear);
 			return false;
