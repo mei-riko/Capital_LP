@@ -2,19 +2,17 @@ import $ from 'jquery';
 
 export let unitMaskPhone = () => {
     $('input[type="tel"]').inputmask({
-        mask: '+9 999 999 99 99',
+        mask: '+7 (999) 999 99 99',
         placeholder: " ",
         showMaskOnHover: false,
         onincomplete: function(){ 
             $(this).closest("form").addClass('error-phone'); 
             $(this).addClass('input--error'); 
-            $(this).siblings('.error_phone').addClass('error').html('Укажите корректный номер'); 
             $(this).removeClass('input--success');
         }, 
         oncomplete: function(){ 
             $(this).closest("form").removeClass('error-phone'); 
             $(this).removeClass('input--error'); 
-            $(this).siblings('.error_phone').removeClass('error').html(''); 
             $(this).addClass('input--success'); 
         },
     })
@@ -68,13 +66,13 @@ $(function() {
         unitMaskPhone();
     }
     // Input Mask Name
-    if( $('input[name="name"]').length > 0 ) {
-        unitRegexName();
-    }
+    // if( $('input[name="name"]').length > 0 ) {
+    //     unitRegexName();
+    // }
     // Input Mask Email
-    if( $('input[name="mail"]').length > 0 ) {
-        unitRegexEmail();
-    }
+    // if( $('input[name="mail"]').length > 0 ) {
+    //     unitRegexEmail();
+    // }
 });
 
 $('input').on('keydown', function(event) {
