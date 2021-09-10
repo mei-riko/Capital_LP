@@ -70,6 +70,10 @@
 
         display: flex;
         align-items: stretch;
+
+        &.swiper-slide{
+            height: auto;
+        }
     }
 }
 // < 1600px
@@ -152,6 +156,12 @@
                 grid-template-columns: repeat(2, 1fr);
                 justify-content: center;
             }
+        }
+
+        // Slider Blocks
+        &__slider-wrapper{
+            // align-items: stretch;
+            grid-gap: 0;
         }
     }
 }

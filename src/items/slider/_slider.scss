@@ -23,12 +23,6 @@
                 padding-right: calc( (100% - 440px)/2 );
             }
         }
-        &__grid{
-            &.swiper-wrapper{
-                display: flex;
-                grid-gap: 0;
-            }
-        }
     }
 }
 // < 576px
