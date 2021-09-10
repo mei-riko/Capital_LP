@@ -18,20 +18,28 @@
     &__count{
         position: absolute;
         top: 4px;
+        bottom: auto;
         right: 4px;
 
         background-color: $body-bg;
         border-radius: 30px;
+
         line-height: 28px;
         text-align: center;
+        
         padding: 3px 10px 0;
     }
+    &__name{
+        padding-left: 0;
+    }
     &__fullname{
+        color: $light-grey;
+
         font-size: 1rem;
         line-height: $line-height-heading;
-        margin-top: 6px;
-        color: $light-grey 
 
+        margin-top: 6px;
+        padding-left: 0;
     }
     // Price Info
     &__label{

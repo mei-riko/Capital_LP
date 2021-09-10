@@ -12,9 +12,9 @@ $(function() {
             return false;
         });
         // Input Mask Phone
-        // if( $('input[type="tel"]').length > 0 ) {
-        //     unitMaskPhone();
-        // }
+        if( $('input[type="tel"]').length > 0 ) {
+            unitMaskPhone();
+        }
     };
     initAjaxLoader();
 });

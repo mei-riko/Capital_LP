@@ -18,7 +18,7 @@ $(function() {
     $(document).on('click', '[data-trigger="click"]', function(e){
         e.preventDefault();
     })
-    
+
     // Hover Effect
     $('.heading-screen .heading-screen__col .btn')
         .mouseenter(function(event){
@@ -28,16 +28,13 @@ $(function() {
         .mouseleave(function(event){
             $('.item.item--hover').removeClass('item--hover');
         });
-    // Init Change
-    // window.initCompanyPart();
-    // window.initProductPart();
 });
 
 import './mouseup';
 import './ajaxloader';
-import './companydata';
+// import './companydata';
 import './company';
-import './productdata';
+// import './productdata';
 import './product';
 import './hidpicanvas';
 import './diagram';

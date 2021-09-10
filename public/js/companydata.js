@@ -113,14 +113,5 @@ window.companydata={
 		   	    [2021,291580.98]
 	   	    ]
 	    }
-	],
-	tips:{
-		'' : '',
-		'wait' : '',
-		'sell' : '',
-		'waitwait' : '',
-		'sellwait' : '',
-		'waitsell' : '',
-		'sellsell' : ''
-	}
+	]
 }

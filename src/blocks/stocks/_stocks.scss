@@ -263,6 +263,9 @@
         }
         &__btns{
             grid-gap: $grid-gutter-width/2;
+            &--last{
+                grid-template-columns: 1fr;
+            }
         }
     }
 }
@@ -279,9 +282,7 @@
         &__btns{
             margin-top: $spacer-gutter;
 
-            &--last{
-                grid-template-columns: 1fr;
-            }
+            
         }
         &__chat{
             // min-height: 1px;

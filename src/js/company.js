@@ -107,4 +107,3 @@ window.initCompanyPart = function (){
 }
 
 $(window.initCompanyPart);
-

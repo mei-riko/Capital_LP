@@ -94,10 +94,10 @@ function drawLinearGraph(selector, graphData, options) {
 	for ( var ix = 0; ix < options.xAxisTicks.length; ix ++ ) {
 		if (options.xAxisTicks[ix] == options.maxYear) {
 			c.fillStyle = '#ffffff';
-			c.strokeStyle = '#ffffff';
+			c.strokeStyle = '#4F5074';
 		} else {
-			c.fillStyle = '#808080';
-			c.strokeStyle = '#333';
+			c.fillStyle = '#68697a';
+			c.strokeStyle = '#343550';
 		}
 		let xPixel = getXPixel(options.xAxisTicks[ix], minX, maxX, xShift);
 
@@ -329,8 +329,8 @@ $(function() {
 			});
 		}
 
-        pricesUSD[0].color='#2A4269';
-		pricesUSD[1].color='rgb(101, 181, 178)';
+        pricesUSD[0].color='#5f49f2';
+		pricesUSD[1].color='#5cc728';
 
 		var canvas = $(areaSelector);
 		canvas.attr('width', canvas.parent().innerWidth());
@@ -359,19 +359,20 @@ $(function() {
 		    lineWidthAxes: 4,
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
-		    font:'italic 14pt sans-serif',
-		    dataLabelFont:'italic 10pt sans-serif',
+		    font:'14pt sans-serif',
+		    dataLabelFont:'10pt sans-serif',
 			maxYear: window.plotMaxYear
 		}
-		if(canvas.attr('width')*1 < 400){		
+		if(canvas.attr('width')*1 < 768){
 			options.xPadding = 80;
 		    options.xShift = -20;
 			options.yShift = 10;
 		    options.yPadding = 40;
-		    options.dataLabelFont ='italic 9pt sans-serif';
-		    options.font = 'italic 10pt sans-serif';
-			options.hLabel = 20;  // label width
-		    options.wLabel = 40;  // label width
+
+		    options.font = '10pt sans-serif';
+			options.dataLabelFont ='9pt sans-serif';
+			options.hLabel = 24;  // label width
+		    options.wLabel = 34;  // label width
 		}
 		canvas.attr('width', canvas.parent().innerWidth());
 		canvas.attr('height', Math.round(canvas.attr('width')/2));
@@ -379,6 +380,8 @@ $(function() {
 
 		if( window.maxYearDrawn) {
 			$('#oneMoreYear').parent().addClass('d-none');
+			$('#saleShares').removeClass('btn_secondary').addClass('btn_action');
+			$(".stocks__btns").addClass("stocks__btns--last");
 		}
 	}
 

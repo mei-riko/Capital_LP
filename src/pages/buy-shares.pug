@@ -1,17 +1,27 @@
 - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","count":"15 шт."},{"logo":"./icon/tesla.svg","name":"TSLA","fullname":"Tesla inc.","subtotal":"$46.96","count":"8 шт."}]
 
+//- mixin company(object)
+//-     .item.item_company.item_company-inside&attributes(attributes)
+//-         .item_company-inside__count=object.count
+//-         .item_company-inside__logo
+//-             img.img-fluid(src=object.logo)
+//-         .item_company-inside__info
+//-             .item__title.item_company-inside__name=object.name
+//-             .item_company-inside__fullname=object.fullname
+//-         .item_company-inside__col
+//-             .item__title.item_company-inside__price.item_subtotal=object.subtotal
+//-             p.item_company-inside__label Цена за акцию
 mixin company(object)
-    .item.item_company-inside&attributes(attributes)
-        .item_company-inside__count=object.count
-        .item_company-inside__logo
+    .item.item_company.item_company-inside&attributes(attributes)
+        .item_company__count.item_company-inside__count=object.count
+        .item_company__logo.item_company-inside__logo
             img.img-fluid(src=object.logo)
         .item_company-inside__info
-            .item__title.item_company-inside__name=object.name
-            .item_company-inside__fullname=object.fullname
+            .item__title.item_company__name.item_company-inside__name=object.name
+            .item_company__fullname.item_company-inside__fullname=object.fullname
         .item_company-inside__col
             .item__title.item_company-inside__price.item_subtotal=object.subtotal
-            p.item_company-inside__label Цена за акцию
-            
+            p.item_company-inside__label Цена за акцию 
 .heading-screen.heading-screen_step
     .container.heading-screen__container.heading-screen_step__container.heading-screen_step__container_success
         .row 
