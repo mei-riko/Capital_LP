@@ -28,7 +28,7 @@ function drawLinearGraph(selector, graphData, options) {
 	var drawedCirclesPrevGraph 	  = [];
 	var drawedCirclesCurrentGraph = [];
 	var xShift = options.xShift;
-	var yShift = 30;
+	var yShift = options.yShift;
 	
 	var minY = 0;
 	// var maxY = getMaxY(graphData);
@@ -93,7 +93,13 @@ function drawLinearGraph(selector, graphData, options) {
     c.textAlign = "center"
     // console.log(options.xAxisTicks);
 	for ( var ix = 0; ix < options.xAxisTicks.length; ix ++ ) {
-		c.fillStyle = '#9394A0';
+		if (options.xAxisTicks[ix] == options.maxYear) {
+			c.fillStyle = '#ffffff';
+			c.strokeStyle = '#ffffff';
+		} else {
+			c.fillStyle = '#808080';
+			c.strokeStyle = '#333';
+		}
 		let xPixel = getXPixel(options.xAxisTicks[ix], minX, maxX, xShift);
 
 		c.fillText(options.xAxisTicks[ix], xPixel, graph.height() - options.yPadding + 5);
@@ -108,8 +114,8 @@ function drawLinearGraph(selector, graphData, options) {
     	return function() {
 		    c.drawImage(
 		    	icon_image,
-		    	xLabel- 1.8 * hLabel,
-		    	yLabel + hLabel*0.08,
+		    	xLabel - 2 * hLabel + hLabel*0.05,
+		    	yLabel + hLabel*0.05,
 		    	hLabel * 0.9,
 		    	hLabel * 0.9
 		    	);
@@ -166,18 +172,13 @@ function drawLinearGraph(selector, graphData, options) {
 	        c.fill();
 	    }
 
-	    // draw label in recangle
+	    // draw label in rectangle
         var lastDataPoint = data.values[data.values.length - 1];
 
         c.fillStyle =  data.dataLabelBg;
 
 		
-        var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift);
-		if(options.drawLogo){
-			xLabel += hLabel * 2.5;
-		} else {
-			xLabel += hLabel * 0.8;
-		}
+        var xLabel = getXPixel(lastDataPoint.X, minX, maxX, xShift) + hLabel * 1.5 ;
 
         var yLabel = getYPixel(lastDataPoint.Y, minY, maxY, yShift) - hLabel/2 + data.labelShift * hLabel;
 
@@ -191,18 +192,18 @@ function drawLinearGraph(selector, graphData, options) {
         c.fill();
 
        
-        if(options.drawLogo){
+        
 
-			c.fillStyle = "#ffffff";
-	        c.beginPath();
-		    c.arc(xLabel-hLabel-10 , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
-	        c.fill();
+		c.fillStyle = "#ffffff";
+        c.beginPath();
+	    c.arc(xLabel- 1.5 * hLabel , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
+        c.fill();
 
-			var icon_image = new Image();
-			icon_image.src = data.icon;
-			icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
-			window.plotImages.push(icon_image);
-        }
+		var icon_image = new Image();
+		icon_image.src = data.icon;
+		icon_image.onload = onImageLoaded(c, icon_image, xLabel, yLabel, wLabel, hLabel);
+		window.plotImages.push(icon_image);
+        
 
 		c.font = options.dataLabelFont;
 		c.textAlign = "center"
@@ -217,26 +218,46 @@ function drawLinearGraph(selector, graphData, options) {
 
 
 $(function() {
-	window.drawActiveStocks = function() {
+	window.drawActiveStocks = function(maxYear) {
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
-			// console.log(i, window.companydata);
+			console.log(i, window.companydata);
 			var companyContainer = $('.stocks__company[data-id=' + i + ']').first();
 			companyContainer.find('.item_stocks__count').empty().html(company.numberOfShares + '&nbsp;шт.');
 			companyContainer.find('.item_stocks__title').empty().html(company.shareCode);
 			companyContainer.find('.item_stocks__subtitle').empty().html(company.name);
-			companyContainer.find('.item_stocks__title#subtotal').empty().html('$'+company.priceAtStart.usd);
 
-			var totalAtStartFloat = parseFloat(company.totalAtStart.rur.replace(/[^0-9.]/g, ''));
+			
+			// var pricePerShare = company.priceAtStart.usd;
+			var pricePerShare = company.pricesUSD.filter(w => (w[0] == maxYear) );
+			if(pricePerShare[0]) {
+				pricePerShare = pricePerShare[0][1];
+			} else {
+				pricePerShare = company.pricesUSD[1][1];
+			}
+			companyContainer.find('.item_stocks__title#subtotal').empty().html('$'+pricePerShare);
+
+			// var totalAtStart = company.totalAtStart.rur;
+			var totalAtStart = company.sumPricesRUR.filter(w => (w[0] == maxYear) );
+			if(totalAtStart[0]) {
+				totalAtStart = totalAtStart[0][1];
+			} else {
+				totalAtStart = company.sumPricesRUR[1][1];
+			}
+			totalAtStart = ''+totalAtStart;
+			
+
+			var totalAtStartFloat = parseFloat(totalAtStart.replace(/[^0-9.]/g, ''));
 			var totalAtStartView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalAtStartFloat).toFixed(2));
 			// console.log( totalAtStartView );
 			companyContainer.find('.item_stocks__title#total').empty().html(totalAtStartView);
 		}
 	};
 
-	window.drawActiveStocks();
-
+	
+	// window.drawActiveStocks(maxYear);
 	window.drawStocksPlot = function(areaSelector, maxYear) {
+		
 		var delta = 1;
 		var pricesUSD = [];
 		var minX = false;
@@ -315,7 +336,7 @@ $(function() {
 
 		var canvas = $(areaSelector);
 		canvas.attr('width', canvas.parent().innerWidth());
-		canvas.attr('height', Math.round(canvas.attr('width')/1.8));
+		canvas.attr('height', Math.round(canvas.attr('width')/2));
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -332,6 +353,7 @@ $(function() {
         var options = {
 		    xPadding : 140,
 		    xShift: -80,
+			yShift: 30,
 		    yPadding : 40,
 		    wLabel : 45,  // label width
             hLabel : 30,  // label height
@@ -341,20 +363,20 @@ $(function() {
 		    yAxisTicks:yAxisTicks,
 		    font:'italic 14pt sans-serif',
 		    dataLabelFont:'italic 10pt sans-serif',
-		    drawLogo:true
+			maxYear: window.plotMaxYear
 		}
-		if(canvas.attr('width')*1 < 400){
-		
-			canvas.attr('height', Math.round(canvas.attr('width')));
-
-			options.drawLogo = false;
+		if(canvas.attr('width')*1 < 400){		
 			options.xPadding = 80;
 		    options.xShift = -20;
-		    options.yPadding = 40;font:
+			options.yShift = 10;
+		    options.yPadding = 40;
 		    options.dataLabelFont ='italic 9pt sans-serif';
 		    options.font = 'italic 10pt sans-serif';
+			options.hLabel = 20;  // label width
 		    options.wLabel = 40;  // label width
 		}
+		canvas.attr('width', canvas.parent().innerWidth());
+		canvas.attr('height', Math.round(canvas.attr('width')/2));
 		drawLinearGraph(areaSelector, pricesUSD, options);
 
 		if( window.maxYearDrawn) {
@@ -418,7 +440,8 @@ $(function() {
 	window.activateNextBtn = function () {
 		$('#oneMoreYear').click(function(e){
 			e.preventDefault();
-			var nextYear = window.plotMaxYear + 1
+			var nextYear = window.plotMaxYear + 1;
+			window.drawActiveStocks(nextYear);
 			window.drawStocksPlot('#flot-graph', nextYear);
 			window.drawChatMessages('.stocks__chat-body', nextYear);
 			return false;
