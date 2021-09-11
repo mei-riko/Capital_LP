@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 export let unitMaskPhone = () => {
     $('input[type="tel"]').inputmask({
-        mask: '+9 999 999 99 99',
+        mask: '+7 (999) 999 99 99',
         placeholder: " ",
         showMaskOnHover: false,
         onincomplete: function(){ 
@@ -68,13 +68,13 @@ $(function() {
         unitMaskPhone();
     }
     // Input Mask Name
-    if( $('input[name="name"]').length > 0 ) {
-        unitRegexName();
-    }
-    // Input Mask Email
-    if( $('input[name="mail"]').length > 0 ) {
-        unitRegexEmail();
-    }
+    // if( $('input[name="name"]').length > 0 ) {
+    //     unitRegexName();
+    // }
+    // // Input Mask Email
+    // if( $('input[name="mail"]').length > 0 ) {
+    //     unitRegexEmail();
+    // }
 });
 
 $('input').on('keydown', function(event) {
