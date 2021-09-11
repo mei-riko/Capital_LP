@@ -363,7 +363,7 @@
 
 .item_stocks__label, .item_stocks__subtitle {
   line-height: 1.2;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 6px;
 }
 
@@ -388,9 +388,6 @@
   .item_stocks__count {
     font-size: 12px;
     line-height: 20px;
-  }
-  .item_stocks__info {
-    margin-right: 10px;
   }
   .item_stocks__info:last-child {
     margin-right: 0;

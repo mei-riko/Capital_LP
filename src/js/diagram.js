@@ -66,7 +66,7 @@ function drawLinearGraph(selector, graphData, options) {
     c.clearRect(0, 0, graph.width(), graph.height());
     
     c.lineWidth = options.lineWidthAxes;
-    c.strokeStyle = '#333';
+    c.strokeStyle = '#9394A0';
 	
     c.font = options.font;
     c.textAlign = "center";
@@ -82,7 +82,7 @@ function drawLinearGraph(selector, graphData, options) {
     c.textAlign = "right"
     c.textBaseline = "middle";
     for ( var iy = 0; iy < options.yAxisTicks.length; iy ++ ) {
-		c.fillStyle = '#808080';
+		c.fillStyle = '#9394A0';
         c.fillText('$'+options.yAxisTicks[iy],
         	50,
         	getYPixel(options.yAxisTicks[iy], minY, maxY, yShift));

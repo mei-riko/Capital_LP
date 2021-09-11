@@ -24,7 +24,7 @@
     &__label,
     &__subtitle{
         line-height: $line-height-heading;
-        color: $light-grey;
+        color: $grey;
         margin-top: 6px;
     }
     // Total Paper Count
@@ -55,9 +55,7 @@
             font-size: map-get($map: $font-size, $key: xs);
             line-height: 20px;
         }
-        &__info{
-            margin-right: map-get($map: $spacers, $key: 1)/2;
-        
+        &__info{       
             &:last-child{
                 margin-right: 0;
             }
