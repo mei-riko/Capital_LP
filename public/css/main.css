@@ -1040,7 +1040,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 11;
   width: 100%;
   padding: 60px 80px;
 }
@@ -1061,6 +1061,11 @@
   width: 200px;
   height: 40px;
   background: url("../img/logo.svg") no-repeat left center/contain;
+}
+
+.header__logo:hover {
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
 }
 
 .header__phone {
@@ -1159,6 +1164,11 @@
   width: 174px;
   height: 30px;
   background: url("../img/logo.svg") no-repeat left center/contain;
+}
+
+.footer__logo:hover {
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
 }
 
 .footer__copyright {

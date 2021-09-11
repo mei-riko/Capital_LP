@@ -363,7 +363,7 @@ $(function() {
 		    dataLabelFont:'10pt sans-serif',
 			maxYear: window.plotMaxYear
 		}
-		if(canvas.attr('width')*1 < 768){
+		if(canvas.attr('width')*1 < 400){
 			options.xPadding = 80;
 		    options.xShift = -20;
 			options.yShift = 10;
