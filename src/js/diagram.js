@@ -367,7 +367,7 @@ $(function() {
 			options.xPadding = 80;
 		    options.xShift = -20;
 			options.yShift = 10;
-		    options.yPadding = 40;
+		    options.yPadding = 10;
 		    options.dataLabelFont ='italic 9pt sans-serif';
 		    options.font = 'italic 10pt sans-serif';
 			options.hLabel = 20;  // label width
