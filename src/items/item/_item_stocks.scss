@@ -84,7 +84,7 @@
 // < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .item_stocks{
-        width: 320px;
+        // width: 320px;
         max-width: 100%;
         padding-right: map-get($map: $spacers, $key: 2);
 

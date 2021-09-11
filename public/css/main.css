@@ -408,7 +408,6 @@
 
 @media all and (max-width: 1024px) {
   .item_stocks {
-    width: 320px;
     max-width: 100%;
     padding-right: 30px;
   }
@@ -1702,7 +1701,8 @@
   }
   .heading-screen_step__container:before {
     width: 720px;
-    height: 680px;
+    height: 520px;
+    right: -40px;
   }
   .heading-screen_step__container:after {
     height: 620px;
@@ -1856,11 +1856,27 @@
 .stocks__graph {
   grid-column-start: 1;
   grid-column-end: 3;
+  position: relative;
+  margin-right: -60px;
+  padding-left: 6px;
+}
+
+.stocks__graph:before {
+  content: '';
+  display: block;
+  width: calc( 100% - 60px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   background-color: #282941;
   border-radius: 16px;
-  width: 100%;
-  overflow: auto;
-  max-width: 100%;
+}
+
+.stocks__graph canvas {
+  position: relative;
+  z-index: 9;
 }
 
 .stocks__btns {
@@ -1964,11 +1980,11 @@
     font-size: 16px;
   }
   .stocks__info {
-    padding-top: 140px;
+    padding-top: 120px;
     padding-bottom: 60px;
   }
   .stocks__chat {
-    padding-top: 140px;
+    padding-top: 120px;
     min-height: 720px;
   }
   .stocks__chat:after {
@@ -2052,6 +2068,11 @@
   .stocks__graph {
     grid-column-start: 1;
     grid-column-end: 2;
+    padding-left: 0;
+    margin-right: -30px;
+  }
+  .stocks__graph:before {
+    width: calc( 100% - 30px);
   }
   .stocks__chat {
     height: auto;
@@ -2098,6 +2119,14 @@
   }
   .stocks__btns {
     margin-top: 15px;
+  }
+  .stocks__graph {
+    margin-left: -10px;
+    margin-right: -20px;
+  }
+  .stocks__graph:before {
+    left: 10px;
+    width: calc( 100% - 30px);
   }
   .stocks__chat {
     height: 260px;

@@ -20,16 +20,36 @@
         grid-column-start: 1;
         grid-column-end: 3;
 
-        background-color: $dark-grey;
-        border-radius: $border-radius;
+        // background-color: $dark-grey;
+        // border-radius: $border-radius;
         
-        width: 100%;
-        // overflow: hidden;
-        overflow: auto;
-        max-width: 100%;
-        // canvas{
-        //     max-width: 100%;
-        // }
+        position: relative;
+        margin-right: -60px;
+        padding-left: 6px;
+        // width: 100%;
+        // max-width: 100%;
+        // overflow: auto;
+
+        &:before{
+            content: '';
+            display: block;
+
+            width: calc( 100% - 60px);
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            background-color: $dark-grey;
+            border-radius: $border-radius;
+        }
+
+        canvas{
+            position: relative;
+            z-index: 9;
+        }
     }
     &__btns{
         display: grid;
@@ -128,11 +148,11 @@
             font-size: map-get($map: $font-size, $key: md);
         }
         &__info{
-            padding-top: 140px;
+            padding-top: 120px;
             padding-bottom: map-get($map: $spacers, $key: 4);
         }
         &__chat{
-            padding-top: 140px;
+            padding-top: 120px;
             min-height: 720px;
 
             &:after{
@@ -229,6 +249,13 @@
         &__graph {
             grid-column-start: 1;
             grid-column-end: 2;
+
+            padding-left: 0;
+            margin-right: -30px;
+
+            &:before{
+                width: calc( 100% - 30px );
+            }
         }
         &__chat{
             height: auto;
@@ -280,9 +307,16 @@
         }
     
         &__btns{
-            margin-top: $spacer-gutter;
+            margin-top: $spacer-gutter;            
+        }
+        &__graph{
+            margin-left: -10px;
+            margin-right: -20px;
 
-            
+            &:before{
+                left: 10px;
+                width: calc( 100% - 30px );
+            }
         }
         &__chat{
             // min-height: 1px;

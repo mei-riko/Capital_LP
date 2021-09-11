@@ -349,31 +349,56 @@ $(function() {
 			yAxisTicks.push(y);
 		}
         var options = {
-		    xPadding : 140,
+		    xPadding : 150,
+		    yPadding : 40,
+			
 		    xShift: -80,
 			yShift: 30,
-		    yPadding : 40,
-		    wLabel : 45,  // label width
-            hLabel : 30,  // label height
+
+		    wLabel : 44,  // label width
+            hLabel : 28,  // label height
+
+			// Линии графика
 		    lineWidth : 8,
 		    lineWidthAxes: 4,
+
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
-		    font:'14pt sans-serif',
-		    dataLabelFont:'10pt sans-serif',
+		    font:'18px/18px Theinhardt Pan',
+		    dataLabelFont:'16px/2em Theinhardt Pan',
 			maxYear: window.plotMaxYear
 		}
-		if(canvas.attr('width')*1 < 400){
-			options.xPadding = 80;
-		    options.xShift = -20;
-			options.yShift = 10;
-		    options.yPadding = 40;
 
-		    options.font = '10pt sans-serif';
-			options.dataLabelFont ='9pt sans-serif';
-			options.hLabel = 24;  // label width
+		if(canvas.attr('width')*1 < 580){
+			options.xPadding = 80;
+		    options.yPadding = 20;
+
+			options.xShift = -20;
+			options.yShift = 20;
+
+			// Линии графика
+		    options.lineWidth = 6;
+		    options.lineWidthAxes = 2;
+
+		    options.font = '14px/14px Theinhardt Pan';
+			options.dataLabelFont ='12px/2em Theinhardt Pan';
 		    options.wLabel = 34;  // label width
+			options.hLabel = 20;  // label height
 		}
+
+		if(canvas.attr('width')*1 < 420){
+			options.xPadding = 60;
+		    options.yPadding = 20;
+
+			options.xShift = 0;
+			options.yShift = 20;
+
+		    options.font = '11px/11px Theinhardt Pan';
+			options.dataLabelFont ='10px/2em Theinhardt Pan';
+		    options.wLabel = 26;  // label width
+			options.hLabel = 16;  // label height
+		}
+
 		canvas.attr('width', canvas.parent().innerWidth());
 		canvas.attr('height', Math.round(canvas.attr('width')/2));
 		drawLinearGraph(areaSelector, pricesUSD, options);

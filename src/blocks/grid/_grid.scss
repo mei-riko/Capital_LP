@@ -7,7 +7,7 @@
         // align-items: flex-end;
     }
 }
-// < 1680px
+// < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .grid{
         &_stock{
@@ -15,7 +15,7 @@
         }
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .grid{
         &_stocks{
@@ -23,7 +23,7 @@
         }
     }
 }
-// < 920px
+// < 1024px
 @media all and (max-width: map-get($grid-breakpoints, 'md')){
     .grid{
         &_stocks{

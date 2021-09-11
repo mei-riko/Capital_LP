@@ -84,7 +84,8 @@
 
             &:before{
                 width: 720px;
-                height: 680px;
+                height: 520px;
+                right: -($spacer);
             }
             &:after{
                 height: 620px;
