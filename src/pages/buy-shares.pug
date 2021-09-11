@@ -34,7 +34,7 @@ mixin company(object)
                 .heading-screen__card.heading-screen_step__card
                     for object, index in companies
                         +company(object)(data-id=index)
-                a.btn.btn_action.heading-screen_step__btn(href="stocks.html" data-target="#heading-screen" data-loader="ajax") Начать торговать
+                a.btn.btn_action.heading-screen_step__btn(data-href="stocks.html" data-target="#heading-screen" data-loader="ajax") Начать торговать
                 script
                     | window.showTotalSharesRur('#price[data-status="success"]');
                     | window.showCurrentCompanies()

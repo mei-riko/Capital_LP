@@ -24,10 +24,10 @@ mixin companyStocks(object)
                         canvas#flot-graph(width="1" height="1")
                 .mt-2.stocks__btns
                     .stocks__btns-item
-                        a.btn.btn_action.stocks__btn#oneMoreYear(href="stocks-final.html") Подождать 
+                        a.btn.btn_action.stocks__btn#oneMoreYear(data-href="stocks-final.html") Подождать 
                             span.d-sm-none &nbsp;еще год
                     .stocks__btns-item
-                        a.btn.btn_secondary.stocks__btn#saleShares(href="result.html" data-target="#heading-screen" data-loader="ajax") Продать акции
+                        a.btn.btn_secondary.stocks__btn#saleShares(data-href="result.html" data-target="#heading-screen" data-loader="ajax") Продать акции
             .stocks__chat
                 .stocks__chat-body#chat-messages
                     .stocks__message.stocks__message_new

@@ -44,7 +44,7 @@ mixin product(object)
                 .heading-screen__card
                     for object, index in companies
                         +company(object)(data-id=index)
-                a.btn.btn_action.heading-screen__col-btn(href="buy-shares.html" data-target="#heading-screen" data-loader="ajax") Купить акции
+                a.btn.btn_action.heading-screen__col-btn(data-href="buy-shares.html" data-target="#heading-screen" data-loader="ajax") Купить акции
             .heading-screen__col
                 a.heading-screen__change.heading-screen__change_reverse.nextproduct(href="javascript:void(0);")
                     svg.heading-screen__change-icon(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -53,7 +53,7 @@ mixin product(object)
                 .heading-screen__card
                     for object, index in products
                         +product(object)(data-id=index)
-                a.btn.btn_action.heading-screen__col-btn(href="buy-products.html" data-target="#heading-screen" data-loader="ajax") Купить товары
+                a.btn.btn_action.heading-screen__col-btn(data-href="buy-products.html" data-target="#heading-screen" data-loader="ajax") Купить товары
                 script
                     | if(window.initCompanyPart) window.initCompanyPart();
                     | if(window.initProductPart) window.initProductPart();
