@@ -48,7 +48,8 @@ function drawLinearGraph(selector, graphData, options) {
 	// console.log('minX', minX, 'maxX', maxX);
 
     function getXPixel(val, minX, maxX, shift) {
-    	let xPixel = ((graphWidth - shift - 2 * options.xPadding) / ( maxX - minX) ) * ( val - minX ) + shift + options.xPadding;
+		let dx=-0.1;
+    	let xPixel = ((graphWidth - shift - 2 * options.xPadding) / ( maxX - minX - dx) ) * ( val - minX - dx ) + shift + options.xPadding;
     	// console.log('getXPixel', val, minX, maxX, shift, '=>', xPixel);
     	return xPixel;
 	}
