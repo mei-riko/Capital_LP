@@ -131,7 +131,8 @@
     }
     &__message-text{
         grid-area: text;
-        font-size: map-get($map: $font-size, $key: lg);
+        // font-size: map-get($map: $font-size, $key: lg);
+        font-size: 19px;
         line-height: $line-height-base;
     }
 }
@@ -145,7 +146,8 @@
             // max-width: map-get($map: $container-max-widths, $key: xl);
         }
         &__message-text{
-            font-size: map-get($map: $font-size, $key: md);
+            // font-size: map-get($map: $font-size, $key: md);
+            font-size: 17px;
         }
         &__info{
             padding-top: 120px;
