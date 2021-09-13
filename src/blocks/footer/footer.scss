@@ -7,9 +7,9 @@
         height: map-get($map: $spacers, $key: 2);
         background: url('../img/logo.svg') no-repeat left center / contain;
 
-        &:hover{
-            filter: opacity(.5);
-        }
+        // &:hover{
+        //     filter: opacity(.5);
+        // }
     }
     &__copyright{
         margin-top: map-get($map: $spacers, $key: 1);

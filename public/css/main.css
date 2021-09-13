@@ -1059,11 +1059,6 @@
   background: url("../img/logo.svg") no-repeat left center/contain;
 }
 
-.header__logo:hover {
-  -webkit-filter: opacity(0.5);
-  filter: opacity(0.5);
-}
-
 .header__phone {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1160,11 +1155,6 @@
   width: 174px;
   height: 30px;
   background: url("../img/logo.svg") no-repeat left center/contain;
-}
-
-.footer__logo:hover {
-  -webkit-filter: opacity(0.5);
-  filter: opacity(0.5);
 }
 
 .footer__copyright {

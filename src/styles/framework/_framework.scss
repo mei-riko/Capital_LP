@@ -1,4 +1,4 @@
-html,body {
+html, body {
     font-size: map-get($font-size, 'md');
     font-weight: $font-weight-base;
     line-height: $line-height;
@@ -6,6 +6,16 @@ html,body {
     -ms-overflow-style: scrollbar;
 
     min-width: 100%;
+}
+
+/* 1.5 dpr */
+@media 
+(-webkit-min-device-pixel-ratio: 1.5), 
+(min-resolution: 144dpi){ 
+    /* Retina-specific stuff here */
+    html, body{
+        font-weight: $font-weight-lighter
+    }
 }
 body{
     overflow-x: hidden;

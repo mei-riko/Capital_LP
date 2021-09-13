@@ -20,9 +20,9 @@
         height: 40px;
         background: url('../img/logo.svg') no-repeat left center / contain;
 
-        &:hover{
-            filter: opacity(.5);
-        }
+        // &:hover{
+        //     filter: opacity(.5);
+        // }
     }
     &__phone{
         display: flex;

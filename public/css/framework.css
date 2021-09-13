@@ -331,6 +331,13 @@ template {
 
 @font-face {
   font-family: "Theinhardt Pan";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/TheinhardtPanLight.woff") format("woff"), url("../fonts/TheinhardtPanLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Theinhardt Pan";
   font-weight: 400;
   font-style: normal;
   src: url("../fonts/TheinhardtPanRegular.woff") format("woff"), url("../fonts/TheinhardtPanRegular.ttf") format("truetype");
@@ -1906,6 +1913,14 @@ html, body {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
   min-width: 100%;
+}
+
+/* 1.5 dpr */
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  /* Retina-specific stuff here */
+  html, body {
+    font-weight: 300;
+  }
 }
 
 body {
