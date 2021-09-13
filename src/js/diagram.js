@@ -27,7 +27,7 @@ function drawLinearGraph(selector, graphData, options) {
     var graph = $(selector);
 	var graphWidth = parseInt(graph.attr('width'));
 	var graphHeight = parseInt(graph.attr('height'));
-	console.log('graphWidth', graphWidth, 'graphHeight', graphHeight);
+	// console.log('graphWidth', graphWidth, 'graphHeight', graphHeight);
 	var xShift = options.xShift;
 	var yShift = options.yShift;
 	
@@ -58,7 +58,7 @@ function drawLinearGraph(selector, graphData, options) {
 			(val - minY) * (graphHeight - shift - 2 * options.yPadding) / (maxY - minY)
 			+ shift + options.yPadding
 			);
-		console.log('getYPixel', val, minY, maxY, shift, '=>', yPixel);
+		// console.log('getYPixel', val, minY, maxY, shift, '=>', yPixel);
 	    return yPixel;
 	}
 
@@ -85,7 +85,7 @@ function drawLinearGraph(selector, graphData, options) {
     for ( var iy = 0; iy < options.yAxisTicks.length; iy ++ ) {
 		c.fillStyle = '#808080';
         c.fillText('$'+options.yAxisTicks[iy],
-        	50,
+        	50 * options.devicePixelRatio,
         	getYPixel(options.yAxisTicks[iy], minY, maxY, yShift));
     }
 
@@ -325,12 +325,12 @@ $(function() {
 				dataLabelColor: dataLabelColor
 			});
 		}
-		console.log('minY', minY, 'maxY', maxY);
+		// console.log('minY', minY, 'maxY', maxY);
 
         pricesUSD[0].color='#2A4269';
 		pricesUSD[1].color='rgb(101, 181, 178)';
 
-		var canvas = $(areaSelector).first();
+		var canvas = $(areaSelector);
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -360,7 +360,7 @@ $(function() {
 				font:'italic 14pt sans-serif',
 				dataLabelFont:'italic 10pt sans-serif',
 				maxYear: window.plotMaxYear,
-				devicePixelRatio: 1
+				devicePixelRatio: 2
 				// devicePixelRatio: window.devicePixelRatio
 			}
 			if(canvas.attr('width')*1 < 400){		
@@ -368,16 +368,18 @@ $(function() {
 				window.drawStocksPlotOptions.xShift = -20;
 				window.drawStocksPlotOptions.yShift = 10;
 				window.drawStocksPlotOptions.yPadding = 10;
+				window.drawStocksPlotOptions.wLabel = 40;  // label width
+				window.drawStocksPlotOptions.hLabel = 20;  // label width
 				window.drawStocksPlotOptions.dataLabelFont ='italic 9pt sans-serif';
 				window.drawStocksPlotOptions.font = 'italic 10pt sans-serif';
-				window.drawStocksPlotOptions.hLabel = 20;  // label width
-				window.drawStocksPlotOptions.wLabel = 40;  // label width
+				window.drawStocksPlotOptions.lineWidth = 8;
+				window.drawStocksPlotOptions.lineWidthAxes = 4;
 			}
 			
 			var canvasWidth =  canvas.parent().innerWidth();
 			var canvasHeight = Math.round(canvasWidth/2);
 
-			if (false && window.drawStocksPlotOptions.devicePixelRatio > 1) {
+			if (window.drawStocksPlotOptions.devicePixelRatio > 1) {
 				canvas.attr('width', canvasWidth * window.drawStocksPlotOptions.devicePixelRatio);
 				canvas.attr('height',  canvasHeight * window.drawStocksPlotOptions.devicePixelRatio);
 				canvas.css({
@@ -385,8 +387,18 @@ $(function() {
 					height: canvasHeight+'px',
 				});
 
-				let c = canvas.getContext('2d');
-				c.scale(window.drawStocksPlotOptions.devicePixelRatio, window.drawStocksPlotOptions.devicePixelRatio);
+				// let c = canvas[0].getContext('2d');
+				// c.scale(window.drawStocksPlotOptions.devicePixelRatio, window.drawStocksPlotOptions.devicePixelRatio);
+				window.drawStocksPlotOptions.xPadding *= window.drawStocksPlotOptions.devicePixelRatio;
+				window.drawStocksPlotOptions.xShift *= window.drawStocksPlotOptions.devicePixelRatio;
+				window.drawStocksPlotOptions.yShift *= window.drawStocksPlotOptions.devicePixelRatio;
+				window.drawStocksPlotOptions.yPadding *= window.drawStocksPlotOptions.devicePixelRatio;
+				window.drawStocksPlotOptions.dataLabelFont ='italic 18pt sans-serif';
+				window.drawStocksPlotOptions.font = 'italic 20pt sans-serif';
+				window.drawStocksPlotOptions.hLabel *= window.drawStocksPlotOptions.devicePixelRatio;  // label width
+				window.drawStocksPlotOptions.wLabel *= window.drawStocksPlotOptions.devicePixelRatio;  // label width
+				window.drawStocksPlotOptions.lineWidth  *= window.drawStocksPlotOptions.devicePixelRatio;
+				window.drawStocksPlotOptions.lineWidthAxes  *= window.drawStocksPlotOptions.devicePixelRatio;
 			} else {
 				canvas.attr('width', canvasWidth);
 				canvas.attr('height', canvasHeight);
