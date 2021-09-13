@@ -63,6 +63,11 @@ function drawLinearGraph(selector, graphData, options) {
 
     var c = graph[0].getContext('2d');
 
+	// to enable retina display
+	if (options.devicePixelRatio > 1) {
+		c.scale(options.devicePixelRatio, options.devicePixelRatio);
+	}
+
     c.clearRect(0, 0, graph.width(), graph.height());
     
     c.lineWidth = options.lineWidthAxes;
@@ -333,8 +338,6 @@ $(function() {
 		pricesUSD[1].color='rgb(101, 181, 178)';
 
 		var canvas = $(areaSelector);
-		canvas.attr('width', canvas.parent().innerWidth());
-		canvas.attr('height', Math.round(canvas.attr('width')/2));
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -361,7 +364,9 @@ $(function() {
 		    yAxisTicks:yAxisTicks,
 		    font:'italic 14pt sans-serif',
 		    dataLabelFont:'italic 10pt sans-serif',
-			maxYear: window.plotMaxYear
+			maxYear: window.plotMaxYear,
+			devicePixelRatio: 2
+			// devicePixelRatio: window.devicePixelRatio
 		}
 		if(canvas.attr('width')*1 < 400){		
 			options.xPadding = 80;
@@ -373,8 +378,24 @@ $(function() {
 			options.hLabel = 20;  // label width
 		    options.wLabel = 40;  // label width
 		}
-		canvas.attr('width', canvas.parent().innerWidth());
-		canvas.attr('height', Math.round(canvas.attr('width')/2));
+
+		
+		var canvasWidth =  canvas.parent().innerWidth();
+		var canvasHeight = Math.round(canvasWidth/2);
+
+		if (options.devicePixelRatio > 1) {
+			canvas.attr('width', canvasWidth * options.devicePixelRatio);
+			canvas.attr('height',  canvasHeight * options.devicePixelRatio);
+			canvas.css({
+				width: canvasWidth+'px',
+				height: canvasHeight+'px',
+			});
+			// ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+		} else {
+			canvas.attr('width', canvasWidth);
+			canvas.attr('height', canvasHeight);
+		}
+
 		drawLinearGraph(areaSelector, pricesUSD, options);
 
 		if( window.maxYearDrawn) {
