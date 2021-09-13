@@ -25,8 +25,9 @@ function getMaxY(pricesUSD) {
 function drawLinearGraph(selector, graphData, options) {
 	// console.log( data, previousData);
     var graph = $(selector);
-	var drawedCirclesPrevGraph 	  = [];
-	var drawedCirclesCurrentGraph = [];
+	var graphWidth = parseInt(graph.attr('width'));
+	var graphHeight = parseInt(graph.attr('height'));
+	console.log('graphWidth', graphWidth, 'graphHeight', graphHeight);
 	var xShift = options.xShift;
 	var yShift = options.yShift;
 	
@@ -47,28 +48,23 @@ function drawLinearGraph(selector, graphData, options) {
 	// console.log('minX', minX, 'maxX', maxX);
 
     function getXPixel(val, minX, maxX, shift) {
-    	let xPixel = ((graph.width() - shift - 2 * options.xPadding) / ( maxX - minX) ) * ( val - minX ) + shift + options.xPadding;
+    	let xPixel = ((graphWidth - shift - 2 * options.xPadding) / ( maxX - minX) ) * ( val - minX ) + shift + options.xPadding;
     	// console.log('getXPixel', val, minX, maxX, shift, '=>', xPixel);
     	return xPixel;
 	}
 
 	function getYPixel(val, minY, maxY, shift) {
-		let yPixel = graph.height() - (
-			(val-minY) * (graph.height() - shift - 2 * options.yPadding) / (maxY - minY)
+		let yPixel = graphHeight - (
+			(val - minY) * (graphHeight - shift - 2 * options.yPadding) / (maxY - minY)
 			+ shift + options.yPadding
 			);
-		// console.log('getYPixel', val, minY, maxY, shift, '=>', yPixel);
+		console.log('getYPixel', val, minY, maxY, shift, '=>', yPixel);
 	    return yPixel;
 	}
 
     var c = graph[0].getContext('2d');
 
-	// to enable retina display
-	if (options.devicePixelRatio > 1) {
-		c.scale(options.devicePixelRatio, options.devicePixelRatio);
-	}
-
-    c.clearRect(0, 0, graph.width(), graph.height());
+    c.clearRect(0, 0, graphWidth, graphHeight);
     
     c.lineWidth = options.lineWidthAxes;
     c.strokeStyle = '#333';
@@ -106,7 +102,7 @@ function drawLinearGraph(selector, graphData, options) {
 		}
 		let xPixel = getXPixel(options.xAxisTicks[ix], minX, maxX, xShift);
 
-		c.fillText(options.xAxisTicks[ix], xPixel, graph.height() - options.yPadding + 5);
+		c.fillText(options.xAxisTicks[ix], xPixel, graphHeight - options.yPadding + 5);
 		c.beginPath();
 		c.moveTo(xPixel, getYPixel(minY, minY, maxY, yShift) + 5);
 		c.lineTo(xPixel, getYPixel(maxY, minY, maxY, yShift) - 5);
@@ -195,9 +191,6 @@ function drawLinearGraph(selector, graphData, options) {
 	    c.arc(xLabel+wLabel, yLabel+hLabel/2, hLabel/2, 0, Math.PI * 2, true);
         c.fill();
 
-       
-        
-
 		c.fillStyle = "#ffffff";
         c.beginPath();
 	    c.arc(xLabel- 1.5 * hLabel , yLabel+hLabel/2, hLabel/1.5, 0, Math.PI * 2, true);
@@ -270,7 +263,6 @@ $(function() {
 		var maxY = false;
 
 
-
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
 			for(let k=0; k<company.pricesUSD.length; k++) {
@@ -333,11 +325,12 @@ $(function() {
 				dataLabelColor: dataLabelColor
 			});
 		}
+		console.log('minY', minY, 'maxY', maxY);
 
         pricesUSD[0].color='#2A4269';
 		pricesUSD[1].color='rgb(101, 181, 178)';
 
-		var canvas = $(areaSelector);
+		var canvas = $(areaSelector).first();
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -351,52 +344,56 @@ $(function() {
 		for(let y = minY; y<=maxY; y+=100){
 			yAxisTicks.push(y);
 		}
-        var options = {
-		    xPadding : 140,
-		    xShift: -80,
-			yShift: 30,
-		    yPadding : 40,
-		    wLabel : 45,  // label width
-            hLabel : 30,  // label height
-		    lineWidth : 8,
-		    lineWidthAxes: 4,
-		    xAxisTicks:xAxisTicks,
-		    yAxisTicks:yAxisTicks,
-		    font:'italic 14pt sans-serif',
-		    dataLabelFont:'italic 10pt sans-serif',
-			maxYear: window.plotMaxYear,
-			devicePixelRatio: 2
-			// devicePixelRatio: window.devicePixelRatio
-		}
-		if(canvas.attr('width')*1 < 400){		
-			options.xPadding = 80;
-		    options.xShift = -20;
-			options.yShift = 10;
-		    options.yPadding = 10;
-		    options.dataLabelFont ='italic 9pt sans-serif';
-		    options.font = 'italic 10pt sans-serif';
-			options.hLabel = 20;  // label width
-		    options.wLabel = 40;  // label width
-		}
 
-		
-		var canvasWidth =  canvas.parent().innerWidth();
-		var canvasHeight = Math.round(canvasWidth/2);
+		if(!window.drawStocksPlotOptions) {
+			window.drawStocksPlotOptions = {
+				xPadding : 140,
+				xShift: -80,
+				yShift: 30,
+				yPadding : 40,
+				wLabel : 45,  // label width
+				hLabel : 30,  // label height
+				lineWidth : 8,
+				lineWidthAxes: 4,
+				xAxisTicks:xAxisTicks,
+				yAxisTicks:yAxisTicks,
+				font:'italic 14pt sans-serif',
+				dataLabelFont:'italic 10pt sans-serif',
+				maxYear: window.plotMaxYear,
+				devicePixelRatio: 1
+				// devicePixelRatio: window.devicePixelRatio
+			}
+			if(canvas.attr('width')*1 < 400){		
+				window.drawStocksPlotOptions.xPadding = 80;
+				window.drawStocksPlotOptions.xShift = -20;
+				window.drawStocksPlotOptions.yShift = 10;
+				window.drawStocksPlotOptions.yPadding = 10;
+				window.drawStocksPlotOptions.dataLabelFont ='italic 9pt sans-serif';
+				window.drawStocksPlotOptions.font = 'italic 10pt sans-serif';
+				window.drawStocksPlotOptions.hLabel = 20;  // label width
+				window.drawStocksPlotOptions.wLabel = 40;  // label width
+			}
+			
+			var canvasWidth =  canvas.parent().innerWidth();
+			var canvasHeight = Math.round(canvasWidth/2);
 
-		if (options.devicePixelRatio > 1) {
-			canvas.attr('width', canvasWidth * options.devicePixelRatio);
-			canvas.attr('height',  canvasHeight * options.devicePixelRatio);
-			canvas.css({
-				width: canvasWidth+'px',
-				height: canvasHeight+'px',
-			});
-			// ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-		} else {
-			canvas.attr('width', canvasWidth);
-			canvas.attr('height', canvasHeight);
+			if (false && window.drawStocksPlotOptions.devicePixelRatio > 1) {
+				canvas.attr('width', canvasWidth * window.drawStocksPlotOptions.devicePixelRatio);
+				canvas.attr('height',  canvasHeight * window.drawStocksPlotOptions.devicePixelRatio);
+				canvas.css({
+					width: canvasWidth+'px',
+					height: canvasHeight+'px',
+				});
+
+				let c = canvas.getContext('2d');
+				c.scale(window.drawStocksPlotOptions.devicePixelRatio, window.drawStocksPlotOptions.devicePixelRatio);
+			} else {
+				canvas.attr('width', canvasWidth);
+				canvas.attr('height', canvasHeight);
+			}
 		}
-
-		drawLinearGraph(areaSelector, pricesUSD, options);
+		window.drawStocksPlotOptions.yAxisTicks = yAxisTicks;
+		drawLinearGraph(areaSelector, pricesUSD, window.drawStocksPlotOptions);
 
 		if( window.maxYearDrawn) {
 			$('#oneMoreYear').parent().addClass('d-none');
