@@ -20,7 +20,7 @@ body {
   margin: 0;
   font-family: "Theinhardt Pan", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.4;
   color: #ffffff;
   text-align: left;
@@ -330,31 +330,31 @@ template {
 }
 
 @font-face {
-  font-family: "Theinhardt Pan";
+  font-family: 'Theinardt Pan' sans-serif;
+  src: url("../fonts/Theinhardt-Pan-Light.woff") format("woff"), url("../fonts/Theinhardt-Pan-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
-  src: url("../fonts/TheinhardtPanLight.woff") format("woff"), url("../fonts/TheinhardtPanLight.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Theinhardt Pan";
+  font-family: 'Theinardt Pan' sans-serif;
+  src: url("../fonts/Theinhardt-Pan-Regular.woff") format("woff"), url("../fonts/Theinhardt-Pan-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-  src: url("../fonts/TheinhardtPanRegular.woff") format("woff"), url("../fonts/TheinhardtPanRegular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Theinhardt Pan";
+  font-family: 'Theinardt Pan' sans-serif;
+  src: url("../fonts/Theinhardt-Pan-Medium.woff") format("woff"), url("../fonts/Theinhardt-Pan-Medium.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
-  src: url("../fonts/TheinhardtPanMedium.woff") format("woff"), url("../fonts/TheinhardtPanMedium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Theinhardt Pan";
+  font-family: 'Theinardt Pan' sans-serif;
+  src: url("../fonts/Theinhardt-Pan-Bold.woff") format("woff"), url("../fonts/Theinhardt-Pan-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
-  src: url("../fonts/TheinhardtPanBold.woff") format("woff"), url("../fonts/TheinhardtPanBold.ttf") format("truetype");
 }
 
 .container {
@@ -1907,7 +1907,7 @@ template {
 
 html, body {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
