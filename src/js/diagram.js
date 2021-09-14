@@ -348,6 +348,7 @@ $(function() {
 			yAxisTicks.push(y);
 		}
 
+		
 		if(!window.drawStocksPlotOptions) {
 			window.drawStocksPlotOptions = {
 				xPadding : 140,

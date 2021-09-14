@@ -93,4 +93,36 @@ var gulp = require("gulp"),
   });
 
   
+  gulp.task('devscripts', function () {
+    return gulp.src('./src/js/app.js')
+      .pipe(plumber())
+      .pipe(webpackStream({
+        output: {
+          filename: 'app.js',
+          devtoolLineToLine: true,
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(js)$/,
+              exclude: /(node_modules)/,
+              loader: 'babel-loader',
+              query: {
+                presets: ['env']
+              }
+            }
+          ]
+        },
+        externals: {
+          jquery: 'jQuery'
+        }
+      }).on('error', notify.onError()))
+      .pipe(gulp.dest('./public/js/'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(gulp.dest('./public/js/'))
+      .on('end', browserSync.reload);
+  });
+
+  gulp.task('dev', gulp.parallel('html', 'css', 'devscripts', 'watch', 'browser-sync' ) );
+
   gulp.task('default', gulp.parallel('html', 'css', 'scripts', 'watch', 'browser-sync' ) );
