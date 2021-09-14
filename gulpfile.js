@@ -98,8 +98,7 @@ var gulp = require("gulp"),
       .pipe(plumber())
       .pipe(webpackStream({
         output: {
-          filename: 'app.js',
-          devtoolLineToLine: true,
+          filename: 'app.js'
         },
         module: {
           rules: [
