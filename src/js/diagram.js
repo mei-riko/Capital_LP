@@ -332,6 +332,8 @@ $(function() {
 		pricesUSD[1].color='rgb(101, 181, 178)';
 
 		var canvas = $(areaSelector);
+		var canvasWidth =  canvas.parent().innerWidth();
+		var canvasHeight = Math.round(canvasWidth/2);
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){
@@ -364,7 +366,7 @@ $(function() {
 				devicePixelRatio: 2
 				// devicePixelRatio: window.devicePixelRatio
 			}
-			if(canvas.attr('width')*1 < 400){		
+			if(canvasWidth < 400){		
 				window.drawStocksPlotOptions.xPadding = 80;
 				window.drawStocksPlotOptions.xShift = -20;
 				window.drawStocksPlotOptions.yShift = 10;
@@ -376,9 +378,6 @@ $(function() {
 				window.drawStocksPlotOptions.lineWidth = 8;
 				window.drawStocksPlotOptions.lineWidthAxes = 4;
 			}
-			
-			var canvasWidth =  canvas.parent().innerWidth();
-			var canvasHeight = Math.round(canvasWidth/2);
 
 			if (window.drawStocksPlotOptions.devicePixelRatio > 1) {
 				canvas.attr('width', canvasWidth * window.drawStocksPlotOptions.devicePixelRatio);
@@ -386,6 +385,8 @@ $(function() {
 				canvas.css({
 					width: canvasWidth+'px',
 					height: canvasHeight+'px',
+					maxWidth: canvasWidth+'px',
+					maxHeight: canvasHeight+'px'
 				});
 
 				// let c = canvas[0].getContext('2d');
