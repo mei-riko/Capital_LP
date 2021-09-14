@@ -364,8 +364,8 @@ $(function() {
 
 		    xAxisTicks:xAxisTicks,
 		    yAxisTicks:yAxisTicks,
-		    font:'18px/18px Theinhardt Pan',
-		    dataLabelFont:'16px/2em Theinhardt Pan',
+		    font:'18px/18px Theinhardt Pan, sans serif',
+		    dataLabelFont:'16px/32px Theinhardt Pan, sans serif',
 			maxYear: window.plotMaxYear
 		}
 

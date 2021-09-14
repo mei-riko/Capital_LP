@@ -330,31 +330,31 @@ template {
 }
 
 @font-face {
-  font-family: 'Theinardt Pan' sans-serif;
-  src: url("../fonts/Theinhardt-Pan-Light.woff") format("woff"), url("../fonts/Theinhardt-Pan-Light.ttf") format("truetype");
+  font-family: "Theinhardt Pan";
   font-weight: 300;
   font-style: normal;
+  src: url("../fonts/Theinhardt-Pan-Light.woff2") format("woff2"), url("../fonts/Theinhardt-Pan-Light.woff") format("woff"), url("../fonts/Theinhardt-Pan-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Theinardt Pan' sans-serif;
-  src: url("../fonts/Theinhardt-Pan-Regular.woff") format("woff"), url("../fonts/Theinhardt-Pan-Regular.ttf") format("truetype");
+  font-family: "Theinhardt Pan";
   font-weight: 400;
   font-style: normal;
+  src: url("../fonts/Theinhardt-Pan-Regular.woff2") format("woff2"), url("../fonts/Theinhardt-Pan-Regular.woff") format("woff"), url("../fonts/Theinhardt-Pan-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Theinardt Pan' sans-serif;
-  src: url("../fonts/Theinhardt-Pan-Medium.woff") format("woff"), url("../fonts/Theinhardt-Pan-Medium.ttf") format("truetype");
+  font-family: "Theinhardt Pan";
   font-weight: 600;
   font-style: normal;
+  src: url("../fonts/Theinhardt-Pan-Medium.woff2") format("woff2"), url("../fonts/Theinhardt-Pan-Medium.woff") format("woff"), url("../fonts/Theinhardt-Pan-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Theinardt Pan' sans-serif;
-  src: url("../fonts/Theinhardt-Pan-Bold.woff") format("woff"), url("../fonts/Theinhardt-Pan-Bold.ttf") format("truetype");
+  font-family: "Theinhardt Pan";
   font-weight: 700;
   font-style: normal;
+  src: url("../fonts/Theinhardt-Pan-Bold.woff2") format("woff2"), url("../fonts/Theinhardt-Pan-Bold.woff") format("woff"), url("../fonts/Theinhardt-Pan-Bold.ttf") format("truetype");
 }
 
 .container {
