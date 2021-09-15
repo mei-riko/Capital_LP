@@ -12,7 +12,7 @@ section.advantage
                 h2.advantage__title.mb-4.mb-lg-3.mb-sm-1 Подбираем качественные инструменты для&nbsp;инвестирования. 
                     | Вы&nbsp;выбираете подходящий, мы&nbsp;следим за&nbsp;ситуацией на&nbsp;рынке и&nbsp;вносим 
                     | нужные изменения для&nbsp;вашей выгоды.
-                a.btn.btn_action(href="javascript;") Перейти на наш сайт                    
+                a.btn.btn_action(href="#callback" data-trigger="scroll") Заказать обратный звонок                    
             .col-5.col-lg-6.col-sm-12.advantage__items
                 for object in advantages
                     +advantageItem(object)
@@ -61,7 +61,7 @@ section
                         | Вы наблюдаете за&nbsp;рынком, а&nbsp;сервис подскажет, как избежать убытков или&nbsp;когда 
                         | зафиксировать прибыль.
     //- CTA Form
-    .container.cta-block-container
+    .container.cta-block-container#callback
         .cta-block
             .cta-block__container
                 p.h1.cta-block__title.mb-1 Хотите узнать о нас больше?

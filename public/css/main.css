@@ -700,7 +700,6 @@
 
 .item_service__intro {
   color: rgba(255, 255, 255, 0.7);
-  min-height: 230px;
 }
 
 @media all and (max-width: 1600px) {

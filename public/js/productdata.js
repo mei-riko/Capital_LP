@@ -26,11 +26,11 @@ window.productdata={
 			}
 		},
 		{
-			icon: './img/clock.png',
-			name: 'Sony Playstation 4',
+			icon: './img/sony.png',
+			name: 'Sony PlayStation 4 Pro',
 			type: 'Игровая приставка',
 			price: {
-				rur:"49 990"
+				rur:"34 999"
 			}
 		}
 	]
