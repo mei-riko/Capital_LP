@@ -44,17 +44,25 @@ function drawLinearGraph(imageSelector, graphData, options) {
 		}
 		return newSize;
 	}
+	function recalcSize(orig, ratio){
+		if(ratio>1) {
+			return Math.round(orig * ratio);
+		} else{
+			return orig;
+		}
+	}
+
 	var geometry = {
-		canvasWidth: options.canvasWidth * window.devicePixelRatio,
-		canvasHeight: options.canvasHeight * window.devicePixelRatio,
-		xPadding : options.xPadding * window.devicePixelRatio,
-		xShift: options.xShift * window.devicePixelRatio,
-		yPadding : options.yPadding * window.devicePixelRatio,
-		yShift: options.yShift * window.devicePixelRatio,
-		wLabel : options.wLabel * window.devicePixelRatio,
-		hLabel : options.hLabel * window.devicePixelRatio,
-		lineWidth : options.lineWidth * window.devicePixelRatio,
-		lineWidthAxes: options.lineWidthAxes * window.devicePixelRatio,
+		canvasWidth: recalcSize(options.canvasWidth, window.devicePixelRatio),
+		canvasHeight: recalcSize(options.canvasHeight, window.devicePixelRatio),
+		xPadding : recalcSize(options.xPadding, window.devicePixelRatio),
+		xShift:recalcSize(options.xShift, window.devicePixelRatio),
+		yPadding : Math.round(options.yPadding * window.devicePixelRatio),
+		yShift: Math.round(options.yShift * window.devicePixelRatio),
+		wLabel : recalcSize(options.wLabel, window.devicePixelRatio),
+		hLabel : recalcSize(options.hLabel, window.devicePixelRatio),
+		lineWidth : recalcSize(options.lineWidth, window.devicePixelRatio),
+		lineWidthAxes: recalcSize(options.lineWidthAxes, window.devicePixelRatio),
 		font: {
 			style:options.font.style, 
 			size: recalcFontSize(options.font.size, window.devicePixelRatio), 
@@ -135,7 +143,7 @@ function drawLinearGraph(imageSelector, graphData, options) {
 
 
 
-    // $('#canvas-graph').empty().append(graph);
+    $('#canvas-graph').empty().append(graph);
 	var image = $(imageSelector).css(geometry.css);
 	var c = graph.getContext('2d');
 
