@@ -36,6 +36,14 @@ function drawLinearGraph(imageSelector, graphData, options) {
 			});
 
 	// recalculate the sizes
+	function recalcFontSize(orig, ratio){
+		let newSize=10;
+        let upperBound = orig * ratio;
+		while(newSize <= upperBound){
+			newSize += 10;
+		}
+		return newSize;
+	}
 	var geometry = {
 		canvasWidth: options.canvasWidth * window.devicePixelRatio,
 		canvasHeight: options.canvasHeight * window.devicePixelRatio,
@@ -49,13 +57,13 @@ function drawLinearGraph(imageSelector, graphData, options) {
 		lineWidthAxes: options.lineWidthAxes * window.devicePixelRatio,
 		font: {
 			style:options.font.style, 
-			size: Math.round(options.font.size * window.devicePixelRatio), 
+			size: recalcFontSize(options.font.size, window.devicePixelRatio), 
 			unit: options.font.unit, 
 			family: options.font.family
 		},
 		dataLabelFont:{
 			style:options.dataLabelFont.style, 
-			size: Math.round(options.dataLabelFont.size * window.devicePixelRatio), 
+			size: recalcFontSize(options.dataLabelFont.size, window.devicePixelRatio), 
 			unit: options.dataLabelFont.unit, 
 			family: options.dataLabelFont.family
 		},
@@ -155,25 +163,27 @@ function drawLinearGraph(imageSelector, graphData, options) {
 
     // Draw the Y value texts
 	displayLog = false;
-	c.font = fontString(geometry.font);
+	
     c.textAlign = "right"
     c.textBaseline = "middle";
     c.strokeStyle = '#333';
 	c.fillStyle = '#808080';
     for ( var iy = 0; iy < geometry.yAxisTicks.length; iy ++ ) {
 		// console.log('$'+geometry.yAxisTicks[iy]);
+		c.font = fontString(geometry.font);
         c.fillText('$'+geometry.yAxisTicks[iy],
-			getXPixel(minX - 0.1),
+			getXPixel(minX - 0.2),
         	getYPixel(geometry.yAxisTicks[iy]));
     }
 	displayLog = false;
 
     // Draw the X value texts and axes
+	displayLog = true;
 	c.lineWidth = geometry.lineWidthAxes;
-	c.font = fontString(geometry.font);
     c.textAlign = "center"
     // console.log(geometry.xAxisTicks);
 	for ( var ix = 0; ix < geometry.xAxisTicks.length; ix ++ ) {
+		c.font = fontString(geometry.font);
 		if (geometry.xAxisTicks[ix] == geometry.maxYear) {
 			c.fillStyle = '#ffffff';
 			c.strokeStyle = '#ffffff';
@@ -181,15 +191,17 @@ function drawLinearGraph(imageSelector, graphData, options) {
 			c.fillStyle = '#808080';
 			c.strokeStyle = '#333';
 		}
+		if(displayLog) console.log('c.font', c.font,'geometry.xAxisTicks[ix]', geometry.xAxisTicks[ix]);
 		let xPixel = getXPixel(geometry.xAxisTicks[ix]);
 
-		c.fillText(geometry.xAxisTicks[ix], xPixel, geometry.canvasHeight - geometry.yPadding + 5);
+		
+		c.fillText(geometry.xAxisTicks[ix], xPixel, geometry.canvasHeight - 0.9 * geometry.yPadding);
 		c.beginPath();
 		c.moveTo(xPixel, getYPixel(minY) + 5);
 		c.lineTo(xPixel, getYPixel(maxY) - 5);
 		c.stroke();
 	}
-    
+    displayLog = false;
 	// image.attr('src', graph.toDataURL()); return;
 
     var onImageLoaded = function(c, icon_image, xImage, yImage, wImage, hImage){
@@ -478,15 +490,15 @@ $(function() {
 				window.drawStocksPlotOptions.lineWidthAxes = 8;
 			}
 			if(canvasWidth <= 400){		
-				// console.log('canvasWidth < 400');
+				console.log('canvasWidth < 400');
 				window.drawStocksPlotOptions.xPadding = 160;
-				window.drawStocksPlotOptions.xShift = -40;
+				window.drawStocksPlotOptions.xShift = -60;
 				window.drawStocksPlotOptions.yShift = 30;
 				window.drawStocksPlotOptions.yPadding = 20;
 				window.drawStocksPlotOptions.wLabel = 80;  // label width
 				window.drawStocksPlotOptions.hLabel = 40;  // label width
 				window.drawStocksPlotOptions.dataLabelFont =  {style:'italic', size: 26, unit: 'px', family: 'sans-serif'};
-				window.drawStocksPlotOptions.font = {style:'italic', size: 28, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.font = {style:'italic', size: 24, unit: 'px', family: 'sans-serif'};
 				window.drawStocksPlotOptions.lineWidth = 16;
 				window.drawStocksPlotOptions.lineWidthAxes = 8;
 			}
