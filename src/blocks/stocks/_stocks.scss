@@ -46,7 +46,7 @@
             border-radius: $border-radius;
         }
 
-        canvas{
+        &-img{
             position: relative;
             z-index: 9;
         }

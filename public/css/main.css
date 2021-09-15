@@ -1864,7 +1864,7 @@
   border-radius: 16px;
 }
 
-.stocks__graph canvas {
+.stocks__graph-img {
   position: relative;
   z-index: 9;
 }

@@ -20,16 +20,16 @@ mixin companyStocks(object)
                 .stocks__info-grid
                     for object, index in companies
                         +companyStocks(object)(data-id=index)
-                .stocks__graph
-                    //- canvas#flot-graph(width="1" height="1")
-                    img#flot-graph
-                    //- div#canvas-graph(style="overflow:scroll; width:100%; height: 400px;")
+                    .stocks__graph
+                        //- canvas#flot-graph(width="1" height="1")
+                        img#flot-graph.stocks__graph-img
+                        //- div#canvas-graph(style="overflow:scroll; width:100%; height: 400px;")
                 .mt-2.stocks__btns
                     .stocks__btns-item
                         a.btn.btn_action.stocks__btn#oneMoreYear(data-href="stocks-final.html") Подождать 
                             span.d-sm-none &nbsp;еще год
                     .stocks__btns-item
-                        a.btn.btn_secondary.stocks__btn#saleShares(data-href="result.html" data-target="#heading-screen" data-loader="ajax") Продать акции
+                        a.btn.btn_secondary.stocks__btn#saleShares(href="javascript;" data-href="result.html" data-target="#heading-screen" data-loader="ajax") Продать акции
             .stocks__chat
                 .stocks__chat-body#chat-messages
                     .stocks__message.stocks__message_new
