@@ -15,13 +15,13 @@ function valid(val, elem, type) {
 		phone = true;
 		
 		if (val == 'click') {
-			$inputPhone.addClass('input--success');
+			$inputPhone.removeClass('input--error').addClass('input--success');
 		}
 	  } else {
 		phone = false;
 
 		if (val == 'click') {
-			$inputPhone.addClass('input--error');
+			$inputPhone.removeClass('input--success').addClass('input--error');
 		}
 	  }
 	}
@@ -30,13 +30,13 @@ function valid(val, elem, type) {
 		name = true;
 		
 		if (val == 'click') {
-			$inputName.addClass('input--success');
+			$inputName.removeClass('input--error').addClass('input--success');
 		}
 	  } else {
 		name = false;
 
 		if (val == 'click') {
-			$inputName.addClass('input--error');
+			$inputName.removeClass('input--success').addClass('input--error');
 		}
 	  }
 	}
@@ -45,13 +45,13 @@ function valid(val, elem, type) {
 		email = true;
 		
 		if (val == 'click') {
-			$inputEmail.addClass('input--success');
+			$inputEmail.removeClass('input--error').addClass('input--success');
 		}
 	  } else {
 		email = false;
 
 		if (val == 'click') {
-			$inputEmail.addClass('input--error');
+			$inputEmail.removeClass('input--success').addClass('input--error');
 		}
 	  }
 	}
@@ -87,13 +87,15 @@ function valid(val, elem, type) {
 
 $(document).ready(function(){
 	$(document).on('click', '[btn-form]', function(event){
-		let type = '';
+		let type = '',
+			url = '';
 		
 		if ( $(this).closest('form').hasClass('form-callback-small') ){
 			type = 'phone';
 		}
 		if ( $(this).closest('form').hasClass('form-callback') ){
 			type = 'participate';
+			url = $(this).data('href');
 		}
 		
 		if (valid( 'click', $(this), type ) === true) {
@@ -103,14 +105,21 @@ $(document).ready(function(){
 				$thanks = $(this).closest('.form-container').find('.form-thanks'),
 				$intro = $(this).closest('.form-container').find('.form-intro');
 				
+				if(type == 'participate'){
+					var name = $(form).find('.input[name="name"]').val();
+					console.log(name);
+				}
+				
 			fetch(action, {
 				method: "post",
 				body: formData
 			}).then(function (response) {
 				response.json().then(function (result) {
-					form.remove();
-					// $intro.hide();
-					$thanks.show();
+					if(type == 'phone'){ form.remove(); $thanks.show(); }
+					if(type == 'participate'){
+						document.cookie = 'callbackName=' + name + ';expires=1;path=/';
+						$('#heading-screen').load(url); 
+					}
 				});
 			});
 		}
@@ -144,12 +153,30 @@ $(document).ready(function(){
 			});
 		}
 	});	
-	$(document).on('change', '.input', function(event){
-		let type = '';
+	
+	// Проверка для смены классов
+	$(document).on('input', '.input', function(event){
+		let $input = $(this);
+		let name = $input.attr('name');
 		
-		if ( $(this).closest('form').hasClass('form-subscribe-small') ){
-			type = 'email';
-		}
-		valid( 'click', $(this), type );
+		switch (name) {
+			case 'mail':
+				if( validateEmail($input.val()) ){
+					$input.removeClass('input--error').addClass('input--success');
+				}else{
+					$input.removeClass('input--success').addClass('input--error');
+				}
+				break;
+			case 'name':
+				if( $input.val().length > 2 ){
+					$input.removeClass('input--error').addClass('input--success');
+				}else{
+					$input.removeClass('input--success').addClass('input--error');
+				}
+				break;
+			default:
+				break;
+		};
 	});
+	
 });

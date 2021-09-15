@@ -1,6 +1,8 @@
 .item_service{
     text-align: center;
     padding: $spacer;
+    
+    height: 100%;
 
     &__icon{
         margin: 0 auto $spacer;
@@ -62,6 +64,7 @@
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_service{
         padding: map-get($map: $spacers, $key: 1);
+        height: auto;
 
         &__icon{
             width: 70px;

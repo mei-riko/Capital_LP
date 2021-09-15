@@ -685,6 +685,7 @@
 .item_service {
   text-align: center;
   padding: 40px;
+  height: 100%;
 }
 
 .item_service__icon {
@@ -740,6 +741,7 @@
 @media all and (max-width: 768px) {
   .item_service {
     padding: 20px;
+    height: auto;
   }
   .item_service__icon {
     width: 70px;
@@ -1789,7 +1791,6 @@
     width: 400px;
     background-size: 340px;
     background-position-y: 20px;
-    margin-top: -60px;
   }
   .heading-screen_step__title {
     margin-bottom: 20px;
@@ -1848,7 +1849,7 @@
   grid-column-end: 3;
   position: relative;
   margin-right: -60px;
-  padding-left: 6px;
+  padding-left: 15px;
 }
 
 .stocks__graph:before {
@@ -2026,6 +2027,13 @@
 @media all and (max-width: 1024px) {
   .stocks__container {
     max-width: 720px;
+  }
+  .stocks__graph {
+    padding: 10px 0;
+    margin-right: -30px;
+  }
+  .stocks__graph:before {
+    width: calc( 100% - 30px);
   }
   .stocks__message-name {
     font-size: 12px;
@@ -2235,6 +2243,9 @@
 
 .product {
   position: relative;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .product__figure {
@@ -2252,7 +2263,16 @@
   }
 }
 
+@media all and (max-width: 1024px) {
+  .product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media all and (max-width: 768px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
   .product__figure {
     width: 460px;
     left: -300px;

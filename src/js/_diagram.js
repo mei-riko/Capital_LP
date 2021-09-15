@@ -107,14 +107,14 @@ function drawLinearGraph(imageSelector, graphData, options) {
 				/ ( maxX - minX - dx) 
 			) * ( val - minX - dx ) 
 			+ geometry.xShift + geometry.xPadding;
-    	// if(displayLog) console.log('getXPixel',{
-		// 	val:val,
-		// 	minX:minX,
-		// 	maxX: maxX,
-		// 	canvasWidth:geometry.canvasWidth,
-		// 	xShift:geometry.xShift,
-		// 	xPadding: geometry.xPadding
-		// }, '=>', xPixel);
+    	if(displayLog) console.log('getXPixel',{
+			val:val,
+			minX:minX,
+			maxX: maxX,
+			canvasWidth:geometry.canvasWidth,
+			xShift:geometry.xShift,
+			xPadding: geometry.xPadding
+		}, '=>', xPixel);
     	return xPixel;
 	}
 
@@ -123,20 +123,20 @@ function drawLinearGraph(imageSelector, graphData, options) {
 			(val - minY) * (geometry.canvasHeight - geometry.yShift - 2 * geometry.yPadding) / (maxY - minY)
 			+ geometry.yShift + geometry.yPadding
 			);
-		// if(displayLog) console.log('getYPixel', 
-		// 			{
-		// 				val:val,
-		// 				minY: minY,
-		// 				maxY: maxY, 
-		// 				canvasHeight: geometry.canvasHeight, 
-		// 				yShift: geometry.yShift , 
-		// 				yPadding: geometry.yPadding
-		// 			}, '=>', yPixel);
+		if(displayLog) console.log('getYPixel', 
+					{
+						val:val,
+						minY: minY,
+						maxY: maxY, 
+						canvasHeight: geometry.canvasHeight, 
+						yShift: geometry.yShift , 
+						yPadding: geometry.yPadding
+					}, '=>', yPixel);
 	    return yPixel;
 	}
 
 	function fontString(f){
-		// f = {style:'normal', size: 10, unit: 'pt', family: 'Theinhardt Pan'}
+		// f = {style:'italic', size: 10, unit: 'pt', family: 'sans-serif'}
 		// return f.style + ' ' + f.size + f.unit + ' ' + f.family;
 		return f.size + f.unit + ' ' + f.family;
 	}
@@ -199,7 +199,7 @@ function drawLinearGraph(imageSelector, graphData, options) {
 			c.fillStyle = '#68697a';
 			c.strokeStyle = '#343550';
 		}
-		// if(displayLog) console.log('c.font', c.font,'geometry.xAxisTicks[ix]', geometry.xAxisTicks[ix]);
+		if(displayLog) console.log('c.font', c.font,'geometry.xAxisTicks[ix]', geometry.xAxisTicks[ix]);
 		let xPixel = getXPixel(geometry.xAxisTicks[ix]);
 
 		
@@ -234,7 +234,7 @@ function drawLinearGraph(imageSelector, graphData, options) {
     	//console.log('a');
     	graphData[0].labelShift =  0;
     	graphData[1].labelShift =  0;
-    } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.3 *  geometry.hLabel) {
+    } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.5 *  geometry.hLabel) {
     	//console.log('b');
     	graphData[0].labelShift =  0;
     	graphData[1].labelShift =  0;
@@ -469,7 +469,7 @@ $(function() {
 					maxHeight: canvasHeight+'px'
 				},
 				xPadding : 280,
-				xShift: -140,
+				xShift: -160,
 				yShift: 60,
 				yPadding : 80,
 				wLabel : 90,  // label width
@@ -478,35 +478,35 @@ $(function() {
 				lineWidthAxes: 8,
 				xAxisTicks:xAxisTicks,
 				yAxisTicks:yAxisTicks,
-				font: {style:'normal', size: 32, unit: 'px', family: 'Theinhardt Pan'},
-				dataLabelFont:{style:'normal', size: 26, unit: 'px', family: 'Theinhardt Pan'},
+				font: {style:'italic', size: 35, unit: 'px', family: 'sans-serif'},
+				dataLabelFont:{style:'italic', size: 30, unit: 'px', family: 'sans-serif'},
 				maxYear: window.plotMaxYear
 				//devicePixelRatio: 2
 				// devicePixelRatio: window.devicePixelRatio
 			}
-			if(canvasWidth <= 768){		
+			if(canvasWidth <= 620){		
 				// console.log('canvasWidth < 620');
 				window.drawStocksPlotOptions.xPadding = 160;
 				window.drawStocksPlotOptions.xShift = -40;
 				window.drawStocksPlotOptions.yShift = 30;
-				window.drawStocksPlotOptions.yPadding = 40;
+				window.drawStocksPlotOptions.yPadding = 20;
 				window.drawStocksPlotOptions.wLabel = 80;  // label width
-				window.drawStocksPlotOptions.hLabel = 52;  // label width
-				window.drawStocksPlotOptions.font = {style:'normal', size: 28, unit: 'px', family: 'Theinhardt Pan'};
-				window.drawStocksPlotOptions.dataLabelFont =  {style:'normal', size: 20, unit: 'px', family: 'Theinhardt Pan'};
+				window.drawStocksPlotOptions.hLabel = 40;  // label width
+				window.drawStocksPlotOptions.dataLabelFont =  {style:'italic', size: 26, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.font = {style:'italic', size: 28, unit: 'px', family: 'sans-serif'};
 				window.drawStocksPlotOptions.lineWidth = 16;
 				window.drawStocksPlotOptions.lineWidthAxes = 8;
 			}
-			if(canvasWidth <= 576){		
-				// console.log('canvasWidth < 400');
+			if(canvasWidth <= 400){		
+				console.log('canvasWidth < 400');
 				window.drawStocksPlotOptions.xPadding = 160;
 				window.drawStocksPlotOptions.xShift = -60;
 				window.drawStocksPlotOptions.yShift = 30;
 				window.drawStocksPlotOptions.yPadding = 20;
-				window.drawStocksPlotOptions.wLabel = 66;  // label width
-				window.drawStocksPlotOptions.hLabel = 44;  // label width
-				window.drawStocksPlotOptions.font = {style:'normal', size: 14, unit: 'px', family: 'Theinhardt Pan'};
-				window.drawStocksPlotOptions.dataLabelFont =  {style:'normal', size: 14, unit: 'px', family: 'Theinhardt Pan'};
+				window.drawStocksPlotOptions.wLabel = 80;  // label width
+				window.drawStocksPlotOptions.hLabel = 40;  // label width
+				window.drawStocksPlotOptions.dataLabelFont =  {style:'italic', size: 26, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.font = {style:'italic', size: 24, unit: 'px', family: 'sans-serif'};
 				window.drawStocksPlotOptions.lineWidth = 16;
 				window.drawStocksPlotOptions.lineWidthAxes = 8;
 			}
@@ -587,8 +587,7 @@ $(function() {
 	window.showResults = function(selectorYears, selectorProfit){
 
 		var yearIntervar = window.plotMaxYear - window.plotMinYear;
-
-		if(yearIntervar == 1){
+		if(yearIntervar==1){
 			$(selectorYears).empty().html(yearIntervar+' год');
 		} else if (yearIntervar > 1 &&  yearIntervar<=4) {
 			$(selectorYears).empty().html(yearIntervar+' года');
@@ -628,22 +627,4 @@ $(function() {
     	$(selectorProfit).empty().html(totalSharesRurView);
 	}
 
-	window.showStart = function(selectorProfit){
-
-		// console.log(window.companydata.active);
-
-        var startPriceRur = 0;
-    	for(let i = 0; i<window.companydata.active.length; i++) {
-    		let company = window.companydata.available[window.companydata.active[i]];
-    		let sharesRurStr = '' + company.sumPricesRUR[0][1];
-    		let sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
-    		startPriceRur += sharesRur;
-    		// console.log(i, sharesRurStr, sharesRur);
-    	}
-
-		// console.log( startPriceRur );
-
-    	var startPriceRurView = (new Intl.NumberFormat("ru-RU", { useGrouping:true })).format(Number(startPriceRur).toFixed(2));
-    	$(selectorProfit).empty().html(startPriceRurView);
-	}
 });

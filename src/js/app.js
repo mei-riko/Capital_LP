@@ -34,7 +34,7 @@ import './mouseup';
 import './ajaxloader';
 import './company';
 import './product';
-// import './hidpicanvas';
+import './hidpicanvas';
 import './diagram';
 
 import '../blocks/stocks/stocks';

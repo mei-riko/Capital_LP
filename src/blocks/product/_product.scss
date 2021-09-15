@@ -1,6 +1,9 @@
 .product{
     position: relative;
     // overflow-x: clip;
+    display: grid;
+    grid-gap: $grid-gutter-width;
+    grid-template-columns: repeat(3, 1fr);
 
     &__figure{
         position: absolute;
@@ -9,7 +12,7 @@
         z-index: -1;
     }
 }
-// < 1380px
+// < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .product{
         &__figure{
@@ -19,8 +22,17 @@
         }
     }
 }
+// < 1024px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .product{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+// < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .product{
+        grid-template-columns: 1fr;
+
         &__figure{
             width: 460px;
             left: -300px;

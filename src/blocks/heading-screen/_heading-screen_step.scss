@@ -208,7 +208,7 @@
                 background-size: 340px;
                 background-position-y: 20px;
 
-                margin-top: -(map-get($map: $spacers, $key: 4));
+                // margin-top: -(map-get($map: $spacers, $key: 4));
             }
         }
         &__title{

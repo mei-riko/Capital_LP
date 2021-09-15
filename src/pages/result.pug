@@ -7,6 +7,9 @@
                     |  и заработали 
                     span#price(data-status="result") 150 000
                     | &nbsp;₽
+                p.heading-screen__content При этом вы вложили в акции  
+                    span#start(data-status="start") 40 000
+                    | &nbsp;₽
                 p.heading-screen__content.mb-4.mb-xl-2 Теперь вы готовы к&nbsp;открытию брокерского счета. Заполните форму 
                     | ниже и&nbsp;мы с&nbsp;вами свяжемся в&nbsp;ближайшее время
                 form.form.form_column.heading-screen__form(action="")
@@ -16,3 +19,4 @@
                     //- button.btn.btn_action.form_column__btn(type="submit") Отправить заявку
 script
    | window.showResults('#yearsinterval', '#price[data-status="result"]');
+   | window.showStart('#start[data-status="start"]');
