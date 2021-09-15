@@ -4,7 +4,7 @@
     <div class="col-7 col-xl-6 col-lg-8 col-md-9 col-sm-12">
       <h1 class="heading-screen__title heading-screen_step__title">Отличный выбор! <br/>Мы вложили <span id="price" data-status="success">90 000 </span>₽ в&nbsp;акции быстрорастущих компаний</h1>
       <div class="heading-screen__card heading-screen_step__card">
-        <div class="item item_company item_company-inside">
+        <div class="item item_company item_company-inside" data-id="0">
           <div class="item_company__count">15 шт.</div>
           <div class="item_company__info item_company-inside__info">
             <div class="item_company__logo"><img class="img-fluid" src="./icon/yandex.svg"/></div>
@@ -13,10 +13,10 @@
           </div>
           <div class="item_company-inside__col">
             <p class="item_company__label">Стоимость акции</p>
-            <div class="item__title">$21.65</div>
+            <div class="item__title item__subtotal">$21.65</div>
           </div>
         </div>
-        <div class="item item_company item_company-inside">
+        <div class="item item_company item_company-inside" data-id="1">
           <div class="item_company__count">8 шт.</div>
           <div class="item_company__info item_company-inside__info">
             <div class="item_company__logo"><img class="img-fluid" src="./icon/tesla.svg"/></div>
@@ -25,10 +25,14 @@
           </div>
           <div class="item_company-inside__col">
             <p class="item_company__label">Стоимость акции</p>
-            <div class="item__title">$46.96</div>
+            <div class="item__title item__subtotal">$46.96</div>
           </div>
         </div>
       </div><a class="btn btn_action" href="stocks.html" data-target="#heading-screen" data-loader="ajax">Начать торговать</a>
+      <script>
+        window.showTotalSharesRur('#price[data-status="success"]');
+        window.showCurrentCompanies()
+      </script>
     </div>
   </div>
 </div>

@@ -20,3 +20,9 @@ $(function() {
 
 import './mouseup';
 import './ajaxloader';
+import './companydata';
+import './company';
+import './productdata';
+import './product';
+import './hidpicanvas';
+import './diagram';
