@@ -194,7 +194,7 @@ function drawLinearGraph(imageSelector, graphData, options) {
 
     var onImageLoaded = function(c, icon_image, xImage, yImage, wImage, hImage){
     	return function() {
-			console.log('c.drawImage', icon_image.src, 	xImage,	yImage,	wImage,	hImage);
+			// console.log('c.drawImage', icon_image.src, 	xImage,	yImage,	wImage,	hImage);
 		    c.drawImage(
 		    	icon_image,
 		    	xImage,
@@ -464,17 +464,31 @@ $(function() {
 				//devicePixelRatio: 2
 				// devicePixelRatio: window.devicePixelRatio
 			}
-			if(canvasWidth < 400){		
-				window.drawStocksPlotOptions.xPadding = 80;
-				window.drawStocksPlotOptions.xShift = -20;
-				window.drawStocksPlotOptions.yShift = 10;
-				window.drawStocksPlotOptions.yPadding = 10;
-				window.drawStocksPlotOptions.wLabel = 40;  // label width
-				window.drawStocksPlotOptions.hLabel = 20;  // label width
-				window.drawStocksPlotOptions.dataLabelFont =  {style:'italic', size: 9, unit: 'pt', family: 'sans-serif'};
-				window.drawStocksPlotOptions.font = {style:'italic', size: 10, unit: 'pt', family: 'sans-serif'};
-				window.drawStocksPlotOptions.lineWidth = 8;
-				window.drawStocksPlotOptions.lineWidthAxes = 4;
+			if(canvasWidth <= 620){		
+				// console.log('canvasWidth < 620');
+				window.drawStocksPlotOptions.xPadding = 160;
+				window.drawStocksPlotOptions.xShift = -40;
+				window.drawStocksPlotOptions.yShift = 30;
+				window.drawStocksPlotOptions.yPadding = 20;
+				window.drawStocksPlotOptions.wLabel = 80;  // label width
+				window.drawStocksPlotOptions.hLabel = 40;  // label width
+				window.drawStocksPlotOptions.dataLabelFont =  {style:'italic', size: 26, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.font = {style:'italic', size: 28, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.lineWidth = 16;
+				window.drawStocksPlotOptions.lineWidthAxes = 8;
+			}
+			if(canvasWidth <= 400){		
+				// console.log('canvasWidth < 400');
+				window.drawStocksPlotOptions.xPadding = 160;
+				window.drawStocksPlotOptions.xShift = -40;
+				window.drawStocksPlotOptions.yShift = 30;
+				window.drawStocksPlotOptions.yPadding = 20;
+				window.drawStocksPlotOptions.wLabel = 80;  // label width
+				window.drawStocksPlotOptions.hLabel = 40;  // label width
+				window.drawStocksPlotOptions.dataLabelFont =  {style:'italic', size: 26, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.font = {style:'italic', size: 28, unit: 'px', family: 'sans-serif'};
+				window.drawStocksPlotOptions.lineWidth = 16;
+				window.drawStocksPlotOptions.lineWidthAxes = 8;
 			}
 		}
 		window.drawStocksPlotOptions.maxYear = window.plotMaxYear;
