@@ -63,6 +63,7 @@
                 }
             }
             &_disabled{
+                border-color: $orange;
                 filter: opacity(.5);
             }
         }

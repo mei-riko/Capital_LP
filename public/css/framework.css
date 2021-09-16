@@ -1984,6 +1984,15 @@ a:focus {
   outline: none;
 }
 
+.text-link {
+  color: #597CFB;
+  text-decoration: underline;
+}
+
+.text-link:hover {
+  color: #95abfc;
+}
+
 table td {
   padding: 8px 15px;
 }
@@ -2011,6 +2020,10 @@ table td {
 
 .text-spacing {
   letter-spacing: 0.05em;
+}
+
+.text-small {
+  font-size: 12px;
 }
 
 .img-fluid {

@@ -7,20 +7,103 @@
         height: auto;
         height: intrinsic;
     }
+
     .swiper-slide {
         width: auto;
         height: auto;
         height: intrinsic;
+
+        filter: opacity( 0.5 );
+
+        &.swiper-slide-next{
+            filter: opacity( 1 );
+
+            & + .swiper-slide{
+                filter: opacity( 1 );
+            }
+        }
+        &.swiper-slide-active{
+            filter: opacity( 1 );
+        }
+    }
+}
+// Content Slider Blocks
+.content__slider.swiper-initialized{
+    max-width: 100%;
+
+    padding-left: calc( (100% - 1400px)/2 );
+    padding-right: calc( (100% - 1400px)/2 );
+
+    .content__slider-wrapper{
+        grid-gap: 0;
+    }
+}
+// < 1600px
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .content__slider.swiper-initialized{
+        max-width: 100%;
+    
+        padding-left: calc( (100% - 1240px)/2 );
+        padding-right: calc( (100% - 1240px)/2 );
+    
+        .content__slider-wrapper{
+            grid-gap: 0;
+        }
+    }
+}
+// < 1280px
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .content__slider.swiper-initialized{
+        max-width: 100%;
+    
+        padding-left: calc( (100% - 940px)/2 );
+        padding-right: calc( (100% - 940px)/2 );
+    
+        .content__slider-wrapper{
+            grid-gap: 0;
+        }
+    }
+}
+// < 1024px
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .content__slider.swiper-initialized{
+        max-width: 100%;
+    
+        padding-left: calc( (100% - 680px)/2 );
+        padding-right: calc( (100% - 680px)/2 );
+    
+        .content__slider-wrapper{
+            grid-gap: 0;
+        }
+    }
+
+    .swiper{
+        .swiper-slide {
+            &.swiper-slide-next{
+                & + .swiper-slide{
+                    filter: opacity( 0.5 );
+                }
+            }
+        }
     }
 }
 // < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
-    .content{
-        &__slider{
-            max-width: 100%;
-            &.swiper-initialized{
-                padding-left: calc( (100% - 440px)/2 );
-                padding-right: calc( (100% - 440px)/2 );
+    .content__slider.swiper-initialized{
+        max-width: 100%;
+    
+        padding-left: calc( (100% - 440px)/2 );
+        padding-right: calc( (100% - 440px)/2 );
+    
+        .content__slider-wrapper{
+            grid-gap: 0;
+        }
+    }
+
+    .swiper{
+        .swiper-slide {
+            &.swiper-slide-next{
+                filter: opacity( 0.5 );
             }
         }
     }

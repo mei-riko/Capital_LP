@@ -12,32 +12,46 @@ const sliderClassRemove = ( container ) => {
 };
 const sliderUnit = ( elem ) => {
     if( $( elem ).length > 0 ){
-        if ( $(window).width() < 769 || window.matchMedia('screen and (max-width: 768x)').matches ){
-            $( elem ).each(function(){
-                sliderClassAdd( $(this) );
-                console.log( $(this).hasClass('swiper-initialized') );
-                if( !$(this).hasClass('swiper-initialized') ){
-                    const swiper = new Swiper(this, {
-                        // Optional parameters
-                        loop: false,
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                        breakpoints: {
-                            576: {
-                              spaceBetween: 20,
-                            },
+        $( elem ).each(function(){
+            sliderClassAdd( $(this) );
+            console.log( $(this).hasClass('swiper-initialized') );
+            if( !$(this).hasClass('swiper-initialized') ){
+                const swiper = new Swiper(this, {
+                    // Optional parameters
+                    loop: false,
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    breakpoints: {
+                        577: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
                         },
-                    });
-                }
-            });
-        }else{
-            $( elem ).each(function(){
-                if( $(this).hasClass('swiper-initialized') ){
-                    this.swiper.destroy(true, true);
-                }
-                sliderClassRemove( $(this) );
-            });
-        }
+                        769: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1025: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1601: {
+                            slidesPerView: 3,
+                            spaceBetween: 60,
+                        },
+                    },
+                });
+            }
+        });
+        // if ( $(window).width() < 769 || window.matchMedia('screen and (max-width: 768x)').matches ){
+            
+        // }else{
+        //     $( elem ).each(function(){
+        //         if( $(this).hasClass('swiper-initialized') ){
+        //             this.swiper.destroy(true, true);
+        //         }
+        //         sliderClassRemove( $(this) );
+        //     });
+        // }
     }
     
 };

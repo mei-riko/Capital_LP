@@ -138,9 +138,7 @@
 // < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .content{
-        &__slider{
-            max-width: 100%;
-        }
+        
         &__steps{
             grid-gap: $spacer/2;
             grid-template-columns: repeat(2, 1fr);
@@ -158,11 +156,7 @@
             }
         }
 
-        // Slider Blocks
-        &__slider-wrapper{
-            // align-items: stretch;
-            grid-gap: 0;
-        }
+        
     }
 }
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){

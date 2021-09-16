@@ -330,6 +330,22 @@
   color: #ffffff;
 }
 
+.btn_offer {
+  background-color: #ED672B;
+  border-color: #ED672B;
+  color: #ffffff;
+}
+
+.btn_offer--hover, .btn_offer:hover {
+  background-color: #d34e12;
+  border-color: #d34e12;
+  color: #ffffff;
+}
+
+.btn_offer:focus {
+  color: #ffffff;
+}
+
 .input {
   border: 2px solid #ffffff;
   border-radius: 40px;
@@ -732,17 +748,9 @@
 }
 
 .item_preipo:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-@media all and (max-width: 1600px) {
-  .item_preipo:hover {
-    -webkit-transform: scale(1.025);
-    -ms-transform: scale(1.025);
-    transform: scale(1.025);
-  }
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 @media all and (max-width: 768px) {
@@ -802,17 +810,9 @@
 }
 
 .item_preipo-soon:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-@media all and (max-width: 1600px) {
-  .item_preipo-soon:hover {
-    -webkit-transform: scale(1.025);
-    -ms-transform: scale(1.025);
-    transform: scale(1.025);
-  }
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 @media all and (max-width: 768px) {
@@ -863,6 +863,40 @@
   .item_preipo-prev {
     padding-left: 12px;
     padding-right: 12px;
+  }
+}
+
+.item_preipo-offer {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #141314;
+  height: auto;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.item_preipo-offer__logo {
+  border-color: #ED672B;
+  background-color: #ED672B;
+}
+
+.item_preipo-offer__btn {
+  width: 100%;
+}
+
+.item_preipo-offer:hover {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+@media all and (max-width: 768px) {
+  .item_preipo-soon:hover {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 }
 
@@ -1075,15 +1109,84 @@
   width: auto;
   height: auto;
   height: intrinsic;
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+}
+
+.swiper .swiper-slide.swiper-slide-next {
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+}
+
+.swiper .swiper-slide.swiper-slide-next + .swiper-slide {
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+}
+
+.swiper .swiper-slide.swiper-slide-active {
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+}
+
+.content__slider.swiper-initialized {
+  max-width: 100%;
+  padding-left: calc( (100% - 1400px)/2);
+  padding-right: calc( (100% - 1400px)/2);
+}
+
+.content__slider.swiper-initialized .content__slider-wrapper {
+  grid-gap: 0;
+}
+
+@media all and (max-width: 1600px) {
+  .content__slider.swiper-initialized {
+    max-width: 100%;
+    padding-left: calc( (100% - 1240px)/2);
+    padding-right: calc( (100% - 1240px)/2);
+  }
+  .content__slider.swiper-initialized .content__slider-wrapper {
+    grid-gap: 0;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  .content__slider.swiper-initialized {
+    max-width: 100%;
+    padding-left: calc( (100% - 940px)/2);
+    padding-right: calc( (100% - 940px)/2);
+  }
+  .content__slider.swiper-initialized .content__slider-wrapper {
+    grid-gap: 0;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .content__slider.swiper-initialized {
+    max-width: 100%;
+    padding-left: calc( (100% - 680px)/2);
+    padding-right: calc( (100% - 680px)/2);
+  }
+  .content__slider.swiper-initialized .content__slider-wrapper {
+    grid-gap: 0;
+  }
+  .swiper .swiper-slide.swiper-slide-next + .swiper-slide {
+    -webkit-filter: opacity(0.5);
+    filter: opacity(0.5);
+  }
 }
 
 @media all and (max-width: 768px) {
-  .content__slider {
-    max-width: 100%;
-  }
   .content__slider.swiper-initialized {
+    max-width: 100%;
     padding-left: calc( (100% - 440px)/2);
     padding-right: calc( (100% - 440px)/2);
+  }
+  .content__slider.swiper-initialized .content__slider-wrapper {
+    grid-gap: 0;
+  }
+  .swiper .swiper-slide.swiper-slide-next {
+    -webkit-filter: opacity(0.5);
+    filter: opacity(0.5);
   }
 }
 
@@ -1182,6 +1285,7 @@
 }
 
 .modal__download-btn_disabled {
+  border-color: #ED672B;
   -webkit-filter: opacity(0.5);
   filter: opacity(0.5);
 }
@@ -1812,9 +1916,6 @@
 }
 
 @media all and (max-width: 768px) {
-  .content__slider {
-    max-width: 100%;
-  }
   .content__steps {
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -1830,9 +1931,6 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-  .content__slider-wrapper {
-    grid-gap: 0;
   }
 }
 

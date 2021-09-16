@@ -1,0 +1,15 @@
+.btn_offer{
+    background-color: $orange;
+    border-color: $orange;
+    color: $white;
+
+    &--hover,
+    &:hover{
+        background-color: darken($color: $orange, $amount: 10);
+        border-color: darken($color: $orange, $amount: 10);
+        color: $white;
+    }
+    &:focus{
+        color: $white;
+    }
+}

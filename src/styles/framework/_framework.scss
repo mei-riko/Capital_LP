@@ -72,6 +72,15 @@ a{
         outline: none;
     }
 }
+.text-link{
+    color: $link-hover-color;
+    text-decoration: underline;
+
+    &:hover{
+        color: lighten($color: $link-hover-color, $amount: 12);
+    }
+}
+
 table{
     td{
         padding: 8px 15px;
@@ -86,6 +95,8 @@ table{
 .text-grey{filter: opacity(0.5);}
 .text-action{color: $action;}
 .text-spacing{letter-spacing: 0.05em;}
+
+.text-small{font-size: map-get($map: $font-size, $key: xs);}
 
 .img-fluid{
     display: block;

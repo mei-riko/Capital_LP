@@ -36,14 +36,15 @@
 
     &:hover{
         // border-color: $action;
-        transform: scale(1.05);
+        // transform: scale(1.05);
+        transform: scale(0.95);
     }
 }
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_preipo{
         &:hover{
-            transform: scale(1.025);
+            // transform: scale(1.025);
         }
     }
 }

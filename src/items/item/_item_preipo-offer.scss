@@ -1,6 +1,7 @@
-.item_preipo-soon{
-    background-color: $body-bg;
-    color: $white;
+.item_preipo-offer{
+    background-color: $white;
+    border-color: $white;
+    color: $black;
 
     // height: 100%;
     height: auto;
@@ -8,27 +9,10 @@
     cursor: pointer;
     transition: $transition-base;
 
-    &__open-modal{
-        border-color: $white;
-        transition: $transition-base;
-
-        path{
-            fill: $white;
-            transition: $transition-base;
-        }
-
-        &--hover,
-        &:hover{
-            border-color: $action;
-
-            path{
-                fill: $action;
-            }
-        }
-    }
+    
     &__logo{
-        border-color: $action;
-        background-color: $action;
+        border-color: $orange;
+        background-color: $orange;
     }
     &__btn{
         width: 100%;
