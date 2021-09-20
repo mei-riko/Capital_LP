@@ -13,7 +13,6 @@
 
         margin-top: map-get($map: $spacers, $key: 1);
     }
-
     &__title{
         color: $action;
         margin-bottom: $spacer;
@@ -74,6 +73,27 @@
         &.swiper-slide{
             height: auto;
         }
+    }
+    &__slider-arrow{
+        background-color: rgba(0, 0, 0, 0);
+        width: 100px;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+        z-index: 11;
+
+        &[aria-disabled=false]{
+            cursor: pointer;
+        }
+    }
+    &__slider-next{
+        right: 0;
+    }
+    &__slider-prev{
+        left: 0;
     }
 }
 // < 1600px

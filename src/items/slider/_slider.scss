@@ -37,6 +37,9 @@
     .content__slider-wrapper{
         grid-gap: 0;
     }
+    .content__slider-arrow{
+        width: calc( (100% - 1400px)/2 - 60px);
+    }
 }
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
@@ -48,6 +51,9 @@
     
         .content__slider-wrapper{
             grid-gap: 0;
+        }
+        .content__slider-arrow{
+            width: calc( (100% - 1240px)/2 - 20px);
         }
     }
 }
@@ -62,6 +68,9 @@
         .content__slider-wrapper{
             grid-gap: 0;
         }
+        .content__slider-arrow{
+            width: calc( (100% - 940px)/2 - 20px);
+        }
     }
 }
 // < 1024px
@@ -74,6 +83,9 @@
     
         .content__slider-wrapper{
             grid-gap: 0;
+        }
+        .content__slider-arrow{
+            width: calc( (100% - 680px)/2 - 20px);
         }
     }
 
@@ -98,6 +110,9 @@
         .content__slider-wrapper{
             grid-gap: 0;
         }
+        .content__slider-arrow{
+            width: calc( (100% - 440px)/2 - 20px);
+        }
     }
 
     .swiper{
@@ -110,25 +125,27 @@
 }
 // < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
-    .content{
-        &__slider{
-            max-width: 100%;
-            &.swiper-initialized{
-                padding-left: $spacer;
-                padding-right: $spacer;
+    .content__slider{
+        max-width: 100%;
+
+        &.swiper-initialized{
+            padding-left: $spacer;
+            padding-right: $spacer;
+
+            .content__slider-arrow{
+                width: 0px;
             }
         }
     }
 }
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
-    .content{
-        &__slider{
-            max-width: 100%;
-            &.swiper-initialized{
-                padding-left: $grid-gutter-width;
-                padding-right: $grid-gutter-width;
-            }
+    .content__slider{
+        max-width: 100%;
+        
+        &.swiper-initialized{
+            padding-left: $grid-gutter-width;
+            padding-right: $grid-gutter-width;
         }
     }
 }

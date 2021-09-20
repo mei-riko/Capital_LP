@@ -21,6 +21,11 @@ const sliderUnit = ( elem ) => {
                     loop: false,
                     slidesPerView: 1,
                     spaceBetween: 10,
+                    navigation: {
+                        nextEl: '.content__slider-next',
+                        prevEl: '.content__slider-prev',
+                    },
+                    
                     breakpoints: {
                         577: {
                             slidesPerView: 1,
@@ -33,6 +38,7 @@ const sliderUnit = ( elem ) => {
                         1025: {
                             slidesPerView: 3,
                             spaceBetween: 20,
+                            
                         },
                         1601: {
                             slidesPerView: 3,
