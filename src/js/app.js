@@ -38,3 +38,4 @@ import './hidpicanvas';
 import './diagram';
 
 import '../blocks/stocks/stocks';
+import '../blocks/preloader/preloader';

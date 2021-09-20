@@ -8,7 +8,7 @@ window.stockChat = function(){
         let heightMin = Math.ceil( $('.stocks__info').outerHeight(true) );
         let heightChat = Math.ceil( $('.stocks__chat').outerHeight(true) );
 
-        // console.log('heightMin : ' + heightMin + 'heightChat: ' + heightChat);
+        // console.log('heightMin : ' + heightMin + ' heightChat: ' + heightChat);
 
         if( heightMin > heightChat ){
             $('.stocks__chat').css('min-height', heightMin);

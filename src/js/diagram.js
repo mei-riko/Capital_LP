@@ -37,11 +37,13 @@ function drawLinearGraph(imageSelector, graphData, options) {
 
 	// recalculate the sizes
 	function recalcFontSize(orig, ratio){
-		let newSize=10;
+		let newSize = 10;
         let upperBound = orig * ratio;
+
 		while(newSize <= upperBound){
 			newSize += 10;
 		}
+
 		return newSize;
 	}
 	function recalcSize(orig, ratio){
@@ -313,12 +315,11 @@ function drawLinearGraph(imageSelector, graphData, options) {
         
 
 		c.font = fontString(geometry.dataLabelFont);
-		c.textAlign = "center"
+		c.textAlign = "center";
 	    c.fillStyle = data.dataLabelColor;
 	    c.fillText(data.dataLabel, xLabel + geometry.wLabel/2, yLabel+geometry.hLabel/2);
-	    c.font = fontString(geometry.font);
+	    // c.font = fontString(geometry.font);
     }
-
 	image.attr('src', graph.toDataURL());
 }
 
@@ -505,8 +506,8 @@ $(function() {
 				window.drawStocksPlotOptions.yPadding = 20;
 				window.drawStocksPlotOptions.wLabel = 66;  // label width
 				window.drawStocksPlotOptions.hLabel = 44;  // label width
-				window.drawStocksPlotOptions.font = {style:'normal', size: 14, unit: 'px', family: 'Theinhardt Pan'};
-				window.drawStocksPlotOptions.dataLabelFont =  {style:'normal', size: 14, unit: 'px', family: 'Theinhardt Pan'};
+				window.drawStocksPlotOptions.font = {style:'normal', size: 16, unit: 'px', family: 'Theinhardt Pan'};
+				window.drawStocksPlotOptions.dataLabelFont =  {style:'normal', size: 16, unit: 'px', family: 'Theinhardt Pan'};
 				window.drawStocksPlotOptions.lineWidth = 16;
 				window.drawStocksPlotOptions.lineWidthAxes = 8;
 			}
@@ -629,19 +630,14 @@ $(function() {
 	}
 
 	window.showStart = function(selectorProfit){
-
-		// console.log(window.companydata.active);
-
         var startPriceRur = 0;
+
     	for(let i = 0; i<window.companydata.active.length; i++) {
     		let company = window.companydata.available[window.companydata.active[i]];
     		let sharesRurStr = '' + company.sumPricesRUR[0][1];
     		let sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
     		startPriceRur += sharesRur;
-    		// console.log(i, sharesRurStr, sharesRur);
     	}
-
-		// console.log( startPriceRur );
 
     	var startPriceRurView = (new Intl.NumberFormat("ru-RU", { useGrouping:true })).format(Number(startPriceRur).toFixed(2));
     	$(selectorProfit).empty().html(startPriceRurView);

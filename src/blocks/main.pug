@@ -17,9 +17,12 @@ html(lang="ru")
         script(src="./js/companydata.js")
         script(src="./js/productdata.js")
         
-    body
+    body.not-ready
         script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
         include ./header/header.pug
+        .preloader 
+            img.preloader__anim(src="../icon/preloader.svg")
+
         block content
         include ./footer/footer.pug
         link(href="./css/jquery.fancybox.min.css", rel="stylesheet")
