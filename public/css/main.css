@@ -1138,49 +1138,77 @@
   grid-gap: 0;
 }
 
-.content__slider.swiper-initialized .content__slider-arrow {
+.content__slider.swiper-initialized .content__slider-next {
+  right: calc( (100% - 1400px)/2 - 80px);
+}
+
+.content__slider.swiper-initialized .content__slider-prev {
+  left: calc( (100% - 1400px)/2 - 80px);
+}
+
+.content__slider.swiper-initialized::before, .content__slider.swiper-initialized::after {
+  content: '';
+  display: block;
   width: calc( (100% - 1400px)/2 - 60px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+}
+
+.content__slider.swiper-initialized:before {
+  left: 0;
+}
+
+.content__slider.swiper-initialized:after {
+  right: 0;
 }
 
 @media all and (max-width: 1600px) {
   .content__slider.swiper-initialized {
     max-width: 100%;
-    padding-left: calc( (100% - 1240px)/2);
-    padding-right: calc( (100% - 1240px)/2);
+    padding-left: calc( (100% - 1160px)/2);
+    padding-right: calc( (100% - 1160px)/2);
   }
   .content__slider.swiper-initialized .content__slider-wrapper {
     grid-gap: 0;
   }
-  .content__slider.swiper-initialized .content__slider-arrow {
-    width: calc( (100% - 1240px)/2 - 20px);
+  .content__slider.swiper-initialized .content__slider-next {
+    right: 20px;
+  }
+  .content__slider.swiper-initialized .content__slider-prev {
+    left: 20px;
+  }
+  .content__slider.swiper-initialized::before, .content__slider.swiper-initialized::after {
+    width: calc( (100% - 1160px)/2 - 20px);
   }
 }
 
 @media all and (max-width: 1280px) {
   .content__slider.swiper-initialized {
     max-width: 100%;
-    padding-left: calc( (100% - 940px)/2);
-    padding-right: calc( (100% - 940px)/2);
+    padding-left: calc( (100% - 880px)/2);
+    padding-right: calc( (100% - 880px)/2);
   }
   .content__slider.swiper-initialized .content__slider-wrapper {
     grid-gap: 0;
   }
-  .content__slider.swiper-initialized .content__slider-arrow {
-    width: calc( (100% - 940px)/2 - 20px);
+  .content__slider.swiper-initialized::before, .content__slider.swiper-initialized::after {
+    width: calc( (100% - 880px)/2 - 20px);
   }
 }
 
 @media all and (max-width: 1024px) {
   .content__slider.swiper-initialized {
     max-width: 100%;
-    padding-left: calc( (100% - 680px)/2);
-    padding-right: calc( (100% - 680px)/2);
+    padding-left: calc( (100% - 620px)/2);
+    padding-right: calc( (100% - 620px)/2);
   }
   .content__slider.swiper-initialized .content__slider-wrapper {
     grid-gap: 0;
   }
-  .content__slider.swiper-initialized .content__slider-arrow {
-    width: calc( (100% - 680px)/2 - 20px);
+  .content__slider.swiper-initialized::before, .content__slider.swiper-initialized::after {
+    width: calc( (100% - 620px)/2 - 20px);
   }
   .swiper .swiper-slide.swiper-slide-next + .swiper-slide {
     -webkit-filter: opacity(0.5);
@@ -1198,7 +1226,11 @@
     grid-gap: 0;
   }
   .content__slider.swiper-initialized .content__slider-arrow {
-    width: calc( (100% - 440px)/2 - 20px);
+    display: none;
+  }
+  .content__slider.swiper-initialized::before, .content__slider.swiper-initialized::after {
+    display: none;
+    width: 0px;
   }
   .swiper .swiper-slide.swiper-slide-next {
     -webkit-filter: opacity(0.5);
@@ -1890,25 +1922,36 @@
 }
 
 .content__slider-arrow {
-  background-color: rgba(0, 0, 0, 0);
-  width: 100px;
-  height: 100%;
+  background: #ffffff no-repeat center/20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: calc( 50% - 30px);
+  opacity: 0;
   z-index: 11;
 }
 
 .content__slider-arrow[aria-disabled=false] {
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
+.content__slider-arrow[aria-disabled=false]:hover {
+  background-color: #EBEBEB;
+}
+
 .content__slider-next {
-  right: 0;
+  background-image: url("../img/arrow-right.svg");
+  right: 20px;
 }
 
 .content__slider-prev {
-  left: 0;
+  background-image: url("../img/arrow-left.svg");
+  left: 20px;
 }
 
 @media all and (max-width: 1600px) {
@@ -1923,6 +1966,11 @@
   }
   .content__stats-item {
     font-size: 24px;
+  }
+  .content__slider-arrow {
+    width: 40px;
+    height: 40px;
+    background-size: 16px;
   }
 }
 
