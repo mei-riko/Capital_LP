@@ -899,7 +899,7 @@
 }
 
 .input--error {
-  border-color: #F41F16;
+  border-color: #BE0505;
   background: url("../icon/icon-false.svg") no-repeat center right/20px;
   background-position-x: calc(100% - 20px);
 }
@@ -2244,7 +2244,7 @@
   position: relative;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .product__figure {
