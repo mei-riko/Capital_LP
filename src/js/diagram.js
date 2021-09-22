@@ -358,7 +358,7 @@ $(function() {
 			var totalAtStartFloat = parseFloat(totalAtStart.replace(/[^0-9.]/g, ''));
 			var totalAtStartView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalAtStartFloat).toFixed(2));
 			// console.log( totalAtStartView );
-			companyContainer.find('.item_stocks__title#total').empty().html(totalAtStartView);
+			companyContainer.find('.item_stocks__title#total').empty().html(totalAtStartView.replace(',','.') + ' ₽');
 		}
 	};
 
@@ -625,8 +625,8 @@ $(function() {
     		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
     	}
 
-    	var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping:true })).format(Number(endPriceRur - startPriceRur).toFixed(2));
-    	$(selectorProfit).empty().html(totalSharesRurView);
+    	var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(endPriceRur - startPriceRur).toFixed(2));
+    	$(selectorProfit).empty().html(totalSharesRurView.replace(',','.'));
 	}
 
 	window.showStart = function(selectorProfit){
@@ -636,10 +636,12 @@ $(function() {
     		let company = window.companydata.available[window.companydata.active[i]];
     		let sharesRurStr = '' + company.sumPricesRUR[0][1];
     		let sharesRur = parseFloat(sharesRurStr.replace(/[^0-9.]/g, ''));
-    		startPriceRur += sharesRur;
+			startPriceRur += sharesRur;
     	}
 
-    	var startPriceRurView = (new Intl.NumberFormat("ru-RU", { useGrouping:true })).format(Number(startPriceRur).toFixed(2));
-    	$(selectorProfit).empty().html(startPriceRurView);
+
+    	var startPriceRurView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(startPriceRur).toFixed(2));
+
+    	$(selectorProfit).empty().html(startPriceRurView.replace(',','.'));
 	}
 });
