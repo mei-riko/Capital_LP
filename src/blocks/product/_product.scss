@@ -11,6 +11,11 @@
         left: -640px;
         z-index: -1;
     }
+
+    &__col{
+        display: flex;
+        align-items: stretch;
+    }
 }
 // < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){

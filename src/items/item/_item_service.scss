@@ -2,7 +2,8 @@
     text-align: center;
     padding: $spacer;
     
-    height: 100%;
+    // height: 100%;
+    height: auto;
 
     &__icon{
         margin: 0 auto $spacer;
@@ -55,9 +56,9 @@
             width: 100px;
             margin-bottom: map-get($map: $spacers, $key: 1);
         }
-        &__intro{
-            min-height: 200px;
-        }
+        // &__intro{
+        //     min-height: 200px;
+        // }
     }
 }
 // < 768px

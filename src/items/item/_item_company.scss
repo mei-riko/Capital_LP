@@ -132,8 +132,8 @@
         padding: $spacer-gutter;
         // text-align: center;
 
-        max-width: 160px;
-        width: 100%;
+        width: 160px;
+        max-width: 100%;
 
         &__info{
             grid-template-columns: 30px 1fr;
@@ -151,6 +151,8 @@
 // < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_company{
+        min-height: 134px;
+        
         padding-top: map-get($map: $spacers, $key: 1)/2;
         padding-bottom: map-get($map: $spacers, $key: 1)/2;
 
@@ -172,6 +174,7 @@
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_company{
+        width: 130px;
         padding: $spacer-gutter;
 
         &__fullname{

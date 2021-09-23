@@ -178,8 +178,8 @@
 @media all and (max-width: 768px) {
   .item_company {
     padding: 15px;
-    max-width: 160px;
-    width: 100%;
+    width: 160px;
+    max-width: 100%;
   }
   .item_company__info {
     grid-template-columns: 30px 1fr;
@@ -197,6 +197,7 @@
 
 @media all and (max-width: 576px) {
   .item_company {
+    min-height: 134px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -214,6 +215,7 @@
 
 @media all and (max-width: 375px) {
   .item_company {
+    width: 130px;
     padding: 15px;
   }
   .item_company__fullname {
@@ -538,9 +540,9 @@
   .item_product {
     display: block;
     padding: 15px;
-    max-width: 160px;
-    width: 100%;
-    min-height: 134px;
+    width: 160px;
+    max-width: 100%;
+    min-height: 162px;
     text-align: center;
   }
   .item_product__img {
@@ -550,6 +552,9 @@
 }
 
 @media all and (max-width: 576px) {
+  .item_product {
+    min-height: 134px;
+  }
   .item_product__name {
     font-size: 12px;
   }
@@ -561,6 +566,7 @@
 
 @media all and (max-width: 375px) {
   .item_product {
+    width: 130px;
     padding: 10px;
   }
   .item_product__img {
@@ -685,7 +691,7 @@
 .item_service {
   text-align: center;
   padding: 40px;
-  height: 100%;
+  height: auto;
 }
 
 .item_service__icon {
@@ -731,9 +737,6 @@
   .item_service__icon {
     width: 100px;
     margin-bottom: 20px;
-  }
-  .item_service__intro {
-    min-height: 200px;
   }
 }
 
@@ -1567,6 +1570,7 @@
   }
   .heading-screen__col-btn {
     padding: 18px 18px 16px 18px;
+    width: 100%;
   }
 }
 
@@ -1598,15 +1602,18 @@
     margin-bottom: 100px;
   }
   .heading-screen__card {
-    padding: 10px 0;
+    padding: 10px 0 0;
+    display: block;
+  }
+  .heading-screen__card > * {
+    margin-bottom: 10px;
   }
   .heading-screen__col {
-    max-width: calc(50% - 15px);
+    max-width: calc(50% - 12px);
   }
   .heading-screen__col-btn {
     font-size: 14px;
     padding: 18px 16px 16px 16px;
-    width: 100%;
   }
   .heading-screen__change-icon {
     width: 15px;
@@ -2252,6 +2259,15 @@
   top: 200px;
   left: -640px;
   z-index: -1;
+}
+
+.product__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 @media all and (max-width: 1280px) {
