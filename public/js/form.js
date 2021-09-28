@@ -208,7 +208,6 @@ $(document).ready(function(){
 				response.json().then(function (result) {
 					form.remove();
 					$intro.html(thanks);
-					
 					if(file.length > 0){ downloadPdf( file, name ); }
 				});
 			});
