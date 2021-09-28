@@ -117,7 +117,8 @@ $(document).ready(function(){
 				response.json().then(function (result) {
 					if(type == 'phone'){ form.remove(); $thanks.show(); }
 					if(type == 'participate'){
-						document.cookie = 'callbackName=' + name + ';expires=1;path=/';
+						document.cookie = 'callbackName=,expires=Thu, 01 Jan 1970 00:00:01 GMT';
+						document.cookie = 'callbackName=' + name + ',expires=1,path=/';
 						$('#heading-screen').load(url); 
 					}
 				});
