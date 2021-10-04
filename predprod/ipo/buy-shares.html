@@ -1,0 +1,40 @@
+
+<div class="heading-screen heading-screen_step">
+  <div class="container heading-screen__container heading-screen_step__container heading-screen_step__container_success">
+    <div class="row"> 
+      <div class="col-7 col-xl-6 col-lg-8 col-md-9 col-sm-12">
+        <h1 class="heading-screen__title heading-screen_step__title">Отличный выбор! <br/>Мы вложили <span id="price" data-status="success">90 000 </span>&nbsp;₽ в&nbsp;акции быстрорастущих компаний</h1>
+        <div class="heading-screen__card heading-screen_step__card">
+          <div class="item item_company-inside" data-id="0">
+            <div class="item_company-inside__count">15 шт.</div>
+            <div class="item_company-inside__logo"><img class="img-fluid" src="./icon/yandex.svg"/></div>
+            <div class="item_company-inside__info">
+              <div class="item__title item_company-inside__name">YNDX</div>
+              <div class="item_company-inside__fullname">Yandex NV</div>
+            </div>
+            <div class="item_company-inside__col">
+              <div class="item__title item_company-inside__price item_subtotal">$21.65</div>
+              <p class="item_company-inside__label">Цена за акцию</p>
+            </div>
+          </div>
+          <div class="item item_company-inside" data-id="1">
+            <div class="item_company-inside__count">8 шт.</div>
+            <div class="item_company-inside__logo"><img class="img-fluid" src="./icon/tesla.svg"/></div>
+            <div class="item_company-inside__info">
+              <div class="item__title item_company-inside__name">TSLA</div>
+              <div class="item_company-inside__fullname">Tesla inc.</div>
+            </div>
+            <div class="item_company-inside__col">
+              <div class="item__title item_company-inside__price item_subtotal">$46.96</div>
+              <p class="item_company-inside__label">Цена за акцию</p>
+            </div>
+          </div>
+        </div><a class="btn btn_action heading-screen_step__btn" href="stocks.html" data-target="#heading-screen" data-loader="ajax">Начать торговать</a>
+        <script>
+          window.showTotalSharesRur('#price[data-status="success"]');
+          window.showCurrentCompanies()
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
