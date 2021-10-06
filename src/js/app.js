@@ -2,9 +2,9 @@ import $ from 'jquery';
 
 import '../blocks/heading-screen/heading-screen';
 import '../blocks/header/header';
+
 import '../items/item/item';
 import '../items/input/input';
-
 import '../items/slider/slider';
 import '../items/modal/modal';
 

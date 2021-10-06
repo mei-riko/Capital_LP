@@ -80,7 +80,9 @@ a{
         color: lighten($color: $link-hover-color, $amount: 12);
     }
 }
-
+.text-underline{
+    text-decoration: underline;
+}
 table{
     td{
         padding: 8px 15px;

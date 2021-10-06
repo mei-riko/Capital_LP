@@ -1993,6 +1993,10 @@ a:focus {
   color: #95abfc;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 table td {
   padding: 8px 15px;
 }

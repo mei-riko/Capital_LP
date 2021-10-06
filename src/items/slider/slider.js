@@ -14,7 +14,7 @@ const sliderUnit = ( elem ) => {
     if( $( elem ).length > 0 ){
         $( elem ).each(function(){
             sliderClassAdd( $(this) );
-            console.log( $(this).hasClass('swiper-initialized') );
+            // console.log( $(this).hasClass('swiper-initialized') );
             if( !$(this).hasClass('swiper-initialized') ){
                 const swiper = new Swiper(this, {
                     // Optional parameters
