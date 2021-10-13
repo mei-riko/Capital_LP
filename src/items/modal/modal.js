@@ -4,7 +4,8 @@ $(function() {
     // Fancybox
     if( $('[data-fancybox]').length > 0 ){
         $('[data-fancybox]').fancybox({
-            autoFocus: false
+            autoFocus: false,
+            touch: false
         });
     }
     // Modal
