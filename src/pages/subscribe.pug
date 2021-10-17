@@ -2,7 +2,7 @@ extends ../blocks/main.pug
 
 block variables
     - var pageTitle     = "Подписка"
-    - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","count":"15 шт."},{"logo":"./icon/tesla.svg","name":"TSLA","fullname":"Tesla inc.","subtotal":"$46.96","count":"8 шт."}]
+    - var companies     = [{"logo":"./icon/yandex.svg","name":"YNDX","fullname":"Yandex NV","subtotal":"$21.65","count":"15 шт."}]
 mixin company(object)
     .item.item_company.item_company-inside
         .item_company__count=object.count

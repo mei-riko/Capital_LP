@@ -225,28 +225,34 @@ function drawLinearGraph(imageSelector, graphData, options) {
 			image.attr('src', graph.toDataURL());
 		}
     }
+
     // get minimal and maximal Y
 
-    let v0 = graphData[0].values;
-    let v1 = graphData[1].values;
-    //console.log(v0, v1, v0[v0.length-1].Y, v1[v1.length-1].Y, v0[v0.length-1].Y - v1[v1.length-1].Y,  geometry.hLabel);
-    if (v0[v0.length-1].Y - v1[v1.length-1].Y > 0.5* geometry.hLabel) {
-    	//console.log('a');
-    	graphData[0].labelShift =  0;
-    	graphData[1].labelShift =  0;
-    } else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.5 *  geometry.hLabel) {
-    	//console.log('b');
-    	graphData[0].labelShift =  0;
-    	graphData[1].labelShift =  0;
-    } else if(v0[v0.length-1].Y - v1[v1.length-1].Y > 0) {
-    	//console.log('c');
-    	graphData[0].labelShift =  -0.5;
-    	graphData[1].labelShift =   0.5;
-    } else  if(v0[v0.length-1].Y - v1[v1.length-1].Y <= 0) {
-    	//console.log('d');
-    	graphData[0].labelShift = 0.5;
-    	graphData[1].labelShift = -0.5;
-    }
+	for(var iD=0; iD<graphData.length; iD++){
+		graphData[iD].labelShift =  0;
+	}
+	if(graphData.length === 2 ){
+		let v0 = graphData[0].values;
+		let v1 = graphData[1].values;
+		//console.log(v0, v1, v0[v0.length-1].Y, v1[v1.length-1].Y, v0[v0.length-1].Y - v1[v1.length-1].Y,  geometry.hLabel);
+		if (v0[v0.length-1].Y - v1[v1.length-1].Y > 0.5* geometry.hLabel) {
+			//console.log('a');
+			graphData[0].labelShift =  0;
+			graphData[1].labelShift =  0;
+		} else if (v1[v1.length-1].Y - v0[v0.length-1].Y > 0.5 *  geometry.hLabel) {
+			//console.log('b');
+			graphData[0].labelShift =  0;
+			graphData[1].labelShift =  0;
+		} else if(v0[v0.length-1].Y - v1[v1.length-1].Y > 0) {
+			//console.log('c');
+			graphData[0].labelShift =  -0.5;
+			graphData[1].labelShift =   0.5;
+		} else  if(v0[v0.length-1].Y - v1[v1.length-1].Y <= 0) {
+			//console.log('d');
+			graphData[0].labelShift = 0.5;
+			graphData[1].labelShift = -0.5;
+		}
+	}
     // plot data 
     for(var iD=0; iD<graphData.length; iD++){
     	var data = graphData[iD];
@@ -438,9 +444,10 @@ $(function() {
 			});
 		}
 		// console.log('minY', minY, 'maxY', maxY);
-
         pricesUSD[0].color='#2A4269';
-		pricesUSD[1].color='rgb(101, 181, 178)';
+		if(pricesUSD[1]) {
+			pricesUSD[1].color='rgb(101, 181, 178)';
+		}
 
 		var xAxisTicks = [];
 		for(let x = minX; x<=maxX; x++){

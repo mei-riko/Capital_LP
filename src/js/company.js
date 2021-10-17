@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-var maxActiveCompanies = 2;
+var maxActiveCompanies = 1;
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -42,6 +42,7 @@ window.initCompanyPart = function (){
 		// shuffle array
 		shuffleArray(candidates);
 		window.companydata.active = candidates.slice(0, maxActiveCompanies);
+		console.log('window.companydata.active', window.companydata.active);
 
         // draw next part
         drawActiveCompanies();
