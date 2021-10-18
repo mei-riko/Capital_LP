@@ -14,9 +14,11 @@ html(lang="ru")
         link(href="./css/framework.css", rel="stylesheet")
         link(href="./css/main.css", rel="stylesheet")
 
-    body
+    body.not-ready
         script(src="./js/jquery.min.js")
         include ./header/header.pug
+        .preloader
+            img.preloader__anim(src="../img/preloader.svg")
         block content
         include ./footer/footer.pug
         link(href="./css/jquery.fancybox.min.css", rel="stylesheet")

@@ -78,6 +78,10 @@ $(function() {
 
         if( newPosTop === 0){
             canTranslate = true;
+            $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
+            $('.figure').each(function(){
+                $(this).removeClass('color');
+            });
         }
         
         // Смотрим скролл вниз или вверх

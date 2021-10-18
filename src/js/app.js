@@ -1,5 +1,6 @@
 import $ from 'jquery';
 
+import '../blocks/preloader/preloader';
 import '../blocks/heading-screen/heading-screen';
 import '../blocks/header/header';
 
@@ -38,4 +39,3 @@ $(function() {
     })
     
 });
-
