@@ -50,7 +50,7 @@ $(function() {
             $figureActive = $figureMobile;
         }
         
-        // console.log( 'NextScroll: ' + NextScroll + '; CurrentScroll: ' + CurrentScroll);
+        console.log( 'NextScroll: ' + NextScroll + '; CurrentScroll: ' + CurrentScroll);
         newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop; 
 
         // Отступ фигуры в начальном положении
