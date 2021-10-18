@@ -6,7 +6,8 @@ $(function() {
     let $figureActive = $figureDesktop;
 
     // Идентификатор
-    let isAnimation = false;
+    let canAnimation = false;
+    let canTranslate = false;
     // Скролл страницы
     let newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
@@ -20,26 +21,31 @@ $(function() {
     }
 
     if( newPosTop <  figureDifference){
-        isAnimation = false;
+        canAnimation = true;
+        canTranslate = true;
+        $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
+        // $figureActive.removeClass('figure--stop');
     }else{
-        isAnimation = true;
-        $figureActive.addClass('figure--stop');
+        canAnimation = false;
+        canTranslate = false;
+        // $figureActive.addClass('figure--stop');
     }
 
-    // Отступ фигуры от верха страницы
+    // Отступ фигуры от верха страницы для скроллинга
     // В начале
     let figureOffset = 0;
     // В конце
     let figureOffsetFinal = 0;
 
     let figureDifference = 0;
-    // Триггер
+    // Триггеры
+    let figureOffsetTrigger = Math.ceil($figureActive.offset().top);
     let trigger = Math.ceil(figureOffset - newPosTop);
 
     var CurrentScroll = 0;
 
     $(window).on('scroll', function(event){
-        var NextScroll = $(this).scrollTop();
+        var NextScroll = Math.ceil( $(this).scrollTop() );
         
         // Смотрим с какой фигурой работаем
         if ( $(window).width() > 768 || !window.matchMedia('screen and (max-width: 768px)').matches ){
@@ -50,7 +56,6 @@ $(function() {
             $figureActive = $figureMobile;
         }
         
-        console.log( 'NextScroll: ' + NextScroll + '; CurrentScroll: ' + CurrentScroll);
         newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop; 
 
         // Отступ фигуры в начальном положении
@@ -59,26 +64,43 @@ $(function() {
         figureOffsetFinal = figureOffset + figureDifference;
 
         trigger = Math.ceil(figureOffset - newPosTop);
-        // console.log( 'newPosTop: ' + newPosTop + '; figureOffset: ' + figureOffset + '; trigger: ' + trigger );
+        
+        console.log( 
+            'NextScroll: ' + NextScroll 
+            + ';\nCurrentScroll: ' + CurrentScroll 
+            + ';\nfigureOffsetTrigger (в начале): ' + figureOffsetTrigger
+            + ';\nfigureOffset(сейчас): ' + figureOffset 
+            + ';\nnewPosTop(от верха браузера): ' + newPosTop 
+            + ';\ntrigger: ' + trigger 
+            + ';\nстатус анимации: ' + canAnimation
+            + ';\nстатус translate: ' + canTranslate
+        );
 
-        if (NextScroll > CurrentScroll){
-            if ( trigger >= 0 && newPosTop <= figureDifference && !isAnimation) {
-                $figureActive.removeClass('figure--stop')
+        if( newPosTop === 0){
+            canTranslate = true;
+        }
+        
+        // Смотрим скролл вниз или вверх
+        if (NextScroll > CurrentScroll ){
+            if ( trigger >= 0 && newPosTop <= figureDifference && canAnimation && canTranslate ) {
                 $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
             }
-            if ( trigger >=0 && newPosTop > figureDifference && !isAnimation){
-                isAnimation = true;
+            if ( newPosTop > figureDifference && canAnimation && canTranslate ){
+                canAnimation = false;
+
                 $figureActive.attr('transform', 'translate(0,' + figureDifference + ')');
                 $('.figure').each(function(){
                     $(this).addClass('color');
                 });
             }
         }else{
-            if ( trigger >= 0 && newPosTop < figureDifference && !$figureActive.hasClass('figure--stop')) {
-                $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
+            if ( trigger >= 0 && newPosTop < figureDifference && canAnimation ) {
+                if( canTranslate ){
+                    $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
+                }
             }
-            if ( trigger >= 0 && newPosTop < figureDifference && isAnimation){
-                isAnimation = false;
+            if ( trigger >= 0 && newPosTop < figureDifference && !canAnimation){
+                canAnimation = true;
                 $('.figure').each(function(){
                     $(this).removeClass('color');
                 });
