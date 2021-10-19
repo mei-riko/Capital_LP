@@ -1,7 +1,8 @@
 .item_company{
     position: relative;
 
-    width: 250px;
+    // width: 250px;
+    width: 100%;
     max-width: 100%;
     padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
     text-align: left;
@@ -63,7 +64,7 @@
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_company{
-        width: 234px;
+        // width: 234px;
         padding: map-get($map: $spacers, $key: 1);
 
         // Price Info
@@ -75,7 +76,7 @@
 // < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_company{
-        width: 180px;
+        // width: 180px;
         padding: $spacer-gutter;
 
         &__count{
@@ -106,7 +107,7 @@
     .item_company{
         display: flex;
         flex-wrap: wrap;
-        width: 240px;
+        // width: 240px;
 
         &__info{
             flex: 0 0 100%;
@@ -132,7 +133,7 @@
         padding: $spacer-gutter;
         // text-align: center;
 
-        width: 160px;
+        // width: 160px;
         max-width: 100%;
 
         &__info{
@@ -174,7 +175,7 @@
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_company{
-        width: 130px;
+        // width: 130px;
         padding: $spacer-gutter;
 
         &__fullname{

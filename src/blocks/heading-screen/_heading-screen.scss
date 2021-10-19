@@ -10,8 +10,10 @@
         flex-direction: column;
         justify-content: space-between;
 
-        max-width: 1440px;
+        // max-width: map-get($map: $container-max-widths, $key: hd);
+        max-width: 1480px;
         min-height: 900px;
+
         height: 100vh;
         // 60px
         padding-top: map-get($map: $spacers, $key: 4);
@@ -20,6 +22,9 @@
         background: url('../img/bg-figure.svg') no-repeat center bottom / 800px;
         background-position-y: calc(100% + 200px);
 
+        &_simple{
+            max-width: map-get($map: $container-max-widths, $key: xl);
+        }
         .row{
             position: relative;
             z-index: 11;
@@ -124,12 +129,17 @@
     &__col{
         text-align: center;
         max-width: 50%;
+        width: 280px;
+
+        &-btn{
+            width: 100%;
+        }
     }
     &__card{
-        display: grid;
-        grid-gap: map-get($map: $spacers, $key: 1);
-        grid-template-columns: repeat(2, 1fr);
-        max-width: fit-content;
+        // display: grid;
+        // grid-gap: map-get($map: $spacers, $key: 1);
+        // grid-template-columns: repeat(2, 1fr);
+        // max-width: fit-content;
         padding: map-get($map: $spacers, $key: 1) 0 map-get($map: $spacers, $key: 2);
     }
     // Form
@@ -144,6 +154,7 @@
         &__container{
             // 1240 + 40
             max-width: 1280px;
+            // max-width: map-get($map: $container-max-widths, $key: xl);
             min-height: 720px;
 
             // 60px
@@ -154,11 +165,18 @@
             background-size: 660px;
             background-position-y: calc(100% + 200px);
 
+            &_simple{
+                max-width: map-get($map: $container-max-widths, $key: lg);
+            }
+
             &:after{
                 width: 360px;
                 height: 60%;
                 // height: 420px;
             }
+        }
+        &__col{
+            width: 240px;
         }
         &__title{
             width: 720px;
@@ -180,6 +198,10 @@
             background-size: 620px;
             background-position-y: calc(100% + 140px);
             
+            &_simple{
+                max-width: map-get($map: $container-max-widths, $key: md);
+            }
+
             &:after{
                 width: 360px;
                 height: 500px;
@@ -201,6 +223,9 @@
         &__card{
             grid-gap: map-get($map: $spacers, $key: 1)/2;
             padding-bottom: map-get($map: $spacers, $key: 1);
+        }
+        &__col{
+            width: 200px;
         }
     }
 }
@@ -247,6 +272,9 @@
         &__card{
             grid-template-columns: 1fr;
         }
+        &__col{
+            width: 240px;
+        }
     }
 }
 // < 768px
@@ -271,6 +299,7 @@
         // Card Row
         &__col{
             max-width: calc(50% - 20px);
+            width: 160px;
         }
         &__card{
             max-width: 100%;

@@ -47,7 +47,7 @@
 
 .item_company {
   position: relative;
-  width: 250px;
+  width: 100%;
   max-width: 100%;
   padding: 20px 30px;
   text-align: left;
@@ -109,7 +109,6 @@
 
 @media all and (max-width: 1600px) {
   .item_company {
-    width: 234px;
     padding: 20px;
   }
   .item_company__label {
@@ -119,7 +118,6 @@
 
 @media all and (max-width: 1280px) {
   .item_company {
-    width: 180px;
     padding: 15px;
   }
   .item_company__count {
@@ -152,7 +150,6 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    width: 240px;
   }
   .item_company__info {
     -webkit-box-flex: 0;
@@ -178,7 +175,6 @@
 @media all and (max-width: 768px) {
   .item_company {
     padding: 15px;
-    width: 160px;
     max-width: 100%;
   }
   .item_company__info {
@@ -215,7 +211,6 @@
 
 @media all and (max-width: 375px) {
   .item_company {
-    width: 130px;
     padding: 15px;
   }
   .item_company__fullname {
@@ -338,7 +333,7 @@
 .item_stocks {
   position: relative;
   padding: 20px 20px 16px;
-  padding-right: 80px;
+  padding-right: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,6 +376,9 @@
 }
 
 @media all and (max-width: 1600px) {
+  .item_stocks {
+    padding-right: 40px;
+  }
   .item_stocks__title {
     font-size: 16px;
   }
@@ -443,7 +441,7 @@
 
 .item_product {
   position: relative;
-  width: 250px;
+  width: 100%;
   max-width: 100%;
   padding: 20px 30px;
   text-align: center;
@@ -481,7 +479,6 @@
 
 @media all and (max-width: 1600px) {
   .item_product {
-    width: 234px;
     padding: 20px;
   }
   .item_product__img {
@@ -492,7 +489,6 @@
 
 @media all and (max-width: 1280px) {
   .item_product {
-    width: 180px;
     padding: 15px;
   }
   .item_product__type {
@@ -514,7 +510,6 @@
     grid-template-columns: 74px 1fr;
     grid-template-rows: 30px 20px 1fr;
     text-align: left;
-    width: 240px;
     padding: 24px 15px;
   }
   .item_product__img {
@@ -540,7 +535,6 @@
   .item_product {
     display: block;
     padding: 15px;
-    width: 160px;
     max-width: 100%;
     min-height: 162px;
     text-align: center;
@@ -566,7 +560,6 @@
 
 @media all and (max-width: 375px) {
   .item_product {
-    width: 130px;
     padding: 10px;
   }
   .item_product__img {
@@ -1273,13 +1266,17 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: 1480px;
   min-height: 900px;
   height: 100vh;
   padding-top: 60px;
   padding-bottom: 140px;
   background: url("../img/bg-figure.svg") no-repeat center bottom/800px;
   background-position-y: calc(100% + 200px);
+}
+
+.heading-screen__container_simple {
+  max-width: 1180px;
 }
 
 .heading-screen__container .row {
@@ -1399,15 +1396,14 @@
 .heading-screen__col {
   text-align: center;
   max-width: 50%;
+  width: 280px;
+}
+
+.heading-screen__col-btn {
+  width: 100%;
 }
 
 .heading-screen__card {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
   padding: 20px 0 30px;
 }
 
@@ -1425,9 +1421,15 @@
     background-size: 660px;
     background-position-y: calc(100% + 200px);
   }
+  .heading-screen__container_simple {
+    max-width: 980px;
+  }
   .heading-screen__container:after {
     width: 360px;
     height: 60%;
+  }
+  .heading-screen__col {
+    width: 240px;
   }
   .heading-screen__title {
     width: 720px;
@@ -1443,6 +1445,9 @@
     padding-bottom: 40px;
     background-size: 620px;
     background-position-y: calc(100% + 140px);
+  }
+  .heading-screen__container_simple {
+    max-width: 720px;
   }
   .heading-screen__container:after {
     width: 360px;
@@ -1464,6 +1469,9 @@
   .heading-screen__card {
     grid-gap: 10px;
     padding-bottom: 20px;
+  }
+  .heading-screen__col {
+    width: 200px;
   }
 }
 
@@ -1502,6 +1510,9 @@
   .heading-screen__card {
     grid-template-columns: 1fr;
   }
+  .heading-screen__col {
+    width: 240px;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -1521,6 +1532,7 @@
   }
   .heading-screen__col {
     max-width: calc(50% - 20px);
+    width: 160px;
   }
   .heading-screen__card {
     max-width: 100%;
@@ -1680,16 +1692,12 @@
   width: 740px;
 }
 
-.heading-screen_step__card {
-  grid-template-columns: repeat(2, 320px);
-}
-
 .heading-screen_step__intro {
   width: 100%;
 }
 
 .heading-screen_step__btn {
-  width: 300px;
+  width: 320px;
   max-width: 100%;
 }
 
@@ -1836,7 +1844,7 @@
 }
 
 .stocks__container {
-  max-width: 1440px;
+  max-width: 1480px;
 }
 
 .stocks__info {

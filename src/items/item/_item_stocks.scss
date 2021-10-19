@@ -1,7 +1,7 @@
 .item_stocks{
     position: relative;
     padding: 20px 20px 16px;
-    padding-right: map-get($map: $spacers, $key: 5);
+    padding-right: map-get($map: $spacers, $key: 4);
     
     display: flex;
     flex-wrap: nowrap;
@@ -44,6 +44,8 @@
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_stocks{
+        padding-right: map-get($map: $spacers, $key: 3);
+        
         &__title{
             font-size: map-get($map: $font-size, $key: md);
         }

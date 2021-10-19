@@ -1,7 +1,8 @@
 .item_product{
     position: relative;
 
-    width: 250px;
+    // width: 250px;
+    width: 100%;
     max-width: 100%;
     padding: map-get($map: $spacers, $key: 1) map-get($map: $spacers, $key: 2);
     text-align: center;
@@ -32,7 +33,7 @@
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .item_product{
-        width: 234px;
+        // width: 234px;
         padding: map-get($map: $spacers, $key: 1);
 
         &__img{
@@ -44,7 +45,7 @@
 // < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_product{
-        width: 180px;
+        // width: 180px;
         padding: $spacer-gutter;
 
         &__type{
@@ -71,7 +72,7 @@
         grid-template-rows: 30px 20px 1fr;
 
         text-align: left;
-        width: 240px;
+        // width: 240px;
         padding: 24px 15px;
 
         &__img{
@@ -99,7 +100,7 @@
         display: block;
         padding: $spacer-gutter;
         
-        width: 160px;
+        // width: 160px;
         max-width: 100%;
 
         // min-height: 134px;
@@ -130,7 +131,7 @@
 // < 375px
 @media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_product{        
-        width: 130px;
+        // width: 130px;
         // min-height: 134px;
 
         padding: $grid-gutter-width/2;

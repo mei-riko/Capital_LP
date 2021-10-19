@@ -64,14 +64,14 @@
     &__title{
         width: 740px;
     }
-    &__card{
-        grid-template-columns: repeat(2, 320px);
-    }
+    // &__card{
+    //     grid-template-columns: repeat(2, 320px);
+    // }
     &__intro{
         width: 100%;
     }
     &__btn{
-        width: 300px;
+        width: 320px;
         max-width: 100%;
     }
 }
