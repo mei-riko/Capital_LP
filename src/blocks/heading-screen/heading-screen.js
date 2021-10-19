@@ -4,6 +4,7 @@ $(function() {
     const $figureDesktop = $('.figure_one-desktop');
     const $figureMobile = $('.figure_one-mobile');
     let $figureActive = $figureDesktop;
+    let $tetrisActive = $('.heading-screen__tetris');
 
     // Идентификатор
     let canAnimation = false;
@@ -15,20 +16,20 @@ $(function() {
     if ( $(window).width() > 768 || !window.matchMedia('screen and (max-width: 768px)').matches ){
         figureDifference = 195;
         $figureActive = $figureDesktop;
+        $tetrisActive = $('.heading-screen__tetris.heading-screen__tetris_desktop');
     }else{
         figureDifference = 130;
         $figureActive = $figureMobile;
+        $tetrisActive = $('.heading-screen__tetris.heading-screen__tetris_mobile');
     }
 
     if( newPosTop <  figureDifference){
         canAnimation = true;
         canTranslate = true;
         $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
-        // $figureActive.removeClass('figure--stop');
     }else{
         canAnimation = false;
         canTranslate = false;
-        // $figureActive.addClass('figure--stop');
     }
 
     // Отступ фигуры от верха страницы для скроллинга
@@ -51,9 +52,11 @@ $(function() {
         if ( $(window).width() > 768 || !window.matchMedia('screen and (max-width: 768px)').matches ){
             figureDifference = 195;
             $figureActive = $figureDesktop;
+            $tetrisActive = $('.heading-screen__tetris.heading-screen__tetris_desktop');
         }else{
             figureDifference = 130;
             $figureActive = $figureMobile;
+            $tetrisActive = $('.heading-screen__tetris.heading-screen__tetris_mobile');
         }
         
         newPosTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop; 
@@ -65,21 +68,23 @@ $(function() {
 
         trigger = Math.ceil(figureOffset - newPosTop);
         
-        console.log( 
-            'NextScroll: ' + NextScroll 
-            + ';\nCurrentScroll: ' + CurrentScroll 
-            + ';\nfigureOffsetTrigger (в начале): ' + figureOffsetTrigger
-            + ';\nfigureOffset(сейчас): ' + figureOffset 
-            + ';\nnewPosTop(от верха браузера): ' + newPosTop 
-            + ';\ntrigger: ' + trigger 
-            + ';\nстатус анимации: ' + canAnimation
-            + ';\nстатус translate: ' + canTranslate
-        );
+        // console.log( 
+        //     'NextScroll: ' + NextScroll 
+        //     + ';\nCurrentScroll: ' + CurrentScroll 
+        //     + ';\nfigureOffsetTrigger (в начале): ' + figureOffsetTrigger
+        //     + ';\nfigureOffset(сейчас): ' + figureOffset 
+        //     + ';\nnewPosTop(от верха браузера): ' + newPosTop 
+        //     + ';\ntrigger: ' + trigger 
+        //     + ';\nстатус анимации: ' + canAnimation
+        //     + ';\nстатус translate: ' + canTranslate
+        // );
 
         if( newPosTop === 0){
             canTranslate = true;
+            newPosTop = (newPosTop > 0) ? Math.ceil( newPosTop ) : 0;
+            
             $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
-            $('.figure').each(function(){
+            $tetrisActive.find('.figure').each(function(){
                 $(this).removeClass('color');
             });
         }
@@ -94,7 +99,7 @@ $(function() {
                 canAnimation = false;
 
                 $figureActive.attr('transform', 'translate(0,' + figureDifference + ')');
-                $('.figure').each(function(){
+                $tetrisActive.find('.figure').each(function(){
                     $(this).addClass('color');
                 });
             }
@@ -107,12 +112,11 @@ $(function() {
             }
             if ( trigger >= 0 && newPosTop < figureDifference && !canAnimation){
                 canAnimation = true;
-                $('.figure').each(function(){
+                $tetrisActive.find('.figure').each(function(){
                     $(this).removeClass('color');
                 });
             }
         }
-
         CurrentScroll = NextScroll;  //Updates current scroll position
     });
 });
