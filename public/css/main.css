@@ -1725,9 +1725,9 @@
 }
 
 .heading-screen__tetris .transition {
-  -webkit-transition: all 0.4s linear;
-  -o-transition: all 0.4s linear;
-  transition: all 0.4s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .heading-screen__tetris .figure_green.color {

@@ -87,6 +87,7 @@ $(function() {
         // Смотрим скролл вниз или вверх
         if (NextScroll > CurrentScroll ){
             if ( trigger >= 0 && newPosTop <= figureDifference && canAnimation && canTranslate ) {
+                newPosTop = (newPosTop > 0) ? Math.ceil( newPosTop ) : 0;
                 $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
             }
             if ( newPosTop > figureDifference && canAnimation && canTranslate ){
@@ -100,6 +101,7 @@ $(function() {
         }else{
             if ( trigger >= 0 && newPosTop < figureDifference && canAnimation ) {
                 if( canTranslate ){
+                    newPosTop = (newPosTop > 0) ? Math.ceil( newPosTop ) : 0;
                     $figureActive.attr('transform', 'translate(0,' + newPosTop + ')');
                 }
             }
