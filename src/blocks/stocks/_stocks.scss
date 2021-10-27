@@ -4,7 +4,8 @@
     // height: 100vh;
 
     &__container{
-        max-width: 1480px;
+        // max-width: 1480px;
+        max-width: map-get($map: $container-max-widths, $key: hd);
     }
 
     &__info{       
@@ -137,8 +138,8 @@
     .stocks{
         &__container{
             // 1240 + 40
-            max-width: 1280px;
-            // max-width: map-get($map: $container-max-widths, $key: xl);
+            // max-width: 1280px;
+            max-width: map-get($map: $container-max-widths, $key: xl);
         }
         &__message-text{
             // font-size: map-get($map: $font-size, $key: md);
@@ -156,6 +157,15 @@
                 height: 360px;
             }
         }
+
+        &__graph {
+            padding: 10px 0;
+            margin-right: -30px;
+
+            &:before{
+                width: calc( 100% - 30px );
+            }
+        }
     }
 }
 // < 1280px
@@ -169,6 +179,15 @@
         &__info{
             padding-top: 0;
             padding-bottom: 0;
+        }
+        &__graph{
+            padding: 0 0 0 10px;
+
+            margin-right: -60px;
+
+            &:before{
+                width: calc( 100% - 60px );
+            }
         }
         &__chat{
             min-height: 1px;

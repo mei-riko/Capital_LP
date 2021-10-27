@@ -10,7 +10,7 @@
 // < 1600px
 @media all and (max-width: map-get($grid-breakpoints, 'xl')){
     .grid{
-        &_stock{
+        &_stocks{
             grid-template-columns: 1fr 400px;
         }
     }

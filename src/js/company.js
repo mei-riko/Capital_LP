@@ -24,7 +24,7 @@ window.initCompanyPart = function (){
 			var totalAtStartFloat = parseFloat(company.totalAtStart.rur.replace(/[^0-9.]/g, ''));
 			var totalAtStartView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalAtStartFloat).toFixed(2));
 			// console.log( totalAtStartView );
-			companyContainer.find('.item__title.item_company__total .item__value').empty().html(totalAtStartView);
+			companyContainer.find('.item__title.item_company__total .item__value').empty().html(totalAtStartView.replace(',','.'));
 		}
 	};
 	window.loadNextCompanies = function() {
@@ -39,10 +39,12 @@ window.initCompanyPart = function (){
 			}
 		}
 		
+		
 		// shuffle array
 		shuffleArray(candidates);
 		window.companydata.active = candidates.slice(0, maxActiveCompanies);
-		console.log('window.companydata.active', window.companydata.active);
+
+		// console.log('window.companydata.active', window.companydata.active);
 
         // draw next part
         drawActiveCompanies();
@@ -64,7 +66,7 @@ window.initCompanyPart = function (){
     	}
 		var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalSharesRur).toFixed(2));
 
-    	return totalSharesRurView;
+    	return totalSharesRurView.replace(',','.');
     }
 	
     window.showTotalSharesRur = function(selector){
@@ -94,13 +96,16 @@ window.initCompanyPart = function (){
     		// console.log(company, sharesRurStr, sharesRur, totalSharesRur);
     	}
     	var totalSharesRurView = (new Intl.NumberFormat("ru-RU", { useGrouping: true, minimumFractionDigits: 2 })).format(Number(totalSharesRur).toFixed(2));
-    	$(selector).empty().html(totalSharesRurView);
+    	$(selector).empty().html(totalSharesRurView.replace(',','.'));
 	}
 
-
     try{
+	
 	    initNextCompany();
-	    loadNextCompanies();
+		// loadNextCompanies();
+		if ( window.companydata.active.length < 1 ){
+			loadNextCompanies();
+		}
 	    drawActiveCompanies();    	
     } catch (e) {
     	//

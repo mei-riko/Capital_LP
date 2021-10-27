@@ -283,8 +283,7 @@
 @media all and (max-width: 1280px) {
   .item_company-inside {
     padding: 15px;
-    width: 100%;
-    min-width: 240px;
+    width: 280px;
   }
 }
 
@@ -301,9 +300,6 @@
 }
 
 @media all and (max-width: 768px) {
-  .item_company-inside {
-    min-width: 190px;
-  }
   .item_company-inside__name, .item_company-inside__price {
     font-size: 16px;
   }
@@ -311,22 +307,21 @@
 
 @media all and (max-width: 576px) {
   .item_company-inside {
-    grid-template-columns: 40px 90px 1fr;
+    grid-template-columns: 40px 70px 1fr;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     grid-template-areas: "logo info price";
-    max-width: 300px;
+    min-height: 1px;
+  }
+  .item_company-inside__count {
+    line-height: 20px;
   }
 }
 
-@media all and (max-width: 576px) {
-  .item_company-inside {
-    grid-template-columns: 30px 74px 1fr;
-  }
+@media all and (max-width: 375px) {
   .item_company-inside__count {
     font-size: 12px;
-    line-height: 20px;
   }
 }
 
@@ -1012,7 +1007,7 @@
 }
 
 @media all and (max-width: 1600px) {
-  .grid_stock {
+  .grid_stocks {
     grid-template-columns: 1fr 400px;
   }
 }
@@ -1643,6 +1638,7 @@
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  max-width: 1360px;
   background: none;
 }
 
@@ -1704,6 +1700,7 @@
 @media all and (max-width: 1600px) {
   .heading-screen_step__container {
     padding-top: 200px;
+    max-width: 1180px;
   }
   .heading-screen_step__container:before {
     width: 720px;
@@ -1750,6 +1747,9 @@
   }
   .heading-screen_step__title {
     margin-bottom: 30px;
+  }
+  .heading-screen_step__btn {
+    width: 280px;
   }
   .heading-screen_step__card {
     grid-template-columns: repeat(2, 1fr);
@@ -1844,7 +1844,7 @@
 }
 
 .stocks__container {
-  max-width: 1480px;
+  max-width: 1360px;
 }
 
 .stocks__info {
@@ -1979,7 +1979,7 @@
 
 @media all and (max-width: 1600px) {
   .stocks__container {
-    max-width: 1280px;
+    max-width: 1180px;
   }
   .stocks__message-text {
     font-size: 17px;
@@ -1995,6 +1995,13 @@
   .stocks__chat:after {
     height: 360px;
   }
+  .stocks__graph {
+    padding: 10px 0;
+    margin-right: -30px;
+  }
+  .stocks__graph:before {
+    width: calc( 100% - 30px);
+  }
 }
 
 @media all and (max-width: 1280px) {
@@ -2007,6 +2014,13 @@
   .stocks__info {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .stocks__graph {
+    padding: 0 0 0 10px;
+    margin-right: -60px;
+  }
+  .stocks__graph:before {
+    width: calc( 100% - 60px);
   }
   .stocks__chat {
     min-height: 1px;

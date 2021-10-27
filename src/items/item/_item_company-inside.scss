@@ -65,8 +65,8 @@
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){
     .item_company-inside{
         padding: $spacer-gutter;
-        width: 100%;
-        min-width: 240px;
+        width: 280px;
+        // min-width: 240px;
     }    
 }
 // < 1024px
@@ -84,7 +84,7 @@
 // < 768px
 @media all and (max-width: map-get($grid-breakpoints, 'sm')){
     .item_company-inside{
-        min-width: 190px;
+        // min-width: 190px;
 
         &__name,
         &__price{
@@ -95,22 +95,27 @@
 // < 576px
 @media all and (max-width: map-get($grid-breakpoints, 'xs')){
     .item_company-inside{
-        grid-template-columns: 40px 90px 1fr;
+        grid-template-columns: 40px 70px 1fr;
         align-items: center;
         grid-template-areas:
             "logo info price";
 
-        max-width: 300px;
+        // max-width: 300px;
+        min-height: 1px;
+
+        &__count{
+            line-height: 20px;
+        }
     }
 }
 
 // < 375px
-@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
     .item_company-inside{
-        grid-template-columns: 30px 74px 1fr;
+        // grid-template-columns: 30px 74px 1fr;
         &__count{
             font-size: map-get($map: $font-size, $key: xs);
-            line-height: 20px;
+            // line-height: 20px;
         }
         // &__name,
         // &__price{

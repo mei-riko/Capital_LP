@@ -7,6 +7,8 @@
         padding-top: 220px;
         justify-content: flex-start;
         // padding-bottom: 320px;
+
+        max-width: map-get($map: $container-max-widths, $key: hd);
         // min-height: 900px;
         background: none;
 
@@ -80,6 +82,7 @@
     .heading-screen_step{
         &__container{
             padding-top: 200px;
+            max-width: map-get($map: $container-max-widths, $key: xl);
             // min-height: 720px;
 
             &:before{
@@ -99,8 +102,9 @@
         &__container{
             padding-top: 120px;
             padding-bottom: 100px;
-            // min-height: 1px;
+
             max-width: map-get($map: $container-max-widths, $key: lg);
+            // min-height: 1px;
 
             &:before{
                 height: 420px;
@@ -142,6 +146,9 @@
         }
         &__title{
             margin-bottom: map-get($map: $spacers, $key: 2);
+        }
+        &__btn{
+            width: 280px;
         }
         &__card{
             grid-template-columns: repeat(2, 1fr);
