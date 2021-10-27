@@ -1,0 +1,39 @@
+.modal_agent-form{
+    &.fancybox-content{
+        width: 520px;
+        max-width: calc(100% - 40px);
+
+        border-radius: $border-radius;
+        color: $white;
+        background: lighten($color: $body-bg, $amount: 4);
+        padding: map-get($map: $spacers, $key: 1) $spacer;
+
+        cursor: default!important;
+    }
+}
+// < 768px
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .modal_form{
+        &.fancybox-content{
+            max-width: calc(100% - 20px);
+        }
+    }
+}
+
+// < 576px
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .modal_form{
+        &.fancybox-content{
+            border-radius: $border-radius/2;
+        }
+    }
+}
+// < 375px
+@media all and (max-width: map-get($grid-breakpoints, 'xxs')){
+    .modal_form{
+        &.fancybox-content{
+            padding: $spacer $spacer/2;
+            max-width: 100%;
+        }
+    }
+}

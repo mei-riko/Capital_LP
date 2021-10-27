@@ -30,13 +30,20 @@
             font-size: map-get($map: $heading, $key: h5);
             transition: $transition-base;
 
-            padding-left: map-get($map: $spacers, $key: 1);
+            // padding-left: map-get($map: $spacers, $key: 1);
+            padding-left: $spacer;
 
             &:hover{
                 text-decoration: none;
             }
         }
-
+        &-btn{
+            padding: 8px 20px 10px;
+            line-height: $spacer/2;
+            background-color: $black;
+            border: 2px solid $action;
+            border-radius: 20px;
+        }
         &_mobile-only{
             display: none;
         }
@@ -49,7 +56,8 @@
 
         &__nav{
             &-item{
-                font-size: map-get($map: $heading, $key: h6);
+                font-size: map-get($map: $font-size, $key: lg);
+                padding-left: map-get($map: $spacers, $key: 1)/2;
             }
         }
     }
@@ -73,8 +81,12 @@
         }
         &__nav{
             &-item{
-                font-size: map-get($map: $font-size, $key: md);
-                padding-left: $spacer;
+                font-size: map-get($map: $font-size, $key: sm);
+                // padding-left: $spacer/2;
+            }
+            &-btn{
+                line-height: map-get($map: $font-size, $key: md);
+                padding: 6px 20px 8px;
             }
         }
     }
@@ -96,15 +108,17 @@
             display: none;
 
             &-item{
-                padding-left: 0;
+                padding: $spacer/4 0;
             }
-            
+            &-btn{
+                display: inline-block;
+            }
             // Modification
             &_mobile-only{
                 background: $body-bg;
                 padding: $spacer 0;
                 display: grid;
-                grid-gap: $spacer;
+                grid-gap: $spacer/2;
                 width: 100%;
                 text-align: center;
 

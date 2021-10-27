@@ -8,9 +8,20 @@ header.header
             a.header__nav-item(href="#prevpreipo" data-trigger="scroll") Прошедшие Pre-IPO
             a.header__nav-item(href="#about" data-trigger="scroll") Что такое Pre-IPO
             a.header__nav-item(href="#work" data-trigger="scroll") Как мы работаем
+            a.header__nav-item(href="#" data-fancybox="" data-src="#agent") 
+                .header__nav-btn Стать агентом
     .header__nav.header__nav_mobile-only
         a.header__nav-item(href="#preipo" data-trigger="scroll") Текущие Pre-IPO
         a.header__nav-item(href="#prevpreipo" data-trigger="scroll") Прошедшие Pre-IPO
         a.header__nav-item(href="#about" data-trigger="scroll") Что такое Pre-IPO
         a.header__nav-item(href="#work" data-trigger="scroll") Как мы работаем
+        a.header__nav-item(href="#" data-fancybox="" data-src="#agent") 
+            .header__nav-btn Стать агентом
 .overlay
+.modal.modal_agent-form.d-none#agent
+    p.modal__form-intro Заполните форму, и&nbsp;мы свяжемся с&nbsp;вами
+    .form.form_default.modal__form
+        input.input(type="text", name="name",placeholder="Вашe имя")
+        input.input(type="tel", name="phone",placeholder="Ваш телефон")
+        input.input(type="text", name="mail",placeholder="Ваш e-mail")
+        button.btn.btn_action(type="submit") Стать агентом

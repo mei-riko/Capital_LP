@@ -15,11 +15,22 @@
         <div class="header__toggle d-none d-md-block">
           <div class="header__toggle-item">меню</div>
         </div>
-        <div class="header__nav"><a class="header__nav-item" href="#preipo" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#prevpreipo" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#about" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#work" data-trigger="scroll">Как мы работаем</a></div>
+        <div class="header__nav"><a class="header__nav-item" href="#preipo" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#prevpreipo" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#about" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#work" data-trigger="scroll">Как мы работаем</a><a class="header__nav-item" href="#" data-fancybox="" data-src="#agent"> 
+            <div class="header__nav-btn">Стать агентом</div></a></div>
       </div>
-      <div class="header__nav header__nav_mobile-only"><a class="header__nav-item" href="#preipo" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#prevpreipo" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#about" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#work" data-trigger="scroll">Как мы работаем</a></div>
+      <div class="header__nav header__nav_mobile-only"><a class="header__nav-item" href="#preipo" data-trigger="scroll">Текущие Pre-IPO</a><a class="header__nav-item" href="#prevpreipo" data-trigger="scroll">Прошедшие Pre-IPO</a><a class="header__nav-item" href="#about" data-trigger="scroll">Что такое Pre-IPO</a><a class="header__nav-item" href="#work" data-trigger="scroll">Как мы работаем</a><a class="header__nav-item" href="#" data-fancybox="" data-src="#agent"> 
+          <div class="header__nav-btn">Стать агентом</div></a></div>
     </header>
     <div class="overlay"></div>
+    <div class="modal modal_agent-form d-none" id="agent">
+      <p class="modal__form-intro">Заполните форму, и&nbsp;мы свяжемся с&nbsp;вами</p>
+      <div class="form form_default modal__form">
+        <input class="input" type="text" name="name" placeholder="Вашe имя"/>
+        <input class="input" type="tel" name="phone" placeholder="Ваш телефон"/>
+        <input class="input" type="text" name="mail" placeholder="Ваш e-mail"/>
+        <button class="btn btn_action" type="submit">Стать агентом</button>
+      </div>
+    </div>
     <div class="preloader"><img class="preloader__anim" src="../img/preloader.svg"/></div>
     <div class="modal modal_company d-none" id="modal1">
       <div class="container"> 

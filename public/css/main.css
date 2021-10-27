@@ -44,11 +44,19 @@
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  padding-left: 60px;
+  padding-left: 40px;
 }
 
 .header__nav-item:hover {
   text-decoration: none;
+}
+
+.header__nav-btn {
+  padding: 8px 20px 10px;
+  line-height: 20px;
+  background-color: #141314;
+  border: 2px solid #597CFB;
+  border-radius: 20px;
 }
 
 .header__nav_mobile-only {
@@ -60,7 +68,8 @@
     padding: 40px 60px;
   }
   .header__nav-item {
-    font-size: 20px;
+    font-size: 18px;
+    padding-left: 30px;
   }
 }
 
@@ -81,8 +90,11 @@
     height: 30px;
   }
   .header__nav-item {
-    font-size: 16px;
-    padding-left: 40px;
+    font-size: 14px;
+  }
+  .header__nav-btn {
+    line-height: 16px;
+    padding: 6px 20px 8px;
   }
 }
 
@@ -102,13 +114,16 @@
     display: none;
   }
   .header__nav-item {
-    padding-left: 0;
+    padding: 10px 0;
+  }
+  .header__nav-btn {
+    display: inline-block;
   }
   .header__nav_mobile-only {
     background: #141314;
     padding: 40px 0;
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 20px;
     width: 100%;
     text-align: center;
     position: absolute;
@@ -516,6 +531,12 @@
 .form_subscribe__input, .form_callback__input {
   width: 100%;
   text-align: center;
+}
+
+.form_default {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: 1fr;
 }
 
 @media all and (max-width: 1280px) {
@@ -1656,6 +1677,35 @@
 @media all and (max-width: 768px) {
   .modal_form.fancybox-content {
     padding: 60px 40px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+@media all and (max-width: 576px) {
+  .modal_form.fancybox-content {
+    border-radius: 20px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .modal_form.fancybox-content {
+    padding: 40px 20px;
+    max-width: 100%;
+  }
+}
+
+.modal_agent-form.fancybox-content {
+  width: 520px;
+  max-width: calc(100% - 40px);
+  border-radius: 40px;
+  color: #ffffff;
+  background: #1e1d1e;
+  padding: 60px 40px;
+  cursor: default !important;
+}
+
+@media all and (max-width: 768px) {
+  .modal_form.fancybox-content {
     max-width: calc(100% - 20px);
   }
 }

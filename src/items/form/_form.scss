@@ -21,6 +21,11 @@
             text-align: center;
         }
     }
+    &_default{
+        display: grid;
+        grid-gap: $spacer-gutter;
+        grid-template-columns: 1fr;
+    }
 }
 // < 1280px
 @media all and (max-width: map-get($grid-breakpoints, 'lg')){

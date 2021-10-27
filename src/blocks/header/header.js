@@ -23,3 +23,11 @@ $(document).on('mouseup', function (e){
         $('.overlay').removeClass('overlay--active');
     }
 });
+
+$( window ).on('resize', function() {
+    if ( $(window).width() > 1024 || !window.matchMedia('screen and (max-width: 1024px)').matches ){
+        $('.header__nav').removeClass('header__nav--active');
+        $('body').removeClass('hidden');
+        $('.overlay').removeClass('overlay--active');
+    }
+});
