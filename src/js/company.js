@@ -48,15 +48,16 @@ window.initCompanyPart = function (){
 		shuffleArray(candidates);
 		window.companydata.active = candidates.slice(0, maxActiveCompanies);
 
-		console.log('maxActiveCompanies', maxActiveCompanies,'window.companydata.active', window.companydata.active);
+		// console.log('maxActiveCompanies', maxActiveCompanies,'window.companydata.active', window.companydata.active);
 
         // draw next part
         drawActiveCompanies();
 	}
     window.initNextCompany = function() {
-        $('.nextcompany').click(function(e) {
+		$(document).on('click', '.nextcompany', function(e){
+        // $('.nextcompany').click(function(e) {
             e.preventDefault();
-			console.log("$('.nextcompany').click");
+			// console.log("$('.nextcompany').click");
             loadNextCompanies();
             return false;
         });
