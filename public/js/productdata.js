@@ -1,5 +1,5 @@
 window.productdata={
-	active: [2,3],
+	active: [],
 	available:[
 		{
 			icon: './img/samsung.png',
