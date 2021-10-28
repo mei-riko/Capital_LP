@@ -57,4 +57,5 @@ mixin product(object)
                 script
                     | if(window.initCompanyPart) window.initCompanyPart();
                     | if(window.initProductPart) window.initProductPart();
-                    | loadNextCompanies();
+                    | if(window.loadNextCompanies) window.loadNextCompanies();
+
