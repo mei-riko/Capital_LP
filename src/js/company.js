@@ -10,6 +10,11 @@ function shuffleArray(array) {
 }
 
 window.initCompanyPart = function (){
+	if(window.initCompanyPartDone) {
+		return;
+	}
+	window.initCompanyPartDone = true;
+
 	window.drawActiveCompanies = function() {
 		for(let i = 0; i<window.companydata.active.length; i++) {
 			var company = window.companydata.available[window.companydata.active[i]];
@@ -42,14 +47,18 @@ window.initCompanyPart = function (){
 		// shuffle array
 		shuffleArray(candidates);
 		window.companydata.active = candidates.slice(0, maxActiveCompanies);
-
-        // draw next part
+		console.log('maxActiveCompanies', maxActiveCompanies,'window.companydata.active', window.companydata.active);
+        
+		// draw next part
         drawActiveCompanies();
 	}
     window.initNextCompany = function() {
-        $('.nextcompany').click(function(e) {
+        $(document).on('click', '.nextcompany', function(e){
+			// $('.nextcompany').click(function(e) {
             e.preventDefault();
-            loadNextCompanies();
+            console.log("$('.nextcompany').click");
+
+			loadNextCompanies();
             return false;
         });
     };

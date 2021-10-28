@@ -2,6 +2,35 @@ function validateEmail($email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     return emailReg.test( $email );
 }
+function checkInputValue( $input ){
+	let name = $input.attr('name');
+		
+	switch (name) {
+		case 'message':
+			if( $input.val().length > 2 ){
+				$input.removeClass('input--error').addClass('input--success');
+			}else{
+				$input.removeClass('input--success').addClass('input--error');
+			}
+			break;
+		case 'mail':
+			if( validateEmail($input.val()) &&  $input.val().length > 0 ){
+				$input.removeClass('input--error').addClass('input--success');
+			}else{
+				$input.removeClass('input--success').addClass('input--error');
+			}
+			break;
+		case 'name':
+			if( $input.val().length > 2 ){
+				$input.removeClass('input--error').addClass('input--success');
+			}else{
+				$input.removeClass('input--success').addClass('input--error');
+			}
+			break;
+		default:
+			break;
+	};
+}
 function valid(val, elem, type) {
 	var phone = false,
 		name = false,
@@ -117,8 +146,8 @@ $(document).ready(function(){
 				response.json().then(function (result) {
 					if(type == 'phone'){ form.remove(); $thanks.show(); }
 					if(type == 'participate'){
-						document.cookie = 'callbackName=,expires=Thu, 01 Jan 1970 00:00:01 GMT';
-						document.cookie = 'callbackName=' + name + ',expires=1,path=/';
+						document.cookie = 'callbackName=;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+						document.cookie = 'callbackName=' + name + ';expires=1;path=/';
 						$('#heading-screen').load(url); 
 					}
 				});
@@ -155,29 +184,15 @@ $(document).ready(function(){
 		}
 	});	
 	
-	// Проверка для смены классов
+	// Проверка для смены классов при введении
 	$(document).on('input', '.input', function(event){
 		let $input = $(this);
-		let name = $input.attr('name');
-		
-		switch (name) {
-			case 'mail':
-				if( validateEmail($input.val()) ){
-					$input.removeClass('input--error').addClass('input--success');
-				}else{
-					$input.removeClass('input--success').addClass('input--error');
-				}
-				break;
-			case 'name':
-				if( $input.val().length > 2 ){
-					$input.removeClass('input--error').addClass('input--success');
-				}else{
-					$input.removeClass('input--success').addClass('input--error');
-				}
-				break;
-			default:
-				break;
-		};
+		checkInputValue( $input );
+	});
+	// Проверка для смены классов при автозаполнении
+	$(document).on('change', '.input', function(event){
+		let $input = $(this);
+		checkInputValue( $input );
 	});
 	
 });
